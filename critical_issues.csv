@@ -1,0 +1,395 @@
+20190416-nc-911-board-minutes-approved-687248c4,No,"Multiple asterisks added to table headings that are not in PDF: pg. 1;
+
+Nested table incorrectly intepreted: p. 1-2
+",Nested table converted into parent table,Critical Issues Remain,"Ordered items start over where there's a page break in the PDF which separates them from the original list: p.  2;
+
+Linked item from heading duplicated at top of what would be Page 2 of the PDF",
+20200522-nc911-board-minutes-approved-685f9cb7,No,"Asterisks added to HTML on heading and table heading that aren't on PDF: p.1, 6; 
+
+Data call marked up as table heading added at start of new page that doesn't belong: p.2;
+
+Table identifies wrong row as table heading row: p. 2;
+Additional table rows further down not marked as heading rows however editor didn't design correctly to identify: p.2-3;
+
+List of phone numers marked up as separate table heading: p. 3;
+
+Asterisks not on PDF added to HTML: p. 3, 5;
+
+Ordered list items have additional number in text: p.3-4, 5;
+
+Asterisks add to HTML ordered list items: p. 3-4;
+
+Image screenshot has incorrect alt text indicating it's a logo.  Table of image content below image with asterisks adding to heading row : p. 4;
+
+Page breaks continue between pages;
+
+
+
+
+","Asterisks added to HTML on heading and table heading that aren't on PDF: p.1, 6; 
+
+Data call marked up as table heading added at start of new page that doesn't belong: p.2;
+
+Table identifies wrong row as table heading row: p. 2;
+Additional table rows further down not marked as heading rows however editor didn't design correctly to identify: p.2-3;
+
+List of phone numers marked up as separate table heading: p. 3;
+
+Asterisks not on PDF added to HTML: p. 3, 5;
+
+Ordered list items have additional number in text: p.3-4, 5;
+
+Asterisks add to HTML ordered list items: p. 3-4;
+
+Image screenshot has incorrect alt text indicating it's a logo.  Table of image content below image with asterisks adding to heading row : p. 4;
+
+Page breaks continue between pages;
+",Critical Issues Remain,"Table that continues over multiple pages no included with parent table. Instead marked up as inside <p>. Changes meaning of data.: p. 2;
+
+New issue: NC DIT logo added to output.html that is not included anywhere in PDF. 
+
+Image screenshot has incorrect alt text: p.4;","Ordered list items have additional number in text: p.3-4, 5;"
+esrmo-newsletter-september-2021-686b1e03,No,"Headings order and hierarchy is incorrect. Images in wrong places. Hyperlinked content  starts from the new line each time. Page 2, hyperlinks are missing, text listed twice or highlited text is placed instead of the hyperlink . Repeted set of links and content at the bottom of the last page.",,Critical Issues Remain,"Hallucination page 1, color block remains, image dispalyed after text block, Hyperlinks promoted on separate line, repeted hyperlinh on the page is missing, page divider - solid line shown as a dot on page 2, still present on all other pages as page divider. Page 3 and after,  list of links added as it was seen yesterday. Framed content added as an image",
+federalagencyhurricanecoordination-686132f8,No,"PowerPoint slides with many Esri screenshots, many slides have titles incorporated into screenshots and those titles are parced in HTML correctly, there is missing contnet starting page 4. Headings order and hierarchy is incorrect. ",,Critical Issues Remain,"Skipped H2 starting page 5, legend has H2 instead of H3, all image captions added to the page.",
+fillable-form-logo-imagery-bdfc,No,Form,,Critical Issues Remain,FORM,
+gdac-legislative-report-may-2016-68610a4b,No,"Page 18, missing text prior to the link. Page 19 - Pulled both a table from the image and the whole image, Alt Text is not accurate.",Alt text issues,Critical Issues Remain,"Remove table of contents in favor of H2 anchor links. Page Intentionally left blank is still present. Page 19, pulled both a table from the image and the image. Missing Alt Text. ","Page 1, Alt text is better but missing the text in the image"
+gicc-2020-census-nc-factsheet-20170809-686131e8,No,Text is not in the correct order. Text pulled from images and the whole image is present. Alt text is not accurate for the 2020 Census Image,Alt text issues,Critical Issues Remain,"Page 1, text pulled from image . Alt text is not accurate for most images. Alt text from the 2020 Census image got placed in a p tag","Page 1, text and images are out of order , underlined text is not underlined "
+gicc-agenda-20160810-68613387,No,Italics missing and replaces with **. Links have been removed fiorm the table and placed at the bottom of the page instead. Nested lists are not pulling over.,Markdown not interpreted as HTML.,Critical Issues Remain,Links are pulled from the table and placed at the bottom of the page,
+gicc-goals-and-strategic-direction-2021-23-685fd67f,No,"Page 1, cut off part of the NCDIT logo. Page 5 -8, missing ""Goal 1"" Reference. Page 15, social media icons do not align with text.",,Critical Issues Remain,"Page 15, social medai image is pull in but text is also pulled from it and added to the bottom. Alt text is wrong","Page 5-8, several are missing the goal reference"
+gicc-lgc-censussurveyresults-20200506-68839ae8,No,"Page 2,3,7,9,11,15, 16, pulling lines of text and creating an image of them. ",,Critical Issues Remain,Slides are being pulled in as both images and text,
+gicc-meeting-minutes-02122003-685fb099,No,"Page 5, duplicated link at the end of page. Page 7, url not pulled from source doc.",,Critical Issues Remain,"Page 7, url not pulled from source doc.",
+gicc-smac-agenda-20210120-68839aac,No,"~ (pg. 1) href is wrong on first link and second link is missing href. Correct links for both are duplicated below at the bottom of the webpage
+~ (pg. 1) italics show as *text*
+~(pg. 1) missing 3rd indent in list (needs additional nesting)
+~(pg. 1) missing muliptle hyperlinks on text that is not shown in document as blue and underlined but still have valid links in the pdf version
+~ (pg. 1) headings are slightly off but not critical severity",,Critical Issues Remain,Page 1: href is wrong on first link and second link is missing href. Correct links for both are duplicated below at the bottom of the webpage,Page 1: headings are slightly off but not critical severity
+gicc-tims-may-2016-686133f1,No,"~ (pg. 1) alt text not complete
+~ (pg. 1) Header not right - Title is split between H1 & H2
+~ (pg. 5) alt text is wrong for both images
+~ (pg. 6) alt text is wrong for first image
+~ (pg. 7) alt text is wrong on image
+~ (pg. 8) image depicting contections between the text are completely missing
+~ (pg. 9) alt text wrong for both images
+~ (pg. 10) text from image was converted into a series of tables and then the image is displayed twice below this 
+~ (p. 11) text from image was converted into a series of tables and missing image
+~ (p. 12) alt text wrong
+~ (p. 15) alt text wrong on 1 image
+~ (p. 17)  text from image was converted into a series of tables and then the image is displayed below
+~(p. 19) Missing graphic completely
+~ (p.22, 23) alt text wrong",,Critical Issues Remain,"Page 5: Missing alt text for both images
+
+Page 6: Missing alt text for one of the images
+
+All Pages: Numerous other missing or incorrect alt text
+
+Page 19: Missing Graphic",
+ifb-its-400277-2017-1102-final-686b18e9,No,N/A - Includes form,,Critical Issues Remain,N/A - Includes form,
+logo-imagery-graphic-colors-map-imagery-6e2e,No,"~ (p. 2) Repeats text from image as a paragraph below
+~ (p. 3) missing muliptle hyperlinks on text that is not shown in document as blue and underlined but still have valid links in the pdf version",,Critical Issues Remain,Page 3: missing muliptle hyperlinks on text that is not shown in document as blue and underlined but still have valid links in the pdf version,"NEW ISSUE: Inserts ""[Image: NCGICC (North Carolina Geographic Information Coordinating Council) logo]"", ""[Image: NC DIT (North Carolina Department of Information Technology) logo]"", etc."
+nc-911-board-technology-committee-minutes-nov-4-2021-685fa41d,No,"Table headers inside paragraph above table. (Pg. 1)
+Section headers for table eclosed by two asterisks. (Pg. 1)
+Image copy of table copied over twice in two different sizes below converted table. (Pg. 1)
+Bold text replaced by plaintext enclosed by 2 asterisks. (Pg. 2)
+First row of table incorrectly converted to table header for both tables on page. (Pg. 2)
+Image of entire page of document copied over in two different sizes below converted table. (Pg. 2)
+List items incorrectly numbered, duplicate numbering and a reset in order. (Pg. 3)
+First row of table incorrectly converted to table header. (Pg. 3)
+Image of entire page of document copied over in two different sizes below converted table. (Pg. 3)
+List items incorrectly numbered, duplicate numbering and a reset in order. (Pg. 4)
+Image of entire page of document copied over in two different sizes below converted table. (Pg. 4)","Markdown not interpreted as HTML.
+Lists not formatting correctly.",Critical Issues Remain,"Table headers outside of table. (Pg. 1)
+Image copy of table copied over twice in two different sizes below converted table. (Pg. 1)
+Image of entire page of document copied over in two different sizes below converted table. (Pg. 2)
+No longer duplicate numbering in list, list still resets numbering if interupted. (Pg. 2)
+First row of table incorrectly convnerted to table header.
+Goals should be part of list item 6. (Pg. 3)
+List items incorrectly numbered, duplicate numbering and a reset in order. (Pg. 4)","Watermark in plaintext at bottom of page. (Global)
+"
+ncom-update-gicc-05-15-2014-68612fe6,No,"Link should be below list. (Pg. 2)
+Link goes to a broken website, but so does the link on the original document. (Pg. 2)
+List hierarchy did not transfer. (Pg.3)
+Checkmark image from the end of list items on original document is placed at the bottom of the page. (Pg. 3)",Lists not formatting correctly.,Critical Issues Remain,List hierarchy did not transfer. (Pg.3),"Link should be below list. (Pg. 2)
+Link goes to a broken website, but so does the link on the original document. (Pg. 2)
+Checkmark image from the end of list items on original document is placed at the bottom of the page. (Pg. 3)"
+near-perfect-powerpoint-slides-by-accessibility-experts-47b0,No,"Background highlighting of headshot images transferred separately, alt text improperly attributed to background. (Pg. 1)
+Many extraneous asterisks. (global)
+Entire slides being transcribed after  an entire image of the corresponding slide is pulled in. (global)
+Images missing and replaced by alt text commented (<!-->) into the html. (Pg. 7)
+Incorrect header hierarchy. (Pg. 12)
+Added links from example image, links were not originally clickable. (Pg. 17).
+Originally hyperlinked text enclosed in brackets then duplicated and enclosed in paretheses, links are then duplicated with more text than originally at the bottom of the page. (Pg. 18)
+Incorrect header hierarchy. (Pg. 19)
+Critical, Page 19 and others: Transcribed the full text from the screenshot (an outlook screenshot for example) and put it in some form of text in the HTML. Should have just put alt text on the image.
+Only part of image transferred over, image then duplicated later. (Pg. 19)
+Font styling examples not transferred. (Pg. 20, 21)
+Duplicate text used for purpose of example removed. (Pg. 22)
+Links not transferred over, placed separately at bottom of page. (Pg. 23)
+Alt text for image contains alt text for both images on the page. (Pg. 25, 26)
+Image duplicated on page, one image is color corrected and loses the gray scale effect. Only one has proper alt text and grascale is not mentioned. (Pg. 27)
+Underlined text improperly converted to hyperlink leading to nowhere. (Pg. 29)
+List numbering duplicated. (Pg. 34)
+Hyperlink in wrong spot, links to correct location but is named incorrectly. (Pg.43)
+Links duplicated, first set of links are broken, second set lead to correct place. (Pg. 44)
+Links duplicated. (Pg. 60)","Dashed lines are used to visually represent page breaks. A screen reader user won't know that the page breaks exist. Was coded using a <div aria-hidden=true> instead of an <hr> (global)
+Markdown not interpreted as HTML.
+Alt text issues. 
+Header issues. (global)",Critical Issues Remain,"Background highlighting of headshot images transferred separately, alt text improperly attributed to background. (Pg. 1)
+Images completely missing, replaced by alt text in brackets. (Pg. 7, 16, 34, 35, 40, 41, 47)
+Entire slides being transcribed after an entire image of the corresponding slide is pulled in. (global)
+Added links from example image, links were not originally clickable. (Pg. 17).
+Duplicated hyperlinks. (Pg. 18)
+Links added at bottom of the page. (Pg. 23)
+Alt text for image contains alt text for both images on the page. (Pg. 25, 26)
+Image duplicated on page, one image is color corrected and loses the gray scale effect. Only one has proper alt text and grascale is not mentioned. (Pg. 27)
+Underlined text improperly converted to hyperlink leading to nowhere. (Pg. 29)
+Hyperlink in wrong spot, links to correct location but is named incorrectly. (Pg.43)
+Links duplicated, first set of links are broken, second set lead to correct place. (Pg. 44)","NEW: Linebreak replaced by em dash. (Pg. 12, 15, 19, 20, 22, 26, 27... Global)"
+near-perfect-powerpoint-slides-by-accessibility-experts-47b2,No,"""Accessibility Items"" should not be h2. (Pg. 5).
+Critical, Page  and others: Transcribed the full text from the screenshot (an outlook screenshot for example) and put it in some form of text in the HTML. Should have just put alt text on the image.
+""Manually create form fields"" should not be h2. (Pg. 7).
+Images placed in wrong order. (Pg. 15)
+Highlights on image not transferred. (Pg. 16)
+Alt text just says ""Document image."" (Pg. 16)
+Duplicate image improperly removed, it is the same image of the keyboard as previous but has different keys highlighted to instruct. (Pg. 18)
+Alt text for images swapped. (Pg. 19)
+Duplicate image improperly removed, showcases steps required. (Pg. 20)
+Numerous improper asterisks. (Pg. 22, 23, 31)
+Link text duplicated and moved to bottom of page. (Pg. 24, 33, 34)
+Image highlights missing. (Pg.25, 27, 28)
+Duplicate image improperly removed, it is the same image of the keyboard as previous but has different keys highlighted to instruct. (Pg. 28)","Dashed lines are used to visually represent page breaks. A screen reader user won't know that the page breaks exist. Was coded using a <div aria-hidden=true> instead of an <hr> (global)
+Markdown not interpreted as HTML.
+Header issues. (global)
+Alt text issues.",Critical Issues Remain,"Images completely missing, replaced by alt text in brackets. (Pg. 4, 29)
+Alt text no longer says ""Document image."", just says nothing. (Pg. 16)
+Links moved to bottom of the page. (Pg. 24, 33)
+","""Accessibility Items"" should not be h2. (Pg. 5)
+""Manually create form fields"" should not be h2. (Pg. 7).
+Images placed in wrong order. (Pg. 15, 19, 21, 25)
+Highlights on image not transferred. (Pg. 16, 25, 27, 28, 30, 32)
+Duplicate image improperly removed, showcases steps required. (Pg. 20, 28)
+NEW: Linebreak replaced by em dash. (Pg. 23)"
+newsletter-with-many-images-and-formatted-text-117c,No,"Made text for link the alt text of embedded videos, link leads to youtube home page. Correct video links duplicated to bottom of page. (Pg. 2, 3, 19, 26) 
+Transcribed imaged also copied over. (Pg. 4)
+Incorrect alt text. (Pg.5)
+Text content ordered incorrectly, does not match image context. (Pg. 5, 9)
+Extraneous asterisks added in place of bold text (Pg. 8)
+Images oriented incorrectly. (Pg. 9)
+Images transferred as just one cluster, alt text only matches one image. (Global)
+Missing images, alt text mixed up. (Pg. 11)
+Image alt text and captions mixed up. (Global)
+Image transcribed along with image. (Global)
+Background image image transferred over. (Pg, 21)
+Header hierarchy issue, all headers are the same. (Pg. 22)
+Links to embedded videos lead to youtube home page. (Pg. 26)
+","Dashed lines are used to visually represent page breaks. A screen reader user won't know that the page breaks exist. Was coded using a <div aria-hidden=true> instead of an <hr> (global)
+Alt text issues.
+Markdown not interpreted as HTML.
+Header hierarchy issues.",Critical Issues Remain,"Made text for link the alt text of embedded videos, link leads to youtube home page. Correct video links duplicated to bottom of page. (Pg. 2, 3, 19, 26)
+Many images completely missing and replaced by alt text in brackets. (Global (not all but a lot))
+Incorrect alt text. (Pg.5)
+Text content ordered incorrectly, does not match image context. (Pg. 5, 9)
+Missing link. (Pg. 18)
+Duplicate link. (Pg. 20, 21)
+",Transcribed image also copied over. (Global)
+newsletter-with-many-images-and-formatted-text-21fb,No,"Initial links broken, links that lead to correct location duplicated to bottom of page. (Pg. 1, 2, 3)
+Paragraph break appears when link does, breaking text flow. (Pg. 1, 2, 3)
+Page break cuts text into multiple paragraphs. (Pg. 2)
+Incorrect alt text on images. (Pg. 1)
+","Dashed lines are used to visually represent page breaks. A screen reader user won't know that the page breaks exist. Was coded using a <div aria-hidden=true> instead of an <hr> (global)
+Alt text issues.",Critical Issues Remain,"Initial links broken, links that lead to correct location duplicated to bottom of page. (Pg. 1, 2, 3)
+Paragraph break appears when link does, breaking text flow. (Pg. 1, 2, 3)
+Incorrect alt text on images. (Pg. 1)",
+powerpoint-slides-f832,No,"Extraneous asterisks added. (Pg. 3)
+Entire slide is being added instead of just one particular image. (Global)
+Sublist is an unorded list when it should be ordered, list numbering is duplicated. (Pg. 5, 17)
+Table headers not properly marked as headers. (Pg. 9)
+Duplicate list numbering. (25)
+First row incorrectly marked as header. (Pg. 28)
+Missing header. (Pg. 30)
+","Dashed lines are used to visually represent page breaks. A screen reader user won't know that the page breaks exist. Was coded using a <div aria-hidden=true> instead of an <hr> (global)
+Alt text issues.
+Markdown not interpreted as HTML.",Critical Issues Remain,"Table headers not properly marked as headers. (Pg. 9)
+Entire slide is being added instead of just one particular image. (Global)
+Images completely missing and replaced by alt text inside brackets. (Global)",
+powerpoint-slides-fed0,No,"See ""powerpoint-slides-f832"", same issues","Dashed lines are used to visually represent page breaks. A screen reader user won't know that the page breaks exist. Was coded using a <div aria-hidden=true> instead of an <hr> (global)
+Alt text issues.
+Markdown not interpreted as HTML.",Critical Issues Remain,"See ""powerpoint-slides-f832"", same issues",
+powerpoint-slides-feef,No,"See ""powerpoint-slides-f832"", same issues
+","Dashed lines are used to visually represent page breaks. A screen reader user won't know that the page breaks exist. Was coded using a <div aria-hidden=true> instead of an <hr> (global)
+Alt text issues.
+Markdown not interpreted as HTML.",Critical Issues Remain,"See ""powerpoint-slides-f832"", same issues",
+powerpoint-slides-fef1,No,"Critical, Page 9 and others: Transcribed the full text from the screenshot (an outlook screenshot for example) and put it in some form of text in the HTML. Should have just put alt text on the image.
+
+All pages: Put all the screenshots of background images into the HTML. Should have ignored
+
+Critical, Page 12 and others: Markdown not interpreted as HTML. Bold is written as **, etc.
+
+Critical, Page 20: Copilot Lab link literally has ""Copilot Lab"" as the href, which is a broken link. The original PDF had a real hyperlink set for that text.
+
+Critical, Page 21: All content from page 21, ""Questions"", is missing from the original PDF.","Full Accessibility Check not completed; only Luke's quick spot check
+
+Markdown not interpreted as HTML",Critical Issues Remain,"Page 9 and others: Transcribed the full text from the screenshot (an outlook screenshot for example) and put it in some form of text in the HTML. Should have just put alt text on the image.
+
+Page 20: Copilot Lab link literally has ""Copilot Lab"" as the href, which is a broken link. The original PDF had a real hyperlink set for that text.
+
+-- NEWLY INTRODUCED ISSUES --
+
+Page 10: Pulling in logos and blank squares as images that shouldn't be there, they are part of the larger slide.
+
+All Pages: Puts in ""[Image: Green paintbrush icon]"" or ""[Image: Purple folder with a magnifying glass icon]"" at random places. Like it's putting the alt text of the image into a standard <p>",All pages: Put all the screenshots of background images into the HTML. Should have ignored
+powerpoint-slides-fef5,No,"See ""powerpoint-slides-fef1"", same issues","Full Accessibility Check not completed; only Luke's quick spot check
+
+Markdown not interpreted as HTML",Critical Issues Remain,"See ""powerpoint-slides-fef1"", same issues","See ""powerpoint-slides-fef1"", same issues"
+powerpoint-slides-ff0a,No,"See ""powerpoint-slides-fef1"", same issues","Full Accessibility Check not completed; only Luke's quick spot check
+
+Markdown not interpreted as HTML",Critical Issues Remain,"See ""powerpoint-slides-fef1"", same issues","See ""powerpoint-slides-fef1"", same issues"
+powerpoint-slides-ff0c,No,"See ""powerpoint-slides-fef1"", same issues","Full Accessibility Check not completed; only Luke's quick spot check
+
+Markdown not interpreted as HTML",Critical Issues Remain,"See ""powerpoint-slides-fef1"", same issues","See ""powerpoint-slides-fef1"", same issues"
+powerpoint-slides-ff0d,No,"See ""powerpoint-slides-fef1"", same issues","Full Accessibility Check not completed; only Luke's quick spot check
+
+Markdown not interpreted as HTML",Critical Issues Remain,"See ""powerpoint-slides-fef1"", same issues","See ""powerpoint-slides-fef1"", same issues"
+scanned-from-paper-many-pages-of-tables-6878,No,"Critical, Page 6: Hallucinated the incorrect price for part ""185669"" - the original PDF says ""$3,000.00"" and the HTML says ""$1,500.00""
+
+The footers (e.g. Page 3 of 39 June 12, 2025) show up in the HTML when they should be cut out
+
+Critical, All Pages: Multiple times, the bold is rendered as ""**"" instead of <strong>
+
+Page 1: Broke up the 2nd row of the table into two wros instead of 1. for ""Part number"", ""Previous Price, and ""2025 Price"" should all be one row but it's split into two","Full Accessibility Check not completed; only Luke's quick spot check
+
+Markdown not interpreted as HTML (**), rows split content that should be together",Critical Issues Remain,"Page 6: Hallucinated the incorrect price for part ""185669"" - the original PDF says ""$3,000.00"" and the HTML says ""$1,500.00""
+
+","Page 1: Broke up the 2nd row of the table into two wros instead of 1. for ""Part number"", ""Previous Price, and ""2025 Price"" should all be one row but it's split into two"
+scio-physical-and-environmental-protection-686b1b84,No,"Page 1: Failed to bring over the seal of the state of NC logo and just put the alt text into the table instead of the image
+
+All Pages: The header was pulled over every time. It should just be pulled over once.
+
+Critical, Page 4: Letters f, g, etc. are all a bulleted list instead of a ordered list. 
+
+Critical, Page 5: letters a & b are missing. They should be an <ol> and instead are not marked
+
+All Pages: Bold is rendered as ** instead of <strong>","Full Accessibility Check not completed; only Luke's quick spot check
+
+Markdown not interpreted as HTML",Critical Issues Remain,"Page 4: Letters f, g, etc. are all a bulleted list instead of a ordered list. 
+
+Page 5/6: Point 3 under PE-4 restarts and is read as ""a"", incorrectly making it a subpoint of 2 instead of it's own point, 3","Page 1: Failed to bring over the seal of the state of NC logo into the table and just put the alt text into the table instead of the image
+
+All Pages: The header was pulled over every time. It should just be pulled over once."
+screenshot-images-11b5,No,"Critical, All Pages: Images are out of order compared to the original PDF. The text is correct but the images are in the wrong places in the HTML so the content doesn't make any sense.
+
+Page 3: Put a figtext on something that should have just been alt text",,Critical Issues Remain,"Critical, All Pages: Images are out of order compared to the original PDF. The text is correct but the images are in the wrong places in the HTML so the content doesn't make any sense.",Page 3: Put figcaption and alt text on an image instead of one or the other
+seal-image-table-6870,No,"Critical, Page 1: Emails are hyperlinks in the original PDF but in the HTML they are outputted as markdown ([email](link))
+
+Critical, Page 2: Hyperlink ""CLICK HERE"" has an href of literally ""CLICK HERE"" instead of the real link from the original PDF. But then puts a 2nd link at another random place in the html, CLICK HERE, that does have the correct link.
+","Full Accessibility Check not completed; only Luke's quick spot check
+
+Markdown not interpreted as HTML (Page 1 for example)
+
+Page 3: First row of the table was made a table header instead of a normal table row
+
+Unneeded aria-lable on the table (I think)",Critical Issues Remain,"Page 2: Hyperlink ""CLICK HERE"" has an href of literally ""CLICK HERE"" instead of the real link from the original PDF. But then puts a 2nd link at another random place in the html, CLICK HERE, that does have the correct link.",Page 3: Splits a table into two at the page break intsead of leaving it as 1 table
+seal-imagery-11ab,No,"All pages: Paragraphs are split because of pages splits - shouldn't be split
+
+Critical, Page 3: Hallucinated a link, ""network"", to go to some random site. The word ""network"" isn't in the PDF.
+
+Critical, Page 2: Truncated/Hallucinated ToC
+
+Page 1: Put the image alt text and the image both in the HTML.
+
+Page 7-8: Word breaks are odd because of the page-by-page approach
+
+Critical, Page 51: Interpreted bold as markdown bold (**), which would read odd on a screen reader
+
+Page 52: Under ""Patch"", it used an <ol>, but then puts the text of the number (""1. "") in there as well
+
+Page 15, 48-49, 68: Hyperlinks aren't formatted as hyperlinks
+
+Critical, Page 28: ""Container-based Encryption"" and ""Full Disk Encryption"" are indented to be sub-points of ""Encryption"" in the PDF, the HTML flattens the full document","Full Accessibility Check not completed; only Luke's quick spot check
+
+Markdown not interpreted as HTML",Critical Issues Remain,"Page 1: Put the image alt text and the image both in the HTML.
+
+Page 2: Truncated/Hallucinated ToC
+
+Page 28: ""Container-based Encryption"" and ""Full Disk Encryption"" are indented to be sub-points of ""Encryption"" in the PDF, the HTML flattens the full document","Page 15, 48, 49, and 68: Link is duplicated, once in text at the correct place and once at the bottom of the page.
+
+All pages: Paragraphs are split because of pages splits - shouldn't be split. For example, Page 7-8 word breaks are odd because of the page-by-page approach"
+seal-imagery-table-with-shading-132c,No,"Asterisks added where formatting used (page 2, 4, 9, 12, 21)
+
+Missing State Crest on all pages, showing alt text in the header rather than crest
+
+Links do not have a valid destination (page 7)
+
+Ordered list keeping numbers in text instead of replacing with letters and roman numberals (pages 3-14)
+
+Check blocks turned into a table and added an extra value field after all list items (pages 18-20)
+
+Signature block turned into table",,Critical Issues Remain,"Missing State Crest on all pages, showing alt text in the header rather than crest
+
+Form check blocks turned into a table and added an extra value field after all list items (pages 18-20)
+
+Signature block turned into table",
+seal-imagery-table-with-shading-colored-text-672b,No,"Global issue: Asterisks added where formatting used
+
+Email address populated twice in the table and then added a 3rd time under the table (page 2)
+
+Global issue: links duplicated at bottom of pages (starting at page 3)
+
+Global issue: Numbered lists adding additional numbers (starting on page 3)",,Critical Issues Remain,Global issue: links and emails addresses duplicated at bottom of pages outside of the tables(starting at page 3),
+wearencgov-broadbandinitiatives-685fc6d1,No,Image cut apart and placed on 2 separate parts of the page so it is not viewable (page 11),,Critical Issues Remain,Image cut apart and placed on 2 separate parts of the page so it is not viewable (page 11),
+logo-tables-shading-watermark-photos-13a3,No,"Global issue: Asterisks added to html where visual text formatting was used in pdf
+
+Page title has asterisks added (page 1)
+
+Red text on pdf has asterisks added in html (page 1, table)
+
+List bullets appearing in pdf, but not formattad as list in html (page 1, table row 8)
+
+Logo repeating (page 3)
+
+Asterisks added to column headers (page 3)
+
+Empty table rows added to bottom of table. Original pdf also had the empty cells but the conversion didn't exclude them. Prob low priority, but may trigger accessibility scanners. (page 3,5)
+
+Added list bullets where no list was in pdf (page 4)
+
+Link markdown formatting used instead of html (page 8)
+
+Duplicated logo (page 8)
+
+Link in PDF doesn't have a destination but looks like a link, conversion set the link text as the href. This is essentially a broken link that would need manual review (page 9)
+
+Created a link from underlined text (page 9)
+
+Loss of text content (text before lists). The AI lost the text and combined the bullets into one big list (page 12, 24)
+
+AI created a strange image (page 21)
+
+","figure/figcaption created on short alt text (page 1,7)
+
+Draft watermark not accounted for in html page text. (page 3-6)
+
+Table column headers not semantically marked up (page 4-6)
+
+Added role=contentinfo elements that include the pdf page number. The text doesn't meet text contrast minimum (page 3-6) We want to recommend not paginating the html output which will resolve this.
+
+h2 used back to back (page 8)
+
+Text in logos not used in alt text (page 8)
+
+Alt text is ""document image"" (page 18, 29)
+
+Strange figcaption added (38%) (page 20)
+
+Not ranking headings correctly, all h2s (page 34)",Critical Issues Remain,"[Image:] inserted as screen text globally
+
+Still adding screenshots of the page in addition to page text
+
+Draft watermark not accounted for in html page text. (page 3-6)
+
+Table column headers not semantically marked up (page 4-6)
+
+Remove table of contents when it references page numbers because there are no page numbers in the HTML converted page
+
+When lists are separated, but the numbers continue in the latter postions of the list, the numbers start again at 1. The start attribute on the <ol> could be used to fix this.","Empty table rows added to bottom of table. Original pdf also had the empty cells but the conversion didn't exclude them. Prob low priority, but may trigger accessibility scanners. (page 3,5)
+
+Page sections are now gone, but content that spanned across pages is separated, for example, a paragraph is split into serparate <p>"

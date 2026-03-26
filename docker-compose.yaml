@@ -1,0 +1,29 @@
+## Local development compose file for the pipeline service.
+## Usage:
+##   docker compose build
+##   docker compose up
+##
+## Extractor → http://localhost:8081  (health: GET /health, extract: POST /extract)
+
+services:
+  extractor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/amd64
+    ports:
+      - "8081:8080"
+    env_file:
+      - .env
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /gcp/application_default_credentials.json
+      PORT: "8080"
+    volumes:
+      - ${HOME}/.config/gcloud:/gcp:ro
+    # healthcheck:
+    #   test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/health')"]
+    #   interval: 15s
+    #   timeout: 5s
+    #   retries: 3
+    #   start_period: 10s

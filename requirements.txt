@@ -1,0 +1,19 @@
+# FastAPI and server dependencies
+fastapi
+uvicorn[standard]==0.24.0
+
+# GCP
+google-cloud-storage>=2.18.0
+google-cloud-pubsub>=2.23.0
+
+# Existing dependencies
+pillow
+backoff==2.2.1
+pydantic>=2.0.0
+pydantic-settings>=2.6.0
+google-cloud-bigquery>=3.0.0
+python-dotenv==1.1.0
+google-genai==1.66.0
+PyMuPDF==1.27.2
+pypdfium2==5.6.0
+tqdm==4.67.3
