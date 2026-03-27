@@ -1,0 +1,101 @@
+document_id,routing_label
+07_NCAC_02G_0101_0102,Auto-Approve
+07_NCAC_02H_.0303_Application,Human Review
+07_NCAC_02H_.0305_Circulation,Human Review
+07_NCAC_02H_.0306_Reproduction_Services,Auto-Approve
+07_NCAC_02H_.0307_Volunteers,Auto-Approve
+07_NCAC_02H_0103,Auto-Approve
+07_NCAC_02H_0104_0105,Auto-Approve
+07_NCAC_02H_0106,Auto-Approve
+07_NCAC_02H_0107,Auto-Approve
+07_NCAC_02H_0107_0109_Form_0300_Notice_of_Text,Excluded
+07_NCAC_02H_0108,Auto-Approve
+07_NCAC_02H_0109,Auto-Approve
+07_NCAC_02H_0302,Auto-Approve
+07_NCAC_02H_0303,Human Review
+07_NCAC_02H_0304,Auto-Approve
+07_NCAC_02H_0305,Human Review
+07_NCAC_02H_Section_.0300_Rules_-_NOTICE_OF_TEXT,Excluded
+07_NCAC_02I_0101,Auto-Approve
+07_NCAC_02I_0202,Human Review
+07_NCAC_02I_0302,Human Review
+07_NCAC_02_File_Stamped_NOT,Excluded
+07_NCAC_04R_0101_v_NOT,Auto-Approve
+07_NCAC_04R_0201_v_NOT,Auto-Approve
+07_NCAC_04R_0202_v_NOT,Auto-Approve
+07_NCAC_04R_0203_v_NOT,Human Review
+07_NCAC_04R_0204_0205_v_NOT,Auto-Approve
+07_NCAC_04R_0301_v_NOT,Human Review
+07_NCAC_04R_0302_v_NOT,Auto-Approve
+07_NCAC_04R_0304_v_NOT,Human Review
+07_NCAC_04R_0305_v_NOT,Auto-Approve
+07_NCAC_04R_0501_v_NOT,Auto-Approve
+07_NCAC_04R_0702_v_NOT,Auto-Approve
+07_NCAC_04R_0703_v_NOT,Auto-Approve
+07_NCAC_04R_0704_0708_v_NOT,Auto-Approve
+07_NCAC_04R_0709_v_NOT,Auto-Approve
+07_NCAC_04R_0710_v_NOT,Auto-Approve
+07_NCAC_04R_0711_v_NOT,Auto-Approve
+07_NCAC_04R_0712_0717_v_NOT,Auto-Approve
+07_NCAC_04R_0718_v_NOT,Auto-Approve
+07_NCAC_13A,Auto-Approve
+07_NCAC_13B,Human Review
+07_NCAC_13B_0802_v_NOT,Auto-Approve
+07_NCAC_13C,Auto-Approve
+07_NCAC_13D,Auto-Approve
+07_NCAC_13F,Auto-Approve
+07_NCAC_13G,Auto-Approve
+07_NCAC_13H_0404,Auto-Approve
+07_NCAC_13H_0404_Fiscal_Note,Reject
+07_NCAC_13H_0404_Notice_of_Text_Form_0300,Excluded
+07_NCAC_13I,Excluded
+07_NCAC_13K,Auto-Approve
+07_NCAC_14,Auto-Approve
+07_NCAC_14A_.0101,Human Review
+07_NCAC_14B_.0401,Human Review
+07_NCAC_14B_.0504,Auto-Approve
+07_NCAC_14B_.0602,Auto-Approve
+07_NCAC_14B_.0605,Auto-Approve
+07_NCAC_14B_.0606,Auto-Approve
+07_NCAC_14B_.0607,Auto-Approve
+07_NCAC_14B_.0706,Auto-Approve
+07_NCAC_15,Auto-Approve
+07_ncac_13b_0101_Definitions_of_Terms_Final_NOT_Version_2021…,Auto-Approve
+07_ncac_13b_0104_Permits_Final_NOT_Version_2021_09_27,Human Review
+07_ncac_13b_0204_Rock_Climbing_Final_NOT_Version_2021_09_27,Auto-Approve
+07_ncac_13b_0507_Bicycles_Final_NOT_Version_2021_09_27,Auto-Approve
+07_ncac_13b_0602_Camping_Final_NOT_Version_2021_09_27,Auto-Approve
+07_ncac_13b_0701_Sports_and_Games_When_Permitted_Final_NOT…,Auto-Approve
+07_ncac_13b_0702_Horses_Final_NOT_Version_2021_09_27,Human Review
+07_ncac_13b_0901_Firearms_Weapons_Explosives_Final_NOT_Version…,Human Review
+07_ncac_13b_0905_Smoking_Final_NOT_Version_2021_09_27,Auto-Approve
+07_ncac_13b_1004_Animals_at_Large_Final_NOT_Version_2021_09_20,Auto-Approve
+07_ncac_13b_1101_Commercial_Enterprises_Final_NOT_Version_2021…,Auto-Approve
+07_ncac_13b_1102_Commercial_Photography_Final_NOT_Version_2021…,Auto-Approve
+07_ncac_13b_1105_Public_Assemblies_Final_NOT_Version_2021_09_27,Auto-Approve
+07_ncac_13b_1201_Closing_and_Opening_Hours_Restricted_Areas…,Auto-Approve
+07_ncac_13b_1204_Aviation_Final_NOT_Version_2021_09_27,Human Review
+07_ncac_13b_1205_Reservation_Periods_Final_NOT_Version_2021_09…,Auto-Approve
+07_ncac_14b_0602_Photographs_Final_NOT_version_2021_04_20,Human Review
+08Hv,Reject
+0Al4,Reject
+0FYY,Reject
+0P8e,Reject
+0P8e_2,Reject
+0dyI,Reject
+10.13.23_Certification_Commission_Agenda.pdf,Reject
+10_21_2020_Denial_of_Request_for_Declaratory_Ruling,Reject
+121-12_-_Swann_School_Materials,Reject
+15A_NCAC_12H_0307,Human Review
+15A_NCAC_12H_0308,Human Review
+15A_NCAC_12H_0401,Human Review
+15A_NCAC_12H_0402,Human Review
+15A_NCAC_12H_0403,Human Review
+1_DNCR_MC_Workshop_Presentation_2017_Cary_post,Excluded
+1_NCHC_2020_09_03_Agenda,Auto-Approve
+1_NCHC_2021_03_25_Agenda_FINAL,Auto-Approve
+1_NCHC_2021_06_23_Agenda_FINAL,Reject
+1_NCHC_Meeting_Agenda_2026-01-20.pdf,Auto-Approve
+ID_07_NCAC_07,Auto-Approve
+ID_07_NCAC_09,Auto-Approve
+ID_07_NCAC_10,Auto-Approve
