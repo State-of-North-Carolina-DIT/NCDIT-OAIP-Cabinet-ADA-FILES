@@ -1,0 +1,489 @@
+=== Cabinet 1400 Monitor Started: Thu Mar 26 15:57:31 PDT 2026 ===
+
+--- Check at Thu Mar 26 15:57:31 PDT 2026 ---
+Active auditor processes: 7
+Active runner processes: 2
+  commerce: 80/100 (in progress)
+  deq: 0/100 (waiting)
+  dmva: 0/99 (waiting)
+  doa: 0/100 (waiting)
+  dpi: 0/97 (waiting)
+  it: 0/100 (waiting)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+TOTAL reports: 80
+
+--- Check at Thu Mar 26 16:17:33 PDT 2026 ---
+Active auditor processes: 9
+Active runner processes: 2
+  commerce: 93/100 DONE
+  deq: 71/100 (in progress)
+  dmva: 0/99 (waiting)
+  doa: 0/100 (waiting)
+  dpi: 0/97 (waiting)
+  it: 0/100 (waiting)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+TOTAL reports: 164
+
+--- Check at Thu Mar 26 16:37:36 PDT 2026 ---
+Active auditor processes: 10
+Active runner processes: 2
+  commerce: 93/100 DONE
+  deq: 100/100 DONE
+  dmva: 72/99 (in progress)
+  doa: 0/100 (waiting)
+  dpi: 0/97 (waiting)
+  it: 0/100 (waiting)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+TOTAL reports: 265
+
+=== Monitor v2 Started: Thu Mar 26 16:39:22 PDT 2026 ===
+
+--- Check at Thu Mar 26 16:39:22 PDT 2026 ---
+Active auditor processes: 10
+Active runner processes: 2
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 80/99 (in progress)
+  doa: 0/100 (waiting)
+  dpi: 0/97 (waiting)
+  it: 0/100 (waiting)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 273/1396 reports generated
+WARNING: 7 docs in completed agencies have no report (possible silent failures)
+ALERT: 9 recent reports mention quota/rate-limit errors\!
+/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dmva/htmls/Base_Sustainability_and_Community_Affairs_4th_Quarter_2020/Base_Sustainability_and_Community_Affairs_4th_Quarter_2020-audit-report.json
+/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dmva/htmls/DMVA_July_Newsletter_2022/DMVA_July_Newsletter_2022-audit-report.json
+/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dmva/htmls/Active_Duty_Transition/Active_Duty_Transition-audit-report.json
+/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dmva/htmls/DHHS_IP_Staffing_Worksheet/DHHS_IP_Staffing_Worksheet-audit-report.json
+/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dmva/htmls/DMVA_August_Newsletter_2022/DMVA_August_Newsletter_2022-audit-report.json
+/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls/MayoMeetingOfficerReport_20160428/MayoMeetingOfficerReport_20160428-audit-report.json
+/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls/SSAB_Meeting_April_2025/SSAB_Meeting_April_2025-audit-report.json
+/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls/Questions_(and_Answers)_about_the_LASII_Stormwater_Funding_Program/Questions_(and_Answers)_about_the_LASII_Stormwater_Funding_Program-audit-report.json
+/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls/East_Carolina_Landfill_Draft_permit/East_Carolina_Landfill_Draft_permit-audit-report.json
+
+=== Monitor v3 Started: Thu Mar 26 16:53:24 PDT 2026 ===
+
+--- Check at Thu Mar 26 16:53:24 PDT 2026 ---
+Active auditor processes: 10
+Active runner processes: 2
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 38/100 (in progress)
+  dpi: 0/97 (waiting)
+  it: 0/100 (waiting)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 330/1396 reports generated
+
+--- Check at Thu Mar 26 17:13:28 PDT 2026 ---
+Active auditor processes: 11
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 9/97 (in progress)
+  it: 0/100 (waiting)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 401/1396 reports generated
+
+--- Check at Thu Mar 26 17:33:33 PDT 2026 ---
+Active auditor processes: 26
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 82/97 (in progress)
+  it: 0/100 (waiting)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 474/1396 reports generated
+
+--- Check at Thu Mar 26 17:53:37 PDT 2026 ---
+Active auditor processes: 23
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 36/100 (in progress)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 521/1396 reports generated
+
+--- Check at Thu Mar 26 18:13:41 PDT 2026 ---
+Active auditor processes: 9
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 88/100 (in progress)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 573/1396 reports generated
+
+=== Monitor v3 Restarted: Thu Mar 26 18:21:16 PDT 2026 ===
+
+--- Check at Thu Mar 26 18:21:16 PDT 2026 ---
+Active auditor processes: 0
+0
+Active runner processes: 0
+0
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 584/1396 reports
+
+=== Monitor v4 (resumed run): Thu Mar 26 18:24:17 PDT 2026 ===
+
+--- Check at Thu Mar 26 18:24:17 PDT 2026 ---
+Active auditor processes: 10 | Runner: 2
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 0/100 (waiting)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+TOTAL: 584/1396 reports | Failures: 0
+
+--- Check at Thu Mar 26 18:33:44 PDT 2026 ---
+Active auditor processes: 20
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 30/100 (in progress)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 614/1396 reports generated
+
+--- Check at Thu Mar 26 18:41:19 PDT 2026 ---
+Active auditor processes: 20
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 60/100 (in progress)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 644/1396 reports
+
+--- Check at Thu Mar 26 18:44:21 PDT 2026 ---
+Active auditor processes: 10 | Runner: 3
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 74/100 (in progress)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+TOTAL: 658/1396 reports | Failures: 0
+
+--- Check at Thu Mar 26 18:58:45 PDT 2026 ---
+Active auditor processes: 14
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 92/100 (in progress)
+  ncagr: 0/100 (waiting)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 676/1396 reports generated
+
+--- Check at Thu Mar 26 19:06:20 PDT 2026 ---
+Active auditor processes: 14
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 93/100 DONE (all OK)
+  ncagr: 13/100 (in progress)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 690/1396 reports
+
+--- Check at Thu Mar 26 19:09:22 PDT 2026 ---
+Active auditor processes: 10 | Runner: 3
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 93/100 DONE (all OK)
+  ncagr: 26/100 (in progress)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+TOTAL: 703/1396 reports | Failures: 0
+
+--- Check at Thu Mar 26 19:35:58 PDT 2026 ---
+Active auditor processes: 19
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 93/100 DONE (all OK)
+  ncagr: 61/100 (in progress)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 738/1396 reports generated
+
+--- Check at Thu Mar 26 19:59:28 PDT 2026 ---
+Active auditor processes: 18
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 93/100 DONE (all OK)
+  ncagr: 68/100 (in progress)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 745/1396 reports
+
+--- Check at Thu Mar 26 20:02:30 PDT 2026 ---
+Active auditor processes: 5 | Runner: 3
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 93/100 DONE (all OK)
+  ncagr: 71/100 (in progress)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+TOTAL: 748/1396 reports | Failures: 0
+
+--- Check at Thu Mar 26 20:24:17 PDT 2026 ---
+Active auditor processes: 12
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 93/100 DONE (all OK)
+  ncagr: 88/100 (in progress)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 765/1396 reports generated
+
+--- Check at Thu Mar 26 20:31:51 PDT 2026 ---
+Active auditor processes: 11
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 93/100 DONE (all OK)
+  ncagr: 88/100 (in progress)
+  ncdcr: 0/100 (waiting)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 765/1396 reports
+
+--- Check at Thu Mar 26 20:34:53 PDT 2026 ---
+Active auditor processes: 10 | Runner: 3
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 93/100 DONE (all OK)
+  ncagr: 88/100 DONE (all OK)
+  ncdcr: 2/100 (in progress)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+TOTAL: 767/1396 reports | Failures: 0
+
+--- Check at Thu Mar 26 20:44:20 PDT 2026 ---
+Active auditor processes: 20
+Active runner processes: 4
+  commerce: 93/100 DONE (all OK)
+  deq: 100/100 DONE (all OK)
+  dmva: 99/99 DONE (all OK)
+  doa: 100/100 DONE (all OK)
+  dpi: 93/97 DONE (all OK)
+  it: 99/100 DONE (all OK)
+  labor: 93/100 DONE (all OK)
+  ncagr: 88/100 DONE (all OK)
+  ncdcr: 49/100 (in progress)
+  ncdhhs: 0/100 (waiting)
+  ncdoi: 0/100 (waiting)
+  ncdor: 0/100 (waiting)
+  ncdps: 0/100 (waiting)
+  nctreasurer: 0/100 (waiting)
+
+TOTAL: 814/1396 reports generated

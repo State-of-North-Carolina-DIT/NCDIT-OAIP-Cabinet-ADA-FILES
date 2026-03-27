@@ -1,0 +1,514 @@
+=== Baseline Auditor Monitor Started at Thu Mar 26 17:04:40 PDT 2026 ===
+Checking every 20 minutes. PID=1708
+
+================================================================
+CHECK at Thu Mar 26 17:04:40 PDT 2026
+================================================================
+
+--- Baseline report counts per agency ---
+  commerce: 37 / 100 baseline reports
+  deq: 0 / 100 baseline reports
+  dmva: 0 / 99 baseline reports
+  doa: 0 / 100 baseline reports
+  dpi: 0 / 97 baseline reports
+  it: 0 / 100 baseline reports
+  labor: 0 / 100 baseline reports
+  ncagr: 0 / 100 baseline reports
+  ncdcr: 0 / 100 baseline reports
+  ncdhhs: 0 / 100 baseline reports
+  ncdoi: 0 / 100 baseline reports
+  ncdor: 0 / 100 baseline reports
+  ncdps: 0 / 100 baseline reports
+  nctreasurer: 0 / 100 baseline reports
+  TOTAL: 37 baseline reports
+
+--- Running auditor processes ---
+  26 auditor process(es) running
+    PID=434 CPU=1.5% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Kerr_Tar_WDB_Overview
+    PID=274 CPU=0.3% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_CatB-W34
+    PID=794 CPU=0.3% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2017_Annual_Performance_Report
+    PID=1565 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Lumber_River_WDB_Overview
+    PID=1507 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2019_01_Centralina_WDB_Overview
+    PID=1438 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Region_Q_WDB_Overview
+    PID=1320 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_CatB-W28
+    PID=1228 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Region_C_WDB_Overview
+    PID=1135 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_Development_Tier_Rankings
+    PID=1109 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_CatB-W21
+    PID=910 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_DavidsonWorks_WDB_Overview
+    PID=868 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Greensboro_High_Point_Guilford_WDB_Overview
+    PID=714 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_CatB-W23
+    PID=659 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2017_Development_Tier_Rankings
+    PID=587 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_CatB_W5
+    PID=411 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Southwestern_WDB_Overview
+    PID=410 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_CatB-W20
+    PID=309 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Turning_Point_WDB_Overview
+    PID=210 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Charlotte_Works_WDB_Overview
+    PID=148 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Triangle_South_WDB_Overview
+    PID=99863 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2017_2020_Develoment_Plan_Final
+    PID=99728 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Eastern_WDB_Overview
+    PID=99504 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Centralina_WDB_Overview
+    PID=99360 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_High_Country_WDB_Overview
+    PID=99080 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/2018_12_Durham_WDB_Overview
+    PID=98625 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/commerce/htmls/20162020_ConPlan
+  4 runner process(es) active
+
+--- Completed agency batch results ---
+
+--- Quota error check (RESOURCE_EXHAUSTED / rateLimitExceeded) ---
+  No quota errors in recent reports
+
+--- V8 hard vetoes (all LLM calls failed) ---
+  No V8 vetoes found
+
+================================================================
+CHECK at Thu Mar 26 17:24:43 PDT 2026
+================================================================
+
+--- Baseline report counts per agency ---
+  commerce: 93 / 100 baseline reports
+  deq: 93 / 100 baseline reports
+  dmva: 0 / 99 baseline reports
+  doa: 0 / 100 baseline reports
+  dpi: 0 / 97 baseline reports
+  it: 0 / 100 baseline reports
+  labor: 0 / 100 baseline reports
+  ncagr: 0 / 100 baseline reports
+  ncdcr: 0 / 100 baseline reports
+  ncdhhs: 0 / 100 baseline reports
+  ncdoi: 0 / 100 baseline reports
+  ncdor: 0 / 100 baseline reports
+  ncdps: 0 / 100 baseline reports
+  nctreasurer: 0 / 100 baseline reports
+  TOTAL: 186 baseline reports
+
+--- Running auditor processes ---
+  16 auditor process(es) running
+    PID=17041 CPU=0.4% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/109-COVID19NationwideWaiver_Reimbursement_Rates_SSO.pdf
+    PID=17965 CPU=0.0% MEM=0.4% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/113countbylea_3
+    PID=17933 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/16_NCAC_06C_.0400_(Salary_and_Benefits)
+    PID=17834 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/108-COVID19NationwideWaiverAreaEligibilityCE_Area_Elig_ClsdEnrlld.pdf
+    PID=17775 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/2006
+    PID=17561 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls/tVolkswagen_Settlement_Community_&_Destination_ZEV_Charging_RFP_Webinar_Slides
+    PID=17453 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls/International_Tie_Disposal_1hrNO2_Model_Review_Report
+    PID=17429 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls/PRLF_Durham_Parks_June_2024_Update
+    PID=17286 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/19_EDC_06873_Charlotte
+    PID=17224 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls/SSAB_Meeting_April_2025
+    PID=17150 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls/Rogers_Mtg_Officer_Report_FINAL_051316
+    PID=17017 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/10022020
+    PID=16941 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/11.04.2025_SN_Service_Area_Map
+    PID=16854 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/2003-2019_Discrete_Math_Crosswalk
+    PID=16543 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls/Shallow_Draft_Navigation_Channel_Dredging_and_Aquatic_Weed_Fund
+    PID=15984 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/12282022_EPP_Initial_Authorization_Process_Guide_FINAL.pdf
+  4 runner process(es) active
+
+--- Completed agency batch results ---
+  commerce: 93 docs — 93 ok, 0 errors, 0 timeouts
+
+--- Quota error check (RESOURCE_EXHAUSTED / rateLimitExceeded) ---
+  No quota errors in recent reports
+
+--- V8 hard vetoes (all LLM calls failed) ---
+  No V8 vetoes found
+
+================================================================
+CHECK at Thu Mar 26 17:44:47 PDT 2026
+================================================================
+
+--- Baseline report counts per agency ---
+  commerce: 93 / 100 baseline reports
+  deq: 100 / 100 baseline reports
+  dmva: 99 / 99 baseline reports
+  doa: 1 / 100 baseline reports
+  dpi: 0 / 97 baseline reports
+  it: 0 / 100 baseline reports
+  labor: 0 / 100 baseline reports
+  ncagr: 0 / 100 baseline reports
+  ncdcr: 0 / 100 baseline reports
+  ncdhhs: 0 / 100 baseline reports
+  ncdoi: 0 / 100 baseline reports
+  ncdor: 0 / 100 baseline reports
+  ncdps: 0 / 100 baseline reports
+  nctreasurer: 0 / 100 baseline reports
+  TOTAL: 293 baseline reports
+
+--- Running auditor processes ---
+  30 auditor process(es) running
+    PID=31066 CPU=1.9% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/0002A_-_Goods_and_Services_from_NPWCBSD
+    PID=32290 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/01272017_Agenda
+    PID=32267 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/01232020_Funding_Meeting_AGENDA
+    PID=32191 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/01262018_Agenda
+    PID=32150 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_CatA-W33
+    PID=32083 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/01232020_Funding_Committee_APPROVED_Minutes
+    PID=31917 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/01262018_Agenda_Book_1
+    PID=31810 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/01212021_EDU_Committee_Agenda_Packet
+    PID=31662 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/01272017_Agenda_2
+    PID=31661 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/01272017_Meeting_Agenda_Book
+    PID=31461 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/01242014_secondary_psap_policy
+    PID=31084 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_CatA-W12
+    PID=31083 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_CatA-W11
+    PID=31082 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_CatA-W10
+    PID=31081 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_Campbell_Oil_Company_New_Customer_Memo
+    PID=31080 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_AmeriGas_Propane_LP_New_Customer_Memo
+    PID=31076 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1411B_-_Sanitary_Paper_Supplies
+    PID=31079 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1510B_-_Fuels
+    PID=31078 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1412A_-_Office_Paper
+    PID=31077 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1214A_-_Gases_Medical,_Welding_&_Specialty
+    PID=31075 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/1017A_-_Agricultural_Chemicals
+    PID=31073 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/070G_-_Utility,_Transportation_&_Golf_Vehicles,_&_Related_Accessories,_Equipment,_Parts_&_Services
+    PID=31074 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/070G_NEW_Statewide_Term_Contract_Announcement
+    PID=31072 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/065A_Utility_and_Dump_Truck_Bodies_NEW_Statewide_Term_Contract…
+    PID=31070 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/060C_-_Storefront_Auto_Parts
+    PID=31071 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/065A_-_Utility_and_Dump_Truck_Bodies
+    PID=31067 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/0002A_NPWCBSD_NEW_Statewide_Term_Contract_Announcement
+    PID=31068 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/0003A_-_Products_and_Supplies_for_Correctional_Facilities
+    PID=31069 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls/001A_-_Correction_Enterprise_Products
+    PID=30435 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/'Explore_State_Budget_Report'_Help_Documentation
+  4 runner process(es) active
+
+--- Completed agency batch results ---
+  commerce: 93 docs — 93 ok, 0 errors, 0 timeouts
+  deq: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dmva: 99 docs — 99 ok, 0 errors, 0 timeouts
+
+--- Quota error check (RESOURCE_EXHAUSTED / rateLimitExceeded) ---
+  No quota errors in recent reports
+
+--- V8 hard vetoes (all LLM calls failed) ---
+  No V8 vetoes found
+
+================================================================
+CHECK at Thu Mar 26 18:04:53 PDT 2026
+================================================================
+
+--- Baseline report counts per agency ---
+  commerce: 93 / 100 baseline reports
+  deq: 100 / 100 baseline reports
+  dmva: 99 / 99 baseline reports
+  doa: 100 / 100 baseline reports
+  dpi: 25 / 97 baseline reports
+  it: 0 / 100 baseline reports
+  labor: 0 / 100 baseline reports
+  ncagr: 0 / 100 baseline reports
+  ncdcr: 0 / 100 baseline reports
+  ncdhhs: 0 / 100 baseline reports
+  ncdoi: 0 / 100 baseline reports
+  ncdor: 0 / 100 baseline reports
+  ncdps: 0 / 100 baseline reports
+  nctreasurer: 0 / 100 baseline reports
+  TOTAL: 417 baseline reports
+
+--- Running auditor processes ---
+  29 auditor process(es) running
+    PID=52393 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/19_EDC_06677_Charlotte_Appeal
+    PID=52285 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/04282017_Agenda_2
+    PID=52260 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/09182020
+    PID=52104 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/107-COVID19NationwideWaiverAreaEligibility_ExtendAreaElig.pdf
+    PID=51535 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/076
+    PID=51389 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/1.0_Percent_Alternate_Assessment_Participation_Extension_Waiver_Request
+    PID=51264 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/1.0_Percent_Participation_Waiver_Request_2020–21
+    PID=50931 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/06E_.0100_(Attendance)_Combined.pdf
+    PID=50647 CPU=0.0% MEM=0.4% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/03_27_15_Agenda_Book_2
+    PID=44452 CPU=0.0% MEM=0.6% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/03_27_15_Agenda_Book
+    PID=43009 CPU=0.0% MEM=0.6% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/01_Unity_Global_Academy_PUBLIC_full_app.pdf
+    PID=42627 CPU=0.0% MEM=0.5% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/01_SABER_STEM_Charlotte_Full_App_PUBLIC.pdf
+    PID=41329 CPU=0.0% MEM=0.8% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/01_Movement_School_Northeast_Charlotte_Full_App_PUBLIC.pdf
+    PID=41324 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/01_High_Point_Preparatory_FULL_APP_PUBLIC.pdf
+    PID=41322 CPU=0.0% MEM=0.4% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/01_Granite_State_Full_App_PUBLIC.pdf
+    PID=53411 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/05_08_14_Funding_Agenda
+    PID=53377 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/04.25.2024_-_Supply_Chain_Allotment_Q&A
+    PID=53322 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/09conference
+    PID=53260 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/16_NCAC_06E_.0200_(Interscholastic_Athletics).pdf
+    PID=53194 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/16_NCAC_06D_0508-_for_publication
+    PID=53138 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/03_12_2020_Agenda_Technology_Committee
+    PID=53099 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/150_Most_Frequently_Used_Words.pdf
+    PID=53069 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/04062016FundingSummary
+    PID=53030 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/10_20_Day_Withdrawal_Request_Memo
+    PID=53008 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/03182016_Agenda
+    PID=52937 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/05_14_2020_Agenda_Technology_Committee_Agenda_Final
+    PID=52895 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/IT_Strategy_Board_Agenda_(June_19,_2025)
+    PID=52781 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/05.26.22_Special_CSAB_Minutes_APPROVED.pdf
+    PID=52641 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls/10022020
+  4 runner process(es) active
+
+--- Completed agency batch results ---
+  commerce: 93 docs — 93 ok, 0 errors, 0 timeouts
+  deq: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dmva: 99 docs — 99 ok, 0 errors, 0 timeouts
+  doa: 100 docs — 100 ok, 0 errors, 0 timeouts
+
+--- Quota error check (RESOURCE_EXHAUSTED / rateLimitExceeded) ---
+  No quota errors in recent reports
+
+--- V8 hard vetoes (all LLM calls failed) ---
+  No V8 vetoes found
+
+================================================================
+CHECK at Thu Mar 26 18:24:58 PDT 2026
+================================================================
+
+--- Baseline report counts per agency ---
+  commerce: 93 / 100 baseline reports
+  deq: 100 / 100 baseline reports
+  dmva: 99 / 99 baseline reports
+  doa: 100 / 100 baseline reports
+  dpi: 94 / 97 baseline reports
+  it: 0 / 100 baseline reports
+  labor: 0 / 100 baseline reports
+  ncagr: 0 / 100 baseline reports
+  ncdcr: 0 / 100 baseline reports
+  ncdhhs: 0 / 100 baseline reports
+  ncdoi: 0 / 100 baseline reports
+  ncdor: 0 / 100 baseline reports
+  ncdps: 0 / 100 baseline reports
+  nctreasurer: 0 / 100 baseline reports
+  TOTAL: 486 baseline reports
+
+--- Running auditor processes ---
+  10 auditor process(es) running
+    PID=66854 CPU=0.3% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/13_NCAC_01B_.0103.pdf_(Repeal)_Disposition_of_Petition
+    PID=66856 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/13_NCAC_07F_.0201_Notice_of_Text
+    PID=66855 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/13_NCAC_07F.0101
+    PID=66853 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/13_NCAC_01B_.0102.pdf_(Amendment)_Mailing_List
+    PID=66852 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/13_NCAC_01B_.0101.pdf_(Amendment)_Instructions_for_Filing_a_Petition_for_Rule-Making
+    PID=66850 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/#_114_-_Introduction_to_Migrant_Housing_Inspections_in_North_Carolina
+    PID=66851 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/13-13-0101.36-11.pdf_2
+    PID=66849 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/13-13-0101.36-11.pdf
+    PID=66848 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/#_108_-_Occupational_Safety_and_Health_Standards_for_Agriculture
+    PID=66846 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/#_041_-_A_Guide_to_OSHA_for_Small_Businesses
+  2 runner process(es) active
+
+--- Completed agency batch results ---
+  commerce: 93 docs — 93 ok, 0 errors, 0 timeouts
+  deq: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dmva: 99 docs — 99 ok, 0 errors, 0 timeouts
+  doa: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dpi: 95 docs — 94 ok, 0 errors, 0 timeouts
+
+--- Quota error check (RESOURCE_EXHAUSTED / rateLimitExceeded) ---
+  No quota errors in recent reports
+
+--- V8 hard vetoes (all LLM calls failed) ---
+  No V8 vetoes found
+
+================================================================
+CHECK at Thu Mar 26 18:45:04 PDT 2026
+================================================================
+
+--- Baseline report counts per agency ---
+  commerce: 93 / 100 baseline reports
+  deq: 100 / 100 baseline reports
+  dmva: 99 / 99 baseline reports
+  doa: 100 / 100 baseline reports
+  dpi: 94 / 97 baseline reports
+  it: 54 / 100 baseline reports
+  labor: 0 / 100 baseline reports
+  ncagr: 0 / 100 baseline reports
+  ncdcr: 0 / 100 baseline reports
+  ncdhhs: 0 / 100 baseline reports
+  ncdoi: 0 / 100 baseline reports
+  ncdor: 0 / 100 baseline reports
+  ncdps: 0 / 100 baseline reports
+  nctreasurer: 0 / 100 baseline reports
+  TOTAL: 540 baseline reports
+
+--- Running auditor processes ---
+  20 auditor process(es) running
+    PID=80994 CPU=8.1% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/03102016NextGenAgenda
+    PID=80917 CPU=0.0% MEM=0.4% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2020_November-December_Edition
+    PID=80770 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/04062016_Funding_Meeting_AGENDA
+    PID=80660 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2021_January-February_Edition
+    PID=80638 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/04222016_Agenda
+    PID=80105 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2021_July-August_Edition
+    PID=80020 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/03182016_Agenda_Book_2
+    PID=79988 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2020-Special-Emphasis-Program-Report.pdf
+    PID=79920 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2020_oil_and_gas_standards_report
+    PID=79838 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/03_24_15_Funding_Agenda
+    PID=79787 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2020_state_agency_licensing_board_report
+    PID=79784 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/04282017_Agenda
+    PID=79731 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/03232018_Agenda
+    PID=79696 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/03192020_Funding_Committee_Agenda
+    PID=79670 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2021_March-April_Edition
+    PID=79535 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2019_migrant_housing_report
+    PID=79253 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2019_special_emphasis_program_report
+    PID=79182 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2020-2021.pdf
+    PID=79121 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/03312017_Agenda_Book
+    PID=79061 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/02262016_Agenda_Book_1
+  4 runner process(es) active
+
+--- Completed agency batch results ---
+  commerce: 93 docs — 93 ok, 0 errors, 0 timeouts
+  deq: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dmva: 99 docs — 99 ok, 0 errors, 0 timeouts
+  doa: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dpi: 95 docs — 94 ok, 0 errors, 0 timeouts
+
+--- Quota error check (RESOURCE_EXHAUSTED / rateLimitExceeded) ---
+  No quota errors in recent reports
+
+--- V8 hard vetoes (all LLM calls failed) ---
+  No V8 vetoes found
+
+================================================================
+CHECK at Thu Mar 26 19:10:08 PDT 2026
+================================================================
+
+--- Baseline report counts per agency ---
+  commerce: 93 / 100 baseline reports
+  deq: 100 / 100 baseline reports
+  dmva: 99 / 99 baseline reports
+  doa: 100 / 100 baseline reports
+  dpi: 94 / 97 baseline reports
+  it: 85 / 100 baseline reports
+  labor: 0 / 100 baseline reports
+  ncagr: 0 / 100 baseline reports
+  ncdcr: 0 / 100 baseline reports
+  ncdhhs: 0 / 100 baseline reports
+  ncdoi: 0 / 100 baseline reports
+  ncdor: 0 / 100 baseline reports
+  ncdps: 0 / 100 baseline reports
+  nctreasurer: 0 / 100 baseline reports
+  TOTAL: 571 baseline reports
+
+--- Running auditor processes ---
+  14 auditor process(es) running
+    PID=94177 CPU=0.0% MEM=0.6% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2022-2023-FTSBid-4-24-2023-5-22-2023
+    PID=94132 CPU=0.0% MEM=0.4% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2010_Water_Use_Survey_Report
+    PID=94105 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/1_IM_PHIS_QR_Guide.pdf
+    PID=94015 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2021_Annual_Report
+    PID=93501 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2006_Central_Coastal_Plain_Water_Use_Survey_Report
+    PID=93497 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2008_Water_Use_Survey_Report
+    PID=93169 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/04282017_Agenda_Book
+    PID=92730 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2011_Water_Use_Survey_Report
+    PID=92281 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/ESRMO_Newsletter_(June_2025)
+    PID=92070 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/04_21_2015_Fund_Com_Notes
+    PID=92047 CPU=0.0% MEM=0.3% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2002_Central_Coastal_Plain_Water_Use_Survey_Report
+    PID=91949 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/it/htmls/IT_Project_Management_Process_Report
+    PID=91788 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2004_Central_Coastal_Plain_Water_Use_Survey_Report
+    PID=91645 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2-17NonAmenableNonExoticInspectionPolicy.pdf
+  4 runner process(es) active
+
+--- Completed agency batch results ---
+  commerce: 93 docs — 93 ok, 0 errors, 0 timeouts
+  deq: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dmva: 99 docs — 99 ok, 0 errors, 0 timeouts
+  doa: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dpi: 95 docs — 94 ok, 0 errors, 0 timeouts
+
+--- Quota error check (RESOURCE_EXHAUSTED / rateLimitExceeded) ---
+  No quota errors in recent reports
+
+--- V8 hard vetoes (all LLM calls failed) ---
+  No V8 vetoes found
+
+================================================================
+CHECK at Thu Mar 26 20:03:17 PDT 2026
+================================================================
+
+--- Baseline report counts per agency ---
+  commerce: 93 / 100 baseline reports
+  deq: 100 / 100 baseline reports
+  dmva: 99 / 99 baseline reports
+  doa: 100 / 100 baseline reports
+  dpi: 94 / 97 baseline reports
+  it: 91 / 100 baseline reports
+  labor: 20 / 100 baseline reports
+  ncagr: 0 / 100 baseline reports
+  ncdcr: 0 / 100 baseline reports
+  ncdhhs: 0 / 100 baseline reports
+  ncdoi: 0 / 100 baseline reports
+  ncdor: 0 / 100 baseline reports
+  ncdps: 0 / 100 baseline reports
+  nctreasurer: 0 / 100 baseline reports
+  TOTAL: 597 baseline reports
+
+--- Running auditor processes ---
+  15 auditor process(es) running
+    PID=5608 CPU=0.3% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2016_November-December_Edition
+    PID=6638 CPU=0.1% MEM=0.7% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2023-2024-FTSBid-8-19-2024_–_10-21-2024
+    PID=6540 CPU=0.0% MEM=0.2% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2016_July-August_Edition
+    PID=6443 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/tNC_Forest_Service_-_Forest_Health_Handbook_(Diseases)
+    PID=6008 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2023HolidaySchedule.pdf
+    PID=5986 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2018_Incidence_Rates
+    PID=5847 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2016_March-April_Edition_2
+    PID=5636 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2017_NCDA&CS_QAR_Report
+    PID=5580 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls/2018_Annual_Report
+    PID=5292 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2017_July-August_Edition
+    PID=5239 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2017_January-February_Edition
+    PID=5106 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2015_January-February_Edition
+    PID=5022 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2016_May-June_Edition
+    PID=4873 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2016_September-October_Edition
+    PID=4144 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2016_November_Volume_37
+  4 runner process(es) active
+
+--- Completed agency batch results ---
+  commerce: 93 docs — 93 ok, 0 errors, 0 timeouts
+  deq: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dmva: 99 docs — 99 ok, 0 errors, 0 timeouts
+  doa: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dpi: 95 docs — 94 ok, 0 errors, 0 timeouts
+  it: 99 docs — 91 ok, 0 errors, 0 timeouts
+
+--- Quota error check (RESOURCE_EXHAUSTED / rateLimitExceeded) ---
+  No quota errors in recent reports
+
+--- V8 hard vetoes (all LLM calls failed) ---
+  No V8 vetoes found
+
+================================================================
+CHECK at Thu Mar 26 20:35:44 PDT 2026
+================================================================
+
+--- Baseline report counts per agency ---
+  commerce: 93 / 100 baseline reports
+  deq: 100 / 100 baseline reports
+  dmva: 99 / 99 baseline reports
+  doa: 100 / 100 baseline reports
+  dpi: 94 / 97 baseline reports
+  it: 91 / 100 baseline reports
+  labor: 62 / 100 baseline reports
+  ncagr: 0 / 100 baseline reports
+  ncdcr: 0 / 100 baseline reports
+  ncdhhs: 0 / 100 baseline reports
+  ncdoi: 0 / 100 baseline reports
+  ncdor: 0 / 100 baseline reports
+  ncdps: 0 / 100 baseline reports
+  nctreasurer: 0 / 100 baseline reports
+  TOTAL: 639 baseline reports
+
+--- Running auditor processes ---
+  19 auditor process(es) running
+    PID=19406 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2020_November-December_Edition
+    PID=19249 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls/07_NCAC_02H_Section_.0300_Rules_-_NOTICE_OF_TEXT
+    PID=19101 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls/07_NCAC_02H_0108
+    PID=19075 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2020_September-October_Edition
+    PID=19041 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls/07_NCAC_02I_0101
+    PID=18989 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls/07_NCAC_02H_0302
+    PID=18904 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls/07_NCAC_02H_0304
+    PID=18541 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2021_November-December_Edition
+    PID=18460 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2021_Safety_Awards_Banquet_Schedule.pdf
+    PID=18124 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls/07_NCAC_02H_0303
+    PID=17813 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2020_oil_and_gas_standards_report
+    PID=17690 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2020-Special-Emphasis-Program-Report.pdf
+    PID=17654 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls/07_NCAC_02I_0302
+    PID=17563 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2021_July-August_Edition
+    PID=16819 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls/07_NCAC_02H_0107
+    PID=16816 CPU=0.0% MEM=0.1% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls/07_NCAC_02H_0103
+    PID=16812 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls/07_NCAC_02H_.0303_Application
+    PID=16642 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2019_migrant_housing_report
+    PID=16572 CPU=0.0% MEM=0.0% CMD=/opt/homebrew/Cellar/python@3.13/3.13.12/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/hermine/Documents/Projects/GitHub/ada-compliance-engine-baseline/pipeline/src/auditor.py /Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/labor/htmls/2021_March-April_Edition
+  4 runner process(es) active
+
+--- Completed agency batch results ---
+  commerce: 93 docs — 93 ok, 0 errors, 0 timeouts
+  deq: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dmva: 99 docs — 99 ok, 0 errors, 0 timeouts
+  doa: 100 docs — 100 ok, 0 errors, 0 timeouts
+  dpi: 95 docs — 94 ok, 0 errors, 0 timeouts
+  it: 99 docs — 91 ok, 0 errors, 0 timeouts
+
+--- Quota error check (RESOURCE_EXHAUSTED / rateLimitExceeded) ---
+  No quota errors in recent reports
+
+--- V8 hard vetoes (all LLM calls failed) ---
+  No V8 vetoes found
+
