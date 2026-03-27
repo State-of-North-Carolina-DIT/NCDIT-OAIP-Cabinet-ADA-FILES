@@ -39,6 +39,26 @@ Environment variables are loaded from `pipeline/.env` (see `.env.dist` for all o
 - `DATA_FOLDER` — input directory (default `../workspace/input`)
 - `OUTPUT_FOLDER` — output directory (default `../workspace/output`)
 
+## Repo Structure
+
+```
+NCDIT-Cabinet-ADA-FILES/
+├── {agency}/htmls/           ← 14 agencies (commerce, deq, dmva, doa, dpi, it, labor, ncagr, ncdcr, ncdhhs, ncdoi, ncdor, ncdps, nctreasurer)
+│   ├── {doc_folder}/         ← one folder per document
+│   │   ├── source.pdf        ← original PDF
+│   │   ├── {name}.json       ← pipeline extraction output
+│   │   ├── {name}.html       ← pipeline rendered HTML
+│   │   ├── {name}-audit-report.json          ← audit report (newest auditor)
+│   │   └── {name}-audit-report-baseline.json ← audit report (stable auditor)
+│   ├── AUDITOR-REPORT.md              ← batch summary for this agency
+│   ├── AUDITOR-REPORT-baseline.md     ← stable version batch summary
+│   ├── audit-batch-results.json       ← raw batch results (newest)
+│   └── audit-batch-results-baseline.json ← raw batch results (stable)
+├── failed/                   ← 17 docs where the pipeline failed (source.pdf only)
+│   └── failed.csv            ← list of failed docs with original URLs
+└── cabinet-agencies/         ← CSV lists of all docs per agency
+```
+
 ## Documentation
 
 - [INPUT-OUTPUT.md](INPUT-OUTPUT.md) — detailed reference for all inputs, outputs, and file formats
