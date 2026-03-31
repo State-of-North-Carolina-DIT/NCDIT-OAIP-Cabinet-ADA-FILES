@@ -1,0 +1,1012 @@
+{
+  "timestamp": "2026-03-26T16:45:23",
+  "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dmva/htmls",
+  "projects": [
+    "ada-compliance-engine-1",
+    "ada-compliance-engine-2",
+    "ada-compliance-engine-3",
+    "ada-compliance-engine-4",
+    "ada-compliance-engine-5",
+    "ada-compliance-engine-6",
+    "ada-compliance-engine-7",
+    "ada-compliance-engine-8",
+    "ada-compliance-engine-9",
+    "ada-compliance-engine-10"
+  ],
+  "total_docs": 99,
+  "ok": 99,
+  "failed": 0,
+  "elapsed_seconds": 1216.9,
+  "results": [
+    {
+      "slug": "09.26.21_Gold_Star_Mothers_Day_proclamation_2021.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 73.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2024_Operation_Greenlight_Press_Release_Final.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 92.9,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_1st_Quarter_2018",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 109.9,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_2nd_Quarter_2020",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 124.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_4th_Quarter_2014",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 114.5,
+      "status": "ok"
+    },
+    {
+      "slug": "Birthday_of_the_US_Army_Proclamation.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 64.1,
+      "status": "ok"
+    },
+    {
+      "slug": "DHHS_IP_Staffing_Worksheet",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 112.6,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_County_Veterans_Offices_Grant_-_Application",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 28.3,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_June_Newsletter_2022",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 136.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Dependent_Burial_Agreement",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 33.2,
+      "status": "ok"
+    },
+    {
+      "slug": "10.12.21_First_Lieutenant_James_Earl_Wright_Day.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 78.6,
+      "status": "ok"
+    },
+    {
+      "slug": "African_American_Military_and_Veteran_Lineage_Day.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 67.8,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_1st_Quarter_2020",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 95.5,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_3rd_Quarter_2014",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 60.4,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_4th_Quarter_2016",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 92.2,
+      "status": "ok"
+    },
+    {
+      "slug": "CDC_Interim_Infection_Prevention_Control_Recommendations_For\u2026",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 126.2,
+      "status": "ok"
+    },
+    {
+      "slug": "DHHS_SDH_Order_Novel_Coronavirus_Causing_Death",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 69.3,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_December_Newsletter_2021",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 151.8,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_March_Newsletter_2021",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 121.6,
+      "status": "ok"
+    },
+    {
+      "slug": "agreement_for_veteran_casket_burial",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 71.6,
+      "status": "ok"
+    },
+    {
+      "slug": "09.18.21_Birthday_of_the_United_States_Air_Force_and_Air_National_Guard.pdf",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 69.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2021_Veteran_Friendly_State_Proclamation_FINAL.pdf",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 81.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_1st_Quarter_2016",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 93.5,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_2nd_Quarter_2018",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 126.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_3th_Quarter_2020",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 132.0,
+      "status": "ok"
+    },
+    {
+      "slug": "Benefits_Offices",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 59.3,
+      "status": "ok"
+    },
+    {
+      "slug": "Community_Grant_Guidelines_Application",
+      "project": "ada-compliance-engine-4",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 28.1,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_County_Veterans_Office_Grant_-_Invitation_to_Apply_-_2nd_Round",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 108.8,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_July_Newsletter_2022",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 158.7,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_Mid_March_Newsletter_2021",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 109.1,
+      "status": "ok"
+    },
+    {
+      "slug": "09.25.21_Blue_Star_Welcome_Week.pdf",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 73.9,
+      "status": "ok"
+    },
+    {
+      "slug": "20230612_WomensVeteransDay_Proclamation.pdf",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 111.3,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_1st_Quarter_2017",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 66.4,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_2nd_Quarter_2019",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 123.5,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_4th_Quarter_2013",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 116.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Birthday_of_the_US_Army_2023_Proclamation.pdf",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 77.5,
+      "status": "ok"
+    },
+    {
+      "slug": "DHHS_CMS_Upcoming_Requirements_for_Notification_of_Confirmed\u2026",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 117.0,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_County_Veterans_Offices_Grant_-_2nd_Round_-_Application-Contract",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 44.6,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_June_Newsletter_2021",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 114.9,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_November_Newsletter",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 157.3,
+      "status": "ok"
+    },
+    {
+      "slug": "09272016_NCServes_Press_Release.pdf",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 109.2,
+      "status": "ok"
+    },
+    {
+      "slug": "Active_Duty_Transition",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 122.6,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_1st_Quarter_2019",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 64.5,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_2nd_Quarter_2021",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 61.8,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_4th_Quarter_2015",
+      "project": "ada-compliance-engine-7",
+      "score": 96,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 147.0,
+      "status": "ok"
+    },
+    {
+      "slug": "Board_of_Dietetics_Nutrition_Annual_Report_2024-2025",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 77.8,
+      "status": "ok"
+    },
+    {
+      "slug": "DHHS_Response_to_COVID19_Cases",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 141.7,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_County_Veterans_Offices_Grant_-_Invitation_to_Apply",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 148.0,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_March_Newsletter_2020",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 129.1,
+      "status": "ok"
+    },
+    {
+      "slug": "agreement_for_dependent_burial",
+      "project": "ada-compliance-engine-7",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 26.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01.10.22_NC_Children_of_Wartime_Veterans'_Scholorship_Day.pdf",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 78.7,
+      "status": "ok"
+    },
+    {
+      "slug": "2021_A_Veteran_Friendly_State_Proclamation.pdf",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 97.8,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_&_Community_Affairs_3rd_Quarter_2021",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 61.5,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_2nd_Quarter_2015",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 90.4,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_3rd_Quarter_2017",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 108.2,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_4th_Quarter_2019",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 102.5,
+      "status": "ok"
+    },
+    {
+      "slug": "CDC_Responding_to_COVID_19_In_Nursing_Homes",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 99.9,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_April_Newsletter_2022",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 151.1,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_January_Newsletter_2020",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 152.8,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_May_Newsletter_2021",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 117.5,
+      "status": "ok"
+    },
+    {
+      "slug": "05.01.21-Military-Appreciation-Month-Proclamation.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 101.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2021_National_Veteran_and_Military_Families_Month_Proclamation.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 75.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_1st_Quarter_2014",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 87.8,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_2nd_Quarter_2016",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 114.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_3rd_Quarter_2018",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 95.4,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_4th_Quarter_2020",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 104.4,
+      "status": "ok"
+    },
+    {
+      "slug": "Cataret_County_Parade.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 82.0,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_August_Newsletter_2021",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 161.3,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_January_Newsletter_2022",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 139.1,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_May_Newsletter_2022",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 116.3,
+      "status": "ok"
+    },
+    {
+      "slug": "050516_USO_NC_serves_press_release.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 108.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2021_National_Veteran_and_Military_Families_Month_Proclamation.pdf_2",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 68.3,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_1st_Quarter_2015",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 86.9,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_2nd_Quarter_2017",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 142.7,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_3rd_Quarter_2019",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 137.3,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_4th_Quarter_2021",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 65.7,
+      "status": "ok"
+    },
+    {
+      "slug": "Childcare_Roundtable_Agenda_2026",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 96.9,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_August_Newsletter_2022",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 109.6,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_July_Newsletter_2021",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 139.0,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_May_Newsletter_2023",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 150.7,
+      "status": "ok"
+    },
+    {
+      "slug": "10.23.21_Veteran_Friendly_State_Proclamation_FINAL.pdf",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 79.0,
+      "status": "ok"
+    },
+    {
+      "slug": "Agreement_for_Burial_of_Cremated_Remains",
+      "project": "ada-compliance-engine-9",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 23.7,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_1st_Quarter_2021",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 76.0,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_3rd_Quarter_2015",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 103.3,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_4th_Quarter_2017",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 118.4,
+      "status": "ok"
+    },
+    {
+      "slug": "CDC_Key_Strategies_to_Prepare_for_COVID_19_In_Long_Term_Care\u2026",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 111.1,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_April_Newsletter_2020",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 114.4,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_February_Newsletter_2020",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 147.8,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_March_Newsletter_2022",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 108.6,
+      "status": "ok"
+    },
+    {
+      "slug": "dmva_guide_2019a",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 14,
+      "elapsed": 331.0,
+      "status": "ok"
+    },
+    {
+      "slug": "12.11.21_U.S._Army_Corporal_Leon_E._Clevenger_Day.pdf",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 64.8,
+      "status": "ok"
+    },
+    {
+      "slug": "Approved_OBTT_Flyer_with_QR.pdf",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 71.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_2nd_Quarter_2014",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 102.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_3rd_Quarter_2016",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 84.3,
+      "status": "ok"
+    },
+    {
+      "slug": "Base_Sustainability_and_Community_Affairs_4th_Quarter_2018",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 131.0,
+      "status": "ok"
+    },
+    {
+      "slug": "CDC_Reportable_Diseases_and_Conditions",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 376.2,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_April_Newsletter_2021",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 147.5,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_February_Newsletter_2022",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 128.4,
+      "status": "ok"
+    },
+    {
+      "slug": "DMVA_March_Newsletter_2023",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 111.3,
+      "status": "ok"
+    }
+  ]
+}

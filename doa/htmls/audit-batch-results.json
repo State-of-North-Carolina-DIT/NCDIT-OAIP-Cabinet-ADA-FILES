@@ -1,0 +1,1022 @@
+{
+  "timestamp": "2026-03-26T17:08:01",
+  "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/doa/htmls",
+  "projects": [
+    "ada-compliance-engine-1",
+    "ada-compliance-engine-2",
+    "ada-compliance-engine-3",
+    "ada-compliance-engine-4",
+    "ada-compliance-engine-5",
+    "ada-compliance-engine-6",
+    "ada-compliance-engine-7",
+    "ada-compliance-engine-8",
+    "ada-compliance-engine-9",
+    "ada-compliance-engine-10"
+  ],
+  "total_docs": 100,
+  "ok": 100,
+  "failed": 0,
+  "elapsed_seconds": 1357.9,
+  "results": [
+    {
+      "slug": "0003A_-_Products_and_Supplies_for_Correctional_Facilities",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 104.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1412A_-_Office_Paper",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 104.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W16",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 74.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W26",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 79.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W36",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 120.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W46",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 117.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W7",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 105.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W12",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 120.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W22",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 119.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W32",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 96.1,
+      "status": "ok"
+    },
+    {
+      "slug": "065A_Utility_and_Dump_Truck_Bodies_NEW_Statewide_Term_Contract\u2026",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 103.2,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W10",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 76.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W20",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 77.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W30",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 83.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W40",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 90.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W50",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 152.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA_W2",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 169.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W16",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 96.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W26",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 153.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB_W2",
+      "project": "ada-compliance-engine-7",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 108.6,
+      "status": "ok"
+    },
+    {
+      "slug": "065A_-_Utility_and_Dump_Truck_Bodies",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 111.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_Campbell_Oil_Company_New_Customer_Memo",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 81.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W19",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 75.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W29",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 77.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W39",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 129.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W49",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 240.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA_W1",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 107.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W15",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 96.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W25",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 142.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB_W1",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 85.5,
+      "status": "ok"
+    },
+    {
+      "slug": "070G_-_Utility,_Transportation_&_Golf_Vehicles,_&_Related_Accessories,_Equipment,_Parts_&_Services",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 127.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W11",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 71.7,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W21",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 109.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W31",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 90.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W41",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 174.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W51",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 99.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA_W3",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 171.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W17",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 122.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W27",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 96.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB_W3",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 91.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1017A_-_Agricultural_Chemicals",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 144.7,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W13",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 83.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W23",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 82.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W33",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 71.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W43",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 140.2,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W53",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 143.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA_W5",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 77.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W19",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 184.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W29",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 153.7,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB_W5",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 78.5,
+      "status": "ok"
+    },
+    {
+      "slug": "060C_-_Storefront_Auto_Parts",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 139.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_AmeriGas_Propane_LP_New_Customer_Memo",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 78.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W18",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 86.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W28",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 97.2,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W38",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 115.7,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W48",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 138.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W9",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 80.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W14",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 203.2,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W24",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 123.7,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W34",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 125.1,
+      "status": "ok"
+    },
+    {
+      "slug": "0002A_NPWCBSD_NEW_Statewide_Term_Contract_Announcement",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 132.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1411B_-_Sanitary_Paper_Supplies",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 123.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W15",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 87.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W25",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 76.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W35",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 93.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W45",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 225.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W6",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 236.7,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W11",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 139.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W21",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 82.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W31",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 75.3,
+      "status": "ok"
+    },
+    {
+      "slug": "0002A_-_Goods_and_Services_from_NPWCBSD",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 140.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1214A_-_Gases_Medical,_Welding_&_Specialty",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 147.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W14",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 119.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W24",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 143.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W34",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 165.7,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W44",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 110.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W54",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 136.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W10",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 104.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W20",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 128.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W30",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 129.1,
+      "status": "ok"
+    },
+    {
+      "slug": "070G_NEW_Statewide_Term_Contract_Announcement",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 119.7,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W12",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 249.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W22",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 119.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W32",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 63.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W42",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 163.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W52",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 121.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA_W4",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 168.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W18",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 124.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W28",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 114.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB_W4",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 91.3,
+      "status": "ok"
+    },
+    {
+      "slug": "001A_-_Correction_Enterprise_Products",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 130.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_-_Fuels",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 173.2,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W17",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 105.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W27",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 141.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W37",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 174.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W47",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 80.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatA-W8",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 117.2,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W13",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 167.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W23",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 103.7,
+      "status": "ok"
+    },
+    {
+      "slug": "1510B_CatB-W33",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 164.0,
+      "status": "ok"
+    }
+  ]
+}

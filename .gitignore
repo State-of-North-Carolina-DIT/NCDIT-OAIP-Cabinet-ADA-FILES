@@ -3,5 +3,6 @@
 audit-batch-results-v*.json
 AUDITOR-REPORT-v*.md
 AUDITOR-REPORT.md
-audit-batch-results.json
+AUDITOR-REPORT-baseline.md
+audit-batch-results-baseline.json
 *-human-vs-auditor*.csv

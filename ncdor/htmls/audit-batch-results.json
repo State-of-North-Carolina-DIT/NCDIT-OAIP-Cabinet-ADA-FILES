@@ -1,0 +1,992 @@
+{
+  "timestamp": "2026-03-26T21:40:56",
+  "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdor/htmls",
+  "projects": [
+    "ada-compliance-engine-1",
+    "ada-compliance-engine-2",
+    "ada-compliance-engine-3",
+    "ada-compliance-engine-4",
+    "ada-compliance-engine-5",
+    "ada-compliance-engine-6",
+    "ada-compliance-engine-7",
+    "ada-compliance-engine-8",
+    "ada-compliance-engine-9",
+    "ada-compliance-engine-10",
+    "ada-compliance-engine-11",
+    "ada-compliance-engine-12",
+    "ada-compliance-engine-13",
+    "ada-compliance-engine-14",
+    "ada-compliance-engine-15",
+    "ada-compliance-engine-16",
+    "ada-compliance-engine-17",
+    "ada-compliance-engine-18",
+    "ada-compliance-engine-19",
+    "ada-compliance-engine-20",
+    "ada-compliance-engine-21",
+    "ada-compliance-engine-22",
+    "ada-compliance-engine-23",
+    "ada-compliance-engine-24",
+    "ada-compliance-engine-25",
+    "ada-compliance-engine-26",
+    "ada-compliance-engine-27",
+    "ada-compliance-engine-28",
+    "ada-compliance-engine-29",
+    "ada-compliance-engine-30"
+  ],
+  "total_docs": 95,
+  "ok": 95,
+  "failed": 0,
+  "elapsed_seconds": 893.0,
+  "results": [
+    {
+      "slug": "1st_2nd_qtr_2016_gas_1200_v3_16",
+      "project": "ada-compliance-engine-30",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 65.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2001_d_400x_amended_north_carolina_individual_income_tax_return\u2026",
+      "project": "ada-compliance-engine-30",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 50.2,
+      "status": "ok"
+    },
+    {
+      "slug": "B-A-2R_Tobacco_License_2025_Renewal_Application",
+      "project": "ada-compliance-engine-30",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 53.5,
+      "status": "ok"
+    },
+    {
+      "slug": "14_dor_taxenforcement",
+      "project": "ada-compliance-engine-15",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 34.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_qtr_2012_gas_1278_ifta_fuel_tax_rates",
+      "project": "ada-compliance-engine-15",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 90.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2006_Sales_Tax_Legislative_Changes",
+      "project": "ada-compliance-engine-15",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 95.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_2nd_qtr_2013_gas_1200b_v1_13",
+      "project": "ada-compliance-engine-28",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 41.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2000_d_400x_amended_north_carolina_individual_income_tax_return\u2026",
+      "project": "ada-compliance-engine-28",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 44.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2_February_2026_Agenda.pdf",
+      "project": "ada-compliance-engine-28",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 174.9,
+      "status": "ok"
+    },
+    {
+      "slug": "13_Motor_Carrier_Enforcement_DOR",
+      "project": "ada-compliance-engine-14",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 66.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_and_2nd_Quarters_2013_Gas-1201ME_Motor_Fuels_Claim_for_Refund_Special_Mobile_Equipment",
+      "project": "ada-compliance-engine-14",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 35.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2006-2007_TAX_RATES_AND_EFFECTIVE_TAX_RATES",
+      "project": "ada-compliance-engine-14",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 174.7,
+      "status": "ok"
+    },
+    {
+      "slug": "11_November_2025_Agenda.pdf",
+      "project": "ada-compliance-engine-12",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 125.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_and_2nd_Quarter_2017_GAS-1200_Claim_For_Refund_-_Nonprofit_Organizations",
+      "project": "ada-compliance-engine-12",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 50.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2005_Sales_Tax_Legislative_Changes",
+      "project": "ada-compliance-engine-12",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 149.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1099_format_2",
+      "project": "ada-compliance-engine-7",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 162.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_and_2nd_Quarter_2013_Gas-1200_Motor_Fuels_Claim_for_Refund_Nonprofit_Organizations",
+      "project": "ada-compliance-engine-7",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 31.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2004-2005_TAX_RATES_AND_EFFECTIVE_TAX_RATES",
+      "project": "ada-compliance-engine-7",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 173.4,
+      "status": "ok"
+    },
+    {
+      "slug": "10_October_20_Day_Agenda",
+      "project": "ada-compliance-engine-10",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 191.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_and_2nd_Quarter_2016_GAS-1200_Claim_For_Refund_-_Nonprofit_Organizations",
+      "project": "ada-compliance-engine-10",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 73.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2005-2006_TAX_RATES_AND_EQUALIZED_TAX_RATES",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 116.7,
+      "status": "ok"
+    },
+    {
+      "slug": "10_October_20_Day_Agenda.pdf",
+      "project": "ada-compliance-engine-11",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 135.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_and_2nd_Quarter_2016_Gas-1201ME_Motor_Fuels_Claim_for_Refund_Special_Mobile_Equipment",
+      "project": "ada-compliance-engine-11",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 48.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2005_2006_rulesandbulletins",
+      "project": "ada-compliance-engine-11",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 217.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1042_s_format_2",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 181.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_2nd_qtr_2017_gas_1201me_v3_17",
+      "project": "ada-compliance-engine-4",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 33.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2003-2004_TAX_RATES_AND_EFFECTIVE_TAX_RATES",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 151.9,
+      "status": "ok"
+    },
+    {
+      "slug": "NCVTS_TR-1_Vehicle_Report_Instructions",
+      "project": "ada-compliance-engine-4",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 80.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_2nd_qtr_2014_gas_1200b_v1_14",
+      "project": "ada-compliance-engine-29",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 35.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2001_Sales_Tax_Legislative_Changes",
+      "project": "ada-compliance-engine-29",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 211.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2_February_Agenda",
+      "project": "ada-compliance-engine-29",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 213.5,
+      "status": "ok"
+    },
+    {
+      "slug": "17_NCAC_04_Existing_Rule_Review_Initial_Classification_Report",
+      "project": "ada-compliance-engine-18",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 114.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_qtr_2015_gas_1278_ifta_fuel_tax_rates",
+      "project": "ada-compliance-engine-18",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 122.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2006_summary",
+      "project": "ada-compliance-engine-18",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 233.3,
+      "status": "ok"
+    },
+    {
+      "slug": "17_18taxratesandeffectivetaxrates",
+      "project": "ada-compliance-engine-16",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 196.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_qtr_2013_gas_1278_ifta_fuel_tax_rates",
+      "project": "ada-compliance-engine-16",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 87.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2006_Supplement_Rules_and_Bulletins_for_Taxable_Years_2005_and_2006",
+      "project": "ada-compliance-engine-16",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 189.4,
+      "status": "ok"
+    },
+    {
+      "slug": "12_December_2025_Agenda.pdf",
+      "project": "ada-compliance-engine-13",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 205.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_and_2nd_Quarter_2017_Gas-1201ME_Motor_Fuels_Claim_for_Refund_Special_Mobile_Equipment",
+      "project": "ada-compliance-engine-13",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 27.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2005_and_2006_Individual_Income_Tax_Bulletins",
+      "project": "ada-compliance-engine-13",
+      "score": 92,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 9,
+      "elapsed": 263.9,
+      "status": "ok"
+    },
+    {
+      "slug": "17cvs1663ncdorvfirstpetroleum",
+      "project": "ada-compliance-engine-20",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 156.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_qtr_2016_gas_1278_ifta_fuel_tax_rates",
+      "project": "ada-compliance-engine-20",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 75.7,
+      "status": "ok"
+    },
+    {
+      "slug": "2007_2008_rulesandbulletins",
+      "project": "ada-compliance-engine-20",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 8,
+      "elapsed": 271.5,
+      "status": "ok"
+    },
+    {
+      "slug": "17_NCAC_05_Periodic_Review_-_Corporate_Franchise,_Income,_and_Insurance_Taxes",
+      "project": "ada-compliance-engine-19",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 182.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_qtr_2015_gas_1278_ifta_fuel_tax_rates_2",
+      "project": "ada-compliance-engine-19",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 80.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2006supplement",
+      "project": "ada-compliance-engine-19",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 248.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1099_format.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 241.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_Quarter_2016_GAS-1278_IFTA_Fuel_Tax_Rates",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 75.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2003_and_2004_Individual_Income_Tax_Bulletins",
+      "project": "ada-compliance-engine-6",
+      "score": 90,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 9,
+      "elapsed": 211.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1_January_2026_Agenda.pdf",
+      "project": "ada-compliance-engine-27",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 194.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2000_Underpayment_of_Estimated_Tax_by_Individuals",
+      "project": "ada-compliance-engine-27",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 73.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2021_Estates_and_Trusts_Income_Tax_Instructions",
+      "project": "ada-compliance-engine-27",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 269.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1999_and_2000_Individual_Income_Tax_Bulletins",
+      "project": "ada-compliance-engine-23",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 182.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_qtr_2017_gas_1278_ifta_fuel_tax_rates_2",
+      "project": "ada-compliance-engine-23",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 236.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2007_Personal_Property_Appraisal_and_Assessment_Manual_Section_III_Classification_of_Real_and_Personal_Property",
+      "project": "ada-compliance-engine-23",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 120.6,
+      "status": "ok"
+    },
+    {
+      "slug": "17_NCAC_04,_Gross_Receipts_and_Privilege_License_Taxes",
+      "project": "ada-compliance-engine-17",
+      "score": 95,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 126.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_qtr_2014_gas_1278_ifta_fuel_tax_rates",
+      "project": "ada-compliance-engine-17",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 148.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2006_detail",
+      "project": "ada-compliance-engine-17",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 270.7,
+      "status": "ok"
+    },
+    {
+      "slug": "109_Kinsale_Land_Trust_111PTC944_COA_Remand",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 240.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_and_2nd_Quarter_2014_Gas-1200_Motor_Fuels_Claim_for_Refund_Nonprofit_Organizations",
+      "project": "ada-compliance-engine-8",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 66.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2004_Individual_Income_Tax_Return",
+      "project": "ada-compliance-engine-8",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 249.7,
+      "status": "ok"
+    },
+    {
+      "slug": "109_Kinsale_Land_Trust_11PTC944",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 183.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_and_2nd_Quarter_2014_Motor_Fuels_Claim_for_Refund_Special_Mobile_Equipment",
+      "project": "ada-compliance-engine-9",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 36.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2004_Sales_Tax_Legislative_Changes",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 339.9,
+      "status": "ok"
+    },
+    {
+      "slug": "04-27-2022_SALT_Guidance",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 103.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_2nd_qtr_2016_gas_1201me_v6_16",
+      "project": "ada-compliance-engine-1",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 38.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2002-2003_TAX_RATES_AND_EFFECTIVE_TAX_RATES",
+      "project": "ada-compliance-engine-1",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 145.5,
+      "status": "ok"
+    },
+    {
+      "slug": "GMRI,INC",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 279.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1_2020_Information_Who_Must_Apply_Cig_License",
+      "project": "ada-compliance-engine-24",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 133.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_qtr_2017_gas_1278_ifta_fuel_tax_rates_3",
+      "project": "ada-compliance-engine-24",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 198.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2007_Personal_Property_Appraisal_and_Assessment_Manual_Section_II_Definitions_and_Terms",
+      "project": "ada-compliance-engine-24",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 239.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1042_s_format",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 120.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_2nd_qtr_2017_gas_1200_v3_17_2",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 49.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2002_Sales_Tax_Legislative_Changes_(2)",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 184.5,
+      "status": "ok"
+    },
+    {
+      "slug": "How_to_Test_File_Formats_using_the_eNC5Q_Application",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 234.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1999_Sales_Tax_Legislative_Changes_(1)",
+      "project": "ada-compliance-engine-21",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 213.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_qtr_2016_gas_1278_ifta_fuel_tax_rates_0",
+      "project": "ada-compliance-engine-21",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 130.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2007_Personal_Property_Appraisal_and_Assessment_Complete_Manual",
+      "project": "ada-compliance-engine-21",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 11,
+      "elapsed": 247.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1_2020_Information_Who_Must_Apply_Cig_License_2",
+      "project": "ada-compliance-engine-25",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 113.8,
+      "status": "ok"
+    },
+    {
+      "slug": "20-Day_Agenda",
+      "project": "ada-compliance-engine-25",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 237.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2007_Personal_Property_Appraisal_and_Assessment_Manual_Section_I_Introduction",
+      "project": "ada-compliance-engine-25",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 249.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1999_Sales_Tax_Legislative_Changes_(2)",
+      "project": "ada-compliance-engine-22",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 190.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_qtr_2017_gas_1278_ifta_fuel_tax_rates",
+      "project": "ada-compliance-engine-22",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 116.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2007_Personal_Property_Appraisal_and_Assessment_Manual_Memorandum",
+      "project": "ada-compliance-engine-22",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 323.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1042-s_format.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 146.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_2nd_qtr_2017_gas_1200_v3_17",
+      "project": "ada-compliance-engine-2",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 67.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2002_Sales_Tax_Legislative_Changes_(1)",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 219.8,
+      "status": "ok"
+    },
+    {
+      "slug": "How_to_Review_Submissions_using_the_eNC5Q_Application",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 200.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1099_format",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 149.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_Quarter_2015_Motor_Fuels_Claim_for_Refund_Special_Mobile_Equipment",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 29.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2003_Sales_Tax_Legislative_Changes",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 350.2,
+      "status": "ok"
+    },
+    {
+      "slug": "Xingwu-Wang-and-Lili-Ding",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 146.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1_January_2025_Agenda.pdf",
+      "project": "ada-compliance-engine-26",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 141.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2000_Sales_Tax_Legislative_Changes",
+      "project": "ada-compliance-engine-26",
+      "score": 95,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 234.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2007_and_2008_Individual_Income_Tax_Bulletins",
+      "project": "ada-compliance-engine-26",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 11,
+      "elapsed": 516.4,
+      "status": "ok"
+    }
+  ]
+}

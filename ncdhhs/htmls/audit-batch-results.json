@@ -1,0 +1,1042 @@
+{
+  "timestamp": "2026-03-26T21:13:39",
+  "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdhhs/htmls",
+  "projects": [
+    "ada-compliance-engine-1",
+    "ada-compliance-engine-2",
+    "ada-compliance-engine-3",
+    "ada-compliance-engine-4",
+    "ada-compliance-engine-5",
+    "ada-compliance-engine-6",
+    "ada-compliance-engine-7",
+    "ada-compliance-engine-8",
+    "ada-compliance-engine-9",
+    "ada-compliance-engine-10",
+    "ada-compliance-engine-11",
+    "ada-compliance-engine-12",
+    "ada-compliance-engine-13",
+    "ada-compliance-engine-14",
+    "ada-compliance-engine-15",
+    "ada-compliance-engine-16",
+    "ada-compliance-engine-17",
+    "ada-compliance-engine-18",
+    "ada-compliance-engine-19",
+    "ada-compliance-engine-20",
+    "ada-compliance-engine-21",
+    "ada-compliance-engine-22",
+    "ada-compliance-engine-23",
+    "ada-compliance-engine-24",
+    "ada-compliance-engine-25",
+    "ada-compliance-engine-26",
+    "ada-compliance-engine-27",
+    "ada-compliance-engine-28",
+    "ada-compliance-engine-29",
+    "ada-compliance-engine-30"
+  ],
+  "total_docs": 100,
+  "ok": 100,
+  "failed": 0,
+  "elapsed_seconds": 639.7,
+  "results": [
+    {
+      "slug": "01_07_Actives",
+      "project": "ada-compliance-engine-13",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 140.5,
+      "status": "ok"
+    },
+    {
+      "slug": "02.26.24_DSP_Workforce_Advisory_Committee_Slides",
+      "project": "ada-compliance-engine-13",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 34.0,
+      "status": "ok"
+    },
+    {
+      "slug": "03.18.24_DSP_Workforce_Advisory_Committee_Slides",
+      "project": "ada-compliance-engine-13",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 37.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_19_Case_and_Procedural_Error_Rate",
+      "project": "ada-compliance-engine-27",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 76.4,
+      "status": "ok"
+    },
+    {
+      "slug": "02_13_negatives",
+      "project": "ada-compliance-engine-27",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 94.3,
+      "status": "ok"
+    },
+    {
+      "slug": "03_14_Actives",
+      "project": "ada-compliance-engine-27",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 75.7,
+      "status": "ok"
+    },
+    {
+      "slug": "0030_Referral_Friend_Spanish.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 20.4,
+      "status": "ok"
+    },
+    {
+      "slug": "02-22_Fed_Actives",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 108.4,
+      "status": "ok"
+    },
+    {
+      "slug": "02_19_Case_and_Procedural_Error_Rate",
+      "project": "ada-compliance-engine-3",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 96.4,
+      "status": "ok"
+    },
+    {
+      "slug": "03_Medical_Home_Checklist_Partnering_with_Provider-e.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 24.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01_12_Actives",
+      "project": "ada-compliance-engine-20",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 101.4,
+      "status": "ok"
+    },
+    {
+      "slug": "02_10_Fed_Actives",
+      "project": "ada-compliance-engine-20",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 66.8,
+      "status": "ok"
+    },
+    {
+      "slug": "03_10_Actives",
+      "project": "ada-compliance-engine-20",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 104.7,
+      "status": "ok"
+    },
+    {
+      "slug": "01_20_Case_and_Procedural_Error_Rate",
+      "project": "ada-compliance-engine-30",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 89.4,
+      "status": "ok"
+    },
+    {
+      "slug": "02_16_Actives",
+      "project": "ada-compliance-engine-30",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 105.7,
+      "status": "ok"
+    },
+    {
+      "slug": "03_17_Actives",
+      "project": "ada-compliance-engine-30",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 79.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_14_Actives",
+      "project": "ada-compliance-engine-22",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 97.3,
+      "status": "ok"
+    },
+    {
+      "slug": "02_10_negatives",
+      "project": "ada-compliance-engine-22",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 97.5,
+      "status": "ok"
+    },
+    {
+      "slug": "03_11_Actives",
+      "project": "ada-compliance-engine-22",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 80.9,
+      "status": "ok"
+    },
+    {
+      "slug": "01-25_State_CAPERs",
+      "project": "ada-compliance-engine-11",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 78.7,
+      "status": "ok"
+    },
+    {
+      "slug": "02-25_State_Actives",
+      "project": "ada-compliance-engine-11",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 130.3,
+      "status": "ok"
+    },
+    {
+      "slug": "03-25_State_Actives",
+      "project": "ada-compliance-engine-11",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 94.1,
+      "status": "ok"
+    },
+    {
+      "slug": "01_17_Actives",
+      "project": "ada-compliance-engine-25",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 89.2,
+      "status": "ok"
+    },
+    {
+      "slug": "02_12_Actives",
+      "project": "ada-compliance-engine-25",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 128.8,
+      "status": "ok"
+    },
+    {
+      "slug": "03_12_Negative",
+      "project": "ada-compliance-engine-25",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 98.0,
+      "status": "ok"
+    },
+    {
+      "slug": "01.08.25_NC_Crisis_Services_Advisory_Committee_Notes",
+      "project": "ada-compliance-engine-12",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 146.2,
+      "status": "ok"
+    },
+    {
+      "slug": "02-25_State_CAPERs",
+      "project": "ada-compliance-engine-12",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 84.6,
+      "status": "ok"
+    },
+    {
+      "slug": "03-25_State_CAPERs",
+      "project": "ada-compliance-engine-12",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 93.7,
+      "status": "ok"
+    },
+    {
+      "slug": "0030_Referral_Friend_English.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 21.6,
+      "status": "ok"
+    },
+    {
+      "slug": "02-22_CAPERS",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 104.2,
+      "status": "ok"
+    },
+    {
+      "slug": "02_19_Actives",
+      "project": "ada-compliance-engine-2",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 113.8,
+      "status": "ok"
+    },
+    {
+      "slug": "03_19_Case_and_Procedural_Error_Rate",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 85.5,
+      "status": "ok"
+    },
+    {
+      "slug": "01_2001",
+      "project": "ada-compliance-engine-28",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 143.5,
+      "status": "ok"
+    },
+    {
+      "slug": "02_14_Actives",
+      "project": "ada-compliance-engine-28",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 85.6,
+      "status": "ok"
+    },
+    {
+      "slug": "03_15_Actives",
+      "project": "ada-compliance-engine-28",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 99.0,
+      "status": "ok"
+    },
+    {
+      "slug": "01_16_Actives",
+      "project": "ada-compliance-engine-24",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 120.3,
+      "status": "ok"
+    },
+    {
+      "slug": "02_11_negatives",
+      "project": "ada-compliance-engine-24",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 99.0,
+      "status": "ok"
+    },
+    {
+      "slug": "03_12_Active",
+      "project": "ada-compliance-engine-24",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 134.7,
+      "status": "ok"
+    },
+    {
+      "slug": "01-22_State_CAPERS",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 121.5,
+      "status": "ok"
+    },
+    {
+      "slug": "02-24_Federal_Actives_with_Ranks",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 85.7,
+      "status": "ok"
+    },
+    {
+      "slug": "02_20_Case_and_Procedural_Error_Rate",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 79.7,
+      "status": "ok"
+    },
+    {
+      "slug": "04_07_negatives",
+      "project": "ada-compliance-engine-5",
+      "score": 99,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 80.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01-24_State_Actives",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 96.5,
+      "status": "ok"
+    },
+    {
+      "slug": "02-24_Federal_CAPERs",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 106.1,
+      "status": "ok"
+    },
+    {
+      "slug": "02_Medical_Home_Checklist_7_Components-e.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 64.0,
+      "status": "ok"
+    },
+    {
+      "slug": "04_08_Actives",
+      "project": "ada-compliance-engine-6",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 110.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01_07_negatives",
+      "project": "ada-compliance-engine-14",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 145.4,
+      "status": "ok"
+    },
+    {
+      "slug": "02NCSSBG",
+      "project": "ada-compliance-engine-14",
+      "score": 99,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 116.3,
+      "status": "ok"
+    },
+    {
+      "slug": "03NCSSBG",
+      "project": "ada-compliance-engine-14",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 122.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01_08_Actives",
+      "project": "ada-compliance-engine-15",
+      "score": 95,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 129.9,
+      "status": "ok"
+    },
+    {
+      "slug": "02_07_Actives",
+      "project": "ada-compliance-engine-15",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 111.8,
+      "status": "ok"
+    },
+    {
+      "slug": "03_07_Actives",
+      "project": "ada-compliance-engine-15",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 142.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_13_Actives",
+      "project": "ada-compliance-engine-21",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 132.3,
+      "status": "ok"
+    },
+    {
+      "slug": "02_10_actives",
+      "project": "ada-compliance-engine-21",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 142.2,
+      "status": "ok"
+    },
+    {
+      "slug": "03_10_negatives",
+      "project": "ada-compliance-engine-21",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 119.4,
+      "status": "ok"
+    },
+    {
+      "slug": "01_09_Actives",
+      "project": "ada-compliance-engine-16",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 145.5,
+      "status": "ok"
+    },
+    {
+      "slug": "02_07_negatives",
+      "project": "ada-compliance-engine-16",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 131.3,
+      "status": "ok"
+    },
+    {
+      "slug": "03_07_negatives",
+      "project": "ada-compliance-engine-16",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 127.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01_11_Actives",
+      "project": "ada-compliance-engine-18",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 96.9,
+      "status": "ok"
+    },
+    {
+      "slug": "02_09_Actives",
+      "project": "ada-compliance-engine-18",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 169.7,
+      "status": "ok"
+    },
+    {
+      "slug": "03_09_2016_State_CFAC_Min",
+      "project": "ada-compliance-engine-18",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 139.7,
+      "status": "ok"
+    },
+    {
+      "slug": "01_19_Actives",
+      "project": "ada-compliance-engine-26",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 152.0,
+      "status": "ok"
+    },
+    {
+      "slug": "02_13_Actives",
+      "project": "ada-compliance-engine-26",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 146.4,
+      "status": "ok"
+    },
+    {
+      "slug": "03_13_Actives",
+      "project": "ada-compliance-engine-26",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 108.4,
+      "status": "ok"
+    },
+    {
+      "slug": "001_DCDEE_21_Request_for_Application_Increasing_Access_for\u2026",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 94.2,
+      "status": "ok"
+    },
+    {
+      "slug": "02-22_Actives",
+      "project": "ada-compliance-engine-1",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 125.3,
+      "status": "ok"
+    },
+    {
+      "slug": "02_17_Actives",
+      "project": "ada-compliance-engine-1",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 116.4,
+      "status": "ok"
+    },
+    {
+      "slug": "03_19_Actives",
+      "project": "ada-compliance-engine-1",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 89.4,
+      "status": "ok"
+    },
+    {
+      "slug": "01_10_actives",
+      "project": "ada-compliance-engine-17",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 135.7,
+      "status": "ok"
+    },
+    {
+      "slug": "02_08_Actives",
+      "project": "ada-compliance-engine-17",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 160.2,
+      "status": "ok"
+    },
+    {
+      "slug": "03_08_Actives",
+      "project": "ada-compliance-engine-17",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 136.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01-25_State_Actives",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 137.6,
+      "status": "ok"
+    },
+    {
+      "slug": "02-25_Federal_CAPERs",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 100.8,
+      "status": "ok"
+    },
+    {
+      "slug": "03-25_Federal_CAPERs",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 76.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2023-2027_State_Aging_Plan",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 118.5,
+      "status": "ok"
+    },
+    {
+      "slug": "01_15_Actives",
+      "project": "ada-compliance-engine-23",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 135.4,
+      "status": "ok"
+    },
+    {
+      "slug": "02_11_actives",
+      "project": "ada-compliance-engine-23",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 186.9,
+      "status": "ok"
+    },
+    {
+      "slug": "03_11_negatives",
+      "project": "ada-compliance-engine-23",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 117.0,
+      "status": "ok"
+    },
+    {
+      "slug": "01-25_Federal_Actives",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 81.4,
+      "status": "ok"
+    },
+    {
+      "slug": "02-24_State_CAPERs",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 151.5,
+      "status": "ok"
+    },
+    {
+      "slug": "03-22_CAPERS",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 84.6,
+      "status": "ok"
+    },
+    {
+      "slug": "04_10_Fed_Actives",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 123.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_20_Actives",
+      "project": "ada-compliance-engine-29",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 88.3,
+      "status": "ok"
+    },
+    {
+      "slug": "02_15_Actives",
+      "project": "ada-compliance-engine-29",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 240.4,
+      "status": "ok"
+    },
+    {
+      "slug": "03_16_Actives",
+      "project": "ada-compliance-engine-29",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 130.5,
+      "status": "ok"
+    },
+    {
+      "slug": "01-22_State_Actives",
+      "project": "ada-compliance-engine-4",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 104.6,
+      "status": "ok"
+    },
+    {
+      "slug": "02-22_Fed_CAPERS",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 158.6,
+      "status": "ok"
+    },
+    {
+      "slug": "02_20_Actives",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 138.1,
+      "status": "ok"
+    },
+    {
+      "slug": "04_07_Actives",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 82.0,
+      "status": "ok"
+    },
+    {
+      "slug": "01-24_State_CAPERs",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 97.4,
+      "status": "ok"
+    },
+    {
+      "slug": "02-24_State_Actives",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 148.2,
+      "status": "ok"
+    },
+    {
+      "slug": "03-22_Actives",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 100.4,
+      "status": "ok"
+    },
+    {
+      "slug": "04_09_Actives",
+      "project": "ada-compliance-engine-7",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 143.9,
+      "status": "ok"
+    },
+    {
+      "slug": "01-25_Federal_CAPERs",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 80.6,
+      "status": "ok"
+    },
+    {
+      "slug": "02-25_Federal_Actives",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 170.4,
+      "status": "ok"
+    },
+    {
+      "slug": "03-25_Federal_Actives",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 133.8,
+      "status": "ok"
+    },
+    {
+      "slug": "04_10_actives",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 119.9,
+      "status": "ok"
+    },
+    {
+      "slug": "01_11_Fed_Actives",
+      "project": "ada-compliance-engine-19",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 136.6,
+      "status": "ok"
+    },
+    {
+      "slug": "02_10_2016_State_CFAC",
+      "project": "ada-compliance-engine-19",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 368.5,
+      "status": "ok"
+    },
+    {
+      "slug": "03_09_Actives",
+      "project": "ada-compliance-engine-19",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 134.2,
+      "status": "ok"
+    }
+  ]
+}

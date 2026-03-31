@@ -1,0 +1,1022 @@
+{
+  "timestamp": "2026-03-30T20:57:27",
+  "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/deq/htmls",
+  "projects": [
+    "ada-compliance-engine-1",
+    "ada-compliance-engine-2",
+    "ada-compliance-engine-3",
+    "ada-compliance-engine-4",
+    "ada-compliance-engine-5",
+    "ada-compliance-engine-6",
+    "ada-compliance-engine-7",
+    "ada-compliance-engine-8",
+    "ada-compliance-engine-9",
+    "ada-compliance-engine-10",
+    "ada-compliance-engine-11",
+    "ada-compliance-engine-12",
+    "ada-compliance-engine-13",
+    "ada-compliance-engine-14",
+    "ada-compliance-engine-15",
+    "ada-compliance-engine-16",
+    "ada-compliance-engine-17",
+    "ada-compliance-engine-18",
+    "ada-compliance-engine-19",
+    "ada-compliance-engine-20",
+    "ada-compliance-engine-21",
+    "ada-compliance-engine-22",
+    "ada-compliance-engine-23",
+    "ada-compliance-engine-24",
+    "ada-compliance-engine-25",
+    "ada-compliance-engine-26",
+    "ada-compliance-engine-27",
+    "ada-compliance-engine-28",
+    "ada-compliance-engine-29",
+    "ada-compliance-engine-30"
+  ],
+  "total_docs": 100,
+  "ok": 95,
+  "failed": 5,
+  "elapsed_seconds": 1319.1,
+  "results": [
+    {
+      "slug": "01_2019_Consumer_Shellfish_Advisory_ENGLISH",
+      "project": "ada-compliance-engine-18",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 70.7,
+      "status": "ok"
+    },
+    {
+      "slug": "0_HertfordCountyCertificationDate_022411",
+      "project": "ada-compliance-engine-18",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 54.0,
+      "status": "ok"
+    },
+    {
+      "slug": "Lake-Tillery-Aquatic-Plant-Reporting",
+      "project": "ada-compliance-engine-18",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 24.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Agenda_Timeline",
+      "project": "ada-compliance-engine-22",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 34.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2019-white-lake-sav-report",
+      "project": "ada-compliance-engine-22",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 121.9,
+      "status": "ok"
+    },
+    {
+      "slug": "MayoMeetingOfficerReport_20160428",
+      "project": "ada-compliance-engine-22",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 91.4,
+      "status": "ok"
+    },
+    {
+      "slug": "01_2018_Agenda_Hydrologics_Mtg_2_002",
+      "project": "ada-compliance-engine-16",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 74.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01_NS_YPDL_Kickoff_meeting_03042020",
+      "project": "ada-compliance-engine-16",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 154.8,
+      "status": "ok"
+    },
+    {
+      "slug": "IHSB_Annual_Land_Use_Restriction_Report_Form",
+      "project": "ada-compliance-engine-16",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 22.6,
+      "status": "ok"
+    },
+    {
+      "slug": "01_2012_CRFL_Data_Delivery_Specifications",
+      "project": "ada-compliance-engine-13",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 128.1,
+      "status": "ok"
+    },
+    {
+      "slug": "01_NRHM_Project_Contract",
+      "project": "ada-compliance-engine-13",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 53.5,
+      "status": "ok"
+    },
+    {
+      "slug": "Dan_River_Meeting_Officer_Report_Final_5_13_16",
+      "project": "ada-compliance-engine-13",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 95.7,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Fact_Sheet_Kaballco.pdf_2",
+      "project": "ada-compliance-engine-28",
+      "score": 100,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 77.4,
+      "status": "ok"
+    },
+    {
+      "slug": "Allen_Meeting_Officer_Report_20160422",
+      "project": "ada-compliance-engine-28",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 86.7,
+      "status": "ok"
+    },
+    {
+      "slug": "Questions_(and_Answers)_about_the_LASII_Stormwater_Funding_Program",
+      "project": "ada-compliance-engine-28",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 144.1,
+      "status": "ok"
+    },
+    {
+      "slug": "01_2019_shellfish_sale_tag_template",
+      "project": "ada-compliance-engine-19",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 150.5,
+      "status": "ok"
+    },
+    {
+      "slug": "0_JLA4_Email_Announcement_20160316",
+      "project": "ada-compliance-engine-19",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 168.6,
+      "status": "ok"
+    },
+    {
+      "slug": "Lake-Tillery-Hydrilla-Management",
+      "project": "ada-compliance-engine-19",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 55.2,
+      "status": "ok"
+    },
+    {
+      "slug": "(UPDATED)_25095_Colwick_Rd_SNI_20250925.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 80.1,
+      "status": "ok"
+    },
+    {
+      "slug": "01_HB_1743_SAB_Purpose_Brief_Tom_Reeder",
+      "project": "ada-compliance-engine-2",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 19.6,
+      "status": "ok"
+    },
+    {
+      "slug": "Buck_Meeting_Officer_Report_Final_5_13_16_00000002",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 99.8,
+      "status": "ok"
+    },
+    {
+      "slug": "SSAB_Meeting_April_2025",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 183.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_10_Corrected_cover_letter_20201221",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 88.6,
+      "status": "ok"
+    },
+    {
+      "slug": "01_NCDAQ_Final_RH_SIP_Transmittal_Letter_040422.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 129.2,
+      "status": "ok"
+    },
+    {
+      "slug": "DSCA_Compliance_Voluntary_Self-Inspection_Checklist_for_Petroleum_and_Alternative-solvent_Dry_Cleaners_Form",
+      "project": "ada-compliance-engine-8",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 26.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Web_Meeting_Etiquette_PDF",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 178.5,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Fact_Sheet_SKA.pdf",
+      "project": "ada-compliance-engine-29",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 87.6,
+      "status": "ok"
+    },
+    {
+      "slug": "Asheville_Mtg_Officer_Report_FINAL_051316",
+      "project": "ada-compliance-engine-29",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 111.5,
+      "status": "ok"
+    },
+    {
+      "slug": "Riverbend_Meeting_Officer_Report_Final_5_13_16",
+      "project": "ada-compliance-engine-29",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 241.4,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Eno_State_Park_Eco_Flow_Study",
+      "project": "ada-compliance-engine-26",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 34.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2023-lake-gaston-sav-report",
+      "project": "ada-compliance-engine-26",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 194.8,
+      "status": "ok"
+    },
+    {
+      "slug": "PRLF_Durham_Parks_June_2024_Update",
+      "project": "ada-compliance-engine-26",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 226.6,
+      "status": "ok"
+    },
+    {
+      "slug": "01_10_adilet_2020_5",
+      "project": "ada-compliance-engine-11",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 203.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01_NRHM_Agenda_111208",
+      "project": "ada-compliance-engine-11",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 219.5,
+      "status": "ok"
+    },
+    {
+      "slug": "DSCA_November_2023_Case_Studies",
+      "project": "ada-compliance-engine-11",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 55.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_12_12_Public_Memo",
+      "project": "ada-compliance-engine-12",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 172.1,
+      "status": "ok"
+    },
+    {
+      "slug": "01_NRHM_Meeting_Agenda_052708",
+      "project": "ada-compliance-engine-12",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 186.0,
+      "status": "ok"
+    },
+    {
+      "slug": "DSCA_November_2023_Meeting_Minutes",
+      "project": "ada-compliance-engine-12",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 122.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Fact_Sheet_SKA.pdf_2",
+      "project": "ada-compliance-engine-30",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 157.9,
+      "status": "ok"
+    },
+    {
+      "slug": "BLACK_SEA_BASS_\u2013_COMMERCIAL_FISHING_OPERATIONS_\u2013_ATLANTIC_OCEAN_\u2013_NORTH_OF_CAPE_HATTERAS",
+      "project": "ada-compliance-engine-30",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 178.0,
+      "status": "ok"
+    },
+    {
+      "slug": "Rogers_Mtg_Officer_Report_FINAL_051316",
+      "project": "ada-compliance-engine-30",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 149.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Fact_Sheet_Kaballco.pdf",
+      "project": "ada-compliance-engine-27",
+      "score": 99,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 79.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2023-roanoke-rapids-sav-report",
+      "project": "ada-compliance-engine-27",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 126.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Primary_Nursery_Areas",
+      "project": "ada-compliance-engine-27",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 364.0,
+      "status": "ok"
+    },
+    {
+      "slug": "009_outfall_COALASHSUMMARY4March_2014",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 257.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01_JLR4_Agenda_Schedule",
+      "project": "ada-compliance-engine-4",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 27.6,
+      "status": "ok"
+    },
+    {
+      "slug": "Cape_Fear_Mtg_Officer_Report_FINAL_051316",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 184.2,
+      "status": "ok"
+    },
+    {
+      "slug": "Southside_Park_Landfill_Surface_Water_Assessment",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 136.4,
+      "status": "ok"
+    },
+    {
+      "slug": "01_10_2nd_pub_not_20201215",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 104.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_January_2014_CPAs",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 119.2,
+      "status": "ok"
+    },
+    {
+      "slug": "DEQ_Risk_Calculator_User_Guide_(February_2024)",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 301.3,
+      "status": "ok"
+    },
+    {
+      "slug": "WeatherspoonMeetingOfficerReport_20160428",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 106.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL",
+      "project": "ada-compliance-engine-21",
+      "score": 29,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 363.2,
+      "status": "ok"
+    },
+    {
+      "slug": "0_ManteoAmend1Certif_021209",
+      "project": "ada-compliance-engine-21",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 80.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Marshall_Meeting_Officer_Final_5_13_16",
+      "project": "ada-compliance-engine-21",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 240.9,
+      "status": "ok"
+    },
+    {
+      "slug": "01_2018_Agenda_FB_Hydrologics_Mtg_2",
+      "project": "ada-compliance-engine-15",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 144.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01_NS_FB_New_Watauga_Kickoff_meeting_04_10_2018_2",
+      "project": "ada-compliance-engine-15",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 47.3,
+      "status": "ok"
+    },
+    {
+      "slug": "Energy_Balance_Malvika_Ogale,_Novo_Nordisk",
+      "project": "ada-compliance-engine-15",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 521.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01_2020MayMFC_BusinessMeetingAgenda",
+      "project": "ada-compliance-engine-20",
+      "score": 96,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 119.3,
+      "status": "ok"
+    },
+    {
+      "slug": "0_Lesson7_4thgrade_RocksMinerals_C_Alligood_Oct08",
+      "project": "ada-compliance-engine-20",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 470.3,
+      "status": "ok"
+    },
+    {
+      "slug": "Lee_Meeting_Officer_Final_5_13_16",
+      "project": "ada-compliance-engine-20",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 135.4,
+      "status": "ok"
+    },
+    {
+      "slug": "01_August_MFC_Briefing_Book_Complete",
+      "project": "ada-compliance-engine-23",
+      "status": "timeout",
+      "elapsed": 600.0
+    },
+    {
+      "slug": "2020-waccamaw-sav-report",
+      "project": "ada-compliance-engine-23",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 118.6,
+      "status": "ok"
+    },
+    {
+      "slug": "Networking_&_Outreach_Efforts_Kate_MacLeod,_ESI_Outreach_Coordinator",
+      "project": "ada-compliance-engine-23",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 49.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01_10_adilet_2020_4",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 151.5,
+      "status": "ok"
+    },
+    {
+      "slug": "01_NRHM_AgIrrig_Data_MoffattNichol_Draft_Report_050709",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 460.0,
+      "status": "ok"
+    },
+    {
+      "slug": "DSCA_Fund_Program_Statistics_March_2021",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 145.4,
+      "status": "ok"
+    },
+    {
+      "slug": "tVolkswagen_Settlement_Community_&_Destination_ZEV_Charging_RFP_Webinar_Slides",
+      "project": "ada-compliance-engine-10",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 30.6,
+      "status": "ok"
+    },
+    {
+      "slug": "002_PFAS_Mass_Load_Protocol_8_31_2020",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 567.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01_IFIM_Aquatic_Habitat_Modeling_Ty_Ziegler",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 55.9,
+      "status": "ok"
+    },
+    {
+      "slug": "CCR_Dam_Rules_09042018",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 42.7,
+      "status": "ok"
+    },
+    {
+      "slug": "Shallow_Draft_Navigation_Channel_Dredging_and_Aquatic_Weed_Fund",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 188.9,
+      "status": "ok"
+    },
+    {
+      "slug": "00_2019_Phase_II_MS4_Training_combined",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 54.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01_January_2012_CPAs",
+      "project": "ada-compliance-engine-5",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 98.6,
+      "status": "ok"
+    },
+    {
+      "slug": "Cliffdale_Landfill_USFWS_\u2013_April_18,_2024",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 12,
+      "elapsed": 488.0,
+      "status": "ok"
+    },
+    {
+      "slug": "Southside_Park_Stream_Sediment_Assessment",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 239.5,
+      "status": "ok"
+    },
+    {
+      "slug": "01_2014_CRFL_Sales_Report",
+      "project": "ada-compliance-engine-14",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 259.9,
+      "status": "ok"
+    },
+    {
+      "slug": "01_NS_FB_New_Watauga_Kickoff_meeting_04_10_2018",
+      "project": "ada-compliance-engine-14",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 82.9,
+      "status": "ok"
+    },
+    {
+      "slug": "East_Carolina_Landfill_Draft_permit",
+      "project": "ada-compliance-engine-14",
+      "score": 14,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 17,
+      "elapsed": 577.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01_CFNM_April_2011_Version_Contract_A",
+      "project": "ada-compliance-engine-24",
+      "status": "timeout",
+      "elapsed": 600.0
+    },
+    {
+      "slug": "2020-white-lake-sav-report",
+      "project": "ada-compliance-engine-24",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 171.6,
+      "status": "ok"
+    },
+    {
+      "slug": "PFAS_Data_Synthesis_Support_STEP_Initiative_2022",
+      "project": "ada-compliance-engine-24",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 171.0,
+      "status": "ok"
+    },
+    {
+      "slug": "(Buffer_Only)_RunningDog_100210_MY1_2023",
+      "project": "ada-compliance-engine-1",
+      "score": 29,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 11,
+      "elapsed": 568.1,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Flow_Scenarios",
+      "project": "ada-compliance-engine-1",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 29.2,
+      "status": "ok"
+    },
+    {
+      "slug": "Belews_Mtg_Officer_Report_FINAL_051316",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 217.8,
+      "status": "ok"
+    },
+    {
+      "slug": "RoxboroMeetingOfficerReport_20160428",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 204.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01_CFNM_Modeling_the_Cape_Fear_Neuse_River_Basin_Operations\u2026",
+      "project": "ada-compliance-engine-25",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 151.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2021-white-lake-sav-report",
+      "project": "ada-compliance-engine-25",
+      "status": "timeout",
+      "elapsed": 600.0
+    },
+    {
+      "slug": "POTS_OPEN_\u2013_ATLANTIC_OCEAN_AND_INTERNAL_COASTAL_AND_JOINT_FISHING_WATERS_WEST_AND_SOUTH_OF_HIGHWAY_58_BRIDGE",
+      "project": "ada-compliance-engine-25",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 279.8,
+      "status": "ok"
+    },
+    {
+      "slug": "01_2018_SAR_SouthernFlounder_2018",
+      "project": "ada-compliance-engine-17",
+      "status": "timeout",
+      "elapsed": 600.0
+    },
+    {
+      "slug": "01_bardeninlet",
+      "project": "ada-compliance-engine-17",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 20.8,
+      "status": "ok"
+    },
+    {
+      "slug": "International_Tie_Disposal_1hrNO2_Model_Review_Report",
+      "project": "ada-compliance-engine-17",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 414.0,
+      "status": "ok"
+    },
+    {
+      "slug": "01_10_adilet_2020_3",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 98.6,
+      "status": "ok"
+    },
+    {
+      "slug": "01_NRBM_Agenda_032509",
+      "project": "ada-compliance-engine-9",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 117.9,
+      "status": "ok"
+    },
+    {
+      "slug": "DSCA_DC_920069_January_2024_Risk_Management_Plan",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 13,
+      "elapsed": 499.3,
+      "status": "ok"
+    },
+    {
+      "slug": "t2023-2024_DMS_Annual_Report",
+      "project": "ada-compliance-engine-9",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 320.6,
+      "status": "ok"
+    },
+    {
+      "slug": "00_BriefingBookMay2020Complete",
+      "project": "ada-compliance-engine-6",
+      "status": "timeout",
+      "elapsed": 600.0
+    },
+    {
+      "slug": "01_January_2013_CPAs",
+      "project": "ada-compliance-engine-6",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 144.1,
+      "status": "ok"
+    },
+    {
+      "slug": "DC790003_February_2022_Risk_Management_Plan",
+      "project": "ada-compliance-engine-6",
+      "score": 29,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 18,
+      "elapsed": 462.3,
+      "status": "ok"
+    },
+    {
+      "slug": "SuttonMeetingOfficerReport_20160428",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 112.4,
+      "status": "ok"
+    }
+  ]
+}
