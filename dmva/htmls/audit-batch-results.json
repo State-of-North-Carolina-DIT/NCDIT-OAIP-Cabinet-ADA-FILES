@@ -1,18 +1,6 @@
 {
   "timestamp": "2026-03-26T16:45:23",
   "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dmva/htmls",
-  "projects": [
-    "ada-compliance-engine-1",
-    "ada-compliance-engine-2",
-    "ada-compliance-engine-3",
-    "ada-compliance-engine-4",
-    "ada-compliance-engine-5",
-    "ada-compliance-engine-6",
-    "ada-compliance-engine-7",
-    "ada-compliance-engine-8",
-    "ada-compliance-engine-9",
-    "ada-compliance-engine-10"
-  ],
   "total_docs": 99,
   "ok": 99,
   "failed": 0,
