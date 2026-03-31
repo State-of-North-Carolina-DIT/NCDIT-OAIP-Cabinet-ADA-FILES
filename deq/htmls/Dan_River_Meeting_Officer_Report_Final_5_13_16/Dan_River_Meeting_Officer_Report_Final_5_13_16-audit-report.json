@@ -1,3 +1,132 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f9c54e4440d40604d693d6227b7c32a34fc438d095ce13d6e17deb426753c2a
-size 5488
+{
+  "document_id": "Dan_River_Meeting_Officer_Report_Final_5_13_16",
+  "audited_at": "2026-03-31T03:40:06.228823Z",
+  "source_files": {
+    "extraction_json": "Dan_River_Meeting_Officer_Report_Final_5_13_16.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "Dan_River_Meeting_Officer_Report_Final_5_13_16.html"
+  },
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
+  "fidelity_content": 0.9923664122137404,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 0.2857142857142857,
+  "routing": "reject",
+  "routing_label": "Reject",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
+  "concerns": [
+    {
+      "description": "Images missing or broken",
+      "severity": "critical",
+      "analysis": "The source PDF contains a meaningful agency logo ('NC Water Resources ENVIRONMENTAL QUALITY') at the top left of the first page. While an <img> tag is present in the HTML output, the image manifest explicitly indicates that the base64 data for this image is corrupt ('valid': false, 'error': 'No module named \\'PIL\\''). Per the evaluation instructions, this means the image is broken and will not render, resulting in a failure for this check.",
+      "source_pdf_quote": "NC Water Resources ENVIRONMENTAL QUALITY logo at the top left of page 1.",
+      "output_quote": "The image manifest indicates \"valid\": false and \"error\": \"No module named 'PIL'\" for the logo image.",
+      "location": "Page 1",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": true
+    },
+    {
+      "description": "Header/footer elements retained in output (4): State of North Carolina | Environmental Quality | Water Reso; Page 2 of 4; Page 3 of 4",
+      "severity": "major",
+      "analysis": "header_footer_count=4. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source document uses bold and underline formatting to emphasize the list item labels on pages 3 and 4 (e.g., 'Environmental Justice', 'Risk Classification', 'Costs', 'Landfills'). In the output JSON, this formatting is completely lost, and the text is rendered without any emphasis markers.",
+      "source_pdf_quote": "List item prefixes are bold and underlined: 'Environmental Justice', 'Risk Classification', 'Not Applicable', 'Beneficial Reuse', 'Costs', 'Excavation', 'Groundwater Assessments', 'Landfills', 'Private Well Issues'",
+      "output_quote": "The text lacks any emphasis formatting, e.g.: \"Environmental Justice – One speaker...\", \"Risk Classification – A citizen...\"",
+      "location": "Pages 3 and 4, unordered list items",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
+      "description": "Mixed numbering types at same list level (1 list(s)): p1:letter+roman — possible sub-point flattening",
+      "severity": "minor",
+      "analysis": "flat_lists=1. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S5",
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 2,
+  "total_critical": 1,
+  "total_major": 0,
+  "total_minor": 1,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.4,
+      "fidelity_content": 0.9923664122137404,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_available": true,
+      "shingling_recall": 0.9498847926267281,
+      "shingling_precision": 0.9809637120761452,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 0.9572881355932203,
+      "baseline_words": 1475,
+      "gemini_words": 1412,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": 0.0,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "converge",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 1
+    },
+    "processing_ms": 95033,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

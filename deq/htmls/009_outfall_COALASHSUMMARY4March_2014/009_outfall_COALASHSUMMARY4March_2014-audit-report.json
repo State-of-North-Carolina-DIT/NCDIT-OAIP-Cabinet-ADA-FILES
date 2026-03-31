@@ -1,3 +1,109 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:782be50f922382f2ceb9314604cf01edbb3e0f813d6bd47e18c16dce21da66a0
-size 3374
+{
+  "document_id": "009_outfall_COALASHSUMMARY4March_2014",
+  "audited_at": "2026-03-31T03:39:45.774657Z",
+  "source_files": {
+    "extraction_json": "009_outfall_COALASHSUMMARY4March_2014.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "009_outfall_COALASHSUMMARY4March_2014.html"
+  },
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 1.0,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The LLM fidelity evaluation reports a perfect score with no defects found, suggesting excellent visual and content preservation. However, programmatic detectors identified two major structural issues: a table data row incorrectly marked as a header, and a footnote converted into an unordered list. Per the routing rules, 1-5 major defects require HUMAN_REVIEW.",
+  "decision_method": "llm_final_decider",
+  "concerns": [
+    {
+      "description": "Data row marked as header: 1 table(s) have numeric/data values in the header row",
+      "severity": "major",
+      "analysis": "data_as_header=1. Examples: p1: [2/14/2014, 2/17/2014, 2/26/2014]. Header rows should contain column labels, not data values.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S3",
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Footnote(s) converted to bulleted list: 1 unordered list(s) after table(s) appear to be footnotes",
+      "severity": "major",
+      "analysis": "footnote_as_list_count=1. Examples: 1 item(s): \"Aluminum is pH and hardness dependent and is based\". Table footnotes (often marked with *, †, ‡) were converted to <ul><li> elements instead of paragraphs. This changes the semantic meaning — screen readers announce them as list items rather than explanatory notes.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "Check the table headers to ensure data values (e.g., dates like 2/14/2014) are not tagged as <th>",
+    "Review the list following the table and convert the bulleted items to standard paragraph text if they are meant to be footnotes"
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 0,
+  "total_critical": 0,
+  "total_major": 0,
+  "total_minor": 0,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 1.0,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_available": true,
+      "shingling_recall": 0.97719651240778,
+      "shingling_precision": 0.9785090664875755,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 1.0,
+      "baseline_words": 536,
+      "gemini_words": 536,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": null,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "partial_disagree",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 0
+    },
+    "processing_ms": 253941,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

@@ -1,3 +1,132 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f36d17742aa9693c837b36299db138351a2c3085ef3bc90f2e4a7efe04797b5
-size 6609
+{
+  "document_id": "01_2012_CRFL_Data_Delivery_Specifications",
+  "audited_at": "2026-03-31T03:37:37.019340Z",
+  "source_files": {
+    "extraction_json": "01_2012_CRFL_Data_Delivery_Specifications.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "01_2012_CRFL_Data_Delivery_Specifications.html"
+  },
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
+  "fidelity_content": 0.8015267175572519,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 0.2857142857142857,
+  "routing": "reject",
+  "routing_label": "Reject",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
+  "concerns": [
+    {
+      "description": "Significant text omission within a section",
+      "severity": "critical",
+      "analysis": "In Appendix A (Page 3), the source document contains an example data set with 41 lines of CSV-style records. The extraction pipeline erroneously removed the vast majority of these lines (likely treating them as duplicates), leaving only 6 lines of data in the output.",
+      "source_pdf_quote": "41 lines of example data starting with '0111328, 140, 1, 6, 12, 0004300700, 25.4, . , 15, 430, 8835020301, 0, 21, 1, 266,' and ending with '0111329, 140, 1, 8, 8, 0004300700, 28.5, . , 17, 430, 8835020301, 0, 11, 1, 220,'",
+      "output_quote": "Only 6 paragraphs of data are present, and the validation metadata indicates 'duplicates_removed: 41'.",
+      "location": "Page 3, Appendix A",
+      "source": "fidelity_llm",
+      "check_id": "C5",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
+      "description": "Images missing or broken",
+      "severity": "critical",
+      "analysis": "Page 4 of the source document contains a meaningful flowchart diagram illustrating the relationship between different record types (Environmental Data, Gear Data, Replicate Data, etc.). The image manifest explicitly indicates that the base64 data for the image extracted on page 4 is invalid/corrupt (\"valid\": false). Consequently, this image will not render, meaning critical diagrammatic information is lost.",
+      "source_pdf_quote": "Flowchart diagram showing 'Environmental Data Record Type 1', 'Gear Data Record Type 7', 'Replicate Data Record Type 2', etc.",
+      "output_quote": "<img src=\"[base64 image stripped for token budget]\" alt=\"A completely blank white image.\"> (Image marked as invalid in manifest)",
+      "location": "Page 4",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": true
+    },
+    {
+      "description": "Table header markup issues: 1 table(s) have a data row marked as header: \"Record Type 1\"",
+      "severity": "major",
+      "analysis": "data_in_th=0, datarow_as_header=1. Tables use <th> for data values (misrepresenting data as headers) or have a data row mismarked as a header row. Screen readers rely on <th> to announce column/row context.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source document contains a distinctly underlined sentence at the bottom of Page 1 regarding the N. C. Public Records Act. In the output JSON, this text appears as a standard paragraph without any markdown or HTML indicating underline formatting.",
+      "source_pdf_quote": "CRFL funding proposals, reports, and research data are subject to the N. C. Public Records Act (N.C.G.S. § 132-1 et seq). (Appears underlined in source)",
+      "output_quote": "\"CRFL funding proposals, reports, and research data are subject to the N. C. Public Records Act (N.C.G.S. § 132-1 et seq).\" (No underline preservation)",
+      "location": "Page 1, bottom paragraph under 'Background'",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 3,
+  "total_critical": 2,
+  "total_major": 0,
+  "total_minor": 1,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.4,
+      "fidelity_content": 0.8015267175572519,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_available": true,
+      "shingling_recall": 0.9620977353992849,
+      "shingling_precision": 0.9945786101527846,
+      "duplication_ratio": 0.005321245565628695,
+      "word_count_ratio": 0.7083333333333334,
+      "baseline_words": 2496,
+      "gemini_words": 1768,
+      "table_count_ratio": null,
+      "image_count_ratio": null,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": 0.0,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "converge",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 1
+    },
+    "processing_ms": 125538,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

@@ -1,3 +1,109 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:809819e06590a721879c193fb6cb896997993241927b8c159f1ab9effc51b8aa
-size 4537
+{
+  "document_id": "DSCA_November_2023_Meeting_Minutes",
+  "audited_at": "2026-03-31T03:43:29.885719Z",
+  "source_files": {
+    "extraction_json": "DSCA_November_2023_Meeting_Minutes.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "DSCA_November_2023_Meeting_Minutes.html"
+  },
+  "quality_score": 97,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9727,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 0.9091,
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The conversion preserved content exceptionally well with shingling recall at 0.997 and a perfect LLM content score. However, a major structural defect was identified where a continuous Roman numeral list (I-X) was improperly fractured into separate lists, an H2 heading, and a plain paragraph. Based on the presence of 1 major defect, the document is routed to HUMAN_REVIEW to correct the semantic list structure.",
+  "decision_method": "llm_final_decider",
+  "concerns": [
+    {
+      "description": "Lists converted incorrectly",
+      "severity": "major",
+      "analysis": "The source document uses a continuous Roman numeral list (I through X) to organize the meeting minutes. However, the output severely fractures this structure. Items I-IV are rendered as a list on Page 1. Item V is incorrectly rendered as an H2 heading on Page 2. Item VI is incorrectly rendered as a plain paragraph on Page 2. Items VII-X are then rendered as a new list on Page 3. Converting numbered list items into plain headings and paragraphs breaks the list continuity and semantic structure.",
+      "source_pdf_quote": "V. Fund & Site Statistics\n[...]\nVI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer",
+      "output_quote": "{\n  \"type\": \"heading\",\n  \"level\": 2,\n  \"text\": \"V. Fund & Site Statistics\"\n}\n[...]\n{\n  \"type\": \"paragraph\",\n  \"text\": \"VI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer, head of the remediation unit...\"\n}",
+      "location": "Page 2",
+      "source": "fidelity_llm",
+      "check_id": "S5",
+      "fidelity_dimension": "structural",
+      "corroborated": true
+    },
+    {
+      "description": "1 bare URL(s) in text not converted to hyperlinks: https://www.deq.nc.gov/about/divisions/waste-management/superfund-section/dry-cl",
+      "severity": "minor",
+      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "Consolidate the fractured Roman numeral list (items I through X) into a single, continuous semantic list structure.",
+    "Convert the bare URL into an active, clickable hyperlink."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 1,
+  "total_critical": 0,
+  "total_major": 1,
+  "total_minor": 0,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 0.9727,
+      "raw_score": 0.9727,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.9727,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 0.9091,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_available": true,
+      "shingling_recall": 0.9966832504145937,
+      "shingling_precision": 0.9942100909842845,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 0.9986366734832992,
+      "baseline_words": 1467,
+      "gemini_words": 1465,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": null,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "partial_disagree",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 1
+    },
+    "processing_ms": 122011,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

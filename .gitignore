@@ -1,1 +1,7 @@
 .DS_Store
+*-audit-report-v*.json
+audit-batch-results-v*.json
+AUDITOR-REPORT-v*.md
+AUDITOR-REPORT.md
+audit-batch-results.json
+*-human-vs-auditor*.csv

@@ -1,3 +1,120 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d0be052e0cebd9f0be3b1f5f9b497852f09ad01586a2829ca8119bbf3f785d6
-size 3602
+{
+  "document_id": "2019-white-lake-sav-report",
+  "audited_at": "2026-03-31T03:38:05.692165Z",
+  "source_files": {
+    "extraction_json": "2019-white-lake-sav-report.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "2019-white-lake-sav-report.html"
+  },
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 0.2857142857142857,
+  "routing": "reject",
+  "routing_label": "Reject",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
+  "concerns": [
+    {
+      "description": "Images missing or broken",
+      "severity": "critical",
+      "analysis": "The image manifest indicates that all extracted images are corrupt ('valid': false due to missing PIL module), meaning none of the images will render correctly in the browser. Furthermore, several meaningful charts/maps present in the source PDF (Figures 5, 6, 7, 8, and 9 on pages 5 through 7) are completely omitted from the HTML output; there are no corresponding <figure> or <img> tags for them.",
+      "source_pdf_quote": "Figure 5. Fontinalis was detected at 65 sample points in 2018. (Map image on page 5)",
+      "output_quote": "The HTML output ends its figures after Figure 4 and skips directly to Figure 10, completely omitting Figures 5, 6, 7, 8, and 9.",
+      "location": "Pages 3-8 / HTML <figure> elements",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": true
+    },
+    {
+      "description": "Table split across page break(s): 1 table(s) with repeated headers across consecutive pages",
+      "severity": "major",
+      "analysis": "split_table_count=1. Examples: pages 8-9: 5 cols (species, 2014, 2017...). Tables spanning multiple pages were extracted as separate table elements with duplicated header rows. The HTML output will show multiple tables instead of one continuous table — a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Table header markup issues: 2 table(s) with 3+ rows have no <th> header cells",
+      "severity": "minor",
+      "analysis": "data_in_th_time=0, no_th_tables=2. Minor semantic markup issues: tables lack <th> elements or use time values as headers. These affect screen reader context but are less severe than data misrepresentation.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 1,
+  "total_critical": 1,
+  "total_major": 0,
+  "total_minor": 0,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.4,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_available": true,
+      "shingling_recall": 0.9382978723404255,
+      "shingling_precision": 0.9708310401761144,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 0.8456284153005464,
+      "baseline_words": 732,
+      "gemini_words": 619,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": 0.0,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "converge",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 1
+    },
+    "processing_ms": 121169,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

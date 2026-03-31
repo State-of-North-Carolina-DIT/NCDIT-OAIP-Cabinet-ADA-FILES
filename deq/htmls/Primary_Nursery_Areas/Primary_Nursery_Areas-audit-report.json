@@ -1,3 +1,120 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:35c826da2ab7218622500762d1176cf830bea5057ba7c59e051acac71edb283f
-size 6106
+{
+  "document_id": "Primary_Nursery_Areas",
+  "audited_at": "2026-03-31T03:44:58.992154Z",
+  "source_files": {
+    "extraction_json": "Primary_Nursery_Areas.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "Primary_Nursery_Areas.html"
+  },
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
+  "fidelity_content": 0.8091603053435115,
+  "fidelity_structural": 0.8182,
+  "fidelity_visual": 0.8571428571428572,
+  "routing": "reject",
+  "routing_label": "Reject",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
+  "concerns": [
+    {
+      "description": "Significant text omission within a section",
+      "severity": "critical",
+      "analysis": "There is a massive text omission starting on page 14. Due to an extraction artifact/hallucination failure at item (f) under 'Bogue Sound - Bogue Inlet Area', the model completely drops the remaining half of the page. This includes multiple sub-items for Bogue Sound ((i), (ii), (g), (h), (i)) and the beginning of the 'New River Area' section ((13) and paragraph (a)).",
+      "source_pdf_quote": "(i) Pettiford Creek - east of a line beginning on the north shore at a point 34° 42.8670' N ... [through] ... (13) New River Area: (a) Salliers Bay area - all waters north and northwest of the IWW beginning at a point on the shoreline 34° 37.0788' N - 77° 12.5350' W; running easterly to a point near Beacon \"58\" at a point 34° 37.9670' N - 77° 12.3060' W; running along the IWW near Cedar Point to a",
+      "output_quote": "The text abruptly stops after the leaked internal monologue for item (f) ('(f) White Oak River...') and jumps directly to the continuation of the sentence from the top of page 15 ('point 34° 33.1860' N - 77° 20.4370' W...'). All intervening text is missing.",
+      "location": "Page 14 / Bogue Sound - Bogue Inlet Area & New River Area",
+      "source": "fidelity_llm",
+      "check_id": "C5",
+      "fidelity_dimension": "content",
+      "corroborated": true
+    },
+    {
+      "description": "Content duplicated",
+      "severity": "major",
+      "analysis": "The output contains multiple severe instances of content duplication. On page 3 of the JSON, the text block beginning with '(a) Fortescue Creek' and ending with '(viii) Runway Creek' is repeated 8 times in a row. Additionally, on page 13 of the JSON, the text for item '(f) White Oak River' is repeated multiple times alongside AI internal monologue/extraction artifacts ('Wait, extracting properly into children array as seen below...').",
+      "source_pdf_quote": "(a) Fortescue Creek: (i) Headwaters of Fortescue Creek - southeast of a line beginning on the south shore...",
+      "output_quote": "\"text\": \"(a) Fortescue Creek:- southeast of a line beginning on the south shore at a point 35° 25.5379' N - 76° 30.6923' W;...\" (This entire block appears 8 consecutive times in the children array of \"In the Pungo River Area:\")",
+      "location": "Pages 3 and 13 (JSON pages 3 and 13)",
+      "source": "fidelity_llm",
+      "check_id": "S1",
+      "fidelity_dimension": "structural",
+      "corroborated": true
+    },
+    {
+      "description": "Significant word count loss: 31% of baseline",
+      "severity": "major",
+      "analysis": "baseline=13694, output=4307",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 2,
+  "total_critical": 1,
+  "total_major": 1,
+  "total_minor": 0,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.4,
+      "fidelity_content": 0.8091603053435115,
+      "fidelity_structural": 0.8182,
+      "fidelity_visual": 0.8571428571428572,
+      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_available": true,
+      "shingling_recall": 0.5386197146896285,
+      "shingling_precision": 0.9893767705382436,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 0.3145173068497152,
+      "baseline_words": 13694,
+      "gemini_words": 4307,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": null,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "converge",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 2
+    },
+    "processing_ms": 363324,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

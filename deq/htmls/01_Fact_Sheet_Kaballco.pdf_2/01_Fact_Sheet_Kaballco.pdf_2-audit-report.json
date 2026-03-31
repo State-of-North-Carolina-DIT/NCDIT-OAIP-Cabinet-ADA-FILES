@@ -1,3 +1,121 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fb3c3c401e5d267ac256140de7275de402c4d5bd864e8958eba4105a08056fa9
-size 4230
+{
+  "document_id": "01_Fact_Sheet_Kaballco.pdf_2",
+  "audited_at": "2026-03-31T03:36:46.431839Z",
+  "source_files": {
+    "extraction_json": "01_Fact_Sheet_Kaballco.pdf_2.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "01_Fact_Sheet_Kaballco.pdf_2.html"
+  },
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 1.0,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The LLM fidelity signals show perfect scores with no defects, and text comparison metrics are very strong. However, programmatic detectors identified 1 major structural issue: 3 bare URLs were not converted to accessible hyperlinks. Per count-based routing rules, 1 major defect requires HUMAN_REVIEW to resolve the accessibility issue.",
+  "decision_method": "llm_final_decider",
+  "concerns": [
+    {
+      "description": "3 bare URL(s) in text not converted to hyperlinks: https://deq.nc.gov/about/divisions/waste-management/laserfiche.; (caroline.bari@ncdenr.gov; caroline.bari@deq.nc.gov",
+      "severity": "major",
+      "analysis": "bare_url_count=3. URLs appear as plain text instead of clickable links.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Page number artifacts retained: Page 1 of 2",
+      "severity": "minor",
+      "analysis": "page_x_of_y_count=1, total=0",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Header/footer elements retained in output (1): Page 1 of 2\n6/28/2023",
+      "severity": "minor",
+      "analysis": "header_footer_count=1. Header/footer elements are present in extraction data. This is common in multi-page government PDFs and is typically cosmetic — the renderer strips them from HTML output.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "Convert the bare URLs into functional, clickable hyperlinks",
+    "Ensure header/footer artifacts are stripped from the final HTML if necessary"
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 0,
+  "total_critical": 0,
+  "total_major": 0,
+  "total_minor": 0,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 1.0,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_available": true,
+      "shingling_recall": 0.9789823008849557,
+      "shingling_precision": 0.9943820224719101,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 0.976,
+      "baseline_words": 500,
+      "gemini_words": 488,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": null,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "partial_disagree",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 0
+    },
+    "processing_ms": 74411,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

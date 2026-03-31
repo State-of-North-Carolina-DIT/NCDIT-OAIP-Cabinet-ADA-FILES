@@ -1,3 +1,109 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ed7ac600a90fbe1819eaaeb3527bf1929a1a04892bae3db319c2ffc7283db7dd
-size 3987
+{
+  "document_id": "01_NRBM_Agenda_032509",
+  "audited_at": "2026-03-31T03:39:05.324650Z",
+  "source_files": {
+    "extraction_json": "01_NRBM_Agenda_032509.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "01_NRBM_Agenda_032509.html"
+  },
+  "quality_score": 97,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9727,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 0.9091,
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The LLM fidelity signals identified a major structural issue where bulleted lists inside table cells were incorrectly converted to plain text using literal bullet characters, rather than semantic HTML lists. Under the binding count-based routing thresholds, a single major defect requires a routing to HUMAN_REVIEW. Otherwise, content preservation is excellent with high programmatic text match scores.",
+  "decision_method": "llm_final_decider",
+  "concerns": [
+    {
+      "description": "Lists converted incorrectly",
+      "severity": "major",
+      "analysis": "The source document contains multiple unordered (bulleted) lists detailing the sub-topics for each agenda item. In the output, these lists are extracted as plain text strings with literal Unicode bullet characters ('•') separated by newlines within the table cells, rather than being converted into proper list structures (e.g., Markdown unordered lists). This will cause the content to be rendered as plain text paragraphs rather than semantic HTML lists, which is a loss of structural meaning.",
+      "source_pdf_quote": "• Cost share payments received.\n• Funds expended.",
+      "output_quote": "Project Finance Update\n• Cost share payments received.\n• Funds expended.",
+      "location": "Table, Row 2, Column 2",
+      "source": "fidelity_llm",
+      "check_id": "S5",
+      "fidelity_dimension": "structural",
+      "corroborated": true
+    },
+    {
+      "description": "Table header markup issues: 1 table(s) have time values in <th> cells: \"10:00-10:05\"",
+      "severity": "minor",
+      "analysis": "data_in_th_time=1, no_th_tables=0. Minor semantic markup issues: tables lack <th> elements or use time values as headers. These affect screen reader context but are less severe than data misrepresentation.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "Review table cells and convert literal bulleted text into proper semantic HTML unordered lists (<ul>/<li>).",
+    "Check table headers to ensure structural semantics are correctly applied to time slots versus column labels."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 1,
+  "total_critical": 0,
+  "total_major": 1,
+  "total_minor": 0,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.9,
+    "score_breakdown": {
+      "fidelity_composite": 0.9727,
+      "raw_score": 0.9727,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.9727,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 0.9091,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_available": true,
+      "shingling_recall": 0.9552906110283159,
+      "shingling_precision": 0.9482248520710059,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 1.0,
+      "baseline_words": 141,
+      "gemini_words": 141,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": null,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "partial_disagree",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 1
+    },
+    "processing_ms": 117176,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

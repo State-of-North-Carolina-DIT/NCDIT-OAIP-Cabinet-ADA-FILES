@@ -1,3 +1,94 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dc3fbf47fc003a885e96935c9dbc9fb2ebaba51479a231672924d0dd982f0e63
-size 2675
+{
+  "document_id": "01_2018_Agenda_FB_Hydrologics_Mtg_2",
+  "audited_at": "2026-03-31T03:37:53.735132Z",
+  "source_files": {
+    "extraction_json": "01_2018_Agenda_FB_Hydrologics_Mtg_2.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "01_2018_Agenda_FB_Hydrologics_Mtg_2.html"
+  },
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 1.0,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 1.0,
+  "routing": "auto_approve",
+  "routing_label": "Auto-Approve",
+  "reasoning": "The document has perfect LLM fidelity scores (1.0 across all categories) and very strong programmatic text preservation metrics (shingling recall and precision both above 0.97). The only identified issue is a minor programmatic observation regarding missing table header markup. Since there are no major or critical defects and minor issues are well below the threshold, the document is safe for automatic approval.",
+  "decision_method": "llm_final_decider",
+  "concerns": [
+    {
+      "description": "Table header markup issues: 1 table(s) with 3+ rows have no <th> header cells",
+      "severity": "minor",
+      "analysis": "data_in_th_time=0, no_th_tables=1. Minor semantic markup issues: tables lack <th> elements or use time values as headers. These affect screen reader context but are less severe than data misrepresentation.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 0,
+  "total_critical": 0,
+  "total_major": 0,
+  "total_minor": 0,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.99,
+    "score_breakdown": {
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 1.0,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_available": true,
+      "shingling_recall": 0.977366255144033,
+      "shingling_precision": 0.979381443298969,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 1.0,
+      "baseline_words": 90,
+      "gemini_words": 90,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": null,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "converge_with_minors",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 0
+    },
+    "processing_ms": 141669,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

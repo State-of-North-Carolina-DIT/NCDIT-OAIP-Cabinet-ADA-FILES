@@ -1,3 +1,132 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ea521ac42467d4f41734c183007af28aa57712d5bcef0ec9f7ecbddfba6775b
-size 4384
+{
+  "document_id": "Southside_Park_Landfill_Surface_Water_Assessment",
+  "audited_at": "2026-03-31T03:45:34.082140Z",
+  "source_files": {
+    "extraction_json": "Southside_Park_Landfill_Surface_Water_Assessment.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "Southside_Park_Landfill_Surface_Water_Assessment.html"
+  },
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
+  "fidelity_content": 0.9923664122137404,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 0.2857142857142857,
+  "routing": "reject",
+  "routing_label": "Reject",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
+  "concerns": [
+    {
+      "description": "Images missing or broken",
+      "severity": "critical",
+      "analysis": "The source PDF is primarily a large, detailed GIS map showing sample locations, parcels, and topographic features. It also contains an agency logo in the top right corner. The HTML output contains no <img> elements whatsoever; instead, it provides a plain text placeholder (`[Image: Site map of Southside Park Landfill...]`). Because this meaningful image (the entire map) and the logo are completely missing, this is a critical defect. Furthermore, the image manifest indicates a 0-length file for t",
+      "source_pdf_quote": "Large GIS map of the Southside Park Landfill and the agency logo in the top right corner.",
+      "output_quote": "<p>[Image: Site map of Southside Park Landfill showing surface water and sediment sample locations...]</p> (No actual <img> element is present)",
+      "location": "Page 1",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": false
+    },
+    {
+      "description": "Header/footer elements retained in output (1): Drawing Path: T:\\Raleigh-1050\\Projects\\2021\\2115952_NCDEQ_So",
+      "severity": "major",
+      "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source document uses underlining to emphasize the table headers (e.g., 'SW-1/DUP-6102025-SD' and 'ug/L') as well as the 'Risk Assessment' section within each table. This underlining is entirely lost in the output JSON, which presents the text as plain strings.",
+      "source_pdf_quote": "Underlined text: \"Risk Assessment\"",
+      "output_quote": "\"Risk Assessment\"",
+      "location": "Data tables SW-1 through SW-5",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
+      "description": "Table header markup issues: 1 table(s) with 3+ rows have no <th> header cells",
+      "severity": "minor",
+      "analysis": "data_in_th_time=0, no_th_tables=1. Minor semantic markup issues: tables lack <th> elements or use time values as headers. These affect screen reader context but are less severe than data misrepresentation.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 2,
+  "total_critical": 1,
+  "total_major": 0,
+  "total_minor": 1,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.4,
+      "fidelity_content": 0.9923664122137404,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_available": true,
+      "shingling_recall": 0.9020979020979021,
+      "shingling_precision": 0.9889267461669506,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 0.9384615384615385,
+      "baseline_words": 260,
+      "gemini_words": 244,
+      "table_count_ratio": null,
+      "image_count_ratio": 0.0022271714922048997,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": null,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "converge",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 0
+    },
+    "processing_ms": 135626,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

@@ -1,3 +1,144 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1355cc2e765dc5fc57824d2c97a484b599e612196fe11dcf788254d7541ea0b3
-size 6395
+{
+  "document_id": "Allen_Meeting_Officer_Report_20160422",
+  "audited_at": "2026-03-31T03:38:13.093232Z",
+  "source_files": {
+    "extraction_json": "Allen_Meeting_Officer_Report_20160422.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "Allen_Meeting_Officer_Report_20160422.html"
+  },
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
+  "fidelity_content": 0.9923664122137404,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 0.2857142857142857,
+  "routing": "reject",
+  "routing_label": "Reject",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
+  "concerns": [
+    {
+      "description": "Images missing or broken",
+      "severity": "critical",
+      "analysis": "The source PDF contains a logo on the first page for 'NC Waste Management Environmental Quality' and a digital signature image for Larry Frost. While the HTML includes an <img> tag for the NC logo, the provided image manifest indicates that this image's base64 data is corrupt ('\"valid\": false', '\"error\": \"No module named 'PIL'\"'), meaning it will appear as a broken image icon to the user. Additionally, the signature image from page 1 is entirely absent from the HTML output. Both of these are mea",
+      "source_pdf_quote": "NC Waste Management Environmental Quality logo at top left of page 1, and digital signature for Larry Frost in the 'From' block on page 1.",
+      "output_quote": "Image manifest shows '\"valid\": false' for the logo, and the signature image is missing entirely from the HTML.",
+      "location": "Page 1",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": true
+    },
+    {
+      "description": "Header/footer elements retained in output (5): State of North Carolina | Environmental Quality | Waste Mana; Meeting Officer’s Report Coal Ash Impoundment Classification; Meeting Officer’s Report\nCoal Ash Impoundment Classification",
+      "severity": "major",
+      "analysis": "header_footer_count=5. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source document contains the word 'MEMORANDUM' which is visibly underlined. The output preserves it as a heading (level 1), but lacks any indication or markdown for the underline, resulting in a loss of the specific visual emphasis present in the source.",
+      "source_pdf_quote": "MEMORANDUM (underlined)",
+      "output_quote": "\"text\": \"MEMORANDUM\"",
+      "location": "Page 1, Heading Level 1",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
+      "description": "Page number artifacts retained: Page 3 of 5, Page 5 of 5",
+      "severity": "minor",
+      "analysis": "page_x_of_y_count=2, total=0",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
+      "severity": "minor",
+      "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S5",
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 2,
+  "total_critical": 1,
+  "total_major": 0,
+  "total_minor": 1,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.4,
+      "fidelity_content": 0.9923664122137404,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_available": true,
+      "shingling_recall": 0.9171696847753186,
+      "shingling_precision": 0.9895079594790159,
+      "duplication_ratio": 0.02348721508735393,
+      "word_count_ratio": 0.9077514413837284,
+      "baseline_words": 1561,
+      "gemini_words": 1417,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": 0.0,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "converge",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 1
+    },
+    "processing_ms": 86003,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

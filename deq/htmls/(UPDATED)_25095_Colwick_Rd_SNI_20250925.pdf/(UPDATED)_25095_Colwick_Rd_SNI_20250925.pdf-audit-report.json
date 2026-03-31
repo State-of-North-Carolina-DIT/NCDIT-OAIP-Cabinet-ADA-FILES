@@ -1,3 +1,134 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:60f69b77ade56a972c319427d7d0c1423b32769ba87a694015cb896c85d8a6b9
-size 3837
+{
+  "document_id": "(UPDATED)_25095_Colwick_Rd_SNI_20250925.pdf",
+  "audited_at": "2026-03-31T03:36:48.794526Z",
+  "source_files": {
+    "extraction_json": "(UPDATED)_25095_Colwick_Rd_SNI_20250925.pdf.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "(UPDATED)_25095_Colwick_Rd_SNI_20250925.pdf.html"
+  },
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9973,
+  "fidelity_content": 0.9923664122137404,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The document has high text preservation scores (shingling recall 0.985, fidelity composite 0.9973), but programmatic detectors identified a major structural accessibility defect: retained header/footer elements. According to the routing rules, the presence of one major programmatic defect mandates a HUMAN_REVIEW to ensure the structural issues are corrected.",
+  "decision_method": "llm_final_decider",
+  "concerns": [
+    {
+      "description": "Header/footer elements retained in output (1): 25095-21-060/Colwick Road Property/202500925",
+      "severity": "major",
+      "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source document includes an underlined date ('October 1, 2025'). The output uses markdown for bold but does not preserve the underline, which represents genuine structural emphasis loss.",
+      "source_pdf_quote": "October 1, 2025 (underlined and bolded)",
+      "output_quote": "**October 1, 2025** (no underline)",
+      "location": "Third paragraph",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
+      "description": "Displaced hyperlinks: 2 link(s) extracted as standalone elements instead of inline text",
+      "severity": "minor",
+      "analysis": "standalone_links=2, examples=['mailto:shirley.liggins@deq.nc.gov', 'https://edocs.deq.nc.gov/WasteManagement/']. Links should be inline within paragraphs, not separate blocks.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "1 bare URL(s) in text not converted to hyperlinks: lonnavines@cmlibrary.org",
+      "severity": "minor",
+      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "Remove the retained header/footer text from the HTML output",
+    "Correct standalone links so they are inline within paragraphs",
+    "Convert bare URLs (lonnavines@cmlibrary.org) to proper clickable hyperlinks"
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 1,
+  "total_critical": 0,
+  "total_major": 0,
+  "total_minor": 1,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.9,
+    "score_breakdown": {
+      "fidelity_composite": 0.9973,
+      "raw_score": 0.9973,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.9973,
+      "fidelity_content": 0.9923664122137404,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_available": true,
+      "shingling_recall": 0.9847288046340179,
+      "shingling_precision": 0.9873284054910243,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 0.9963898916967509,
+      "baseline_words": 554,
+      "gemini_words": 552,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 2,
+      "output_link_count": 2,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": null,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "partial_disagree",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 0
+    },
+    "processing_ms": 77033,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

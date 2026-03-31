@@ -1,3 +1,108 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aa3b8e6065871209bc528309aa4680c2e94fd6bab0d512c65676d4b2f348f0c0
-size 4151
+{
+  "document_id": "0_JLA4_Email_Announcement_20160316",
+  "audited_at": "2026-03-31T03:40:48.093222Z",
+  "source_files": {
+    "extraction_json": "0_JLA4_Email_Announcement_20160316.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "0_JLA4_Email_Announcement_20160316.html"
+  },
+  "quality_score": 97,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9727,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 0.9091,
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "Both the LLM fidelity evaluation and the programmatic detector independently identified that hyperlinks were extracted as standalone elements rather than inline within the text flow. This represents a major structural accessibility issue. Under count-based routing rules, 1-5 major defects requires a routing of HUMAN_REVIEW.",
+  "decision_method": "llm_final_decider",
+  "concerns": [
+    {
+      "description": "Link text pulled over but not hyperlinked",
+      "severity": "major",
+      "analysis": "In the source document, the word 'here' at the end of the two meeting location paragraphs is a clickable hyperlink pointing to Google Maps. In the output JSON, this text is extracted inline as a plain text paragraph (`{\"type\": \"paragraph\", \"text\": \"here\"}`). While the link annotations themselves were extracted and appended to the end of the document as separate elements, the inline text where the links naturally occur in the reading flow has lost its hyperlink styling/wrapper.",
+      "source_pdf_quote": "A map of the location for this meeting is available here.",
+      "output_quote": "{\"type\": \"paragraph\", \"text\": \"here\"}",
+      "location": "Paragraphs 10-11 and 13-14",
+      "source": "fidelity_llm",
+      "check_id": "S8",
+      "fidelity_dimension": "structural",
+      "corroborated": false
+    },
+    {
+      "description": "Displaced hyperlinks: 4 link(s) extracted as standalone elements instead of inline text",
+      "severity": "major",
+      "analysis": "standalone_links=4, examples=['http://deq.nc.gov/about/divisions/water-resources/planning/b', 'mailto:jla4-cfrwse@lists.ncmail.net', 'https://www.google.com/maps/place/Chatham+Community+Library/']. Links should be inline within paragraphs, not separate blocks.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "Locate standalone link elements and embed them correctly inline within the text flow (e.g., 'here' hyperlinks)."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 1,
+  "total_critical": 0,
+  "total_major": 1,
+  "total_minor": 0,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 0.9727,
+      "raw_score": 0.9727,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.9727,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 0.9091,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_available": true,
+      "shingling_recall": 0.9837877671333825,
+      "shingling_precision": 0.9816176470588235,
+      "duplication_ratio": 0.021497120921305183,
+      "word_count_ratio": 1.0026041666666667,
+      "baseline_words": 384,
+      "gemini_words": 385,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 6,
+      "output_link_count": 4,
+      "link_count_ratio": 0.6666666666666666,
+      "image_placeholder_ratio": null,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "converge",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 0
+    },
+    "processing_ms": 167889,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

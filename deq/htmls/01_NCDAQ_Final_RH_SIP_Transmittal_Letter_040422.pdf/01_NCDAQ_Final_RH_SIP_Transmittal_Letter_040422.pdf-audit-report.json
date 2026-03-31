@@ -1,3 +1,132 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:934f6232aa9e7a8a2841695399b32082249b6375c91b9a384752b611a9fadf89
-size 5303
+{
+  "document_id": "01_NCDAQ_Final_RH_SIP_Transmittal_Letter_040422.pdf",
+  "audited_at": "2026-03-31T03:39:06.575554Z",
+  "source_files": {
+    "extraction_json": "01_NCDAQ_Final_RH_SIP_Transmittal_Letter_040422.pdf.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "01_NCDAQ_Final_RH_SIP_Transmittal_Letter_040422.pdf.html"
+  },
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 0.2857142857142857,
+  "routing": "reject",
+  "routing_label": "Reject",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
+  "concerns": [
+    {
+      "description": "Images missing or broken",
+      "severity": "critical",
+      "analysis": "The source PDF contains important agency logos on the first page: the Great Seal of the State of North Carolina and the DEQ logo. The HTML output fails to render these as images, instead replacing them with text placeholders (`<p>[Image: ...]</p>`). Additionally, the signature image on page 3 is marked as corrupt (`\"valid\": false`) in the image manifest, meaning it will not render.",
+      "source_pdf_quote": "The Great Seal of the State of North Carolina (top right, page 1), the DEQ logo (bottom left, page 1), and a handwritten signature for Michael A. Abraczinskas (page 3).",
+      "output_quote": "The HTML contains text placeholders like `<p>[Image: Great Seal of the State of North Carolina]</p>` instead of actual `<img>` tags for the page 1 logos. The manifest shows a `valid: false` error for the page 3 signature image.",
+      "location": "Pages 1 and 3",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": true
+    },
+    {
+      "description": "Header/footer elements retained in output (2): North Carolina Department of Environmental Quality | Divisio; Daniel Blackman April 4, 2022 Page 2",
+      "severity": "major",
+      "analysis": "header_footer_count=2. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Page number artifacts retained: Page 3",
+      "severity": "minor",
+      "analysis": "page_x_of_y_count=1, total=0",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Displaced hyperlinks: 1 link(s) extracted as standalone elements instead of inline text",
+      "severity": "minor",
+      "analysis": "standalone_links=1, examples=['mailto:randy.strait@ncdenr.gov']. Links should be inline within paragraphs, not separate blocks.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 1,
+  "total_critical": 1,
+  "total_major": 0,
+  "total_minor": 0,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 0.95,
+    "score_breakdown": {
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.4,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_available": true,
+      "shingling_recall": 0.926147077309868,
+      "shingling_precision": 0.9565076273937033,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 0.9448751076658053,
+      "baseline_words": 1161,
+      "gemini_words": 1097,
+      "table_count_ratio": null,
+      "image_count_ratio": 0.75,
+      "source_link_count": 0,
+      "output_link_count": 1,
+      "link_count_ratio": null,
+      "image_placeholder_ratio": 0.0,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "converge",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 1
+    },
+    "processing_ms": 128497,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}

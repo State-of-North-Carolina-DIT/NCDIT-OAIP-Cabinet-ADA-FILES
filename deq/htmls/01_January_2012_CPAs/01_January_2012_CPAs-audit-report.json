@@ -1,3 +1,121 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6de75d98e7fab3477bbef153acc6bd2a70ea5fd88f9cdfff19d3ab8c099c06b
-size 3059
+{
+  "document_id": "01_January_2012_CPAs",
+  "audited_at": "2026-03-31T03:38:02.094905Z",
+  "source_files": {
+    "extraction_json": "01_January_2012_CPAs.json",
+    "source_pdf": "source.pdf",
+    "rendered_html": "01_January_2012_CPAs.html"
+  },
+  "quality_score": 97,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9727,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 0.9091,
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "Both the LLM fidelity analysis and the programmatic detectors identified a major structural issue where a single table spanning two pages was split into two separate table objects instead of being merged into a continuous table. Since there is exactly one major issue, count-based rules dictate routing to HUMAN_REVIEW to fix the table structure.",
+  "decision_method": "llm_final_decider",
+  "concerns": [
+    {
+      "description": "Table structure corrupted",
+      "severity": "major",
+      "analysis": "The source document contains a single large table that spans across both pages (pages 1 and 2) with repeated headers. The extraction rules explicitly state that when a large table spans multiple PDF pages with repeated headers, it should be rendered as one continuous table. However, the output JSON splits the table into two separate `table` objects (one on page 1 and one on page 2).",
+      "source_pdf_quote": "A single continuous table spanning pages 1 and 2 with repeated headers starting with 'Case Number | Owner - Facility | ...'",
+      "output_quote": "Two separate objects with 'type': 'table', one inside pages[0].content and another inside pages[1].content.",
+      "location": "Pages 1 and 2",
+      "source": "fidelity_llm",
+      "check_id": "S3",
+      "fidelity_dimension": "structural",
+      "corroborated": false
+    },
+    {
+      "description": "Table split across page break(s): 1 table(s) with repeated headers across consecutive pages",
+      "severity": "major",
+      "analysis": "split_table_count=1. Examples: pages 1-2: 12 cols (case number, owner - facility, permit number...). Tables spanning multiple pages were extracted as separate table elements with duplicated header rows. The HTML output will show multiple tables instead of one continuous table — a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Repeated footer/header text (2x): \"dwq january 2012 civil penalty assessments\"",
+      "severity": "minor",
+      "analysis": "Short text with footer-like pattern appears on 2 pages",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    }
+  ],
+  "action_items": [
+    "Merge the separate table objects on pages 1 and 2 into a single continuous table.",
+    "Remove the duplicated header row from the second part of the table."
+  ],
+  "routing_changed": false,
+  "pipeline_original_routing": null,
+  "total_defects": 1,
+  "total_critical": 0,
+  "total_major": 1,
+  "total_minor": 0,
+  "exclusion_reason": null,
+  "axe_compliance": null,
+  "internal": {
+    "decider_confidence": 1.0,
+    "score_breakdown": {
+      "fidelity_composite": 0.9727,
+      "raw_score": 0.9727,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
+    },
+    "signals": {
+      "fidelity_composite": 0.9727,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 0.9091,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_available": true,
+      "shingling_recall": 1.0,
+      "shingling_precision": 0.9989395546129375,
+      "duplication_ratio": 0.0,
+      "word_count_ratio": 0.9931224209078404,
+      "baseline_words": 727,
+      "gemini_words": 722,
+      "table_count_ratio": null,
+      "image_count_ratio": 1.0,
+      "source_link_count": 0,
+      "output_link_count": 0,
+      "link_count_ratio": 1.0,
+      "image_placeholder_ratio": null,
+      "pipeline_confidence": null,
+      "pipeline_routing": null,
+      "pipeline_success": true,
+      "pipeline_error": null,
+      "axe_violations": 0,
+      "axe_critical": 0,
+      "axe_serious": 0,
+      "axe_moderate": 0,
+      "axe_minor": 0,
+      "axe_available": false,
+      "structural_fp_available": false,
+      "structural_fp_table_count_pdf": null,
+      "structural_fp_table_count_json": null,
+      "structural_fp_list_count_pdf": null,
+      "structural_fp_list_count_json": null,
+      "legacy_accuracy_score": null,
+      "signal_agreement": "converge",
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 0
+    },
+    "processing_ms": 97905,
+    "fidelity_report_path": "fidelity-report.json",
+    "routing_escalated_from": null
+  }
+}
