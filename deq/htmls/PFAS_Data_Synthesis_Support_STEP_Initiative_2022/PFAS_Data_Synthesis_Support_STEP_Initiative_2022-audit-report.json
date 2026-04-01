@@ -1,6 +1,6 @@
 {
   "document_id": "PFAS_Data_Synthesis_Support_STEP_Initiative_2022",
-  "audited_at": "2026-04-01T15:42:41.920634Z",
+  "audited_at": "2026-04-01T18:31:50.785445Z",
   "source_files": {
     "extraction_json": "PFAS_Data_Synthesis_Support_STEP_Initiative_2022.json",
     "source_pdf": "source.pdf",
@@ -8,27 +8,15 @@
   },
   "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9973,
-  "fidelity_content": 0.9923664122137404,
+  "fidelity_composite": 1.0,
+  "fidelity_content": 1.0,
   "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "The document conversion exhibits extremely high fidelity with a composite score of 0.9973 and strong programmatic metrics (shingling recall 0.969). The only issues identified are a single minor loss of visual emphasis (bold/underline) and a couple of standalone hyperlinks. Since there are no major or critical defects and the total minor count is well below the threshold, the document comfortably qualifies for automated approval.",
+  "reasoning": "The document conversion has perfect LLM fidelity scores across all categories (1.0) and strong programmatic metrics, including a shingling recall of 0.969 and precision of 0.977. There are no critical or major defects identified by any system. The only note is a single programmatic minor observation regarding displaced hyperlinks, which falls well within the acceptable threshold for automatic approval.",
   "decision_method": "llm_final_decider",
   "concerns": [
-    {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document extensively uses underlining for headings and important list items, as well as bold text. In the output JSON, the underline and bold emphasis on the application deadline bullet on page 3 is completely lost. Similarly, the bold text for 'Subject Line: PFAS Data Application' in the previous bullet has lost its emphasis markers.",
-      "source_pdf_quote": "Application deadline of 4/18/2022 5PM (or may remain open until we have suitable applicant pool) (underlined and bolded in source)",
-      "output_quote": "Application deadline of 4/18/2022 5PM (or may remain open until we have suitable applicant pool) (no formatting markers)",
-      "location": "Page 3, Application Instructions section",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
     {
       "description": "Displaced hyperlinks: 2 link(s) extracted as standalone elements instead of inline text",
       "severity": "minor",
@@ -45,24 +33,24 @@
   "action_items": [],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 0,
   "total_critical": 0,
   "total_major": 0,
-  "total_minor": 1,
+  "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.98,
+    "decider_confidence": 0.99,
     "score_breakdown": {
-      "fidelity_composite": 0.9973,
-      "raw_score": 0.9973,
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9973,
-      "fidelity_content": 0.9923664122137404,
+      "fidelity_composite": 1.0,
+      "fidelity_content": 1.0,
       "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
       "fidelity_routing": "AUTO_APPROVE",
@@ -99,7 +87,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 111957,
+    "processing_ms": 95747,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

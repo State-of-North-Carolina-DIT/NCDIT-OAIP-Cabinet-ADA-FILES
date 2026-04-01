@@ -1,34 +1,22 @@
 {
   "document_id": "01_August_MFC_Briefing_Book_Complete",
-  "audited_at": "2026-04-01T07:57:56.837463Z",
+  "audited_at": "2026-04-01T18:06:17.988621Z",
   "source_files": {
     "extraction_json": "01_August_MFC_Briefing_Book_Complete.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_August_MFC_Briefing_Book_Complete.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
-  "fidelity_content": 0.9541984732824428,
-  "fidelity_structural": 0.8182,
-  "fidelity_visual": 0.1428571428571429,
+  "quality_score": 50,
+  "quality_grade": "Poor",
+  "fidelity_composite": null,
+  "fidelity_content": null,
+  "fidelity_structural": null,
+  "fidelity_visual": null,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "reasoning": "Programmatic-only: 1 critical concern(s): Header/footer elements retained in output (433): Marine Fisheries Commission Business Meeting Agenda; 1; 2",
+  "decision_method": "programmatic_only",
   "concerns": [
-    {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "Several meaningful charts, graphs, and figures present in the source PDF are completely missing from the HTML output or incorrectly cropped. For example, on page 171, Figures 1 and 2 are absent and have been replaced by text placeholders like `[Image: A bar chart showing commercial and recreational landings...]`. Additionally, on pages 173 (Figure 6), 174 (Figure 8), 175 (Figure 10), and 176 (Figure 12), the HTML includes `<img>` tags but the images are incorrectly cropped to only show the botto",
-      "source_pdf_quote": "Bar chart (Figure 1) and line chart (Figure 2) on page 171 displaying landings and abundance.",
-      "output_quote": "<p>[Image: A bar chart showing commercial and recreational landings of kingfishes by weight in pounds from 1972 to 2019. Recreational landings are represented by blue bars, and commercial landings are represented by grey bars.]</p>\n<p>[Image: A line chart illustrating the annual index of relative YOY (young-of-year) abundance for southern kingfish from 1989 to 2017. It features a solid blue line with a grey shaded margin of error, and a horizontal dashed blue line marking 2/3 of the average.]</p",
-      "location": "Page 171, Figures 1 and 2",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": false
-    },
     {
       "description": "Header/footer elements retained in output (433): Marine Fisheries Commission Business Meeting Agenda; 1; 2",
       "severity": "critical",
@@ -42,51 +30,27 @@
       "corroborated": false
     },
     {
-      "description": "Minor text differences beyond acceptable reformatting",
+      "description": "Table caption coded as header row: 37 table(s) have a single spanning first row that is likely a caption/title",
       "severity": "major",
-      "analysis": "The source document includes legislative track-changes formatting (strike-throughs for deletions and underlines for insertions). The extraction pipeline failed to distinguish or discard the struck-through text, resulting in both the deleted text and the inserted text being extracted side-by-side. This creates widespread unnatural repetition that alters the reading and flow of the text.",
-      "source_pdf_quote": "\"(1) [strikethrough: Raw] [underline: raw] crustacea receiving or [strikethrough: refrigeration.] [underline: refrigeration;]\"",
-      "output_quote": "\"(1) Raw raw crustacea receiving or refrigeration.refrigeration;\"",
-      "location": "Page 243, Section 15A NCAC 18A .0159",
-      "source": "fidelity_llm",
-      "check_id": "C6",
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
-    {
-      "description": "Table structure corrupted",
-      "severity": "major",
-      "analysis": "On page 185 (the continuation of the Eligibility Pool Board Meeting Summary table), the output incorrectly merges data cells across two distinct columns. In the source PDF, the column 'TOTAL REVIEWED' contains data values (e.g., '21' for row '10/4/2006'), while the adjacent column 'INCOMP. ***' is completely empty for the entire page. In the output JSON, the data values from the 'TOTAL REVIEWED' column are assigned `num_columns: 2` (e.g., `\"text\": \"21\", \"column_start\": 4, \"row_start\": 53, \"num_c",
-      "source_pdf_quote": "Data value '21' under 'TOTAL REVIEWED' and blank cell under 'INCOMP. ***'",
-      "output_quote": "{\"text\": \"21\", \"column_start\": 4, \"row_start\": 53, \"num_columns\": 2}",
-      "location": "Page 185, Eligibility Pool Board Meeting Summary table (row 53)",
-      "source": "fidelity_llm",
+      "analysis": "caption_as_header=37. Examples: p8: \"Roll Call Vote\"; p8: \"Roll Call Vote\"; p10: \"Roll Call Vote\". First row spans all columns — should be a <caption> element, not a header row.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
       "check_id": "S3",
-      "fidelity_dimension": "structural",
-      "corroborated": true
-    },
-    {
-      "description": "Reading order significantly different",
-      "severity": "major",
-      "analysis": "There is a systematic reading order defect where footnote text from the bottom of a page is concatenated directly into the body text that continues on the next page. This interrupts continuous sentences that span across page boundaries, inserting the entire footnote block directly into the middle of the sentence. This materially diverges from the source's logical reading flow.",
-      "source_pdf_quote": "Page 192 ends with \"Proposed rule\" and has a footnote starting with \"1 Frankenberg, D. 1995. North Carolina...\". Page 193 begins with \"changes for the Neuse River...\".",
-      "output_quote": "\"1 Frankenberg, D. 1995. North Carolina Blue Ribbon Advisory Council on Oysters. Final Report on Studies and Recommendations. North Carolina Department of Environment, Health, and Natural Resources. Raleigh, NC. changes for the Neuse River, Gibbs, Shoal, and West Bluff sanctuaries would delineate all reef site area intended for oyster sanctuary purposes so that protections provided by 15A NCAC 03K .0209 and 03R .0117 may be accurately applied.\"",
-      "location": "Page 192 (Output JSON merges the footnote and the next page's body text)",
-      "source": "fidelity_llm",
-      "check_id": "S4",
-      "fidelity_dimension": "structural",
+      "fidelity_dimension": null,
       "corroborated": false
     },
     {
-      "description": "Content visually duplicated on page",
+      "description": "Full-page image alongside extracted text (3 page(s))",
       "severity": "major",
-      "analysis": "The HTML contains a visual duplication of the letter on page 24. A large image of the entire letter is embedded in the HTML output, and immediately following it, the extracted text of the exact same letter is rendered as structured HTML paragraphs. This causes the user to see the same content twice.",
-      "source_pdf_quote": "Letter dated March 1, 2019 from Stephen W. Murphey to Gregg Waugh.",
-      "output_quote": "<img src=\"[base64 image stripped for token budget]\" alt=\"Letter dated March 1, 201 from the North Carolina Division of Marine Fisheries to\">\n<p>ROY COOPER<br>Governor<br><br>MICHAEL S. REGAN<br>Secretary<br><br>STEPHEN W. MURPHEY<br>Director</p>\n<p>March 1, 2019</p>\n<p>Gregg Waugh",
-      "location": "Page 24",
-      "source": "fidelity_llm",
-      "check_id": "V3",
-      "fidelity_dimension": "visual",
+      "analysis": "suspect_pages=3. A scanned/screenshot page image duplicates content already present as text elements.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
       "corroborated": false
     },
     {
@@ -102,16 +66,16 @@
       "corroborated": false
     },
     {
-      "description": "21 bare URL(s) in text not converted to hyperlinks: https://www.ncsbe.gov/Ethics/Education; https://EFILE.ncsbe.gov/; http://portal.ncdenr.org/web/mf/stock-overview.; https://ncdenrits.webex.com/ncdenrits/onstage/g.php?MTID=ea8608d0638d06136715b7a; http://portal.ncdenr.org/web/mf/mfc-proposed-rules.*",
+      "description": "20 bare URL(s) in text not converted to hyperlinks: https://www.ncsbe.gov/Ethics/Education; https://EFILE.ncsbe.gov/; https://ncdenrits.webex.com/ncdenrits/onstage/g.php?MTID=ea8608d0638d06136715b7a; http://portal.ncdenr.org/web/mf/mfc-proposed-rules.*; http://portal.ncdenr.org/web/mf/shellfish-closure-maps.",
       "severity": "major",
-      "analysis": "bare_url_count=21. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
+      "analysis": "bare_url_count=20. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
       "check_id": "S8",
       "fidelity_dimension": null,
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Table cells contain 27 unlinked URL(s)/email(s) that should be hyperlinks",
@@ -123,7 +87,7 @@
       "source": "programmatic",
       "check_id": "S7",
       "fidelity_dimension": null,
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Mixed numbering types at same list level (2 list(s)): p197:letter+roman, p269:letter+roman — possible sub-point flattening",
@@ -186,6 +150,18 @@
       "corroborated": false
     },
     {
+      "description": "Table header markup issues: 10 table(s) have a data row marked as header: \"Artificial Reef Site Name\", \"Original FMP Adoption:\", \"Progressive triggers and targe\"",
+      "severity": "major",
+      "analysis": "data_in_th=0, datarow_as_header=10. Tables use <th> for data values (misrepresenting data as headers) or have a data row mismarked as a header row. Screen readers rely on <th> to announce column/row context.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "Links displaced to end of page: 11 link(s) clustered at bottom of 4 page(s) instead of inline in text",
       "severity": "major",
       "analysis": "displaced_link_pages=4, total_displaced=11. Links appear as standalone elements at the end of pages rather than being inline in the paragraph text.",
@@ -195,18 +171,6 @@
       "source": "programmatic",
       "check_id": "S7",
       "fidelity_dimension": null,
-      "corroborated": true
-    },
-    {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document relies heavily on underlines to denote newly added legislative text (as part of a redline/strikeout format). The extraction JSON does not contain any representation of this underline formatting, resulting in a total loss of this visual emphasis.",
-      "source_pdf_quote": "\"(1) [strikethrough: Raw] [underline: raw] crustacea receiving or [strikethrough: refrigeration.] [underline: refrigeration;]\"",
-      "output_quote": "\"(1) Raw raw crustacea receiving or refrigeration.refrigeration;\"",
-      "location": "Page 243, Section 15A NCAC 18A .0159",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
       "corroborated": false
     },
     {
@@ -318,45 +282,45 @@
       "corroborated": false
     },
     {
-      "description": "Source PDF contains 33 instance(s) of blue-styled text without hyperlink annotations. These appear to be intended as hyperlinks but were not annotated in the PDF (likely lost during Word-to-PDF export). This is a source document limitation, not a pipeline defect. Examples: page 21: \"Klibansky, Lara\"; page 21: \"Gillikin, Dana\"; page 53: \"carter.witten@ncdenr.gov\"; page 63: \"Submitted\"; page 63: \"Name:\"",
+      "description": "Source PDF contains 32 instance(s) of blue-styled text without hyperlink annotations. These appear to be intended as hyperlinks but were not annotated in the PDF (likely lost during Word-to-PDF export). This is a source document limitation, not a pipeline defect. Examples: page 21: \"Klibansky, Lara\"; page 21: \"Gillikin, Dana\"; page 63: \"Submitted\"; page 63: \"Name:\"; page 63: \"City:\"",
       "severity": "informational",
-      "analysis": "orphaned_blue_text_count=33. Blue text without link annotations detected via PyMuPDF color extraction.",
+      "analysis": "orphaned_blue_text_count=32. Blue text without link annotations detected via PyMuPDF color extraction.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
       "check_id": "S7",
       "fidelity_dimension": null,
-      "corroborated": true
+      "corroborated": false
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Header/footer elements retained in output (433): Marine Fisheries Commission Business Meeting Agenda; 1; 2"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 6,
-  "total_critical": 1,
-  "total_major": 4,
-  "total_minor": 1,
+  "total_defects": 0,
+  "total_critical": 0,
+  "total_major": 0,
+  "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.8,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
-      "available_components": 1
+      "fidelity_composite": null,
+      "raw_score": 0.5,
+      "ceiling": 0.5,
+      "ceiling_reason": "fidelity_unavailable",
+      "available_components": 0
     },
     "signals": {
-      "fidelity_composite": 0.4,
-      "fidelity_content": 0.9541984732824428,
-      "fidelity_structural": 0.8182,
-      "fidelity_visual": 0.1428571428571429,
-      "fidelity_routing": "AUTO_REJECT",
-      "fidelity_available": true,
+      "fidelity_composite": null,
+      "fidelity_content": null,
+      "fidelity_structural": null,
+      "fidelity_visual": null,
+      "fidelity_routing": null,
+      "fidelity_available": false,
       "shingling_recall": 0.919537454389354,
       "shingling_precision": 0.9372402100196894,
       "duplication_ratio": 0.05962009569044524,
@@ -385,12 +349,12 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 2
+      "deduplicated_count": 0
     },
-    "processing_ms": 790067,
-    "fidelity_report_path": "fidelity-report.json",
+    "processing_ms": 3929,
+    "fidelity_report_path": null,
     "routing_escalated_from": null
   }
 }

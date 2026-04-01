@@ -1,32 +1,44 @@
 {
   "document_id": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL",
-  "audited_at": "2026-04-01T15:47:13.575557Z",
+  "audited_at": "2026-04-01T17:31:15.499749Z",
   "source_files": {
     "extraction_json": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL.html"
   },
-  "quality_score": 95,
-  "quality_grade": "Good",
-  "fidelity_composite": 0.9473282442748091,
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
   "fidelity_content": 0.9923664122137404,
-  "fidelity_structural": 1.0,
-  "fidelity_visual": 0.8571428571428572,
-  "routing": "human_review",
-  "routing_label": "Human Review",
-  "reasoning": "The document contains exactly 5 major defects, which places it at the threshold for HUMAN_REVIEW according to the count-based routing rules. The major issues involve image extraction anomalies (both reported missing figures and an excessive overall image count ratio), tables split across pages with duplicated headers, displaced hyperlinks, and table header markup issues.",
-  "decision_method": "llm_final_decider",
+  "fidelity_structural": 0.9091,
+  "fidelity_visual": 0.2857142857142857,
+  "routing": "reject",
+  "routing_label": "Reject",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
     {
       "description": "Images missing or broken",
-      "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.77, placeholder_ratio=0.00 contradict LLM claim] Several meaningful data visualizations and charts present in the source PDF (Figures 14-18 and Figures 21-23) are missing from the HTML output. Instead of rendering as `<img>` tags, they have been replaced by text placeholders (e.g., `[Image: ...]`). Because these are complex line charts representing Spawning Stock Biomass (SSB) projections and cumulative landings, the user loses critical information that cannot be fully conveyed by the brief placeholder text alone.",
-      "source_pdf_quote": "Source PDF pages 56-58 and 61-62 contain visual line graphs for Figures 14 through 18, and Figures 21 through 23.",
-      "output_quote": "The HTML output lacks <img> tags for these figures and instead displays plain text paragraphs such as: \"<p>[Image: Line chart showing projections of Spawning Stock Biomass (SSB) from 2018 to 2050 under different fishing scenarios...]</p>\"",
-      "location": "Figures 14-18 (Pages 56-58) and Figures 21-23 (Pages 61-62)",
+      "severity": "critical",
+      "analysis": "Several meaningful charts from the source PDF (Figures 14, 15, 16, 17, 18, 21, 22, and 23) are missing their image data in the rendered HTML. Instead of valid <img> elements, the output contains literal text placeholders (e.g., '[Image: Line chart showing projections...]') indicating that the image extraction failed (manifest confirms b64_len: 0 for these). Since these are critical data visualizations, their absence constitutes a severe loss of meaningful information.",
+      "source_pdf_quote": "The source PDF contains meaningful data line charts for Figures 14, 15, 16, 17, 18, 21, 22, and 23.",
+      "output_quote": "The HTML contains literal text placeholders instead of actual image elements, such as: \"[Image: Line chart showing projections of Spawning Stock Biomass (SSB) from 2018 to 2050 under different fishing scenarios...]\"",
+      "location": "Figures 14, 15, 16, 17, 18, 21, 22, 23 (Pages 56-62)",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
+      "corroborated": false
+    },
+    {
+      "description": "Lists converted incorrectly",
+      "severity": "major",
+      "analysis": "I examined the list structures throughout the document. Most lists, including complex nested ones (e.g., Page 25 and Page 27), were extracted properly with appropriate child items. However, on Page 14, there is a nested list under the heading 'Amendment 1 Management Carried Forward in Amendment 2'. The second main bullet point ('From Supplement A to the Southern Flounder FMP Amendment 1...') contains three sub-bullets ('A commercial minimum...', 'A minimum mesh...', 'A minimum mesh...'). In the ",
+      "source_pdf_quote": "• From Supplement A to the Southern Flounder FMP Amendment 1, as modified by the Aug. \n17, 2017 settlement agreement:\n− A commercial minimum size limit of 15 inches TL;\n− A minimum mesh size of 6.0-ISM to harvest southern flounder from a gill net; and\n− A minimum mesh size of 5.75-ISM stretched mesh for pound net escape panels.",
+      "output_quote": "{\n  \"text\": \"From Supplement A to the Southern Flounder FMP Amendment 1, as modified by the Aug. 17, 2017 settlement agreement:\"\n},\n{\n  \"text\": \"A commercial minimum size limit of 15 inches TL;\"\n},\n{\n  \"text\": \"A minimum mesh size of 6.0-ISM to harvest southern flounder from a gill net; and\"\n}",
+      "location": "Page 14",
+      "source": "fidelity_llm",
+      "check_id": "S5",
+      "fidelity_dimension": "structural",
       "corroborated": false
     },
     {
@@ -80,10 +92,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "On page 27, the source document contains the underlined and italicized text 'Advisory Committee Recommendations'. The pipeline extracted this line as a regular paragraph rather than a heading and applied markdown italics (*Advisory Committee Recommendations*). Because it is not designated as a heading and markdown does not support underlines, the specific underline emphasis is lost.",
-      "source_pdf_quote": "\"Advisory Committee Recommendations (Refer to Table 13 for a comparison of recommendations)\" (where 'Advisory Committee Recommendations' is underlined and italicized).",
-      "output_quote": "\"*Advisory Committee Recommendations* (Refer to Table 13 for a comparison of recommendations)\"",
-      "location": "Page 27, element index 1",
+      "analysis": "The source document uses underlining for emphasis on certain paragraph text (e.g., 'Advisory Committee Recommendations' and 'Southern Flounder FMP Advisory Committee' on page 27). The extraction JSON converts these to markdown italics but drops the actual underline styling. Since markdown does not support underline natively and the pipeline did not preserve it, this represents a loss of visual emphasis.",
+      "source_pdf_quote": "Advisory Committee Recommendations (Refer to Table 13 for a comparison of recommendations)\n\nSouthern Flounder FMP Advisory Committee (Both phrases are underlined in the source PDF)",
+      "output_quote": "*Advisory Committee Recommendations* (Refer to Table 13 for a comparison of recommendations)\n\n*Southern Flounder FMP Advisory Committee*",
+      "location": "Page 27",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -103,16 +115,12 @@
     }
   ],
   "action_items": [
-    "Check Figures 14-18 and 21-23 to ensure charts and data visualizations are present and properly rendered.",
-    "Investigate the high image count ratio to remove any duplicated or improperly segmented images.",
-    "Merge the 2 tables that were split across page breaks and remove the duplicated header rows.",
-    "Move the 6 standalone hyperlinks inline within their appropriate paragraphs.",
-    "Fix the table header markup where data rows are incorrectly tagged as headers."
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
-  "total_critical": 0,
+  "total_defects": 3,
+  "total_critical": 1,
   "total_major": 1,
   "total_minor": 1,
   "exclusion_reason": null,
@@ -120,18 +128,18 @@
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9473282442748091,
-      "raw_score": 0.9473,
-      "ceiling": null,
-      "ceiling_reason": null,
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9473282442748091,
+      "fidelity_composite": 0.4,
       "fidelity_content": 0.9923664122137404,
-      "fidelity_structural": 1.0,
-      "fidelity_visual": 0.8571428571428572,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_structural": 0.9091,
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
       "shingling_recall": 0.9368857689853223,
       "shingling_precision": 0.9756113769271664,
@@ -165,7 +173,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 383610,
+    "processing_ms": 168611,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }
