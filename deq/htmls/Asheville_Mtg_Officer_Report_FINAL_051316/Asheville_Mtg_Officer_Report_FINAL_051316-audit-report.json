@@ -1,34 +1,22 @@
 {
   "document_id": "Asheville_Mtg_Officer_Report_FINAL_051316",
-  "audited_at": "2026-03-31T03:38:48.142474Z",
+  "audited_at": "2026-04-01T06:29:50.303374Z",
   "source_files": {
     "extraction_json": "Asheville_Mtg_Officer_Report_FINAL_051316.json",
     "source_pdf": "source.pdf",
     "rendered_html": "Asheville_Mtg_Officer_Report_FINAL_051316.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
-  "fidelity_content": 1.0,
-  "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "quality_score": 50,
+  "quality_grade": "Poor",
+  "fidelity_composite": null,
+  "fidelity_content": null,
+  "fidelity_structural": null,
+  "fidelity_visual": null,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "Programmatic-only: 2 major concern(s): Header/footer elements retained in output (1): State of North Carolina | Environmental Quality | Energy, Mi; Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
+  "decision_method": "programmatic_only",
   "concerns": [
-    {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source PDF contains an agency logo ('NC Energy, Mineral & Land Resources') on the first page. While the HTML includes an <img> element for this logo, the image manifest indicates that the base64 data is corrupt ('valid': false, error: 'No module named 'PIL''). Therefore, the image is broken and will not render visually for the user.",
-      "source_pdf_quote": "Page 1 of the source PDF contains the 'NC Energy, Mineral & Land Resources ENVIRONMENTAL QUALITY' logo in the top left corner.",
-      "output_quote": "The image manifest indicates that the extracted image data is corrupt ('valid': false), meaning the resulting <img> tag in the HTML will not display the logo.",
-      "location": "Page 1 / Header",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": true
-    },
     {
       "description": "Header/footer elements retained in output (1): State of North Carolina | Environmental Quality | Energy, Mi",
       "severity": "major",
@@ -43,7 +31,7 @@
     },
     {
       "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
-      "severity": "minor",
+      "severity": "major",
       "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
       "source_pdf_quote": null,
       "output_quote": null,
@@ -55,32 +43,33 @@
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Header/footer elements retained in output (1): State of North Carolina | Environmental Quality | Energy, Mi",
+    "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
-  "total_critical": 1,
+  "total_defects": 0,
+  "total_critical": 0,
   "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.7,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
-      "available_components": 1
+      "fidelity_composite": null,
+      "raw_score": 0.5,
+      "ceiling": 0.5,
+      "ceiling_reason": "fidelity_unavailable",
+      "available_components": 0
     },
     "signals": {
-      "fidelity_composite": 0.4,
-      "fidelity_content": 1.0,
-      "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
-      "fidelity_available": true,
+      "fidelity_composite": null,
+      "fidelity_content": null,
+      "fidelity_structural": null,
+      "fidelity_visual": null,
+      "fidelity_routing": null,
+      "fidelity_available": false,
       "shingling_recall": 0.9801657785671996,
       "shingling_precision": 0.979585798816568,
       "duplication_ratio": 0.0,
@@ -109,12 +98,12 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 110803,
-    "fidelity_report_path": "fidelity-report.json",
+    "processing_ms": 154,
+    "fidelity_report_path": null,
     "routing_escalated_from": null
   }
 }

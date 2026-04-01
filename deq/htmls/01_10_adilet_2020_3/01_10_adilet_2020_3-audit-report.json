@@ -1,41 +1,41 @@
 {
   "document_id": "01_10_adilet_2020_3",
-  "audited_at": "2026-03-31T03:37:07.472596Z",
+  "audited_at": "2026-04-01T08:45:26.773462Z",
   "source_files": {
     "extraction_json": "01_10_adilet_2020_3.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_10_adilet_2020_3.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
+  "quality_score": 90,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.8973282442748092,
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.1428571428571429,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "fidelity_visual": 0.7142857142857143,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The LLM fidelity analysis and programmatic signals both identify significant issues with image handling in this scanned document. The LLM noted a missing agency logo and the erroneous inclusion of text content as an embedded image, which is corroborated by the programmatic image count ratio of 1.5. Because there are 4 major defects (2 LLM, 2 programmatic) and no critical defects, the document requires a human review to correct the image duplication and formatting loss.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source PDF contains meaningful images, including the NC State Seal on page 1, the DEQ logo on page 1, and a signature on page 2. While there are corresponding <img> tags in the HTML output, the image manifest indicates that all extracted images have 'valid': false due to a Python error ('No module named 'PIL''). This means the base64 image data is corrupt/missing and the images will not render in the browser.",
-      "source_pdf_quote": "Page 1 State Seal of NC, Page 1 DEQ logo, Page 2 signature.",
-      "output_quote": "Image manifest reports 'valid': false and 'error': 'No module named 'PIL'' for all three images.",
-      "location": "Image manifest / HTML image tags",
+      "severity": "major",
+      "analysis": "[Downgraded: image_count_ratio=1.50, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains two distinct agency logos on page 1: the North Carolina State Seal at the top center, and the NC DEQ (Department of Environmental Quality) logo at the bottom left. While the HTML successfully preserves the State Seal at the top of the document, the DEQ logo is entirely missing from the output.",
+      "source_pdf_quote": "The NC DEQ logo located at the bottom left of page 1 next to the department address block.",
+      "output_quote": "The HTML lacks an <img> element representing the DEQ logo.",
+      "location": "Page 1 footer region",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Content visually duplicated on page",
       "severity": "major",
-      "analysis": "The HTML output contains an extracted text list (`<ol><li>Provide proof...`) of the 4 requirements on page 1. Immediately following the paragraph after this list, the HTML embeds an image with the alt text 'A snippet of an official document containing a numbered list of requirements regarding sediment basin baffles and contacting well'. This represents an extraction error where an image snippet of the text content was captured and embedded alongside the actual structured text extraction, causing",
-      "source_pdf_quote": "Numbered list 1-4 on page 1 detailing requirements (e.g., 'Show the sediment basin baffle placement...', 'Please re-contact the 20 well owners...').",
-      "output_quote": "The HTML contains both the `<ol>` tag with the full text AND an `<img>` tag showing a screenshot of the same list snippet.",
-      "location": "Page 1 output, after the '<ol>' list and before the DEQ footer.",
+      "analysis": "The HTML output extracts the numbered list on page 1 correctly into an <ol> element and subsequent <p> elements. However, immediately following the 'Please be advised...' paragraph, the HTML inserts an image that captures a screenshot of this exact same text (items concerning sediment basin baffles and contacting well owners). This results in the user seeing the text content as structured HTML and then seeing it again as an embedded image.",
+      "source_pdf_quote": "The numbered list (specifically items 3 and 4) and the following paragraph on page 1.",
+      "output_quote": "The HTML contains the text in standard tags but also includes an image duplicating the content: <img src=\"...\" alt=\"A snippet of an official document containing a numbered list of requirements regarding sediment basin baffles and contacting well\">",
+      "location": "Body of HTML, immediately preceding the footer address text",
       "source": "fidelity_llm",
       "check_id": "V3",
       "fidelity_dimension": "visual",
@@ -66,8 +66,20 @@
       "corroborated": false
     },
     {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source document contains underlined text to indicate emphasis on the mailing type ('Certified Mail' and 'Return Receipt Requested'). This underline formatting is completely lost in the output JSON.",
+      "source_pdf_quote": "Certified Mail\nReturn Receipt Requested",
+      "output_quote": "Certified Mail\nReturn Receipt Requested",
+      "location": "Page 1, elements 5",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
       "description": "Header/footer elements retained in output (1): North Carolina Department of Environmental Quality | Divisio",
-      "severity": "major",
+      "severity": "minor",
       "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
@@ -76,46 +88,37 @@
       "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document contains underlined text on both pages to denote the mailing method ('Certified Mail', 'Return Receipt Requested'). This structural emphasis was completely lost in the JSON output, which extracted them as plain text paragraphs without underline markers.",
-      "source_pdf_quote": "Certified Mail\nReturn Receipt Requested (Both underlined in the source PDF)",
-      "output_quote": "Certified Mail\nReturn Receipt Requested\n7008 1300 00001126 1372",
-      "location": "Page 1 and Page 2 (Mailing headers)",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
-      "corroborated": false
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Remove the embedded image that duplicates the structured text content.",
+    "Restore the missing NC DEQ logo if contextually important.",
+    "Restore missing underline formatting for 'Certified Mail' and 'Return Receipt Requested'.",
+    "Remove any retained header/footer text from the main body content."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 3,
-  "total_critical": 1,
-  "total_major": 1,
+  "total_critical": 0,
+  "total_major": 2,
   "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.8973282442748092,
+      "raw_score": 0.8973,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
+      "fidelity_composite": 0.8973282442748092,
       "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.1428571428571429,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_visual": 0.7142857142857143,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": null,
       "shingling_precision": null,
@@ -147,9 +150,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 96055,
+    "processing_ms": 108911,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

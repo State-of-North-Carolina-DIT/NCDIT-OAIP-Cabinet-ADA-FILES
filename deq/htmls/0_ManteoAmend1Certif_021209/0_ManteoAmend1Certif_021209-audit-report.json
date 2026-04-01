@@ -1,6 +1,6 @@
 {
   "document_id": "0_ManteoAmend1Certif_021209",
-  "audited_at": "2026-03-31T03:42:52.259291Z",
+  "audited_at": "2026-04-01T08:46:36.278630Z",
   "source_files": {
     "extraction_json": "0_ManteoAmend1Certif_021209.json",
     "source_pdf": "source.pdf",
@@ -14,16 +14,16 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "The document has a very high LLM fidelity composite score of 0.9973 and structural/visual scores of 1.0. The programmatic text metrics show a low recall and word count ratio, but the source text is extremely short (84 words), making these metrics highly sensitive to minor extraction anomalies. Only one minor defect (missing underline formatting) was found, which is well below the threshold for human review.",
+  "reasoning": "The document has a high composite LLM fidelity score of 0.9973 and structural/visual scores of 1.0. The low programmatic shingling recall and word count ratio are likely due to PyMuPDF extraction limitations on a short document (baseline 84 words), which is offset by the high LLM content score (0.992). Only one minor defect (missing underline) was detected, well below the threshold for human review, so it is routed to AUTO_APPROVE.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The text 'Amendment #1' is underlined in the source PDF to provide visual emphasis. However, in the output JSON, this text is stripped of its underline formatting.",
-      "source_pdf_quote": "Amendment #1 (underlined)",
-      "output_quote": "\"text\": \"Amendment #1\"",
-      "location": "Page 1, heading immediately following the title",
+      "analysis": "The text 'Amendment #1' is explicitly underlined in the source PDF. In the extraction JSON, this text is extracted as a heading but lacks any underline formatting markup.",
+      "source_pdf_quote": "Amendment #1",
+      "output_quote": "Amendment #1",
+      "location": "Page 1, heading level 2",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -87,7 +87,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 79371,
+    "processing_ms": 68797,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

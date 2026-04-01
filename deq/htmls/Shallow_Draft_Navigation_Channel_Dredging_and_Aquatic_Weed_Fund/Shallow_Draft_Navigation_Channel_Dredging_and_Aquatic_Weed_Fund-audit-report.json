@@ -1,6 +1,6 @@
 {
   "document_id": "Shallow_Draft_Navigation_Channel_Dredging_and_Aquatic_Weed_Fund",
-  "audited_at": "2026-03-31T03:49:43.482685Z",
+  "audited_at": "2026-04-01T08:48:44.597135Z",
   "source_files": {
     "extraction_json": "Shallow_Draft_Navigation_Channel_Dredging_and_Aquatic_Weed_Fund.json",
     "source_pdf": "source.pdf",
@@ -20,22 +20,34 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The image manifest indicates that the base64 data for the DEQ logo on page 1 is corrupt ('valid': false with a 'No module named PIL' error), meaning the image will fail to render in a browser despite the presence of the <img> tag. Furthermore, the State Seal at the top of page 1 has a base64 length of 0 and is rendered merely as a text placeholder rather than a valid image element. As these are meaningful organizational identifying logos on the first page, this is a critical defect.",
-      "source_pdf_quote": "State Seal of North Carolina at the top of page 1 and the DEQ logo at the bottom of page 1.",
-      "output_quote": "The HTML contains a text placeholder '<p>[Image: State Seal of North Carolina]</p>' instead of the seal, and the image manifest marks the DEQ logo image as 'valid: false' (corrupted base64 data).",
-      "location": "Page 1",
+      "analysis": "The first page of the source PDF features the prominent State Seal of North Carolina at the top. In the HTML output, this image is missing entirely; it is replaced by the text string '[Image: State Seal of North Carolina]' rather than an actual <img> element. The image manifest also confirms this image has a b64_len of 0. Missing the primary government seal on the first page is a critical defect.",
+      "source_pdf_quote": "State Seal of North Carolina graphic at the top center of page 1.",
+      "output_quote": "<p>[Image: State Seal of North Carolina]</p>",
+      "location": "Page 1, Top Header",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
+    },
+    {
+      "description": "Header/footer elements retained in output (9): North Carolina Department of Environmental Quality | Divisio; 1; 2",
+      "severity": "critical",
+      "analysis": "header_footer_count=9, pages_affected=9/10. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
     },
     {
       "description": "Minor text differences beyond acceptable reformatting",
       "severity": "major",
-      "analysis": "In the final table on page 10 (the Cooperators table), the left edges of several cell entries were cut off during extraction, leading to altered text. For example, 'Jordan Lake' became 'h Lake', 'Mountain Island Reservoir' became 'untain Island Reservoir', and 'Lake Norman Marine Commission' became 'Marine Commission'.",
-      "source_pdf_quote": "\"Jordan Lake - Folkners Branch\"\n\"Mountain Island Reservoir\"",
-      "output_quote": "\"h Lake - Folkners Branch\"\n\"untain Island Reservoir\"",
-      "location": "Page 10, second table (Cooperators table)",
+      "analysis": "On Page 10, the 'Cooperators' table suffers from text truncation in the output due to bounding box/OCR crop errors. Specifically, 'Jordan Lake' is extracted as 'h Lake', and 'Mountain Island Reservoir' is extracted as 'untain Island Reservoir'. This alters proper nouns, changing the meaning and obscuring the referenced location.",
+      "source_pdf_quote": "Jordan Lake - Folkners Branch\n...\nMountain Island Reservoir",
+      "output_quote": "\"h Lake - Folkners Branch\"\n...\n\"untain Island Reservoir\"",
+      "location": "Page 10, Cooperators table",
       "source": "fidelity_llm",
       "check_id": "C6",
       "fidelity_dimension": "content",
@@ -44,26 +56,14 @@
     {
       "description": "Table structure corrupted",
       "severity": "major",
-      "analysis": "The large table spanning PDF pages 4 through 10 ('North Carolina Aquatic Weed Control Program') is improperly split into multiple separate tables (found in the JSON on pages 4, 6, 8, 9, and 10) instead of being rendered as one continuous table. Consequently, the continuation tables on pages 6, 8, 9, and 10 lack header rows, placing actual data values in the first row which will be incorrectly marked as headers by the renderer. Additionally, the columns are split incorrectly in the tables on page",
-      "source_pdf_quote": "A continuous 7-column table starting on page 4 and ending on page 10.",
-      "output_quote": "Multiple separate tables where continuation tables start with data rows (e.g., 'Aquatic Weeds', 'Hydrilla', 'Fayetteville, City of') and column numbers arbitrarily shift to 9 columns on pages 6 and 9 (e.g., 'column_start': 4 for '$', 'column_start': 5 for '800.00').",
-      "location": "Pages 6, 8, 9, 10",
+      "analysis": "The primary data table spanning pages 4 through 10 of the source PDF has a 7-column structure, with columns 5 and 6 containing monetary values (e.g., '$ 800.00'). While the table is correctly rendered with 7 columns on page 4, the JSON extraction for pages 6, 8, and 9 incorrectly splits the dollar signs into their own distinct columns. This effectively forces the table into a 9-column structure in the output, which breaks the column mapping and misaligns the data beneath the 7-column headers. Fo",
+      "source_pdf_quote": "A 7-column table where the 5th and 6th columns contain the dollar amounts in single cells, such as '$ 800.00'.",
+      "output_quote": "The data is split across 9 columns, separating the dollar sign: {\"text\": \"$\", \"column_start\": 4}, {\"text\": \"800.00\", \"column_start\": 5}, {\"text\": \"$\", \"column_start\": 6}, {\"text\": \"800.00\", \"column_start\": 7}.",
+      "location": "Pages 6, 8, and 9 (Table cells array)",
       "source": "fidelity_llm",
       "check_id": "S3",
       "fidelity_dimension": "structural",
       "corroborated": true
-    },
-    {
-      "description": "Header/footer elements retained in output (9): North Carolina Department of Environmental Quality | Divisio; 1; 2",
-      "severity": "major",
-      "analysis": "header_footer_count=9. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
     },
     {
       "description": "Displaced hyperlinks: 1 link(s) extracted as standalone elements instead of inline text",
@@ -147,9 +147,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 2
+      "deduplicated_count": 1
     },
-    "processing_ms": 188271,
+    "processing_ms": 178898,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,6 +1,6 @@
 {
   "document_id": "t2023-2024_DMS_Annual_Report",
-  "audited_at": "2026-03-31T03:52:45.124214Z",
+  "audited_at": "2026-04-01T08:46:02.976906Z",
   "source_files": {
     "extraction_json": "t2023-2024_DMS_Annual_Report.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a presentation slide deck characterized by landscape orientation, consistent navigation buttons (back, home, forward) on every page, background images, and slide-style layouts.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is entirely composed of landscape-oriented pages with background images, minimal presentation-style text (bullet points, large headers), and graphical navigation buttons on every page, which are characteristic of a slide deck or interactive presentation.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 319825,
+    "processing_ms": 55696,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

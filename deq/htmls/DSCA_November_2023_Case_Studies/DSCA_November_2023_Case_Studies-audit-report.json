@@ -1,6 +1,6 @@
 {
   "document_id": "DSCA_November_2023_Case_Studies",
-  "audited_at": "2026-03-31T03:43:27.501735Z",
+  "audited_at": "2026-04-01T08:44:45.931703Z",
   "source_files": {
     "extraction_json": "DSCA_November_2023_Case_Studies.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document consists entirely of presentation slides. Characteristics include landscape orientation, large structural graphics and diagrams on almost every page, large header text, bulleted lists summarizing points, and speaker notes included at the bottom of the earlier pages.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a 29-page presentation with a landscape orientation, slide-like layouts, large background graphics, and bulleted text typical of a PowerPoint presentation.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 54624,
+    "processing_ms": 44797,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,6 +1,6 @@
 {
   "document_id": "BLACK_SEA_BASS_–_COMMERCIAL_FISHING_OPERATIONS_–_ATLANTIC_OCEAN_–_NORTH_OF_CAPE_HATTERAS",
-  "audited_at": "2026-03-31T03:41:04.964134Z",
+  "audited_at": "2026-04-01T08:47:08.013826Z",
   "source_files": {
     "extraction_json": "BLACK_SEA_BASS_–_COMMERCIAL_FISHING_OPERATIONS_–_ATLANTIC_OCEAN_–_NORTH_OF_CAPE_HATTERAS.json",
     "source_pdf": "source.pdf",
@@ -20,22 +20,22 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The source document contains an agency seal on page 1 and a signature block on page 3. In the HTML output, the page 1 seal is missing and instead rendered only as text inside brackets (`<p>[Image: ...]</p>`). Additionally, the image manifest indicates that the signature image on page 3 has a `valid: false` status with an error, meaning the base64 data is corrupt and will fail to render.",
-      "source_pdf_quote": "Seal of the North Carolina Marine Fisheries on Page 1; signature image on Page 3.",
-      "output_quote": "<p>[Image: Seal of the North Carolina Marine Fisheries... ]</p> and an <img> tag for the signature where the manifest reports `\"valid\": false, \"error\": \"No module named 'PIL'\"`",
-      "location": "Page 1 (Header) and Page 3 (Signature)",
+      "analysis": "The source PDF contains a meaningful agency logo (Seal of the North Carolina Marine Fisheries) on the top left of the first page. According to the image manifest, the extracted image data for this logo has a `b64_len` of 0, meaning it is corrupt/invalid. In the HTML output, it appears merely as a text placeholder `[Image: Seal of the North Carolina Marine Fisheries celebrating 200 years of management and conservation (1822-2022)]` rather than a valid `<img>` element. The primary agency seal on t",
+      "source_pdf_quote": "Top left of page 1 shows the circular seal of the North Carolina Marine Fisheries celebrating 200 years.",
+      "output_quote": "<p>[Image: Seal of the North Carolina Marine Fisheries celebrating 200 years of management and conservation (1822-2022)]</p>",
+      "location": "Page 1 / top of the document",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The source document contains a primary list utilizing Roman numerals (I, II, III, IV) with nested sub-lists using capital letters (A, B, C). On page 1, the pipeline correctly groups items I, II, and III as an ordered list with proper nesting for their sub-items. However, on page 2, the final parent item 'IV. GENERAL INFORMATION' is incorrectly extracted as a level-2 heading instead of a list item. This breaks the main list sequence and causes its nested sub-items (A-J on page 2, K-M on page 3) t",
-      "source_pdf_quote": "IV. GENERAL INFORMATION\nA. This proclamation is issued under the authority...",
-      "output_quote": "{\"type\": \"heading\", \"level\": 2, \"text\": \"IV. GENERAL INFORMATION\"}, {\"type\": \"list\", \"list_type\": \"ordered\", \"items\": [{\"text\": \"A. This proclamation is issued under the authority...",
-      "location": "Page 2",
+      "analysis": "The main structured list in the document uses Roman numerals (I. SIZE LIMIT, II. HARVEST PERIOD AND LIMITS, III. GEAR RESTRICTIONS, IV. GENERAL INFORMATION). In the output for page 1, items I, II, and III are correctly extracted as items within a single ordered list. However, on page 2, 'IV. GENERAL INFORMATION' is extracted as a level 2 heading (`h2`), and its sub-items (A-J) are extracted as a completely new top-level ordered list instead of being nested children. This incorrectly splits the c",
+      "source_pdf_quote": "IV. GENERAL INFORMATION\nA. This proclamation is issued...",
+      "output_quote": "{\n  \"type\": \"heading\",\n  \"level\": 2,\n  \"text\": \"IV. GENERAL INFORMATION\"\n},\n{\n  \"type\": \"list\",\n  \"list_type\": \"ordered\",\n  \"items\": [\n    {\n      \"text\": \"A. This proclamation is issued...\"",
+      "location": "Page 2, first heading and list",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -54,33 +54,33 @@
       "corroborated": false
     },
     {
-      "description": "Header/footer elements retained in output (1): State of North Carolina | Division of Marine Fisheries\n3441 ",
+      "description": "2 bare URL(s) in text not converted to hyperlinks: https://www.ecfr.gov/current/title-50/part-; www.ncmarinefisheries.net.",
       "severity": "major",
-      "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "analysis": "bare_url_count=2. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
-      "check_id": null,
+      "check_id": "S8",
       "fidelity_dimension": null,
       "corroborated": false
     },
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document heavily uses underlining and bolding for emphasis, particularly on restriction statements and list headers. This emphasis is lost entirely in several areas of the output. For example, 'FISH TRAPS/POTS:' and 'TRAWLS:' are bolded in the source but are extracted as plain text. Furthermore, item 'M' on page 3 is fully bolded and underlined in the source but appears as completely unformatted plain text in the output.",
-      "source_pdf_quote": "M. This proclamation supersedes Proclamation FF-4-2023, dated December 16, 2022. It increases the offload limit for trawls in the Atlantic Ocean commercial black sea bass fishery north of Cape Hatteras...",
-      "output_quote": "\"text\": \"M. This proclamation supersedes Proclamation FF-4-2023, dated December 16, 2022. It increases the offload limit for trawls in the Atlantic Ocean commercial black sea bass fishery north of Cape Hatteras...\"",
-      "location": "Page 3, List Item M",
+      "analysis": "The source document relies heavily on underlining to indicate visual emphasis (e.g., all section headings like 'I. SIZE LIMIT', 'II. HARVEST PERIOD AND LIMITS', and entire list items such as II. A-E and III. M). The extraction output completely loses this underline emphasis, returning plain text.",
+      "source_pdf_quote": "II. HARVEST PERIOD AND LIMITS\nA. It is unlawful for persons participating in a commercial fishing operation employing fish pots, traps, and/or hook and line gear, regardless of the number of people involved, to possess or land more than 2,000 pounds of black sea bass per trip. (entire text is underlined)",
+      "output_quote": "II. HARVEST PERIOD AND LIMITS... A. It is unlawful for persons participating in a commercial fishing operation employing fish pots, traps, and/or hook and line gear, regardless of the number of people involved, to possess or land more than 2,000 pounds of black sea bass per trip. (no underline emphasis)",
+      "location": "Page 1, Section II",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
       "corroborated": false
     },
     {
-      "description": "2 bare URL(s) in text not converted to hyperlinks: https://www.ecfr.gov/current/title-50/part-; www.ncmarinefisheries.net.",
+      "description": "Header/footer elements retained in output (1): State of North Carolina | Division of Marine Fisheries\n3441 ",
       "severity": "minor",
-      "analysis": "bare_url_count=2. URLs appear as plain text instead of clickable links.",
+      "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -147,9 +147,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 2
+      "deduplicated_count": 1
     },
-    "processing_ms": 177264,
+    "processing_ms": 98083,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,34 +1,22 @@
 {
   "document_id": "01_10_Corrected_cover_letter_20201221",
-  "audited_at": "2026-03-31T03:36:57.402243Z",
+  "audited_at": "2026-04-01T08:45:10.380727Z",
   "source_files": {
     "extraction_json": "01_10_Corrected_cover_letter_20201221.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_10_Corrected_cover_letter_20201221.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9973,
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The LLM fidelity scores are excellent, indicating high-quality text extraction from a scanned document. However, programmatic signals identified two MAJOR structural issues: the source document has 0 extractable text words but output has 322 (indicating a scanned document), and the image count ratio is 3.0. This suggests the output likely contains duplicated content, with the page rendered as both an image and extracted text, which requires human intervention.",
+  "decision_method": "llm_final_decider",
   "concerns": [
-    {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source PDF contains meaningful images, specifically the official North Carolina state seal in the header and the DEQ logo in the footer. While the HTML output contains <img> elements for these images, the provided image manifest indicates that all extracted images have 'valid: false' due to an extraction error ('No module named PIL'). Therefore, the base64 data is corrupt, and the images will be broken when rendered in a browser.",
-      "source_pdf_quote": "Official North Carolina state seal at the top center of the page, and the DEQ logo at the bottom left.",
-      "output_quote": "Image manifest reports: \"valid\": false, \"error\": \"No module named 'PIL'\" for all three extracted images.",
-      "location": "Page 1 header and footer",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": true
-    },
     {
       "description": "Scanned document: source has 0 extractable text but output contains 322 words (OCR'd from images)",
       "severity": "major",
@@ -54,8 +42,20 @@
       "corroborated": false
     },
     {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "In the third body paragraph of the source document, the final sentence is heavily underlined for emphasis. The extraction JSON captures this text as plain unformatted text, losing the explicit underline emphasis.",
+      "source_pdf_quote": "Please attach this letter to the cover of your existing mining permit for future reference. (underlined in source)",
+      "output_quote": "Please attach this letter to the cover of your existing mining permit for future reference.",
+      "location": "Third body paragraph (beginning \"This letter is an administrative correction...\")",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
       "description": "Header/footer elements retained in output (1): North Carolina Department of Environmental Quality | Divisio",
-      "severity": "major",
+      "severity": "minor",
       "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
@@ -64,27 +64,18 @@
       "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document contains an underlined sentence in the third body paragraph to draw attention to an administrative instruction. This underline emphasis is completely lost in the output JSON.",
-      "source_pdf_quote": "Please attach this letter to the cover of your existing mining permit for future reference. (underlined in source)",
-      "output_quote": "Please attach this letter to the cover of your existing mining permit for future reference.",
-      "location": "Third paragraph of the letter body",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
-      "corroborated": false
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Check for duplicated content where the scanned page is presented as an image alongside the extracted text",
+    "Remove duplicate images if present",
+    "Remove retained header/footer elements",
+    "Restore underlining emphasis in the third body paragraph if necessary"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
-  "total_critical": 1,
+  "total_defects": 1,
+  "total_critical": 0,
   "total_major": 0,
   "total_minor": 1,
   "exclusion_reason": null,
@@ -92,18 +83,18 @@
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.9973,
+      "raw_score": 0.9973,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
+      "fidelity_composite": 0.9973,
       "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": null,
       "shingling_precision": null,
@@ -133,11 +124,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 85888,
+    "processing_ms": 92389,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

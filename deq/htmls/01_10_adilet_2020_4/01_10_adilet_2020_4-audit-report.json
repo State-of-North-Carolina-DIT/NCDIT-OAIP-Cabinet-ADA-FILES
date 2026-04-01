@@ -1,33 +1,57 @@
 {
   "document_id": "01_10_adilet_2020_4",
-  "audited_at": "2026-03-31T03:38:00.292159Z",
+  "audited_at": "2026-04-01T08:46:21.973105Z",
   "source_files": {
     "extraction_json": "01_10_adilet_2020_4.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_10_adilet_2020_4.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
+  "quality_score": 89,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.8928,
   "fidelity_content": 0.9923664122137404,
-  "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "fidelity_structural": 0.8182,
+  "fidelity_visual": 0.8571428571428572,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The document contains multiple major defects that require human intervention, including incorrect list conversions that alter document meaning, disrupted reading order due to running headers extracted as body text, and visual duplication of content via redundant screenshots. Programmatic signals confirm the document is a scanned PDF (0 baseline words) and corroborate the header/footer retention issue. With 4 major defects, this falls squarely into the HUMAN_REVIEW category.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source document contains meaningful visual elements, including the North Carolina state seal on page 1, the DEQ logo at the bottom of page 1, and a handwritten signature on page 4. While the HTML includes `<img>` elements intended to represent these graphics (along with partial text screenshots), the image manifest indicates that all extracted images have a corrupt/truncated base64 string (`\"valid\": false` due to a missing PIL module error). As a result, these images will fail to load in a b",
-      "source_pdf_quote": "Page 1 contains the North Carolina state seal and DEQ logo; Page 4 contains a handwritten signature from Judith A. Wehner.",
-      "output_quote": "The HTML contains <img> tags (e.g., `<img src=\"...\" alt=\"Official letterhead from the North Carolina Department of Environmental Quality...\">`), but the image manifest confirms these are corrupt (\"valid\": false), meaning they are broken.",
-      "location": "Page 1 and Page 4",
+      "description": "Lists converted incorrectly",
+      "severity": "major",
+      "analysis": "On page 3, there is a series of unnumbered paragraphs describing various basins (e.g., 'Basin 1:', 'Basin 2:', 'Basin 4/5:', 'Basin 8:'). The pipeline incorrectly converted these into an 'ordered' list. Because the basins skip numbers (jumping from 4/5 to 8, 11, etc.), rendering them as an HTML ordered list (<ol>) will apply sequential numbering (1, 2, 3, 4, 5, etc.) that conflicts with the actual basin numbers, fundamentally altering the document's meaning and introducing incorrect numbering.",
+      "source_pdf_quote": "Basin 1: The outlet of the slope drain appears...\nBasin 2: The outlet of the slope drain appears...\nBasin 3: The outlet of the slope drain appears...\nBasin 4/5: The ditch design appears...\nBasin 8: The diversion is shown...",
+      "output_quote": "{\n  \"type\": \"list\",\n  \"list_type\": \"ordered\",\n  \"items\": [\n    {\n      \"text\": \"Basin 1: The outlet...\"\n    },\n    ...\n    {\n      \"text\": \"Basin 8: The diversion...\"\n    }\n  ]\n}",
+      "location": "Page 3",
       "source": "fidelity_llm",
-      "check_id": "V2",
+      "check_id": "S5",
+      "fidelity_dimension": "structural",
+      "corroborated": false
+    },
+    {
+      "description": "Reading order significantly different",
+      "severity": "major",
+      "analysis": "The document contains running headers on pages 2, 3, and 4 ('Certified Mail / Mr. Threatt / Page X'). In the output JSON, these running headers are extracted as normal body paragraphs (`type: paragraph`) at the beginning of each page's content array. Because HTML is continuous, these running headers interrupt the contiguous reading flow between pages. Specifically, between pages 1 and 2, the headers interrupt the list of water quality parameters. Between pages 3 and 4, they interrupt a mailing a",
+      "source_pdf_quote": "Page 1 ends with: \"radiological: radon, uranium, and gross alpha and gross beta\". Page 2 continues the list: \"total and dissolved metals: Aluminum...\"",
+      "output_quote": "\"Certified Mail\" ... \"Mr. Threatt\" ... \"Page Two\" are inserted as body paragraphs immediately before \"total and dissolved metals: Aluminum...\"",
+      "location": "Page 2, elements 0-2 (and Page 4, elements 0)",
+      "source": "fidelity_llm",
+      "check_id": "S4",
+      "fidelity_dimension": "structural",
+      "corroborated": false
+    },
+    {
+      "description": "Content visually duplicated on page",
+      "severity": "major",
+      "analysis": "The HTML output contains images that act as partial-page screenshots of text blocks already extracted and rendered as plain HTML text, resulting in visual duplication. On page 1, the numbered list items 1 through 4 are properly extracted into an `<ol>` element, but immediately following this is an image whose alt text reveals it contains a screenshot of the same list ('featuring a numbered list of requirements regarding a Mine Map, traffic'). Similarly, on page 4, the paragraph referencing the m",
+      "source_pdf_quote": "Page 1 numbered list items 1-4 and Page 4 text 'As required by 15A NCAC 5B.0113...'",
+      "output_quote": "The HTML `<ol>` list followed by `<img src=\"[base64 image stripped for token budget]\" alt=\"A partial view of a formal document featuring a numbered list of requirements regarding a Mine Map, traffic\">` on Page 1; and the regulation text followed by `<img src=\"[base64 image stripped for token budget]\" alt=\"The concluding portion of a formal letter regarding a mining permit application, referencing regulation 15A NC\">` on Page 4.",
+      "location": "Bottom of Page 1 content and near Page 4 signature block",
+      "source": "fidelity_llm",
+      "check_id": "V3",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Scanned document: source has 0 extractable text but output contains 1008 words (OCR'd from images)",
@@ -42,8 +66,20 @@
       "corroborated": false
     },
     {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source document contains underlined text at the top of every page ('Certified Mail' and 'Return Receipt Requested'). The output JSON strips this underline formatting, leaving only plain text.",
+      "source_pdf_quote": "\"Certified Mail\" and \"Return Receipt Requested\" (underlined)",
+      "output_quote": "\"Certified Mail\\nReturn Receipt Requested\" (rendered as plain text without structural markers for underline)",
+      "location": "Pages 1, 2, 3, and 4 (top left paragraphs)",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
       "description": "Header/footer elements retained in output (1): North Carolina Department of Environmental Quality | Divisio",
-      "severity": "major",
+      "severity": "minor",
       "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
@@ -52,46 +88,37 @@
       "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document underlines 'Certified Mail' and 'Return Receipt Requested' to indicate emphasis at the top of the letter (and 'Certified Mail' on subsequent pages). The extraction JSON captures the text but does not preserve the underline formatting (e.g., via HTML <u> tags or similar expected representation), resulting in a loss of visual emphasis.",
-      "source_pdf_quote": "Certified Mail (underlined)\nReturn Receipt Requested (underlined)",
-      "output_quote": "Certified Mail\nReturn Receipt Requested",
-      "location": "Page 1, top left",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
-      "corroborated": false
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Change the incorrectly ordered lists for basin descriptions into plain paragraphs or unordered lists.",
+    "Remove running headers ('Certified Mail', 'Page X') from the body text to restore reading order.",
+    "Remove redundant screenshot images that duplicate extracted text.",
+    "Ensure underline formatting is restored where it provides necessary visual emphasis."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
-  "total_critical": 1,
-  "total_major": 0,
+  "total_defects": 4,
+  "total_critical": 0,
+  "total_major": 3,
   "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.8928,
+      "raw_score": 0.8928,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
+      "fidelity_composite": 0.8928,
       "fidelity_content": 0.9923664122137404,
-      "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_structural": 0.8182,
+      "fidelity_visual": 0.8571428571428572,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": null,
       "shingling_precision": null,
@@ -123,9 +150,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 148739,
+    "processing_ms": 164281,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

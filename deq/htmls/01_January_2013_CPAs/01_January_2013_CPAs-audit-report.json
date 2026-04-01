@@ -1,34 +1,22 @@
 {
   "document_id": "01_January_2013_CPAs",
-  "audited_at": "2026-03-31T03:47:52.911549Z",
+  "audited_at": "2026-04-01T05:08:20.277011Z",
   "source_files": {
     "extraction_json": "01_January_2013_CPAs.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_January_2013_CPAs.html"
   },
-  "quality_score": 97,
-  "quality_grade": "Good",
-  "fidelity_composite": 0.9727,
-  "fidelity_content": 1.0,
-  "fidelity_structural": 0.9091,
-  "fidelity_visual": 1.0,
+  "quality_score": 50,
+  "quality_grade": "Poor",
+  "fidelity_composite": null,
+  "fidelity_content": null,
+  "fidelity_structural": null,
+  "fidelity_visual": null,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "Both the LLM fidelity analysis and programmatic detectors identified that a table spanning across two pages was improperly split into two separate table objects with duplicated headers. This is a corroborated MAJOR structural accessibility issue. Text extraction and overall content fidelity are otherwise excellent. Given the single major defect, the document is routed to HUMAN_REVIEW per count-based routing rules.",
-  "decision_method": "llm_final_decider",
+  "reasoning": "Programmatic-only: 1 major concern(s): Table split across page break(s): 1 table(s) with repeated headers across consecutive pages",
+  "decision_method": "programmatic_only",
   "concerns": [
-    {
-      "description": "Table structure corrupted",
-      "severity": "major",
-      "analysis": "The source document contains a single large table that spans across both pages, with the header row repeating at the top of page 2. According to the structural fidelity guidelines, tables spanning multiple PDF pages with repeated headers should be merged and rendered as one continuous table. However, the output JSON splits this into two separate table objects (one on page 1 and another on page 2), failing to represent the continuous logical structure of the data.",
-      "source_pdf_quote": "The table detailing 'Case Number', 'Owner - Facility', etc., which spans from page 1 to page 2 continuously.",
-      "output_quote": "Two separate objects with '\"type\": \"table\"' (one in the page 1 content array, and one in the page 2 content array).",
-      "location": "Pages 1 and 2",
-      "source": "fidelity_llm",
-      "check_id": "S3",
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
     {
       "description": "Table split across page break(s): 1 table(s) with repeated headers across consecutive pages",
       "severity": "major",
@@ -40,47 +28,35 @@
       "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "Repeated footer/header text (2x): \"dwq january 2013 civil penalty assessments\"",
-      "severity": "minor",
-      "analysis": "Short text with footer-like pattern appears on 2 pages",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
     }
   ],
   "action_items": [
-    "Merge the split table on pages 1 and 2 into a single continuous table structure and remove the redundant header row."
+    "Table split across page break(s): 1 table(s) with repeated headers across consecutive pages"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 0,
   "total_critical": 0,
-  "total_major": 1,
+  "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.7,
     "score_breakdown": {
-      "fidelity_composite": 0.9727,
-      "raw_score": 0.9727,
-      "ceiling": null,
-      "ceiling_reason": null,
-      "available_components": 1
+      "fidelity_composite": null,
+      "raw_score": 0.5,
+      "ceiling": 0.5,
+      "ceiling_reason": "fidelity_unavailable",
+      "available_components": 0
     },
     "signals": {
-      "fidelity_composite": 0.9727,
-      "fidelity_content": 1.0,
-      "fidelity_structural": 0.9091,
-      "fidelity_visual": 1.0,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
-      "fidelity_available": true,
+      "fidelity_composite": null,
+      "fidelity_content": null,
+      "fidelity_structural": null,
+      "fidelity_visual": null,
+      "fidelity_routing": null,
+      "fidelity_available": false,
       "shingling_recall": 1.0,
       "shingling_precision": 1.0,
       "duplication_ratio": 0.0,
@@ -109,12 +85,12 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 143412,
-    "fidelity_report_path": "fidelity-report.json",
+    "processing_ms": 79,
+    "fidelity_report_path": null,
     "routing_escalated_from": null
   }
 }

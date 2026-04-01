@@ -1,6 +1,6 @@
 {
   "document_id": "0_HertfordCountyCertificationDate_022411",
-  "audited_at": "2026-03-31T03:37:33.605319Z",
+  "audited_at": "2026-04-01T08:46:29.552674Z",
   "source_files": {
     "extraction_json": "0_HertfordCountyCertificationDate_022411.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "All signals indicate a perfect conversion. LLM fidelity scores and programmatic text comparison metrics are both 1.0, and no defects were identified by any system.",
+  "reasoning": "Both LLM fidelity and programmatic signals indicate a perfect conversion of a very short document (17 words). There are zero defects reported across all severity levels.",
   "decision_method": "llm_final_decider",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 53200,
+    "processing_ms": 55026,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

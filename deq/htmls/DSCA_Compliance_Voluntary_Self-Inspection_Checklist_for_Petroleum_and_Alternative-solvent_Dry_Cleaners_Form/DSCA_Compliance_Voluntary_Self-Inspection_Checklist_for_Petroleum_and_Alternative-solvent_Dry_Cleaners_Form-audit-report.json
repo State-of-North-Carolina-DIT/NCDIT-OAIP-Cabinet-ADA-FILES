@@ -1,6 +1,6 @@
 {
   "document_id": "DSCA_Compliance_Voluntary_Self-Inspection_Checklist_for_Petroleum_and_Alternative-solvent_Dry_Cleaners_Form",
-  "audited_at": "2026-03-31T03:39:32.612259Z",
+  "audited_at": "2026-04-01T08:46:12.300158Z",
   "source_files": {
     "extraction_json": "DSCA_Compliance_Voluntary_Self-Inspection_Checklist_for_Petroleum_and_Alternative-solvent_Dry_Cleaners_Form.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: FORM. The document is a Voluntary Self-inspection Checklist that requires the user to fill out initials in a table and provide signature, date, name, title, address, phone, and email at the bottom. The majority of its utility comes from being a fillable or printable form.",
+  "reasoning": "Document excluded: FORM. The document is a voluntary self-inspection checklist intended to be printed, filled out (with initials for each item), signed, and mailed in. It contains significant blank lines and fillable fields, making it fundamentally a form.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 25366,
+    "processing_ms": 42908,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

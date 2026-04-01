@@ -1,21 +1,21 @@
 {
   "document_id": "01_2019_Consumer_Shellfish_Advisory_ENGLISH",
-  "audited_at": "2026-03-31T03:36:39.652484Z",
+  "audited_at": "2026-04-01T06:29:45.003821Z",
   "source_files": {
     "extraction_json": "01_2019_Consumer_Shellfish_Advisory_ENGLISH.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_2019_Consumer_Shellfish_Advisory_ENGLISH.html"
   },
-  "quality_score": 100,
-  "quality_grade": "Good",
-  "fidelity_composite": 1.0,
-  "fidelity_content": 1.0,
-  "fidelity_structural": 1.0,
-  "fidelity_visual": 1.0,
-  "routing": "auto_approve",
-  "routing_label": "Auto-Approve",
-  "reasoning": "All LLM fidelity scores are perfect (1.0). Programmatic text metrics indicate strong content preservation and precision. The only observation is a minor programmatic issue regarding retained header/footer elements, which does not exceed the threshold for human review. Given the high cost of false positives, this clean document is routed to AUTO_APPROVE.",
-  "decision_method": "llm_final_decider",
+  "quality_score": 50,
+  "quality_grade": "Poor",
+  "fidelity_composite": null,
+  "fidelity_content": null,
+  "fidelity_structural": null,
+  "fidelity_visual": null,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "Programmatic-only: no severe issues found but Final Decider not available.",
+  "decision_method": "programmatic_only",
   "concerns": [
     {
       "description": "Header/footer elements retained in output (2): N.C. DEPARTMENT OF ENVIRONMENTAL QUALITY\nDIVISION OF MARINE ; Shellfish Sanitation Section",
@@ -30,7 +30,9 @@
       "corroborated": false
     }
   ],
-  "action_items": [],
+  "action_items": [
+    "Run with LLM enabled for higher-confidence routing."
+  ],
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 0,
@@ -40,21 +42,21 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.98,
+    "decider_confidence": 0.5,
     "score_breakdown": {
-      "fidelity_composite": 1.0,
-      "raw_score": 1.0,
-      "ceiling": null,
-      "ceiling_reason": null,
-      "available_components": 1
+      "fidelity_composite": null,
+      "raw_score": 0.5,
+      "ceiling": 0.5,
+      "ceiling_reason": "fidelity_unavailable",
+      "available_components": 0
     },
     "signals": {
-      "fidelity_composite": 1.0,
-      "fidelity_content": 1.0,
-      "fidelity_structural": 1.0,
-      "fidelity_visual": 1.0,
-      "fidelity_routing": "AUTO_APPROVE",
-      "fidelity_available": true,
+      "fidelity_composite": null,
+      "fidelity_content": null,
+      "fidelity_structural": null,
+      "fidelity_visual": null,
+      "fidelity_routing": null,
+      "fidelity_available": false,
       "shingling_recall": 0.8656716417910447,
       "shingling_precision": 0.9720670391061452,
       "duplication_ratio": 0.0,
@@ -83,12 +85,12 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge_with_minors",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 68013,
-    "fidelity_report_path": "fidelity-report.json",
+    "processing_ms": 80,
+    "fidelity_report_path": null,
     "routing_escalated_from": null
   }
 }

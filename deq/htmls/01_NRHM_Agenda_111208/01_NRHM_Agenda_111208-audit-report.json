@@ -1,6 +1,6 @@
 {
   "document_id": "01_NRHM_Agenda_111208",
-  "audited_at": "2026-03-31T03:42:32.179871Z",
+  "audited_at": "2026-04-01T08:45:14.154555Z",
   "source_files": {
     "extraction_json": "01_NRHM_Agenda_111208.json",
     "source_pdf": "source.pdf",
@@ -14,16 +14,16 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document shows strong content preservation with high shingling metrics and a high LLM composite score. However, a major structural defect was identified where bulleted lists inside table cells were extracted as plain text with literal bullet characters rather than properly structured HTML lists. Following the count-based routing thresholds, the presence of one major defect requires HUMAN_REVIEW.",
+  "reasoning": "The document contains one major LLM fidelity defect where bulleted lists within table cells have been flattened into plain text rather than using proper HTML list elements (<ul>/<li>), which breaks accessibility for screen readers. There is also a minor programmatic observation regarding table header semantics. According to the count-based routing rules, 1 major defect requires HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The source document contains several bulleted lists under the agenda topics (e.g., under 'Project Finance Update' there are bullets for 'Cost share payments received.' and 'Funds expended.'). In the output JSON, these bulleted items are extracted as plain text with literal bullet characters (•) separated by newline characters inside the table cell, instead of being structured as proper list elements. This breaks the structural semantics of the list for accessibility.",
+      "analysis": "The source document contains several bulleted lists under the agenda topics (e.g., under 'Project Finance Update'). In the output JSON, these lists are flattened into plain text strings containing bullet characters (\\u2022) separated by newlines within the table cells, rather than being structured as proper HTML list elements (<ul>/<li>). This breaks accessibility for screen readers.",
       "source_pdf_quote": "Project Finance Update\n• Cost share payments received.\n• Funds expended.",
-      "output_quote": "\"Project Finance Update\\n• Cost share payments received.\\n• Funds expended.\"",
-      "location": "Row 1, Column 1 of the schedule table",
+      "output_quote": "\"text\": \"Project Finance Update\\n• Cost share payments received.\\n• Funds expended.\"",
+      "location": "Table row 1, column 1 (and multiple other rows)",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -43,8 +43,8 @@
     }
   ],
   "action_items": [
-    "Convert the plain text bullet points with literal bullets into proper HTML list elements (<ul>/<li>) within the respective table cells.",
-    "Review the table header structure to ensure that <th> elements contain appropriate semantic headers rather than data values."
+    "Convert flattened text bullet points inside table cells into properly formatted <ul>/<li> HTML list elements.",
+    "Verify and adjust table headers (<th>) to ensure they contain column descriptions rather than data like time values."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -98,11 +98,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge",
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 218775,
+    "processing_ms": 94916,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

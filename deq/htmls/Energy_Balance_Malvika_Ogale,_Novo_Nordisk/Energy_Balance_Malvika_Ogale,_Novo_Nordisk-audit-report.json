@@ -1,6 +1,6 @@
 {
   "document_id": "Energy_Balance_Malvika_Ogale,_Novo_Nordisk",
-  "audited_at": "2026-03-31T03:47:22.266111Z",
+  "audited_at": "2026-04-01T08:45:14.706340Z",
   "source_files": {
     "extraction_json": "Energy_Balance_Malvika_Ogale,_Novo_Nordisk.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a 19-page slide presentation in landscape orientation. It features characteristic slide layouts, including large titles, bullet points, and numerous visual elements (images, icons, flowcharts, graphs) on almost every page.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a slide presentation characterized by its landscape orientation, multiple visual graphics per page, slide-like layouts, and minimal text blocks typical of corporate presentations.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 520509,
+    "processing_ms": 41312,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

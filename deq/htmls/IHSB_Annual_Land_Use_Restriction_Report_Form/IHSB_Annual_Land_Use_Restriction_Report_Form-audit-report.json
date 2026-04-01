@@ -1,6 +1,6 @@
 {
   "document_id": "IHSB_Annual_Land_Use_Restriction_Report_Form",
-  "audited_at": "2026-03-31T03:39:40.535306Z",
+  "audited_at": "2026-04-01T08:44:27.458675Z",
   "source_files": {
     "extraction_json": "IHSB_Annual_Land_Use_Restriction_Report_Form.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: FORM. The document is titled 'Annual Report Form', consists primarily of fillable fields, checkboxes, and a signature block for property owner certification. As a form designed to be filled out, it loses its core functionality when converted to standard HTML.",
+  "reasoning": "Document excluded: FORM. The document is an annual report form containing blank lines for input (Site Name, Site ID, County), multiple checkboxes, a comments box, and a signature block. More than 50% of its content is structured for direct user input.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 21893,
+    "processing_ms": 23932,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

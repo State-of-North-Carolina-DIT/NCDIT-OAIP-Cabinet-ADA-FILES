@@ -1,6 +1,6 @@
 {
   "document_id": "01_JLR4_Agenda_Schedule",
-  "audited_at": "2026-03-31T03:40:13.465566Z",
+  "audited_at": "2026-04-01T08:44:02.809691Z",
   "source_files": {
     "extraction_json": "01_JLR4_Agenda_Schedule.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document consists of two pages with a landscape orientation, dark blue backgrounds, and large text, consistent with slides from a presentation.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document consists of presentation slides, indicated by the landscape orientation, background colors, and slide-style layout.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 26918,
+    "processing_ms": 23991,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

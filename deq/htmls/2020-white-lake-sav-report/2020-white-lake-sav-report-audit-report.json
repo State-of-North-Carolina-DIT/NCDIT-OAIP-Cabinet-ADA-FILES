@@ -1,6 +1,6 @@
 {
   "document_id": "2020-white-lake-sav-report",
-  "audited_at": "2026-03-31T03:48:20.669711Z",
+  "audited_at": "2026-04-01T08:48:13.059327Z",
   "source_files": {
     "extraction_json": "2020-white-lake-sav-report.json",
     "source_pdf": "source.pdf",
@@ -20,24 +20,24 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The source document contains numerous meaningful images, including maps, aerial photographs, and charts (Figures 1 through 16). The image manifest provided indicates that all extracted images have `\"valid\": false` with the error `\"No module named 'PIL'\"`. Because the base64 data is corrupt/missing, none of these images will render in a browser, despite the presence of `<img>` tags in the HTML output.",
-      "source_pdf_quote": "Figure 1 (page 6) shows an aerial map of predetermined sample points in White Lake.",
-      "output_quote": "The image manifest indicates \"valid\": false for the image corresponding to page 6, meaning the image data is corrupt and will not render.",
-      "location": "Throughout the document (Figures 1-16)",
+      "analysis": "The source PDF contains a meaningful bathymetry map image on the final page (page 22) labeled 'Figure 16'. The rendered HTML output ends completely after 'Figure 15' and entirely omits the Figure 16 image and its corresponding caption.",
+      "source_pdf_quote": "Figure 16: Bathymetry data collected during the August survey. Data was collected and processed using BioSonics epuipment and software. Average depth 7.67ft.",
+      "output_quote": "[Absent from HTML output]",
+      "location": "Page 22 / End of document",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "1 bare URL(s) in text not converted to hyperlinks: https://auth1.dpr.ncparks.gov/flora/species_account.php?id=4050.",
-      "severity": "minor",
-      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links.",
+      "severity": "major",
+      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
-      "check_id": null,
+      "check_id": "S8",
       "fidelity_dimension": null,
       "corroborated": false
     },
@@ -111,9 +111,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 170982,
+    "processing_ms": 130800,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

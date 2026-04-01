@@ -1,41 +1,41 @@
 {
   "document_id": "01_10_2nd_pub_not_20201215",
-  "audited_at": "2026-03-31T03:37:13.080953Z",
+  "audited_at": "2026-04-01T08:45:27.791486Z",
   "source_files": {
     "extraction_json": "01_10_2nd_pub_not_20201215.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_10_2nd_pub_not_20201215.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
+  "quality_score": 90,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.8973282442748092,
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.1428571428571429,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "fidelity_visual": 0.7142857142857143,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The document is a scanned image with 0 baseline words but 377 words extracted, which triggers a programmatic major defect. Furthermore, there are multiple major defects related to images: the output has 2.5x more images than the source, corroborating the LLM fidelity finding that extracted text is visually duplicated as an image snippet. An organizational logo is also missing. With 4 major defects, the document must be routed to human review.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source PDF contains meaningful images on the first page, specifically the North Carolina State Seal and the NC DEQ logo. The HTML output contains <img> tags, but the image manifest indicates that all extracted images have 'valid: false' due to a PIL module error. This means the base64 data is missing or corrupt, and the images will render as broken links. Furthermore, the agency logos themselves do not appear to have been extracted independently.",
-      "source_pdf_quote": "Page 1 contains the North Carolina state seal at the top and the NC DEQ logo at the bottom left.",
-      "output_quote": "The Image Manifest shows 'valid: false' and 'error': 'No module named \\'PIL\\'' for all images, meaning they will fail to render.",
-      "location": "Page 1 / Image Manifest",
+      "severity": "major",
+      "analysis": "[Downgraded: image_count_ratio=2.50, placeholder_ratio=0.00 contradict LLM claim] The source document contains a prominent agency logo for the NC DEQ (Department of Environmental Quality) at the bottom left of page 1. This logo serves as a meaningful organizational identifier. However, the rendered HTML does not contain any corresponding image element for this logo.",
+      "source_pdf_quote": "NC DEQ (Department of Environmental Quality) logo at the bottom left of page 1.",
+      "output_quote": "Missing <img> element for the DEQ logo.",
+      "location": "Page 1 footer",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Content visually duplicated on page",
       "severity": "major",
-      "analysis": "The HTML output includes <img> tags whose alt text clearly indicates they are full-page screenshots or large sections of the document (e.g., 'A formal business letter...', 'A formal legal notice...'). These images are placed directly alongside the fully transcribed text of those same pages. Although the images are broken (as noted in V2), the HTML structure demonstrates the pipeline attempted to render the pages as full-page images alongside the extracted text, which constitutes duplication of t",
-      "source_pdf_quote": "The text of the letter on Page 1 and the Notice on Page 2.",
-      "output_quote": "The HTML includes <img> tags intended to display full-page screenshots (alt='A formal business letter regarding a revised Notice...', alt='A formal legal notice from the North Carolina Department...') immediately before or after the extracted text of the same content.",
-      "location": "Pages 1 and 2",
+      "analysis": "The HTML output contains visual duplication where an extracted text block is immediately followed by an image snippet of the exact same content. Specifically, the text 'This notice was mailed on 12-15-2020' is present as a text paragraph, and right below it, an image containing that same text and handwritten date is inserted, causing the user to see the information twice.",
+      "source_pdf_quote": "Text 'This notice was mailed on 12-15-2020' and the handwritten date/signature area on page 2.",
+      "output_quote": "<p>This notice was mailed on 12-15-2020</p> followed immediately by <img src=\"...\" alt=\"A document snippet displaying the printed text &quot;This notice was mailed on&quot; followed by the\">",
+      "location": "Page 2, bottom section",
       "source": "fidelity_llm",
       "check_id": "V3",
       "fidelity_dimension": "visual",
@@ -66,8 +66,20 @@
       "corroborated": false
     },
     {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "In the source PDF, the text \"within sixty (60) days\" is underlined for emphasis. In the output JSON, this text is rendered as plain text without any indication of underline. As underline does not have a markdown equivalent in this extraction schema, the loss of this structural emphasis is a minor defect.",
+      "source_pdf_quote": "...must be filed in the Office of Administrative Hearings within sixty (60) days of the mailing of this notice to you.",
+      "output_quote": "If you believe that you are an aggrieved party within the meaning of the APA, a petition for a contested case must be filed in the Office of Administrative Hearings within sixty (60) days of the mailing of this notice to you.",
+      "location": "Page 2, paragraph 4",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
       "description": "Header/footer elements retained in output (1): North Carolina Department of Environmental Quality | Divisio",
-      "severity": "major",
+      "severity": "minor",
       "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
@@ -76,46 +88,36 @@
       "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document includes underlined text for emphasis in the fourth paragraph on page 2. This underline emphasis is lost in the extraction.",
-      "source_pdf_quote": "within sixty (60) days (underlined in source)",
-      "output_quote": "within sixty (60) days",
-      "location": "Page 2, paragraph 4",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
-      "corroborated": false
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Check for duplicated content where extracted text is repeated as an image snippet and remove redundant images",
+    "Ensure the NC DEQ logo is present and properly tagged with alt text",
+    "Remove retained header/footer elements from the main content flow"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 3,
-  "total_critical": 1,
-  "total_major": 1,
+  "total_critical": 0,
+  "total_major": 2,
   "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.8973282442748092,
+      "raw_score": 0.8973,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
+      "fidelity_composite": 0.8973282442748092,
       "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.1428571428571429,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_visual": 0.7142857142857143,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": null,
       "shingling_precision": null,
@@ -147,9 +149,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 101306,
+    "processing_ms": 110086,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,6 +1,6 @@
 {
   "document_id": "Lake-Tillery-Hydrilla-Management",
-  "audited_at": "2026-03-31T03:41:43.297851Z",
+  "audited_at": "2026-04-01T08:45:54.635695Z",
   "source_files": {
     "extraction_json": "Lake-Tillery-Hydrilla-Management.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a slide presentation characterized by landscape orientation, slide-style layouts, large text, bulleted lists, and numerous images, charts, and maps across all pages.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a presentation slide deck with a landscape orientation, slide-like layout, and numerous large images (maps, graphs, photos) on almost every page.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 54519,
+    "processing_ms": 33596,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

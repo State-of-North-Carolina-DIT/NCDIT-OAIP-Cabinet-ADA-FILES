@@ -1,6 +1,6 @@
 {
   "document_id": "01_NCDAQ_Final_RH_SIP_Transmittal_Letter_040422.pdf",
-  "audited_at": "2026-03-31T03:39:06.575554Z",
+  "audited_at": "2026-04-01T08:45:20.368168Z",
   "source_files": {
     "extraction_json": "01_NCDAQ_Final_RH_SIP_Transmittal_Letter_040422.pdf.json",
     "source_pdf": "source.pdf",
@@ -20,14 +20,14 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The source PDF contains important agency logos on the first page: the Great Seal of the State of North Carolina and the DEQ logo. The HTML output fails to render these as images, instead replacing them with text placeholders (`<p>[Image: ...]</p>`). Additionally, the signature image on page 3 is marked as corrupt (`\"valid\": false`) in the image manifest, meaning it will not render.",
-      "source_pdf_quote": "The Great Seal of the State of North Carolina (top right, page 1), the DEQ logo (bottom left, page 1), and a handwritten signature for Michael A. Abraczinskas (page 3).",
-      "output_quote": "The HTML contains text placeholders like `<p>[Image: Great Seal of the State of North Carolina]</p>` instead of actual `<img>` tags for the page 1 logos. The manifest shows a `valid: false` error for the page 3 signature image.",
-      "location": "Pages 1 and 3",
+      "analysis": "The source document contains two significant logos on page 1 (the Great Seal of the State of North Carolina and the DEQ logo). In the image manifest, both of these images have a base64 length of 0, indicating they are corrupted or missing. In the rendered HTML, they are represented as plain text placeholders instead of actual <img> elements.",
+      "source_pdf_quote": "Great Seal of the State of North Carolina at the top of page 1 and DEQ logo at the bottom left of page 1.",
+      "output_quote": "<p>[Image: Great Seal of the State of North Carolina]</p> and <p>[Image: DEQ North Carolina Department of Environmental Quality logo]</p>",
+      "location": "Page 1",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Header/footer elements retained in output (2): North Carolina Department of Environmental Quality | Divisio; Daniel Blackman April 4, 2022 Page 2",
@@ -123,9 +123,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 128497,
+    "processing_ms": 101084,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

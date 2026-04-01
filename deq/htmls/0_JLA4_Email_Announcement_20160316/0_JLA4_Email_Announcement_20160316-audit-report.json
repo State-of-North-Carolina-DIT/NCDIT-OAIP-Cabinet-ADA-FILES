@@ -1,34 +1,22 @@
 {
   "document_id": "0_JLA4_Email_Announcement_20160316",
-  "audited_at": "2026-03-31T03:40:48.093222Z",
+  "audited_at": "2026-04-01T08:47:02.734606Z",
   "source_files": {
     "extraction_json": "0_JLA4_Email_Announcement_20160316.json",
     "source_pdf": "source.pdf",
     "rendered_html": "0_JLA4_Email_Announcement_20160316.html"
   },
-  "quality_score": 97,
+  "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9727,
+  "fidelity_composite": 1.0,
   "fidelity_content": 1.0,
-  "fidelity_structural": 0.9091,
+  "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "Both the LLM fidelity evaluation and the programmatic detector independently identified that hyperlinks were extracted as standalone elements rather than inline within the text flow. This represents a major structural accessibility issue. Under count-based routing rules, 1-5 major defects requires a routing of HUMAN_REVIEW.",
+  "reasoning": "The LLM fidelity analysis found no issues and assigned a perfect composite score. However, the programmatic analysis identified a major defect regarding 4 displaced hyperlinks that were extracted as standalone elements instead of being inline text. Per the count-based routing rules, 1 major defect requires human review to ensure accessibility standards are met.",
   "decision_method": "llm_final_decider",
   "concerns": [
-    {
-      "description": "Link text pulled over but not hyperlinked",
-      "severity": "major",
-      "analysis": "In the source document, the word 'here' at the end of the two meeting location paragraphs is a clickable hyperlink pointing to Google Maps. In the output JSON, this text is extracted inline as a plain text paragraph (`{\"type\": \"paragraph\", \"text\": \"here\"}`). While the link annotations themselves were extracted and appended to the end of the document as separate elements, the inline text where the links naturally occur in the reading flow has lost its hyperlink styling/wrapper.",
-      "source_pdf_quote": "A map of the location for this meeting is available here.",
-      "output_quote": "{\"type\": \"paragraph\", \"text\": \"here\"}",
-      "location": "Paragraphs 10-11 and 13-14",
-      "source": "fidelity_llm",
-      "check_id": "S8",
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
     {
       "description": "Displaced hyperlinks: 4 link(s) extracted as standalone elements instead of inline text",
       "severity": "major",
@@ -43,31 +31,31 @@
     }
   ],
   "action_items": [
-    "Locate standalone link elements and embed them correctly inline within the text flow (e.g., 'here' hyperlinks)."
+    "Review the 4 standalone links and ensure they are placed inline with the appropriate paragraph text."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 0,
   "total_critical": 0,
-  "total_major": 1,
+  "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9727,
-      "raw_score": 0.9727,
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9727,
+      "fidelity_composite": 1.0,
       "fidelity_content": 1.0,
-      "fidelity_structural": 0.9091,
+      "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 0.9837877671333825,
       "shingling_precision": 0.9816176470588235,
@@ -97,11 +85,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 167889,
+    "processing_ms": 94267,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

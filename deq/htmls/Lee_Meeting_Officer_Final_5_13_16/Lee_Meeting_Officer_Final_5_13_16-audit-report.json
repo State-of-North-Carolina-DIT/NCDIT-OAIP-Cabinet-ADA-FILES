@@ -1,38 +1,26 @@
 {
   "document_id": "Lee_Meeting_Officer_Final_5_13_16",
-  "audited_at": "2026-03-31T03:47:34.114545Z",
+  "audited_at": "2026-04-01T06:38:06.411290Z",
   "source_files": {
     "extraction_json": "Lee_Meeting_Officer_Final_5_13_16.json",
     "source_pdf": "source.pdf",
     "rendered_html": "Lee_Meeting_Officer_Final_5_13_16.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9973,
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
+  "fidelity_visual": 1.0,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "reasoning": "While the LLM fidelity scores are excellent (composite 0.9973), automated programmatic detectors identified a critical pipeline failure where header and footer artifacts were retained across all 5 pages. Additionally, a major list structure defect was found indicating flattened sub-points. According to strict count-based routing thresholds, the presence of a critical defect mandates a REJECT routing.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source PDF contains an agency logo ('NC Water Resources Environmental Quality') on the top left of the first page. According to the provided Image Manifest, the extracted base64 data for this image (and the footer gradient image) is corrupt ('valid': false, error: 'No module named \\'PIL\\''). Because the image data is invalid, the <img> tag in the HTML will result in a broken image icon. Since this is an agency logo on the first page, its failure to render constitutes a CRITICAL defect.",
-      "source_pdf_quote": "NC Water Resources Environmental Quality logo on the top left of page 1.",
-      "output_quote": "Image manifest shows 'valid': false for the image with alt text starting 'Logo featuring the letters 'NC'...', meaning the image is broken.",
-      "location": "Page 1, first <img> element",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": true
-    },
-    {
       "description": "Header/footer elements retained in output (5): State of North Carolina | Environmental Quality | Water Reso; Page 2 of 5; Page 3 of 5",
-      "severity": "major",
-      "analysis": "header_footer_count=5. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "severity": "critical",
+      "analysis": "header_footer_count=5, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -42,20 +30,8 @@
       "corroborated": false
     },
     {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document utilizes bold and underlined text to emphasize the leading topics in the bulleted lists on pages 3 and 4 (e.g., 'Agriculture', 'Air Quality', 'Beneficial Reuse'). The output entirely strips this underline emphasis, presenting the terms as plain text without any markup.",
-      "source_pdf_quote": "Agriculture– (bold and underlined in source)",
-      "output_quote": "Agriculture– (plain text without underline formatting)",
-      "location": "Page 3 and 4, unordered list items",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
-    {
       "description": "Mixed numbering types at same list level (1 list(s)): p1:letter+roman — possible sub-point flattening",
-      "severity": "minor",
+      "severity": "major",
       "analysis": "flat_lists=1. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
       "source_pdf_quote": null,
       "output_quote": null,
@@ -64,15 +40,29 @@
       "check_id": "S5",
       "fidelity_dimension": null,
       "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "In the source PDF, the key terms at the beginning of the bulleted lists on pages 3, 4, and 5 (e.g., 'Agriculture', 'Air Quality', 'Beneficial Reuse') are heavily emphasized using bold and underlining. This emphasis is entirely missing from the output text, which contains no markdown for bold or underlining for these terms.",
+      "source_pdf_quote": "Agriculture– One citizen commented",
+      "output_quote": "Agriculture– One citizen commented",
+      "location": "Page 3, oral comments list items",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Remove duplicated header and footer artifacts from the HTML output.",
+    "Correct list structures to ensure proper nesting of sub-points instead of flattening.",
+    "Restore bold and underline emphasis to key terms in list items."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
-  "total_critical": 1,
+  "total_defects": 1,
+  "total_critical": 0,
   "total_major": 0,
   "total_minor": 1,
   "exclusion_reason": null,
@@ -80,18 +70,18 @@
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.9973,
+      "raw_score": 0.9973,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
+      "fidelity_composite": 0.9973,
       "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 0.950337512054002,
       "shingling_precision": 0.9771938522558254,
@@ -121,11 +111,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "major_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 134796,
+    "processing_ms": 145922,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

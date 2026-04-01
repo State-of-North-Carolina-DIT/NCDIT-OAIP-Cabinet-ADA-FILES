@@ -1,6 +1,6 @@
 {
   "document_id": "PRLF_Durham_Parks_June_2024_Update",
-  "audited_at": "2026-03-31T03:43:04.561904Z",
+  "audited_at": "2026-04-01T08:46:14.874601Z",
   "source_files": {
     "extraction_json": "PRLF_Durham_Parks_June_2024_Update.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "All signals indicate a perfectly clean document. The LLM fidelity scores are all 1.0, programmatic text preservation metrics are very high (shingling recall 0.969), and no defects were identified by any source.",
+  "reasoning": "All signals indicate a perfectly clean conversion. LLM fidelity scores are exceptional at 1.0 across all categories. Programmatic text metrics show high recall (0.969) and precision (0.993), confirming accurate content preservation. With zero reported defects or minor observations, this document safely merits automatic approval.",
   "decision_method": "llm_final_decider",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 225920,
+    "processing_ms": 60012,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

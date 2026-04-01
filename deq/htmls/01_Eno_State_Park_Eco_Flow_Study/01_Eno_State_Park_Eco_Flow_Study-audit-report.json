@@ -1,6 +1,6 @@
 {
   "document_id": "01_Eno_State_Park_Eco_Flow_Study",
-  "audited_at": "2026-03-31T03:36:03.102480Z",
+  "audited_at": "2026-04-01T08:44:20.804211Z",
   "source_files": {
     "extraction_json": "01_Eno_State_Park_Eco_Flow_Study.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a presentation slide deck characterized by landscape orientation, consistent graphical backgrounds (blue gradients), and a layout consisting of titles, bullet points, large photographs, and charts typical of a PowerPoint presentation.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a landscape-oriented slide presentation with background colors, minimal text on most pages, and numerous large images (photos and cross-section graphs) formatted as slides.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 30983,
+    "processing_ms": 42893,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

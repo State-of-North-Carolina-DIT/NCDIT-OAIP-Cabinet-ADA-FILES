@@ -1,62 +1,26 @@
 {
   "document_id": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL",
-  "audited_at": "2026-03-31T03:41:32.249652Z",
+  "audited_at": "2026-04-01T06:29:49.712136Z",
   "source_files": {
     "extraction_json": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL.html"
   },
-  "quality_score": 29,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.2857,
+  "quality_score": 50,
+  "quality_grade": "Poor",
+  "fidelity_composite": null,
   "fidelity_content": null,
   "fidelity_structural": null,
-  "fidelity_visual": 0.2857142857142857,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.29).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "fidelity_visual": null,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "Programmatic-only: 4 major concern(s): Table split across page break(s): 2 table(s) with repeated headers across consecutive pages; Output has more images than source PDF (ratio 1.8x) — possible image duplication; Displaced hyperlinks: 6 link(s) extracted as standalone elements instead of inline text",
+  "decision_method": "programmatic_only",
   "concerns": [
     {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The image manifest indicates that all extracted images have corrupt or missing base64 data. Specifically, images that have `<img>` tags in the HTML (Figures 1-13, 19, 20) are marked as 'valid: false' with extraction errors ('No module named \\'PIL\\''), meaning they will not render visually. Furthermore, several meaningful charts from the source PDF (Figures 14-18, 21-23 on pages 56-58, 61-62) are completely missing `<img>` elements in the HTML and are instead represented merely as bracketed text ",
-      "source_pdf_quote": "Meaningful charts on pages 50-62 (Figures 1-23).",
-      "output_quote": "The <img> tags for Figures 1-13, 19, and 20 point to corrupted/invalid base64 data per the manifest. Additionally, Figures 14-18 and 21-23 lack <img> tags entirely and only appear as bracketed text (e.g., `<p>[Image: Line chart showing projections...]</p>`).",
-      "location": "Throughout document, particularly Figures 1-23",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": true
-    },
-    {
-      "description": "Fidelity Content evaluation failed — dimension not assessed, requires human review",
+      "description": "Table split across page break(s): 2 table(s) with repeated headers across consecutive pages",
       "severity": "major",
-      "analysis": "The content fidelity call did not produce valid results.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "fidelity_llm",
-      "check_id": null,
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
-    {
-      "description": "Fidelity Structural evaluation failed — dimension not assessed, requires human review",
-      "severity": "major",
-      "analysis": "The structural fidelity call did not produce valid results.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "fidelity_llm",
-      "check_id": null,
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
-    {
-      "description": "Table split across page break(s): 4 table(s) with repeated headers across consecutive pages",
-      "severity": "major",
-      "analysis": "split_table_count=4. Examples: pages 37-38: 2 cols (, season start date...); pages 41-42: 2 cols (, management area...); pages 47-48: 5 cols (issue, ncdmf, southern flounder advisory committee...). Tables spanning multiple pages were extracted as separate table elements with duplicated header rows. The HTML output will show multiple tables instead of one continuous table — a structural accessibility issue.",
+      "analysis": "split_table_count=2. Examples: pages 47-48: 5 cols (issue, ncdmf, southern flounder advisory committee...); pages 48-49: 5 cols (issue, ncdmf, southern flounder advisory committee...). Tables spanning multiple pages were extracted as separate table elements with duplicated header rows. The HTML output will show multiple tables instead of one continuous table — a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -115,32 +79,35 @@
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.29)."
+    "Table split across page break(s): 2 table(s) with repeated headers across consecutive pages",
+    "Output has more images than source PDF (ratio 1.8x) — possible image duplication",
+    "Displaced hyperlinks: 6 link(s) extracted as standalone elements instead of inline text",
+    "Table header markup issues: 1 table(s) have a data row marked as header: \"Year\""
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
-  "total_critical": 1,
+  "total_defects": 0,
+  "total_critical": 0,
   "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.7,
     "score_breakdown": {
-      "fidelity_composite": 0.2857,
-      "raw_score": 0.2857,
-      "ceiling": 0.2857,
-      "ceiling_reason": "fidelity_auto_reject",
-      "available_components": 1
+      "fidelity_composite": null,
+      "raw_score": 0.5,
+      "ceiling": 0.5,
+      "ceiling_reason": "fidelity_unavailable",
+      "available_components": 0
     },
     "signals": {
-      "fidelity_composite": 0.2857,
+      "fidelity_composite": null,
       "fidelity_content": null,
       "fidelity_structural": null,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
-      "fidelity_available": true,
+      "fidelity_visual": null,
+      "fidelity_routing": null,
+      "fidelity_available": false,
       "shingling_recall": 0.9368857689853223,
       "shingling_precision": 0.9756113769271664,
       "duplication_ratio": 0.017866221869397295,
@@ -169,12 +136,12 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 360080,
-    "fidelity_report_path": "fidelity-report.json",
+    "processing_ms": 987,
+    "fidelity_report_path": null,
     "routing_escalated_from": null
   }
 }

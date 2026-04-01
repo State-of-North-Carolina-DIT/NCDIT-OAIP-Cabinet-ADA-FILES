@@ -1,61 +1,61 @@
 {
   "document_id": "Web_Meeting_Etiquette_PDF",
-  "audited_at": "2026-03-31T03:42:31.184680Z",
+  "audited_at": "2026-04-01T06:37:57.114556Z",
   "source_files": {
     "extraction_json": "Web_Meeting_Etiquette_PDF.json",
     "source_pdf": "source.pdf",
     "rendered_html": "Web_Meeting_Etiquette_PDF.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
+  "quality_score": 97,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9727,
   "fidelity_content": 1.0,
-  "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "fidelity_structural": 0.9091,
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The LLM fidelity evaluation identified one major structural defect regarding the reading order of icons in the document (the microphone and chat bubble icons are swapped). According to the count-based routing rules, 1-5 major defects requires a routing to HUMAN_REVIEW. The programmatic text metrics are acceptable, but the structural misordering of meaningful images needs human correction.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source document contains four instructional icons (muted microphone, chat bubble, share screen, red exit X) that demonstrate which WebEx buttons to use. While <img> tags exist in the HTML output, the image manifest indicates that all four images have '\"valid\": false' due to a missing PIL module, meaning the base64 data is corrupt and the images will be broken/will not render in a browser.",
-      "source_pdf_quote": "Four instructional icons (muted microphone, chat bubble, share screen, red exit X) illustrating WebEx buttons.",
-      "output_quote": "The image manifest reports '\"valid\": false' and '\"error\": \"No module named 'PIL'\"' for all four extracted images.",
-      "location": "Image Manifest / Throughout document",
+      "description": "Reading order significantly different",
+      "severity": "major",
+      "analysis": "On page 1, the logical reading order and visual flow of the source document pairs the 'microphone muted' text with the microphone icon, and the 'introduce themselves... using the chat box' text with the chat bubble icon. The output JSON reverses the reading order of these two images, placing the speech bubble icon immediately after the microphone bullet point, and the microphone icon after the chat box bullet point. This materially disrupts the contextual flow of the instructions.",
+      "source_pdf_quote": "Visual flow: 1. 'Keep your microphone muted.' 2. [Microphone Icon] 3. 'Guests will be asked to introduce themselves... using the chat box.' 4. [Speech Bubble Icon]",
+      "output_quote": "1. 'Keep your microphone muted.' 2. {\"type\": \"image\", \"description\": \"A white outlined speech bubble icon...\"} 3. 'Guests will be asked to introduce themselves...' 4. {\"type\": \"image\", \"description\": \"A white outline of a microphone...\"}",
+      "location": "Page 1, element indices 2 through 5",
       "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": true
+      "check_id": "S4",
+      "fidelity_dimension": "structural",
+      "corroborated": false
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Review the placement and reading order of the microphone and chat bubble icons on page 1 and correct them to match the contextual flow of the text instructions."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 1,
-  "total_critical": 1,
-  "total_major": 0,
+  "total_critical": 0,
+  "total_major": 1,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.9727,
+      "raw_score": 0.9727,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
+      "fidelity_composite": 0.9727,
       "fidelity_content": 1.0,
-      "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_structural": 0.9091,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": 0.86084142394822,
       "shingling_precision": 0.9734675205855444,
@@ -85,11 +85,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 177849,
+    "processing_ms": 136629,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,6 +1,6 @@
 {
   "document_id": "tVolkswagen_Settlement_Community_&_Destination_ZEV_Charging_RFP_Webinar_Slides",
-  "audited_at": "2026-03-31T03:48:36.332903Z",
+  "audited_at": "2026-04-01T08:46:46.538155Z",
   "source_files": {
     "extraction_json": "tVolkswagen_Settlement_Community_&_Destination_ZEV_Charging_RFP_Webinar_Slides.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a presentation slide deck characterized by landscape page orientation, typical slide layouts (titles with bulleted lists), large images, and consistent background/footer elements across all pages.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a slide presentation characterized by its landscape orientation, consistent slide-like layout (titles, bullet points, header/footer elements, and graphics), and visual focus typical of a PowerPoint or similar presentation format.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 29918,
+    "processing_ms": 42799,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,6 +1,6 @@
 {
   "document_id": "01_Fact_Sheet_Kaballco.pdf_2",
-  "audited_at": "2026-03-31T03:36:46.431839Z",
+  "audited_at": "2026-04-01T08:44:47.271383Z",
   "source_files": {
     "extraction_json": "01_Fact_Sheet_Kaballco.pdf_2.json",
     "source_pdf": "source.pdf",
@@ -14,18 +14,18 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity signals show perfect scores with no defects, and text comparison metrics are very strong. However, programmatic detectors identified 1 major structural issue: 3 bare URLs were not converted to accessible hyperlinks. Per count-based routing rules, 1 major defect requires HUMAN_REVIEW to resolve the accessibility issue.",
+  "reasoning": "The LLM fidelity signals indicate a clean document with excellent text retention and structural fidelity (composite score 1.0). However, the programmatic signals detected a major accessibility defect: a bare URL that was not converted into a proper hyperlink. Under the count-based routing rules, a single major defect requires a human review to address the accessibility issue.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "3 bare URL(s) in text not converted to hyperlinks: https://deq.nc.gov/about/divisions/waste-management/laserfiche.; (caroline.bari@ncdenr.gov; caroline.bari@deq.nc.gov",
+      "description": "1 bare URL(s) in text not converted to hyperlinks: https://deq.nc.gov/about/divisions/waste-management/laserfiche.",
       "severity": "major",
-      "analysis": "bare_url_count=3. URLs appear as plain text instead of clickable links.",
+      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
-      "check_id": null,
+      "check_id": "S8",
       "fidelity_dimension": null,
       "corroborated": false
     },
@@ -55,8 +55,8 @@
     }
   ],
   "action_items": [
-    "Convert the bare URLs into functional, clickable hyperlinks",
-    "Ensure header/footer artifacts are stripped from the final HTML if necessary"
+    "Convert the bare URL into a proper accessible hyperlink",
+    "Review and potentially remove extraneous page numbers and header/footer elements"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -114,7 +114,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 74411,
+    "processing_ms": 69339,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

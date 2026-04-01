@@ -1,38 +1,26 @@
 {
   "document_id": "Allen_Meeting_Officer_Report_20160422",
-  "audited_at": "2026-03-31T03:38:13.093232Z",
+  "audited_at": "2026-04-01T06:37:30.798084Z",
   "source_files": {
     "extraction_json": "Allen_Meeting_Officer_Report_20160422.json",
     "source_pdf": "source.pdf",
     "rendered_html": "Allen_Meeting_Officer_Report_20160422.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
-  "fidelity_content": 0.9923664122137404,
+  "quality_score": 95,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.95,
+  "fidelity_content": 1.0,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
+  "fidelity_visual": 0.8571428571428572,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "reasoning": "The automated detectors found a critical programmatic defect where header and footer elements were pervasive across the output, causing significant duplicate artifact reading issues for screen readers. Furthermore, the LLM detected a missing signature and digital signature stamp, and there are major programmatic issues with list flattening. The presence of a critical defect mandates a REJECT routing.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source PDF contains a logo on the first page for 'NC Waste Management Environmental Quality' and a digital signature image for Larry Frost. While the HTML includes an <img> tag for the NC logo, the provided image manifest indicates that this image's base64 data is corrupt ('\"valid\": false', '\"error\": \"No module named 'PIL'\"'), meaning it will appear as a broken image icon to the user. Additionally, the signature image from page 1 is entirely absent from the HTML output. Both of these are mea",
-      "source_pdf_quote": "NC Waste Management Environmental Quality logo at top left of page 1, and digital signature for Larry Frost in the 'From' block on page 1.",
-      "output_quote": "Image manifest shows '\"valid\": false' for the logo, and the signature image is missing entirely from the HTML.",
-      "location": "Page 1",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": true
-    },
-    {
       "description": "Header/footer elements retained in output (5): State of North Carolina | Environmental Quality | Waste Mana; Meeting Officer’s Report Coal Ash Impoundment Classification; Meeting Officer’s Report\nCoal Ash Impoundment Classification",
-      "severity": "major",
-      "analysis": "header_footer_count=5. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "severity": "critical",
+      "analysis": "header_footer_count=5, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -42,15 +30,27 @@
       "corroborated": false
     },
     {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document contains the word 'MEMORANDUM' which is visibly underlined. The output preserves it as a heading (level 1), but lacks any indication or markdown for the underline, resulting in a loss of the specific visual emphasis present in the source.",
-      "source_pdf_quote": "MEMORANDUM (underlined)",
-      "output_quote": "\"text\": \"MEMORANDUM\"",
-      "location": "Page 1, Heading Level 1",
+      "description": "Images missing or broken",
+      "severity": "major",
+      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains an agency logo on page 1, which is successfully preserved in the HTML output. However, on page 1, next to 'From: Larry Frost', there is a handwritten signature image along with a digital signature stamp containing textual information ('Digitally signed by LYF... Date: 2016.05.12 12:11:52'). This signature image and its accompanying authorization text are completely missing from the HTML output. Because it contains readable timestamp and authorization data that is not tran",
+      "source_pdf_quote": "On page 1, a handwritten signature graphic and a digital signature stamp box containing the text 'Digitally signed by LYF... Date: 2016.05.12' are present next to the 'From' line.",
+      "output_quote": "The HTML output contains no <img> element or transcribed text representing the signature or digital signature timestamp.",
+      "location": "Page 1, 'From:' section",
       "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": false
+    },
+    {
+      "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
+      "severity": "major",
+      "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S5",
+      "fidelity_dimension": null,
       "corroborated": false
     },
     {
@@ -64,46 +64,36 @@
       "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
-      "severity": "minor",
-      "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Remove retained header, footer, and page number artifacts from the HTML structure.",
+    "Ensure the handwritten and digital signature stamp images are extracted and placed with appropriate alt text.",
+    "Fix nested list structures to prevent flattening of sub-points."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
-  "total_critical": 1,
-  "total_major": 0,
-  "total_minor": 1,
+  "total_defects": 1,
+  "total_critical": 0,
+  "total_major": 1,
+  "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.95,
+      "raw_score": 0.95,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
-      "fidelity_content": 0.9923664122137404,
+      "fidelity_composite": 0.95,
+      "fidelity_content": 1.0,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_visual": 0.8571428571428572,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": 0.9171696847753186,
       "shingling_precision": 0.9895079594790159,
@@ -135,9 +125,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 86003,
+    "processing_ms": 110316,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,21 +1,21 @@
 {
   "document_id": "DSCA_Fund_Program_Statistics_March_2021",
-  "audited_at": "2026-03-31T03:48:05.699250Z",
+  "audited_at": "2026-04-01T06:29:52.759282Z",
   "source_files": {
     "extraction_json": "DSCA_Fund_Program_Statistics_March_2021.json",
     "source_pdf": "source.pdf",
     "rendered_html": "DSCA_Fund_Program_Statistics_March_2021.html"
   },
-  "quality_score": 100,
-  "quality_grade": "Good",
-  "fidelity_composite": 1.0,
-  "fidelity_content": 1.0,
-  "fidelity_structural": 1.0,
-  "fidelity_visual": 1.0,
+  "quality_score": 50,
+  "quality_grade": "Poor",
+  "fidelity_composite": null,
+  "fidelity_content": null,
+  "fidelity_structural": null,
+  "fidelity_visual": null,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "While the LLM fidelity signals indicate perfect visual and structural reproduction, programmatic accessibility checks identified a major table markup issue. Specifically, data values are incorrectly placed in `<th>` header cells, which misrepresents the data and disrupts screen reader navigation. This single major programmatic defect requires human review to correct the accessibility markup.",
-  "decision_method": "llm_final_decider",
+  "reasoning": "Programmatic-only: 1 major concern(s): Table header markup issues: 3 table(s) have data values in <th> cells: \"$ 47,756.04\", \"$ 12,400,720.08\", \"$ 57,272.02\"",
+  "decision_method": "programmatic_only",
   "concerns": [
     {
       "description": "Table header markup issues: 3 table(s) have data values in <th> cells: \"$ 47,756.04\", \"$ 12,400,720.08\", \"$ 57,272.02\"",
@@ -43,8 +43,7 @@
     }
   ],
   "action_items": [
-    "Fix table markup by changing <th> tags to <td> for cells containing data values like '$ 47,756.04'.",
-    "Ensure all tables have appropriate header rows using <th> tags."
+    "Table header markup issues: 3 table(s) have data values in <th> cells: \"$ 47,756.04\", \"$ 12,400,720.08\", \"$ 57,272.02\""
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -55,21 +54,21 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.7,
     "score_breakdown": {
-      "fidelity_composite": 1.0,
-      "raw_score": 1.0,
-      "ceiling": null,
-      "ceiling_reason": null,
-      "available_components": 1
+      "fidelity_composite": null,
+      "raw_score": 0.5,
+      "ceiling": 0.5,
+      "ceiling_reason": "fidelity_unavailable",
+      "available_components": 0
     },
     "signals": {
-      "fidelity_composite": 1.0,
-      "fidelity_content": 1.0,
-      "fidelity_structural": 1.0,
-      "fidelity_visual": 1.0,
-      "fidelity_routing": "AUTO_APPROVE",
-      "fidelity_available": true,
+      "fidelity_composite": null,
+      "fidelity_content": null,
+      "fidelity_structural": null,
+      "fidelity_visual": null,
+      "fidelity_routing": null,
+      "fidelity_available": false,
       "shingling_recall": 0.8842105263157894,
       "shingling_precision": 0.8879492600422833,
       "duplication_ratio": 0.0,
@@ -102,8 +101,8 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 144665,
-    "fidelity_report_path": "fidelity-report.json",
+    "processing_ms": 89,
+    "fidelity_report_path": null,
     "routing_escalated_from": null
   }
 }

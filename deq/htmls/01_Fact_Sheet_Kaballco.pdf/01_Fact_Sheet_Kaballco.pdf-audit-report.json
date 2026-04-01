@@ -1,26 +1,26 @@
 {
   "document_id": "01_Fact_Sheet_Kaballco.pdf",
-  "audited_at": "2026-03-31T03:36:48.948204Z",
+  "audited_at": "2026-04-01T08:45:28.703358Z",
   "source_files": {
     "extraction_json": "01_Fact_Sheet_Kaballco.pdf.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_Fact_Sheet_Kaballco.pdf.html"
   },
-  "quality_score": 99,
+  "quality_score": 96,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9866,
+  "fidelity_composite": 0.9594,
   "fidelity_content": 0.9618320610687023,
-  "fidelity_structural": 1.0,
+  "fidelity_structural": 0.9091,
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document contains two major defects: the LLM hallucinates a word ('cap') to complete a sentence, altering the literal source text, and there are three bare URLs that were not converted into descriptive hyperlinks. The count-based routing rules dictate that 1-5 major defects require HUMAN_REVIEW. Despite high fidelity scores and shingling metrics, these structural and text integrity issues need manual correction.",
+  "reasoning": "The document extraction has high overall fidelity but contains three major defects that require human intervention. First, a header ('FACT SHEET') leaked into the text stream, breaking a sentence across a page break. Second, there is a bare URL that was not converted into a proper hyperlink, which violates accessibility guidelines. Finally, the LLM attempted to correct a typo in the source by inserting the word 'cap', which technically alters the original text and should be reviewed.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Minor text differences beyond acceptable reformatting",
       "severity": "major",
-      "analysis": "The extraction output hallucinates the word 'cap' in a sentence that was grammatically incomplete in the source text. While this corrects the assumed meaning, it alters the literal text of the original government document.",
+      "analysis": "In the fourth paragraph of the first page, the source text contains an apparent typo ('A reinforced concrete was installed.'), whereas the output inserts the word 'cap' ('A reinforced concrete cap was installed.'). While this fixes a grammatical issue and likely reflects the intended meaning, it technically alters the literal text of the source document.",
       "source_pdf_quote": "A reinforced concrete was installed.",
       "output_quote": "A reinforced concrete cap was installed.",
       "location": "Page 1, Paragraph 4",
@@ -30,14 +30,26 @@
       "corroborated": false
     },
     {
-      "description": "3 bare URL(s) in text not converted to hyperlinks: https://deq.nc.gov/about/divisions/waste-management/laserfiche.; (caroline.bari@ncdenr.gov; caroline.bari@deq.nc.gov",
+      "description": "Reading order significantly different",
       "severity": "major",
-      "analysis": "bare_url_count=3. URLs appear as plain text instead of clickable links.",
+      "analysis": "There is a header leakage issue that materially interrupts the reading flow. The running header 'FACT SHEET' appears at the top of both pages in the source PDF. In the output JSON, this header is extracted as an H1 at the beginning of Page 2, directly interrupting a sentence that spans across the page break ('...will be considered in' -> 'FACT SHEET' -> 'the final permit decision.').",
+      "source_pdf_quote": "Page 1 ends with: \"All comments received during the public comment period or at the public hearings will be considered in\" and Page 2 begins with the continued sentence: \"the final permit decision.\"",
+      "output_quote": "Page 1 ends with: \"All comments received during the public comment period or at the public hearings will be considered in\" ... Page 2 begins with: {\"type\": \"heading\", \"level\": 1, \"text\": \"FACT SHEET\"}, followed by: {\"type\": \"paragraph\", \"text\": \"the final permit decision...\"}",
+      "location": "Transition between Page 1 and Page 2",
+      "source": "fidelity_llm",
+      "check_id": "S4",
+      "fidelity_dimension": "structural",
+      "corroborated": false
+    },
+    {
+      "description": "1 bare URL(s) in text not converted to hyperlinks: https://deq.nc.gov/about/divisions/waste-management/laserfiche.",
+      "severity": "major",
+      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
-      "check_id": null,
+      "check_id": "S8",
       "fidelity_dimension": null,
       "corroborated": false
     },
@@ -67,31 +79,31 @@
     }
   ],
   "action_items": [
-    "Verify and correct the hallucinated word 'cap' to match the intended literal text or acceptable correction of the source document.",
-    "Convert the bare URLs into descriptive, accessible hyperlinks.",
-    "Ensure header, footer, and page number artifacts are properly stripped from the final HTML."
+    "Remove the leaked 'FACT SHEET' header to restore the flow of the interrupted sentence.",
+    "Wrap the bare URL in a proper <a> tag with an href attribute.",
+    "Determine whether to keep the grammatical correction ('cap') or revert it to match the source exactly."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 2,
   "total_critical": 0,
-  "total_major": 1,
+  "total_major": 2,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 1.0,
     "score_breakdown": {
-      "fidelity_composite": 0.9866,
-      "raw_score": 0.9866,
+      "fidelity_composite": 0.9594,
+      "raw_score": 0.9594,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9866,
+      "fidelity_composite": 0.9594,
       "fidelity_content": 0.9618320610687023,
-      "fidelity_structural": 1.0,
+      "fidelity_structural": 0.9091,
       "fidelity_visual": 1.0,
       "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
@@ -127,7 +139,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 76843,
+    "processing_ms": 110888,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

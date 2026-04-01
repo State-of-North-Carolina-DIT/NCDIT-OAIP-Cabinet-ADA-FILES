@@ -1,6 +1,6 @@
 {
   "document_id": "01_2020MayMFC_BusinessMeetingAgenda",
-  "audited_at": "2026-03-31T03:37:28.293843Z",
+  "audited_at": "2026-04-01T08:45:29.253577Z",
   "source_files": {
     "extraction_json": "01_2020MayMFC_BusinessMeetingAgenda.json",
     "source_pdf": "source.pdf",
@@ -8,22 +8,22 @@
   },
   "quality_score": 96,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9567,
-  "fidelity_content": 0.9541984732824428,
+  "fidelity_composite": 0.9594,
+  "fidelity_content": 0.9618320610687023,
   "fidelity_structural": 0.9091,
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The evaluation identified four major defects across LLM fidelity and programmatic signals. Key issues include dropped double asterisks denoting 'Probable Action Items', flattened list hierarchies, retained header/footer elements, and table footnotes misformatted as bulleted lists. With exactly four major defects, the document requires HUMAN_REVIEW for remediation.",
+  "reasoning": "The document contains three major defects that require human intervention. The LLM fidelity evaluation flagged two major issues: the omission of double asterisks that designate 'Probable Action Items', which alters the meaning of the agenda, and a flattened three-level list hierarchy. Additionally, programmatic checks found a major structural issue where a footnote was incorrectly converted into a bulleted list. With 3 major defects, the document falls under the HUMAN_REVIEW threshold.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Minor text differences beyond acceptable reformatting",
       "severity": "major",
-      "analysis": "The source document uses a double asterisk (**) to denote \"Probable Action Items\". In several places, these double asterisks were dropped during extraction, which loses the specific meaning intended for those items. For example, 'Approval of Agenda **' became 'Approval of Agenda'. This occurs on multiple items across pages 1 and 2.",
-      "source_pdf_quote": "Approval of Agenda **",
-      "output_quote": "Approval of Agenda ",
-      "location": "Page 1, 9:10 a.m. table cell",
+      "analysis": "The source document uses a double asterisk ('**') to denote 'Probable Action Items', as defined in the document's legend. The output is missing this double asterisk marker on several agenda items, which alters the meaning by removing their 'Probable Action Item' designation. This occurs on Page 1 ('Approval of Agenda' and 'Approval of Meeting Minutes') and Page 2 (2:30 p.m. Rulemaking Update and 3:00 p.m. Rule Suspensions items).",
+      "source_pdf_quote": "Approval of Agenda **\nApproval of Meeting Minutes**",
+      "output_quote": "Approval of Agenda \nApproval of Meeting Minutes",
+      "location": "Page 1, 9:10 a.m. schedule block",
       "source": "fidelity_llm",
       "check_id": "C6",
       "fidelity_dimension": "content",
@@ -32,26 +32,14 @@
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The output flattens the hierarchy of the list at the top of Page 2. In the source PDF, items like 'Observer Program' and 'Incidental Take Permit Updates' are nested as sub-bullets under 'Protected Resources Update', and 'Red Drum' and 'Southern Flounder' are nested under 'Landings Update'. In the JSON output, these third-level list items are extracted at the exact same hierarchical level as their parents (all are placed as direct children of 'Informational Materials continued:'). This loses the ",
-      "source_pdf_quote": "Protected Resources Update\n Observer Program\n Incidental Take Permit Updates",
-      "output_quote": "{\n  \"text\": \"Protected Resources Update\"\n},\n{\n  \"text\": \"Observer Program\"\n},\n{\n  \"text\": \"Incidental Take Permit Updates\"\n}",
-      "location": "Page 2, first list element",
+      "analysis": "The source PDF on page 2 contains a three-level list hierarchy under 'Informational Materials continued:'. For example, 'Observer Program' and 'Incidental Take Permit Updates' are visually indented as sub-points under 'Protected Resources Update'. The extraction flattens this hierarchy, placing the sub-items as direct siblings to their parent item within the 'children' array. This flattens the list meaning and is a major defect.",
+      "source_pdf_quote": "– Protected Resources Update\n Observer Program\n Incidental Take Permit Updates",
+      "output_quote": "{\"text\": \"Protected Resources Update\"}, {\"text\": \"Observer Program\"}, {\"text\": \"Incidental Take Permit Updates\"}",
+      "location": "Page 2, first list under 'Informational Materials continued:'",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
       "corroborated": true
-    },
-    {
-      "description": "Header/footer elements retained in output (3): Marine Fisheries Commission Business Meeting Agenda; 1; 2",
-      "severity": "major",
-      "analysis": "header_footer_count=3. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
     },
     {
       "description": "Footnote(s) converted to bulleted list: 1 unordered list(s) after table(s) appear to be footnotes",
@@ -66,15 +54,15 @@
       "corroborated": false
     },
     {
-      "description": "Visual emphasis loss",
+      "description": "Header/footer elements retained in output (3): Marine Fisheries Commission Business Meeting Agenda; 1; 2",
       "severity": "minor",
-      "analysis": "Several items in the agenda tables are bolded in the source document to indicate emphasis (action items, main headings like Adjourn). The output JSON fails to wrap these items in markdown asterisks to preserve the bold formatting.",
-      "source_pdf_quote": "Adjourn (rendered in bold type)",
-      "output_quote": "Adjourn (missing bold markdown formatting)",
-      "location": "Page 2, 4:00 p.m. table cell",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
+      "analysis": "header_footer_count=3. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
       "corroborated": false
     },
     {
@@ -91,32 +79,32 @@
     }
   ],
   "action_items": [
-    "Restore the double asterisks for all 'Probable Action Items'.",
-    "Correct the nesting of the list items under 'Protected Resources Update' and 'Landings Update' on Page 2.",
-    "Remove stray header and footer text from the main content body.",
-    "Reformat table footnotes as standard paragraphs rather than list items.",
-    "Add bold emphasis back to required table items such as action items and main headings."
+    "Restore the double asterisks ('**') to the appropriate agenda items to correctly identify 'Probable Action Items'.",
+    "Correct the list hierarchy under 'Informational Materials continued:' so sub-items are properly nested.",
+    "Convert the table footnote from an unordered list item (<ul><li>) to a standard paragraph (<p>).",
+    "Remove retained header/footer text from the document.",
+    "Fix table header <th> markup to ensure semantic table structure."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 3,
+  "total_defects": 2,
   "total_critical": 0,
   "total_major": 2,
-  "total_minor": 1,
+  "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9567,
-      "raw_score": 0.9567,
+      "fidelity_composite": 0.9594,
+      "raw_score": 0.9594,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9567,
-      "fidelity_content": 0.9541984732824428,
+      "fidelity_composite": 0.9594,
+      "fidelity_content": 0.9618320610687023,
       "fidelity_structural": 0.9091,
       "fidelity_visual": 1.0,
       "fidelity_routing": "FLAG_FOR_REVIEW",
@@ -153,7 +141,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 116252,
+    "processing_ms": 111269,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

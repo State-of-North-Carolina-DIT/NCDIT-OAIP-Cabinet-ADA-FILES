@@ -1,64 +1,28 @@
 {
   "document_id": "0_Lesson7_4thgrade_RocksMinerals_C_Alligood_Oct08",
-  "audited_at": "2026-03-31T03:45:18.680275Z",
+  "audited_at": "2026-04-01T08:49:35.871030Z",
   "source_files": {
     "extraction_json": "0_Lesson7_4thgrade_RocksMinerals_C_Alligood_Oct08.json",
     "source_pdf": "source.pdf",
     "rendered_html": "0_Lesson7_4thgrade_RocksMinerals_C_Alligood_Oct08.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
-  "fidelity_content": 0.8015267175572519,
-  "fidelity_structural": 0.8182,
-  "fidelity_visual": 0.2857142857142857,
+  "quality_score": 92,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9227299999999999,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 0.9091,
+  "fidelity_visual": 0.8571428571428572,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "reasoning": "The document contains a total of 6 major defects between LLM fidelity reports and programmatic structural detectors, exceeding the threshold of 5 major defects for human review. These include broken/missing images, incorrect list nesting, displaced hyperlinks, table accessibility markup issues, and unsupported form elements. Because the major defect count exceeds 5, the document must be rejected.",
+  "decision_method": "llm_final_decider",
   "concerns": [
-    {
-      "description": "Fabricated contact information",
-      "severity": "critical",
-      "analysis": "I found a completely fabricated URL in the output. At the very end of page 39, the output includes a link to an external commercial website selling rocks and minerals test kits. This link does not exist anywhere in the source document.",
-      "source_pdf_quote": "Page 39 of the source PDF ends with the text 'Pyrite, although it looks like' and contains no URLs or links.",
-      "output_quote": "{\"type\": \"link\", \"text\": \"streak\", \"url\": \"http://www.hometrainingtools.com/catalog/earth-space-science/rocks-minerals/p_rm-testkit.html\"}",
-      "location": "Page 39",
-      "source": "fidelity_llm",
-      "check_id": "C2",
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
-    {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The image manifest indicates that all of the meaningful images extracted from pages 53, 54, and 55 (which correspond to the rock and mineral specimens) have `'valid': false` due to a PIL module error during extraction. This means their base64 data is corrupt and they will appear as broken images when rendered in a browser.",
-      "source_pdf_quote": "Pages 53-55 contain several photographs of rock and mineral specimens numbered 1 through 12.",
-      "output_quote": "The image manifest shows 'valid': false with the error \"No module named 'PIL'\" for the base64 data of these images, meaning they will fail to render.",
-      "location": "Pages 53-55",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": true
-    },
-    {
-      "description": "Table structure corrupted",
-      "severity": "major",
-      "analysis": "In the Materials table (starting on page 3 and continuing to page 4), the row for 'Lesson 6' contains a list of materials that spans across the page boundary in the source PDF. The extraction pipeline incorrectly split this single logical row into two separate rows in the output. Row 3 contains 'Lesson 6' and the first half of the materials list. Row 4 contains an empty cell in the first column and the remainder of the materials list in the second column. This structural corruption breaks the al",
-      "source_pdf_quote": "A single row for Lesson 6 on pages 4/5: 'Lesson 6 | Per Pair of Students ... • Streak plates (small unglazed porcelain plate) ...'",
-      "output_quote": "The row is split into two: {\"text\": \"Lesson 6\", \"column_start\": 0, \"row_start\": 3} alongside the first half of the materials, followed by a new row with an empty cell {\"text\": \"\", \"column_start\": 0, \"row_start\": 4} alongside the second half of the materials.",
-      "location": "Page 4, Materials table",
-      "source": "fidelity_llm",
-      "check_id": "S3",
-      "fidelity_dimension": "structural",
-      "corroborated": true
-    },
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "In the multiple-choice Assessment section at the end of the document, nested list items (the answer choices) are frequently flattened to the same level as their parent questions. For example, on page 58 for Question 3, choice 'a' is correctly nested as a child of the question, but choices 'b', 'c', and 'd' are extracted as top-level list items parallel to the question itself. On page 60 for Question 14, all answer choices ('a' through 'd') are extracted as top-level items instead of being nested",
+      "analysis": "The assessment section contains multiple-choice questions formatted as ordered lists with nested choices (a, b, c, d). However, the JSON output fails to consistently nest these sub-items properly. For example, in Question 3 (Page 58/59), the first option 'a. iron nail' is nested correctly as a child of the question, but the subsequent options ('b. penny', 'c. fingernail', 'd. all of the above') are extracted as sibling items to the main question. Similarly, in Question 14 (Page 60), all lettered",
       "source_pdf_quote": "3. Which of the following could be used to test the hardness of a mineral?\na. iron nail\nb. penny\nc. fingernail\nd. all of the above",
-      "output_quote": "{\"text\": \"Which of the following could be used to test the hardness of a mineral?\", \"children\": [{\"text\": \"a. iron nail\"}]}, followed by top-level items: {\"text\": \"b. penny\"}, {\"text\": \"c. fingernail\"}, {\"text\": \"d. all of the above\"}",
+      "output_quote": "\"items\": [\n            {\n              \"text\": \"Which of the following could be used to test the hardness of a mineral?\",\n              \"children\": [\n                {\n                  \"text\": \"a. iron nail\"\n                }\n              ]\n            },\n            {\n              \"text\": \"b. penny\"\n            },\n            {\n              \"text\": \"c. fingernail\"\n            },\n            {\n              \"text\": \"d. all of the above\"\n            }\n          ]",
       "location": "Page 58 (Question 3) and Page 60 (Question 14)",
       "source": "fidelity_llm",
       "check_id": "S5",
@@ -66,9 +30,45 @@
       "corroborated": true
     },
     {
+      "description": "Images missing or broken",
+      "severity": "major",
+      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains several meaningful photographs of rocks and minerals used for a matching game on page 54 (items 5 and 6). In the HTML output, these images fail to render and are instead replaced by placeholder text `[Image: A collection of loose...]` and `[Image: A solid white rock...]`. The image manifest also confirms that these images have a base64 length of 0 and an unknown format, meaning the image data was not successfully extracted.",
+      "source_pdf_quote": "Photographs of rocks labeled '5' and '6' on page 54.",
+      "output_quote": "<p>[Image: A collection of loose, small grey and brown rocks and gravel.]</p>\n<p>[Image: A solid white rock or mineral specimen displayed next to a dark coin for size comparison.]</p>",
+      "location": "Page 54 (Matching Game Images)",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": false
+    },
+    {
+      "description": "Table caption coded as header row: 3 table(s) have a single spanning first row that is likely a caption/title",
+      "severity": "major",
+      "analysis": "caption_as_header=3. Examples: p28: \"MOHS SCALE OF HARDNESS\"; p35: \"Mohs Hardness Scale With Examples of Common Tests\"; p37: \"Complete Mohs Hardness Scale With Examples of Common Tests\". First row spans all columns — should be a <caption> element, not a header row.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S3",
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "Displaced hyperlinks: 16 link(s) extracted as standalone elements instead of inline text",
       "severity": "major",
       "analysis": "standalone_links=16, examples=['http://sargentwelch.com/sargent-welch-introductory-rock-coll', 'http://www.project2061.org/publications/bsl/online/bointro.h', 'http://sargentwelch.com/sargent-welch-introductory-rock-coll']. Links should be inline within paragraphs, not separate blocks.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Table header markup issues: 1 table(s) have a data row marked as header: \"Unit Title: Rocks and Minerals\"",
+      "severity": "major",
+      "analysis": "data_in_th=0, datarow_as_header=1. Tables use <th> for data values (misrepresenting data as headers) or have a data row mismarked as a header row. Screen readers rely on <th> to announce column/row context.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -87,18 +87,6 @@
       "source": "programmatic",
       "check_id": null,
       "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "Checked for lost underlines, heading demotions, or lost list markers. On page 2, a heading is explicitly underlined in the source PDF to show emphasis, but this underline is lost in the output JSON format (which does not natively support underline via markdown, requiring an HTML tag if it is to be preserved, or it is simply lost).",
-      "source_pdf_quote": "VI. NC English Language Proficiency (ELP) Standard 4 (2008)- for Limited English Proficient students (LEP) (text is underlined in the source PDF)",
-      "output_quote": "{\"type\": \"heading\", \"level\": 2, \"text\": \"VI. NC English Language Proficiency (ELP) Standard 4 (2008)- for Limited English Proficient students (LEP)\"} (lacks any representation of underline)",
-      "location": "Page 2",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
       "corroborated": false
     },
     {
@@ -139,31 +127,36 @@
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Address list nesting for assessment multiple-choice questions",
+    "Ensure images are properly extracted with valid base64 data",
+    "Refactor table first rows to <caption> elements where appropriate",
+    "Fix displaced hyperlinks so they are inline with paragraph text",
+    "Correct table header markup for accessibility",
+    "Convert PDF form fields to functional HTML forms or static accessible equivalents"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 5,
-  "total_critical": 2,
+  "total_defects": 2,
+  "total_critical": 0,
   "total_major": 2,
-  "total_minor": 1,
+  "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.9227299999999999,
+      "raw_score": 0.9227,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
-      "fidelity_content": 0.8015267175572519,
-      "fidelity_structural": 0.8182,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_composite": 0.9227299999999999,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 0.9091,
+      "fidelity_visual": 0.8571428571428572,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": 0.9344277000358808,
       "shingling_precision": 0.9439963751699139,
@@ -195,9 +188,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 6
+      "deduplicated_count": 3
     },
-    "processing_ms": 469586,
+    "processing_ms": 264767,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

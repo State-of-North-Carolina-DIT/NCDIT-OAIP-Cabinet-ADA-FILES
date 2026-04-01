@@ -1,6 +1,6 @@
 {
   "document_id": "DSCA_DC_920069_January_2024_Risk_Management_Plan",
-  "audited_at": "2026-03-31T03:47:24.642404Z",
+  "audited_at": "2026-04-01T08:49:43.000864Z",
   "source_files": {
     "extraction_json": "DSCA_DC_920069_January_2024_Risk_Management_Plan.json",
     "source_pdf": "source.pdf",
@@ -9,7 +9,7 @@
   "quality_score": 30,
   "quality_grade": "Critical",
   "fidelity_composite": 0.4,
-  "fidelity_content": 0.8091603053435115,
+  "fidelity_content": 0.8015267175572519,
   "fidelity_structural": 1.0,
   "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
@@ -20,10 +20,10 @@
     {
       "description": "Complete section or page missing",
       "severity": "critical",
-      "analysis": "The conversion suffered catastrophic failures on numerous pages, returning empty arrays and error messages. Pages 3-11, 22-23, 26, 30, 34-36, 38, 43-44, 46, 48-49, and 54 are completely missing from the output. This results in the loss of major sections of the document, including Sections 1.0 through 9.0.",
-      "source_pdf_quote": "1.0 Introduction\nHart & Hickman, PC (H&H) has prepared this Risk Management Plan (RMP) for the Galaxy Cleaners site on behalf of the North Carolina Dry-Cleaning Solvent Cleanup Act (DSCA) Program...",
-      "output_quote": "[] (Empty content array for page 3 with error '[gemini-3.1-pro-preview] Invalid JSON: Empty response from Gemini')",
-      "location": "Pages 3 through 11 (and several others throughout the document)",
+      "analysis": "The extraction pipeline failed on a large number of pages (23 out of 54 pages), resulting in massive content omission. For example, Page 3, which contains '1.0 Introduction' and '2.0 Objectives of RMP', was completely lost due to an extraction error.",
+      "source_pdf_quote": "1.0 Introduction\nHart & Hickman, PC (H&H) has prepared this Risk Management Plan (RMP)...",
+      "output_quote": "[] (Empty content array with error: \"[gemini-3.1-pro-preview] Invalid JSON: Empty response from Gemini\")",
+      "location": "Page 3",
       "source": "fidelity_llm",
       "check_id": "C3",
       "fidelity_dimension": "content",
@@ -32,14 +32,26 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The image manifest indicates that multiple images have a 'valid': false status due to an extraction error ('No module named \\'PIL\\''). This means the base64 data for these images is corrupt, and they will render as broken links in the HTML. This includes highly meaningful images such as the 'Groundwater Contaminant Concentration Map' on page 14, the 'SOIL CONTAMINANT CONCENTRATION MAP' on page 15, and the PCE Concentration line graph on page 20.",
-      "source_pdf_quote": "Groundwater Contaminant Concentration Map (page 14)",
-      "output_quote": "The image manifest lists the map from page 14 as 'valid': false, indicating the corresponding <img> tag will be broken.",
-      "location": "Pages 14, 15, 20",
+      "analysis": "The source PDF contains several meaningful charts and maps that are either missing or broken in the HTML output. Specifically, the line charts on pages 18 and 19 ('PCE Concentration vs. Time') failed to extract properly (indicated by 'valid': false and 'b64_len': 0 in the image manifest) and are represented only by text placeholders ('[Image: ...]') in the HTML instead of rendered <img> elements. Additionally, the large survey plat maps on pages 34 and 43 of the PDF are completely missing from t",
+      "source_pdf_quote": "Full-page line charts on pages 18 and 19; full-page survey plats on pages 34 and 43.",
+      "output_quote": "<p>[Image: A line chart displaying PCE Concentration vs. Time for monitoring wells MW-1, MW-3, and MW-4. ...]</p> and <p>[Image: A line graph titled 'PCE Concentration vs. Time (MW-3)...]</p>",
+      "location": "Pages 18, 19, 34, 43 / HTML body near 'Appendix A' and 'Exhibit A'",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
+    },
+    {
+      "description": "Header/footer elements retained in output (14): 2923 South Tryon Street, Suite 100\nCharlotte, NC 28203\n704.5; 3334 Hillsborough Street\nRaleigh, NC 27607\n919.847.4241 main; i",
+      "severity": "critical",
+      "analysis": "header_footer_count=14, pages_affected=11/54. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
     },
     {
       "description": "Significant word count loss: 42% of baseline",
@@ -78,14 +90,26 @@
       "corroborated": false
     },
     {
-      "description": "Header/footer elements retained in output (14): 2923 South Tryon Street, Suite 100\nCharlotte, NC 28203\n704.5; 3334 Hillsborough Street\nRaleigh, NC 27607\n919.847.4241 main; i",
+      "description": "1 bare URL(s) in text not converted to hyperlinks: www.ncdsca.org,",
       "severity": "major",
-      "analysis": "header_footer_count=14. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
-      "check_id": null,
+      "check_id": "S8",
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Mixed numbering types at same list level (1 list(s)): p28:letter+roman — possible sub-point flattening",
+      "severity": "major",
+      "analysis": "flat_lists=1. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S5",
       "fidelity_dimension": null,
       "corroborated": false
     },
@@ -99,6 +123,18 @@
       "source": "programmatic",
       "check_id": null,
       "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "On page 27, the heading 'LAND-USE RESTRICTIONS' is underlined in the source PDF to indicate structural emphasis. In the extracted JSON, it is parsed as a heading but the underline styling is completely lost.",
+      "source_pdf_quote": "LAND-USE RESTRICTIONS (underlined)",
+      "output_quote": "{\"type\": \"heading\", \"level\": 2, \"text\": \"LAND-USE RESTRICTIONS\"}",
+      "location": "Page 27",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
       "corroborated": false
     },
     {
@@ -138,30 +174,6 @@
       "corroborated": false
     },
     {
-      "description": "2 bare URL(s) in text not converted to hyperlinks: www.ncdsca.org,; scott.stupak@ncdenr.gov",
-      "severity": "minor",
-      "analysis": "bare_url_count=2. URLs appear as plain text instead of clickable links.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Mixed numbering types at same list level (1 list(s)): p28:letter+roman — possible sub-point flattening",
-      "severity": "minor",
-      "analysis": "flat_lists=1. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
       "description": "Table header markup issues: 2 table(s) with 3+ rows have no <th> header cells",
       "severity": "minor",
       "analysis": "data_in_th_time=0, no_th_tables=2. Minor semantic markup issues: tables lack <th> elements or use time values as headers. These affect screen reader context but are less severe than data misrepresentation.",
@@ -179,10 +191,10 @@
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
+  "total_defects": 3,
   "total_critical": 2,
   "total_major": 0,
-  "total_minor": 0,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
@@ -196,7 +208,7 @@
     },
     "signals": {
       "fidelity_composite": 0.4,
-      "fidelity_content": 0.8091603053435115,
+      "fidelity_content": 0.8015267175572519,
       "fidelity_structural": 1.0,
       "fidelity_visual": 0.2857142857142857,
       "fidelity_routing": "AUTO_REJECT",
@@ -231,9 +243,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 498628,
+    "processing_ms": 295052,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,6 +1,6 @@
 {
   "document_id": "01_2012_CRFL_Data_Delivery_Specifications",
-  "audited_at": "2026-03-31T03:37:37.019340Z",
+  "audited_at": "2026-04-01T08:46:17.831738Z",
   "source_files": {
     "extraction_json": "01_2012_CRFL_Data_Delivery_Specifications.json",
     "source_pdf": "source.pdf",
@@ -20,9 +20,9 @@
     {
       "description": "Significant text omission within a section",
       "severity": "critical",
-      "analysis": "In Appendix A (Page 3), the source document contains an example data set with 41 lines of CSV-style records. The extraction pipeline erroneously removed the vast majority of these lines (likely treating them as duplicates), leaving only 6 lines of data in the output.",
-      "source_pdf_quote": "41 lines of example data starting with '0111328, 140, 1, 6, 12, 0004300700, 25.4, . , 15, 430, 8835020301, 0, 21, 1, 266,' and ending with '0111329, 140, 1, 8, 8, 0004300700, 28.5, . , 17, 430, 8835020301, 0, 11, 1, 220,'",
-      "output_quote": "Only 6 paragraphs of data are present, and the validation metadata indicates 'duplicates_removed: 41'.",
+      "analysis": "In Appendix A (Page 3 of the source), there is an example of a delimited text file containing 44 lines of comma-separated data. The extraction pipeline erroneously aggressive-deduplicated these rows (indicated by 'duplicates_removed: 41' in the metadata), resulting in only 6 data rows appearing in the output. This is a substantial loss of the content within that section.",
+      "source_pdf_quote": "0111328, 140, 1, 6, 12, 0004300700, 25.4, . , 15, 430, 8835020301, 0, 21, 1, 225, (and 37 other similar lines)",
+      "output_quote": "The output jumps directly from the first data row ending in '266,' to a later row ending in '180,', completely omitting dozens of data rows.",
       "location": "Page 3, Appendix A",
       "source": "fidelity_llm",
       "check_id": "C5",
@@ -32,14 +32,14 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "Page 4 of the source document contains a meaningful flowchart diagram illustrating the relationship between different record types (Environmental Data, Gear Data, Replicate Data, etc.). The image manifest explicitly indicates that the base64 data for the image extracted on page 4 is invalid/corrupt (\"valid\": false). Consequently, this image will not render, meaning critical diagrammatic information is lost.",
-      "source_pdf_quote": "Flowchart diagram showing 'Environmental Data Record Type 1', 'Gear Data Record Type 7', 'Replicate Data Record Type 2', etc.",
-      "output_quote": "<img src=\"[base64 image stripped for token budget]\" alt=\"A completely blank white image.\"> (Image marked as invalid in manifest)",
-      "location": "Page 4",
+      "analysis": "The source PDF contains a critical flowchart diagram on page 4 depicting the hierarchical relationship between data records (Environmental Data, Replicate Data, Species Data, etc.). The HTML output includes an <img> element for this figure, but the generated alt text and small byte size listed in the manifest strongly indicate that it was captured as 'A completely blank white image.', meaning the visual diagram was lost.",
+      "source_pdf_quote": "Flowchart diagram showing record type relationships.",
+      "output_quote": "<img src=\"[base64 image stripped for token budget]\" alt=\"A completely blank white image.\">",
+      "location": "Page 4 (Appendix B)",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Table header markup issues: 1 table(s) have a data row marked as header: \"Record Type 1\"",
@@ -56,10 +56,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document contains a distinctly underlined sentence at the bottom of Page 1 regarding the N. C. Public Records Act. In the output JSON, this text appears as a standard paragraph without any markdown or HTML indicating underline formatting.",
-      "source_pdf_quote": "CRFL funding proposals, reports, and research data are subject to the N. C. Public Records Act (N.C.G.S. § 132-1 et seq). (Appears underlined in source)",
-      "output_quote": "\"CRFL funding proposals, reports, and research data are subject to the N. C. Public Records Act (N.C.G.S. § 132-1 et seq).\" (No underline preservation)",
-      "location": "Page 1, bottom paragraph under 'Background'",
+      "analysis": "The source document contains structural emphasis in the form of underline. On Page 1, the final sentence 'CRFL funding proposals, reports, and research data are subject to the N. C. Public Records Act (N.C.G.S. § 132-1 et seq).' is entirely underlined. In the output, this text is rendered as plain text within a paragraph, completely losing its structural emphasis.",
+      "source_pdf_quote": "CRFL funding proposals, reports, and research data are subject to the N. C. Public Records Act (N.C.G.S. § 132-1 et seq). (Underlined)",
+      "output_quote": "CRFL funding proposals, reports, and research data are subject to the N. C. Public Records Act (N.C.G.S. § 132-1 et seq). (No underline marker)",
+      "location": "Page 1",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -123,9 +123,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 125538,
+    "processing_ms": 159770,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

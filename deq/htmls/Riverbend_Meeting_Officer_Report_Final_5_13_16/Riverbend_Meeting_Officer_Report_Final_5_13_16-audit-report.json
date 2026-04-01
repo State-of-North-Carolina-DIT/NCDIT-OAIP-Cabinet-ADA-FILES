@@ -1,38 +1,26 @@
 {
   "document_id": "Riverbend_Meeting_Officer_Report_Final_5_13_16",
-  "audited_at": "2026-03-31T03:42:49.537742Z",
+  "audited_at": "2026-04-01T06:37:29.567403Z",
   "source_files": {
     "extraction_json": "Riverbend_Meeting_Officer_Report_Final_5_13_16.json",
     "source_pdf": "source.pdf",
     "rendered_html": "Riverbend_Meeting_Officer_Report_Final_5_13_16.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
-  "fidelity_content": 1.0,
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9973,
+  "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
+  "fidelity_visual": 1.0,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "reasoning": "The LLM fidelity analysis found only one minor formatting defect and suggested AUTO_APPROVE. However, programmatic detectors identified a critical defect: headers and footers from the source PDF were retained across all 5 pages in the extraction, creating significant accessibility issues for screen readers. Additionally, a major defect regarding flattened sub-lists was detected. According to the count-based routing rules, the presence of any critical defect requires an immediate REJECT.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source PDF contains a meaningful agency logo ('NC Water Resources') on the first page. While the HTML includes an <img> tag for this logo, the image manifest indicates that the base64 data for this image is corrupt ('valid': false, error: 'No module named PIL'). Because the data is corrupted, the image will appear broken and fail to render in a browser.",
-      "source_pdf_quote": "Agency logo in the top left corner of page 1.",
-      "output_quote": "Image manifest metadata shows '\"valid\": false' for the page 1 PNG image with alt text 'Logo featuring the large letters 'NC' in green and dark blue...'",
-      "location": "Page 1",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": true
-    },
-    {
       "description": "Header/footer elements retained in output (5): State of North Carolina | Environmental Quality | Water Reso; Page 2 of 5; Page 3 of 5",
-      "severity": "major",
-      "analysis": "header_footer_count=5. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "severity": "critical",
+      "analysis": "header_footer_count=5, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -43,7 +31,7 @@
     },
     {
       "description": "Mixed numbering types at same list level (1 list(s)): p1:letter+roman — possible sub-point flattening",
-      "severity": "minor",
+      "severity": "major",
       "analysis": "flat_lists=1. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
       "source_pdf_quote": null,
       "output_quote": null,
@@ -52,34 +40,48 @@
       "check_id": "S5",
       "fidelity_dimension": null,
       "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source PDF contains underlined headings for every bullet point in the 'March 1, 2016 Public Meeting and Oral Comments Summary' and 'Written Public Comment Summary' lists (e.g., 'Beneficial Reuse Areas', 'Costs', 'Dam Safety'). The extraction completely loses this underline emphasis, presenting the text plainly without any markdown formatting.",
+      "source_pdf_quote": "Beneficial Reuse Areas (Underlined and bolded)",
+      "output_quote": "Beneficial Reuse Areas",
+      "location": "Page 3 (JSON element list items)",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Strip all duplicate header/footer artifacts from the rendered HTML",
+    "Correct list nesting levels to properly distinguish sub-points from main list items",
+    "Restore missing underline formatting for bullet point headings"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 1,
-  "total_critical": 1,
+  "total_critical": 0,
   "total_major": 0,
-  "total_minor": 0,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.9973,
+      "raw_score": 0.9973,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
-      "fidelity_content": 1.0,
+      "fidelity_composite": 0.9973,
+      "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 0.945280437756498,
       "shingling_precision": 0.9790308869368093,
@@ -109,11 +111,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "major_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 240706,
+    "processing_ms": 109059,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,6 +1,6 @@
 {
   "document_id": "01_Fact_Sheet_SKA.pdf",
-  "audited_at": "2026-03-31T03:36:56.648114Z",
+  "audited_at": "2026-04-01T07:44:13.623243Z",
   "source_files": {
     "extraction_json": "01_Fact_Sheet_SKA.pdf.json",
     "source_pdf": "source.pdf",
@@ -8,27 +8,15 @@
   },
   "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9973,
-  "fidelity_content": 0.9923664122137404,
+  "fidelity_composite": 1.0,
+  "fidelity_content": 1.0,
   "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "The document shows exceptionally high fidelity scores (composite 0.997) and excellent programmatic text metrics (recall 0.989, precision 0.998). The only defect is a minor loss of underline formatting on two headings. Minor programmatic observations regarding headers, footers, and watermarks are standard cosmetic artifacts. With zero major or critical defects, this document easily qualifies for immediate auto-approval.",
+  "reasoning": "All signals indicate an exceptionally clean conversion. The LLM fidelity scores are perfect across the board (composite 1.0), and programmatic text comparison metrics confirm strong content preservation (shingling recall 0.989). There are zero major or critical defects, and the three minor programmatic observations do not exceed the threshold for human review.",
   "decision_method": "llm_final_decider",
   "concerns": [
-    {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The headings 'Background' and 'Public Comment & Public Hearing' are underlined in the source PDF. This underline emphasis was not preserved in the output JSON.",
-      "source_pdf_quote": "Background\n...\nPublic Comment & Public Hearing (both are underlined in source)",
-      "output_quote": "{\n  \"type\": \"heading\",\n  \"level\": 2,\n  \"text\": \"Background\"\n}\n...\n{\n  \"type\": \"heading\",\n  \"level\": 2,\n  \"text\": \"Public Comment & Public Hearing\"\n}",
-      "location": "Page 1",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
     {
       "description": "Page number artifacts retained: Page 1 of 2",
       "severity": "minor",
@@ -64,53 +52,29 @@
       "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "1 bare URL(s) in text not converted to hyperlinks: deq.nc.gov",
-      "severity": "minor",
-      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Watermark/stamp text \"DRAFT\" appears on 2/2 pages",
-      "severity": "minor",
-      "analysis": "watermark=\"DRAFT\", page_count=2/2. Repeated watermark/stamp text indicates a document overlay that may be duplicated in the HTML output.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
     }
   ],
   "action_items": [],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 0,
   "total_critical": 0,
   "total_major": 0,
-  "total_minor": 1,
+  "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 1.0,
     "score_breakdown": {
-      "fidelity_composite": 0.9973,
-      "raw_score": 0.9973,
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9973,
-      "fidelity_content": 0.9923664122137404,
+      "fidelity_composite": 1.0,
+      "fidelity_content": 1.0,
       "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
       "fidelity_routing": "AUTO_APPROVE",
@@ -147,7 +111,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 84822,
+    "processing_ms": 73950,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

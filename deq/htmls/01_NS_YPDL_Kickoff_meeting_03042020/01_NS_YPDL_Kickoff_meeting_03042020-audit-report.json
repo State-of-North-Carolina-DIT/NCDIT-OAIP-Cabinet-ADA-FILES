@@ -1,6 +1,6 @@
 {
   "document_id": "01_NS_YPDL_Kickoff_meeting_03042020",
-  "audited_at": "2026-03-31T03:39:17.912281Z",
+  "audited_at": "2026-04-01T08:45:06.595119Z",
   "source_files": {
     "extraction_json": "01_NS_YPDL_Kickoff_meeting_03042020.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a 24-page landscape-oriented presentation containing multiple slide layouts, background graphics, bulleted lists, and chart images characteristic of a slide deck.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a 24-page slide presentation, characterized by landscape orientation, continuous background images, and presentation-style layouts with bulleted lists and large graphics per page.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 154099,
+    "processing_ms": 87327,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,33 +1,33 @@
 {
   "document_id": "2021-white-lake-sav-report",
-  "audited_at": "2026-03-31T04:12:35.561512Z",
+  "audited_at": "2026-04-01T08:49:25.166454Z",
   "source_files": {
     "extraction_json": "2021-white-lake-sav-report.json",
     "source_pdf": "source.pdf",
     "rendered_html": "2021-white-lake-sav-report.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
+  "quality_score": 95,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.95,
   "fidelity_content": 1.0,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "fidelity_visual": 0.8571428571428572,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The LLM fidelity evaluation flagged one major defect regarding a missing image (Figure 9) and its caption, though programmatic signals note an image count ratio of 1.0, suggesting a potential false positive. Two minor programmatic issues were also identified with standalone links and table header markup. Following count-based routing rules, the presence of one major defect requires a human review to verify if the image and caption are genuinely missing.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source PDF contains an image and caption on page 15 for 'Figure 9. Dwarf milfoil (Myriophyllum tenellum)...'. This meaningful figure is completely missing from the HTML output, which jumps directly from the Figure 8 block to the Figure 10 block.",
-      "source_pdf_quote": "Page 15 containing Figure 9 map and caption 'Figure 9. Dwarf milfoil (Myriophyllum tenellum) was found at 28 sample sites in 2021'",
-      "output_quote": "The HTML output jumps from Figure 8 to Figure 10 with no img or caption elements for Figure 9.",
-      "location": "Page 15 / Figure 9",
+      "severity": "major",
+      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains a map for Figure 9 on page 15. However, this image and its associated caption are completely missing from the rendered HTML output. The HTML skips directly from Figure 8 to Figure 10, omitting the visualization and caption for Dwarf milfoil entirely.",
+      "source_pdf_quote": "Page 15 shows a map image with the caption: \"Figure 9. Dwarf milfoil (Myriophyllum tenellum) was found at 28 sample sites in 2021\"",
+      "output_quote": "The HTML sequence shows Figure 8 and then skips directly to Figure 10, with no <img> or <figcaption> elements corresponding to Figure 9.",
+      "location": "Page 15 / Between Figure 8 and Figure 10 in output",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Displaced hyperlinks: 1 link(s) extracted as standalone elements instead of inline text",
@@ -55,31 +55,32 @@
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Verify if Figure 9 and its caption are missing from the HTML output.",
+    "Check table header structure and standalone hyperlinks for accessibility issues."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 1,
-  "total_critical": 1,
-  "total_major": 0,
+  "total_critical": 0,
+  "total_major": 1,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.85,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.95,
+      "raw_score": 0.95,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
+      "fidelity_composite": 0.95,
       "fidelity_content": 1.0,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_visual": 0.8571428571428572,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": 0.9374814814814815,
       "shingling_precision": 0.9768447051559124,
@@ -109,11 +110,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 119067,
+    "processing_ms": 186681,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

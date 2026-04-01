@@ -1,6 +1,6 @@
 {
   "document_id": "01_NRHM_Meeting_Agenda_052708",
-  "audited_at": "2026-03-31T03:41:27.027444Z",
+  "audited_at": "2026-04-01T08:45:15.313386Z",
   "source_files": {
     "extraction_json": "01_NRHM_Meeting_Agenda_052708.json",
     "source_pdf": "source.pdf",
@@ -14,16 +14,16 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document contains excellent content preservation and high text metrics (shingling recall 0.965), but the LLM fidelity evaluation flagged one MAJOR structural defect regarding lists converted as plain text with unicode bullet characters instead of proper list markup. According to the binding severity count rules, one major defect requires HUMAN_REVIEW.",
+  "reasoning": "The document contains a major structural defect where bulleted lists inside table cells were extracted as plain text using literal bullet characters rather than proper structured list elements. This negatively impacts accessibility for screen reader users. With 1 major defect, the document must be routed to human review for correction.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The source document contains multiple bulleted lists under the agenda topics (e.g., under 'Project Status', 'Discuss Model Schematic', etc.). In the output JSON, these bullet points are extracted as plain text strings separated by newline characters and starting with a literal unicode bullet character (•), instead of being formatted as proper structural lists (using either valid list objects or correct markdown list syntax like '- ' or '* ' that the pipeline would convert to <ul>/<li>). This fla",
-      "source_pdf_quote": "Project Status\n• Project elements begun.\n• Project elements completed.\n• Project schedule.",
-      "output_quote": "\"text\": \"Project Status\\n• Project elements begun.\\n• Project elements completed.\\n• Project schedule.\"",
-      "location": "Table cell at row_start: 2, column_start: 1",
+      "analysis": "The source document contains several unordered (bulleted) lists describing the sub-topics for each agenda item. In the output JSON, these lists are extracted as plain text within the table cells, using literal bullet characters ('•') and newline characters instead of proper structured list elements. This breaks accessibility, as screen readers will read the bullet characters instead of recognizing a list structure.",
+      "source_pdf_quote": "• Cost share payments received.\n• Funds expended.",
+      "output_quote": "\"Project Finance Update\\n• Cost share payments received.\\n• Funds expended.\"",
+      "location": "Row 1, Column 1 (and similar in subsequent rows)",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -43,8 +43,8 @@
     }
   ],
   "action_items": [
-    "Convert plain text bullet points into proper HTML lists (<ul>/<li>).",
-    "Review table headers to ensure semantic correctness."
+    "Convert plain text bulleted items inside table cells into proper structured list elements (<ul>, <li>).",
+    "Review table headers to ensure proper semantic markup for time values."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -98,11 +98,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge",
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 185269,
+    "processing_ms": 96505,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

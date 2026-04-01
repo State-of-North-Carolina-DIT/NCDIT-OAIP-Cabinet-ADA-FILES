@@ -1,33 +1,33 @@
 {
   "document_id": "2023-roanoke-rapids-sav-report",
-  "audited_at": "2026-03-31T03:38:55.013426Z",
+  "audited_at": "2026-04-01T06:38:53.488419Z",
   "source_files": {
     "extraction_json": "2023-roanoke-rapids-sav-report.json",
     "source_pdf": "source.pdf",
     "rendered_html": "2023-roanoke-rapids-sav-report.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
-  "fidelity_content": 0.9923664122137404,
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 1.0,
+  "fidelity_content": 1.0,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
+  "fidelity_visual": 1.0,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "reasoning": "The document has a CRITICAL programmatic defect due to pervasive header/footer elements retained in the output, affecting 18 out of 19 pages. There is also one MAJOR programmatic defect regarding a table caption coded as a header row. According to the strict routing rules, any critical defect automatically requires a REJECT decision. Additionally, the shingling recall (0.916) and word count ratio (0.774) reflect some discrepancies, although the LLM fidelity signals were seemingly unaware of the pervasive programmatic defects.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Images missing or broken",
+      "description": "Header/footer elements retained in output (35): 2023 Roanoke Rapids Vegetation Survey Report; 1; 2023 Roanoke Rapids Vegetation Survey Report",
       "severity": "critical",
-      "analysis": "The image manifest indicates that all extracted images in the HTML have corrupted base64 data ('valid': false, with error 'No module named \\'PIL\\''). Because the image data is corrupted, none of the meaningful images from the source PDF (such as the cover photo on page 1, the NC State University logo, and Figures 1 through 14) will render in the browser.",
-      "source_pdf_quote": "Meaningful images including the cover photo and NC State University logo on page 1, and maps/charts in Figures 1-14.",
-      "output_quote": "Image manifest shows '\"valid\": false' and '\"error\": \"No module named 'PIL'\"' for all 17 extracted images.",
-      "location": "Throughout the document (Pages 1, 7-19)",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": true
+      "analysis": "header_footer_count=35, pages_affected=18/19. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
     },
     {
       "description": "Table caption coded as header row: 1 table(s) have a single spanning first row that is likely a caption/title",
@@ -39,30 +39,6 @@
       "source": "programmatic",
       "check_id": "S3",
       "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Header/footer elements retained in output (35): 2023 Roanoke Rapids Vegetation Survey Report; 1; 2023 Roanoke Rapids Vegetation Survey Report",
-      "severity": "major",
-      "analysis": "header_footer_count=35. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document features underlines for the text 'Prepared By:' and 'Submitted To:' on the cover page. The extraction outputs these terms using markdown italics (*Prepared By:*) rather than HTML underline tags, resulting in a loss of the specific underline emphasis.",
-      "source_pdf_quote": "Prepared By: (underlined) and Submitted To: (underlined)",
-      "output_quote": "*Prepared By:* and *Submitted To:*",
-      "location": "Page 1",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
       "corroborated": false
     },
     {
@@ -91,31 +67,33 @@
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Address the pervasive pipeline failure retaining header and footer artifacts across the document.",
+    "Fix table caption semantics by replacing single spanning header rows with <caption> elements.",
+    "Correct inline hyperlink extraction and table header markup."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
-  "total_critical": 1,
+  "total_defects": 0,
+  "total_critical": 0,
   "total_major": 0,
-  "total_minor": 1,
+  "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
-      "fidelity_content": 0.9923664122137404,
+      "fidelity_composite": 1.0,
+      "fidelity_content": 1.0,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 0.915580252190639,
       "shingling_precision": 0.9685733664933304,
@@ -145,11 +123,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "major_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 125382,
+    "processing_ms": 193003,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

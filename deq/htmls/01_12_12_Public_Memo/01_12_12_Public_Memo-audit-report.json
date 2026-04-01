@@ -1,6 +1,6 @@
 {
   "document_id": "01_12_12_Public_Memo",
-  "audited_at": "2026-03-31T03:38:21.097435Z",
+  "audited_at": "2026-04-01T08:46:01.570516Z",
   "source_files": {
     "extraction_json": "01_12_12_Public_Memo.json",
     "source_pdf": "source.pdf",
@@ -20,13 +20,25 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The source document's first page features the agency logo for the North Carolina Department of Environment and Natural Resources and the 'One NorthCarolina Naturally' logo. However, the HTML output does not contain valid <img> elements for these meaningful organizational logos. Instead, it renders literal placeholder text such as '<p>[Image: Logo of the North Carolina Department of Environment and Natural Resources (NCDENR)]</p>'. Since the actual images are missing from the markup and replaced ",
-      "source_pdf_quote": "Agency logo on the first page of the document.",
-      "output_quote": "<p>[Image: Logo of the North Carolina Department of Environment and Natural Resources (NCDENR)]</p>",
-      "location": "Page 1, document header",
+      "analysis": "The first page of the source document contains two meaningful agency logos (the NCDENR logo at the top and the 'One North Carolina Naturally' logo at the bottom). The rendered HTML does not contain any <img> elements to display these logos. Instead, it only outputs plain text placeholders. The image manifest confirms that no image data (b64_len: 0) was extracted.",
+      "source_pdf_quote": "NCDENR logo at the top of page 1 and 'One North Carolina Naturally' logo at the bottom of page 1.",
+      "output_quote": "<p>[Image: Logo of the North Carolina Department of Environment and Natural Resources (NCDENR)]</p> and <p>[Image: One NorthCarolina Naturally logo]</p>",
+      "location": "Page 1",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
+      "corroborated": false
+    },
+    {
+      "description": "Header/footer elements retained in output (8): Wetlands, Buffers, Stormwater - Compliance and Permitting Un; An Equal Opportunity \\ Affirmative Action Employer; Page 2 of 7",
+      "severity": "critical",
+      "analysis": "header_footer_count=8, pages_affected=7/7. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
       "corroborated": false
     },
     {
@@ -42,26 +54,14 @@
       "corroborated": false
     },
     {
-      "description": "Header/footer elements retained in output (8): Wetlands, Buffers, Stormwater - Compliance and Permitting Un; An Equal Opportunity \\ Affirmative Action Employer; Page 2 of 7",
+      "description": "2 bare URL(s) in text not converted to hyperlinks: http://portal.ncdenr.org/web/wq/swp/ws/401/certsandpermits/swmanagement.; http://portal.ncdenr.org/web/wq/ws/su/npdessw#tab-w",
       "severity": "major",
-      "analysis": "header_footer_count=8. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "analysis": "bare_url_count=2. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "4 bare URL(s) in text not converted to hyperlinks: karen.higgins@ncdenr.gov; ian.mcmillan@ncdenr.gov; http://portal.ncdenr.org/web/wq/swp/ws/401/certsandpermits/swmanagement.; http://portal.ncdenr.org/web/wq/ws/su/npdessw#tab-w",
-      "severity": "major",
-      "analysis": "bare_url_count=4. URLs appear as plain text instead of clickable links.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
+      "check_id": "S8",
       "fidelity_dimension": null,
       "corroborated": false
     },
@@ -92,10 +92,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document uses underlining for specific structural emphasis that is distinct from headings or bolding. On page 5, the phrases \"Compensatory Mitigation\" and \"Activities that require written approval:\" are underlined in the source PDF. This underlining is entirely missing in the output JSON. Additionally, on page 1, the word \"underlined\" has an underline applied in the source that is dropped in the output.",
-      "source_pdf_quote": "Activities that require written approval: (Underlined in the PDF)",
-      "output_quote": "\"Activities that require written approval:\"",
-      "location": "Page 5",
+      "analysis": "I checked the output for the preservation of visual emphasis, specifically underlined text per the instructions. In the source PDF on pages 5 and 7, the phrase 'Riparian Area Protection Rules [Buffer Rules]' is explicitly underlined to provide emphasis. In the JSON output, this text has lost its underline and lacks any alternative markdown emphasis styling, resulting in a loss of visual emphasis.",
+      "source_pdf_quote": "Riparian Area Protection Rules [Buffer Rules]",
+      "output_quote": "Riparian Area Protection Rules [Buffer Rules]",
+      "location": "Page 5 and Page 7",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -161,7 +161,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 169565,
+    "processing_ms": 143878,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

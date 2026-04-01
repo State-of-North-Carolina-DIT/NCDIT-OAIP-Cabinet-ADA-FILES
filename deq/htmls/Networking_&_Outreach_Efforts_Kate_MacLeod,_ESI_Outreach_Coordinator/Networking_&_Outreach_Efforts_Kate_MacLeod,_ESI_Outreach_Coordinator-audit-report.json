@@ -1,6 +1,6 @@
 {
   "document_id": "Networking_&_Outreach_Efforts_Kate_MacLeod,_ESI_Outreach_Coordinator",
-  "audited_at": "2026-03-31T03:48:17.385724Z",
+  "audited_at": "2026-04-01T08:45:54.635525Z",
   "source_files": {
     "extraction_json": "Networking_&_Outreach_Efforts_Kate_MacLeod,_ESI_Outreach_Coordinator.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a landscape-oriented slide presentation with graphical backgrounds, large images, and presentation-style text layouts.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a 21-page presentation consisting of landscape-oriented slides with presentation layouts, background graphics, and slide-style formatting.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 49039,
+    "processing_ms": 28601,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

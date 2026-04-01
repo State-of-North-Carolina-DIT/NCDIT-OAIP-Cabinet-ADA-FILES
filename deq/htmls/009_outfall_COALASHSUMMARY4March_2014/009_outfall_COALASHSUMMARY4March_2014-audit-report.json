@@ -1,6 +1,6 @@
 {
   "document_id": "009_outfall_COALASHSUMMARY4March_2014",
-  "audited_at": "2026-03-31T03:39:45.774657Z",
+  "audited_at": "2026-04-01T08:45:36.986929Z",
   "source_files": {
     "extraction_json": "009_outfall_COALASHSUMMARY4March_2014.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity evaluation reports a perfect score with no defects found, suggesting excellent visual and content preservation. However, programmatic detectors identified two major structural issues: a table data row incorrectly marked as a header, and a footnote converted into an unordered list. Per the routing rules, 1-5 major defects require HUMAN_REVIEW.",
+  "reasoning": "The LLM evaluation gave perfect scores and recommended AUTO_APPROVE. However, programmatic checks identified two major accessibility issues: data values placed in a table header row, and footnotes converted to a bulleted list. Due to these two major programmatic defects, the document requires human review to correct the table structure and footnote semantics.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -43,8 +43,8 @@
     }
   ],
   "action_items": [
-    "Check the table headers to ensure data values (e.g., dates like 2/14/2014) are not tagged as <th>",
-    "Review the list following the table and convert the bulleted items to standard paragraph text if they are meant to be footnotes"
+    "Check the table header rows and reassign any data rows to standard table body rows.",
+    "Convert the bulleted list containing footnotes into proper paragraph-based footnotes with correct semantic structure."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -102,7 +102,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 253941,
+    "processing_ms": 118930,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

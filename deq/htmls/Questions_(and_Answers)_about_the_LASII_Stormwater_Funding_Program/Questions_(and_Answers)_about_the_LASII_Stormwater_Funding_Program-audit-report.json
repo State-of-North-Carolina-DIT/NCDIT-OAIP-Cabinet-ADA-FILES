@@ -1,43 +1,31 @@
 {
   "document_id": "Questions_(and_Answers)_about_the_LASII_Stormwater_Funding_Program",
-  "audited_at": "2026-03-31T03:40:37.188761Z",
+  "audited_at": "2026-04-01T08:47:31.655568Z",
   "source_files": {
     "extraction_json": "Questions_(and_Answers)_about_the_LASII_Stormwater_Funding_Program.json",
     "source_pdf": "source.pdf",
     "rendered_html": "Questions_(and_Answers)_about_the_LASII_Stormwater_Funding_Program.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
+  "quality_score": 97,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9701,
   "fidelity_content": 0.9923664122137404,
-  "fidelity_structural": 0.3636,
+  "fidelity_structural": 0.9091,
   "fidelity_visual": 1.0,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The document contains strong textual fidelity but multiple structural issues with hyperlinks. Specifically, there are displaced hyperlinks extracted as standalone elements rather than inline text, and missing hyperlink annotations (though some of the latter appears to be a source document limitation). With three major structural/hyperlink defects and a few minor formatting artifacts, the document falls squarely into the HUMAN_REVIEW category.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Link injection issues",
-      "severity": "critical",
-      "analysis": "There are missing hyperlinks in the output that were clearly present and clickable in the source PDF. The link for 'Levee Terms & Definitions' on Page 4 is entirely missing from the output. Additionally, the hyperlink for 'Division's website.' on Page 5 is completely missing.",
-      "source_pdf_quote": "1 Levee Terms & Definitions (army.mil) (Hyperlinked to: https://www.usace.army.mil/Missions/Civil-Works/Levee-Safety-Program/Levee-Terms-Definitions/)",
-      "output_quote": "1 Levee Terms & Definitions (army.mil)",
-      "location": "Page 4, Footnote 1 / Page 5 Question 19 Answer",
-      "source": "fidelity_llm",
-      "check_id": "S7",
-      "fidelity_dimension": "structural",
-      "corroborated": true
-    },
-    {
-      "description": "Reading order significantly different",
+      "description": "Link text pulled over but not hyperlinked",
       "severity": "major",
-      "analysis": "The reading order is significantly broken between Page 4 and Page 5. A footnote from the bottom of Page 4 is inserted mid-sentence between the end of the last paragraph on Page 4 and the first paragraph on Page 5, interrupting the continuous flow of the sentence.",
-      "source_pdf_quote": "...accomplish the goals of the planning study, then \nonly one application needs to be submitted...",
-      "output_quote": "...accomplish the goals of the planning study, then\n1 Levee Terms & Definitions (army.mil) only one application needs to be submitted...",
-      "location": "End of Page 4 / Start of Page 5",
+      "analysis": "The source PDF contains clickable hyperlinks on page 4 and page 5 that were pulled into the output as plain text without corresponding link objects or markup. On page 4, the footnote link 'Levee Terms & Definitions (army.mil)' is flattened. On page 5, the link 'Division's website.' under Question 19 is isolated as a plain text paragraph with no href or link object associated with it.",
+      "source_pdf_quote": "Page 4 footnote: 'Levee Terms & Definitions (army.mil)' (hyperlink) and Page 5 under Question 19: 'Division's website.' (hyperlink).",
+      "output_quote": "Page 4 JSON has '1 Levee Terms & Definitions (army.mil) only one application needs to be submitted...' as a plain text paragraph. Page 5 JSON has a plain text paragraph 'Division's website.' Both lack link objects or anchor markup.",
+      "location": "Page 4 and Page 5 content arrays",
       "source": "fidelity_llm",
-      "check_id": "S4",
+      "check_id": "S8",
       "fidelity_dimension": "structural",
       "corroborated": false
     },
@@ -54,24 +42,24 @@
       "corroborated": false
     },
     {
-      "description": "Header/footer elements retained in output (1): LASII Stormwater Program Questions and Answers\nLASII Program",
+      "description": "1 bare URL(s) in text not converted to hyperlinks: (army.mil",
       "severity": "major",
-      "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
-      "check_id": null,
+      "check_id": "S8",
       "fidelity_dimension": null,
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document uses underlining for emphasis in several places, which is not captured or preserved in the JSON output.",
-      "source_pdf_quote": "Page 2, Question 8: \"constructing or repairing dams or other structures designed to retain waters within a stream channel is not eligible for funding.\"\nPage 2, Question 9: \"why the Applicant considers it qualified as critical infrastructure.\"",
-      "output_quote": "Page 2: \"constructing or repairing dams or other structures designed to retain waters within a stream channel is not eligible for funding.\"\nPage 2: \"why the Applicant considers it qualified as critical infrastructure.\"",
-      "location": "Page 2, Question 8 and Question 9",
+      "analysis": "The source PDF frequently uses underlining for emphasis in several answers, which is completely lost in the output text. As stated in the prompt, underline has no markdown equivalent, but its complete absence denotes a genuine loss of visual emphasis.",
+      "source_pdf_quote": "constructing or repairing dams or other structures designed to retain waters within a stream channel is not eligible for funding.",
+      "output_quote": "constructing or repairing dams or other structures designed to retain waters within a stream channel is not eligible for funding.",
+      "location": "Page 2, Question 8 Answer",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -90,25 +78,40 @@
       "corroborated": false
     },
     {
-      "description": "1 bare URL(s) in text not converted to hyperlinks: (army.mil",
+      "description": "Header/footer elements retained in output (1): LASII Stormwater Program Questions and Answers\nLASII Program",
       "severity": "minor",
-      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links.",
+      "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
       "check_id": null,
       "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Source PDF contains 2 instance(s) of blue-styled text without hyperlink annotations. These appear to be intended as hyperlinks but were not annotated in the PDF (likely lost during Word-to-PDF export). This is a source document limitation, not a pipeline defect. Examples: page 4: \"Levee Terms & Definitions (army.mil)\"; page 5: \"Division's website.\"",
+      "severity": "informational",
+      "analysis": "orphaned_blue_text_count=2. Blue text without link annotations detected via PyMuPDF color extraction.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S7",
+      "fidelity_dimension": null,
       "corroborated": true
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Fix displaced hyperlinks so they are inline within their respective paragraphs",
+    "Add href attributes to bare URLs and intended link text",
+    "Remove retained header/footer text and page numbers",
+    "Restore necessary visual emphasis where appropriate"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 3,
-  "total_critical": 1,
+  "total_defects": 2,
+  "total_critical": 0,
   "total_major": 1,
   "total_minor": 1,
   "exclusion_reason": null,
@@ -116,18 +119,18 @@
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.9701,
+      "raw_score": 0.9701,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
+      "fidelity_composite": 0.9701,
       "fidelity_content": 0.9923664122137404,
-      "fidelity_structural": 0.3636,
+      "fidelity_structural": 0.9091,
       "fidelity_visual": 1.0,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": 0.9628571428571429,
       "shingling_precision": 0.9664468024089475,
@@ -159,9 +162,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 2
+      "deduplicated_count": 0
     },
-    "processing_ms": 143404,
+    "processing_ms": 135680,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

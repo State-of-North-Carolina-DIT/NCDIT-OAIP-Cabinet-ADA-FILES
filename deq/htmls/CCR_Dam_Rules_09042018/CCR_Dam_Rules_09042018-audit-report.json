@@ -1,6 +1,6 @@
 {
   "document_id": "CCR_Dam_Rules_09042018",
-  "audited_at": "2026-03-31T03:46:34.541793Z",
+  "audited_at": "2026-04-01T08:45:00.628705Z",
   "source_files": {
     "extraction_json": "CCR_Dam_Rules_09042018.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a landscape-oriented slide presentation with characteristic elements such as title slides, bulleted lists, standard logos on each page, and a low text-to-image ratio typical of slide decks.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a landscape-oriented presentation containing 8 slides with visual layouts, background images, and bulleted text indicative of a slide deck.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 42060,
+    "processing_ms": 39131,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -6,4 +6,8 @@ AUDITOR-REPORT.md
 AUDITOR-REPORT-baseline.md
 audit-batch-results-baseline.json
 *-audit-report-baseline.json
+*-audit-report-*baseline*.json
+*-audit-report-pre-phase*.json
 *-human-vs-auditor*.csv
+AUDIT-ANALYSIS.md
+deq/htmls/Auditor Review (DEQ Set).xlsx

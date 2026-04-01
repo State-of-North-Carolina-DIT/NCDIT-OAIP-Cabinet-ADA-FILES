@@ -1,6 +1,6 @@
 {
   "document_id": "01_HB_1743_SAB_Purpose_Brief_Tom_Reeder",
-  "audited_at": "2026-03-31T03:37:08.466272Z",
+  "audited_at": "2026-04-01T08:45:47.084154Z",
   "source_files": {
     "extraction_json": "01_HB_1743_SAB_Purpose_Brief_Tom_Reeder.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a presentation slide deck. It features a landscape orientation, large text meant for projection, title slides, minimal text per page, bulleted lists structured as slide points, and diagrams/logos typical of PowerPoint or similar presentation software.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a landscape-oriented slide presentation with a slide-like layout, bullet points, and large text typically used for presentations.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 18968,
+    "processing_ms": 128265,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

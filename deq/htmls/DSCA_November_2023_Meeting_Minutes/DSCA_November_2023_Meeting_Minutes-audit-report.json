@@ -1,75 +1,75 @@
 {
   "document_id": "DSCA_November_2023_Meeting_Minutes",
-  "audited_at": "2026-03-31T03:43:29.885719Z",
+  "audited_at": "2026-04-01T06:29:52.960355Z",
   "source_files": {
     "extraction_json": "DSCA_November_2023_Meeting_Minutes.json",
     "source_pdf": "source.pdf",
     "rendered_html": "DSCA_November_2023_Meeting_Minutes.html"
   },
-  "quality_score": 97,
-  "quality_grade": "Good",
-  "fidelity_composite": 0.9727,
-  "fidelity_content": 1.0,
-  "fidelity_structural": 0.9091,
-  "fidelity_visual": 1.0,
+  "quality_score": 50,
+  "quality_grade": "Poor",
+  "fidelity_composite": null,
+  "fidelity_content": null,
+  "fidelity_structural": null,
+  "fidelity_visual": null,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The conversion preserved content exceptionally well with shingling recall at 0.997 and a perfect LLM content score. However, a major structural defect was identified where a continuous Roman numeral list (I-X) was improperly fractured into separate lists, an H2 heading, and a plain paragraph. Based on the presence of 1 major defect, the document is routed to HUMAN_REVIEW to correct the semantic list structure.",
-  "decision_method": "llm_final_decider",
+  "reasoning": "Programmatic-only: 2 major concern(s): 1 bare URL(s) in text not converted to hyperlinks: https://www.deq.nc.gov/about/divisions/waste-management/superfund-section/dry-cl; Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p3:letter+roman — possible sub-point flattening",
+  "decision_method": "programmatic_only",
   "concerns": [
     {
-      "description": "Lists converted incorrectly",
-      "severity": "major",
-      "analysis": "The source document uses a continuous Roman numeral list (I through X) to organize the meeting minutes. However, the output severely fractures this structure. Items I-IV are rendered as a list on Page 1. Item V is incorrectly rendered as an H2 heading on Page 2. Item VI is incorrectly rendered as a plain paragraph on Page 2. Items VII-X are then rendered as a new list on Page 3. Converting numbered list items into plain headings and paragraphs breaks the list continuity and semantic structure.",
-      "source_pdf_quote": "V. Fund & Site Statistics\n[...]\nVI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer",
-      "output_quote": "{\n  \"type\": \"heading\",\n  \"level\": 2,\n  \"text\": \"V. Fund & Site Statistics\"\n}\n[...]\n{\n  \"type\": \"paragraph\",\n  \"text\": \"VI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer, head of the remediation unit...\"\n}",
-      "location": "Page 2",
-      "source": "fidelity_llm",
-      "check_id": "S5",
-      "fidelity_dimension": "structural",
-      "corroborated": true
-    },
-    {
       "description": "1 bare URL(s) in text not converted to hyperlinks: https://www.deq.nc.gov/about/divisions/waste-management/superfund-section/dry-cl",
-      "severity": "minor",
-      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links.",
+      "severity": "major",
+      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
-      "check_id": null,
+      "check_id": "S8",
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p3:letter+roman — possible sub-point flattening",
+      "severity": "major",
+      "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S5",
       "fidelity_dimension": null,
       "corroborated": false
     }
   ],
   "action_items": [
-    "Consolidate the fractured Roman numeral list (items I through X) into a single, continuous semantic list structure.",
-    "Convert the bare URL into an active, clickable hyperlink."
+    "1 bare URL(s) in text not converted to hyperlinks: https://www.deq.nc.gov/about/divisions/waste-management/superfund-section/dry-cl",
+    "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p3:letter+roman — possible sub-point flattening"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 0,
   "total_critical": 0,
-  "total_major": 1,
+  "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.7,
     "score_breakdown": {
-      "fidelity_composite": 0.9727,
-      "raw_score": 0.9727,
-      "ceiling": null,
-      "ceiling_reason": null,
-      "available_components": 1
+      "fidelity_composite": null,
+      "raw_score": 0.5,
+      "ceiling": 0.5,
+      "ceiling_reason": "fidelity_unavailable",
+      "available_components": 0
     },
     "signals": {
-      "fidelity_composite": 0.9727,
-      "fidelity_content": 1.0,
-      "fidelity_structural": 0.9091,
-      "fidelity_visual": 1.0,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
-      "fidelity_available": true,
+      "fidelity_composite": null,
+      "fidelity_content": null,
+      "fidelity_structural": null,
+      "fidelity_visual": null,
+      "fidelity_routing": null,
+      "fidelity_available": false,
       "shingling_recall": 0.9966832504145937,
       "shingling_precision": 0.9942100909842845,
       "duplication_ratio": 0.0,
@@ -100,10 +100,10 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 122011,
-    "fidelity_report_path": "fidelity-report.json",
+    "processing_ms": 136,
+    "fidelity_report_path": null,
     "routing_escalated_from": null
   }
 }

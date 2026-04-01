@@ -1,6 +1,6 @@
 {
   "document_id": "01_January_2012_CPAs",
-  "audited_at": "2026-03-31T03:38:02.094905Z",
+  "audited_at": "2026-04-01T08:45:44.865368Z",
   "source_files": {
     "extraction_json": "01_January_2012_CPAs.json",
     "source_pdf": "source.pdf",
@@ -14,15 +14,15 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "Both the LLM fidelity analysis and the programmatic detectors identified a major structural issue where a single table spanning two pages was split into two separate table objects instead of being merged into a continuous table. Since there is exactly one major issue, count-based rules dictate routing to HUMAN_REVIEW to fix the table structure.",
+  "reasoning": "The extraction achieved excellent text fidelity (shingling recall 1.0) but failed to merge a table spanning across two pages. Both the LLM fidelity evaluation and the programmatic structural detectors identified this as a major structural defect. Per the count-based routing thresholds, the presence of a major defect requires HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Table structure corrupted",
       "severity": "major",
-      "analysis": "The source document contains a single large table that spans across both pages (pages 1 and 2) with repeated headers. The extraction rules explicitly state that when a large table spans multiple PDF pages with repeated headers, it should be rendered as one continuous table. However, the output JSON splits the table into two separate `table` objects (one on page 1 and one on page 2).",
-      "source_pdf_quote": "A single continuous table spanning pages 1 and 2 with repeated headers starting with 'Case Number | Owner - Facility | ...'",
-      "output_quote": "Two separate objects with 'type': 'table', one inside pages[0].content and another inside pages[1].content.",
+      "analysis": "The source document contains a single large table that spans across two pages, with the header row repeated on the second page. According to the structural requirements, this should be rendered as one continuous table. However, the output JSON incorrectly extracts this as two separate table objects, one on page 1 and another on page 2.",
+      "source_pdf_quote": "Large data table spanning pages 1 and 2, with columns \"Case Number\" to \"Total Cases in Previous 12 Months\".",
+      "output_quote": "Two separate table objects (one in page 1 content, another in page 2 content) rather than a single continuous table.",
       "location": "Pages 1 and 2",
       "source": "fidelity_llm",
       "check_id": "S3",
@@ -40,23 +40,10 @@
       "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "Repeated footer/header text (2x): \"dwq january 2012 civil penalty assessments\"",
-      "severity": "minor",
-      "analysis": "Short text with footer-like pattern appears on 2 pages",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
     }
   ],
   "action_items": [
-    "Merge the separate table objects on pages 1 and 2 into a single continuous table.",
-    "Remove the duplicated header row from the second part of the table."
+    "Merge the split tables on pages 1 and 2 into a single continuous HTML table and handle the repeated header row appropriately."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -114,7 +101,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 97905,
+    "processing_ms": 126037,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

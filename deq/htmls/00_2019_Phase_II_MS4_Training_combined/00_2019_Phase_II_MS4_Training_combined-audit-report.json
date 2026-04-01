@@ -1,6 +1,6 @@
 {
   "document_id": "00_2019_Phase_II_MS4_Training_combined",
-  "audited_at": "2026-03-31T03:36:23.520309Z",
+  "audited_at": "2026-04-01T08:45:33.827366Z",
   "source_files": {
     "extraction_json": "00_2019_Phase_II_MS4_Training_combined.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a presentation slide deck characterized by landscape orientation, large text, bulleted lists, and a high density of images (averaging over 4 per page), with headers formatted as slide titles.",
+  "reasoning": "Document excluded: SLIDE_DECK. The source document is a presentation slide deck, formatted with two landscape-oriented slides per portrait page.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 51867,
+    "processing_ms": 115762,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

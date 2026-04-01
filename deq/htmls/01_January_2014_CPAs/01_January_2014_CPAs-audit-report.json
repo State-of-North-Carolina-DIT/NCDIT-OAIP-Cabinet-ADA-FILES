@@ -1,6 +1,6 @@
 {
   "document_id": "01_January_2014_CPAs",
-  "audited_at": "2026-03-31T03:39:12.318451Z",
+  "audited_at": "2026-04-01T08:45:05.481739Z",
   "source_files": {
     "extraction_json": "01_January_2014_CPAs.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "All evaluation signals indicate a perfectly clean conversion. The LLM fidelity scores are all 1.0, and programmatic metrics show complete text preservation with no duplication or structural defects. With zero findings across all systems, the document meets the criteria for automatic approval.",
+  "reasoning": "All signals indicate a perfectly converted document. The LLM fidelity scores are at 1.0, and programmatic metrics show complete text preservation with 1.0 shingling recall/precision and a 1.0 word count ratio. No defects were detected by any system, making this a clear case for automated approval.",
   "decision_method": "llm_final_decider",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 118525,
+    "processing_ms": 86672,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

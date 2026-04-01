@@ -1,41 +1,41 @@
 {
   "document_id": "PFAS_Data_Synthesis_Support_STEP_Initiative_2022",
-  "audited_at": "2026-03-31T03:51:11.675332Z",
+  "audited_at": "2026-04-01T06:37:49.006019Z",
   "source_files": {
     "extraction_json": "PFAS_Data_Synthesis_Support_STEP_Initiative_2022.json",
     "source_pdf": "source.pdf",
     "rendered_html": "PFAS_Data_Synthesis_Support_STEP_Initiative_2022.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9973,
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The LLM fidelity evaluation found a minor issue with lost visual emphasis, but the automated programmatic detector identified a major structural issue: a bare URL/email address (DEQInternships@ncdenr.gov) was not converted into a proper hyperlink. The programmatic minor observations corroborate that this was blue text in the source without a link annotation, causing it to render as plain text in the output. Since there is exactly one major programmatic defect, the document requires HUMAN_REVIEW according to the count-based routing rules.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source document contains a logo for the 'STUDENT TRAINING EXPERIENCE PROGRAM STEP' at the top of the first page. While an <img> element is present in the HTML output, the provided image manifest explicitly indicates that the base64 data for this image is corrupt or invalid ('valid': false with error 'No module named 'PIL''). According to the instructions, corrupt images that will not render properly must be flagged as a V2 FAIL.",
-      "source_pdf_quote": "Agency logo at the top of page 1 featuring a figure, stairs, and the word 'STEP'",
-      "output_quote": "Image manifest reports 'valid': false for the image on page 1",
-      "location": "Page 1",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
+      "description": "1 bare URL(s) in text not converted to hyperlinks: DEQInternships@ncdenr.gov",
+      "severity": "major",
+      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S8",
+      "fidelity_dimension": null,
       "corroborated": true
     },
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document uses bolding and underlining to emphasize several list items. For instance, the second bullet point under 'APPLICATION INSTRUCTIONS' is both bolded and underlined in the PDF, and the date bullets under 'Important Dates:' are bolded. The extraction JSON captures these merely as plain text, losing both the bolding markdown and the underline entirely.",
-      "source_pdf_quote": "Application deadline of 4/18/2022 5PM (or may remain open until we have suitable applicant pool) (Underlined and bolded in PDF)",
-      "output_quote": "\"Application deadline of 4/18/2022 5PM (or may remain open until we have suitable applicant pool)\" (No markdown or underline indicators)",
-      "location": "Page 3, Application Instructions list item",
+      "analysis": "The output loses structural visual emphasis on Page 3. In the application instructions bulleted list, the phrase 'PFAS Data Application' is bolded in the source but plain text in the output. Additionally, the entire second bullet point 'Application deadline of...' is bolded and underlined in the source, but rendered as plain text without any markdown or underline representation in the output.",
+      "source_pdf_quote": "Application deadline of 4/18/2022 5PM (or may remain open until we have suitable applicant pool) (Underlined and bolded in source)",
+      "output_quote": "\"Application deadline of 4/18/2022 5PM (or may remain open until we have suitable applicant pool)\" (Plain text with no markdown/underline)",
+      "location": "Page 3, Application Instructions list",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -54,18 +54,6 @@
       "corroborated": false
     },
     {
-      "description": "1 bare URL(s) in text not converted to hyperlinks: DEQInternships@ncdenr.gov",
-      "severity": "minor",
-      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": true
-    },
-    {
       "description": "Source PDF contains 1 instance(s) of blue-styled text without hyperlink annotations. These appear to be intended as hyperlinks but were not annotated in the PDF (likely lost during Word-to-PDF export). This is a source document limitation, not a pipeline defect. Examples: page 3: \"DEQInternships@ncdenr.gov\"",
       "severity": "informational",
       "analysis": "orphaned_blue_text_count=1. Blue text without link annotations detected via PyMuPDF color extraction.",
@@ -79,12 +67,13 @@
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Add proper mailto href tag to the 'DEQInternships@ncdenr.gov' text.",
+    "Restore bold and underline formatting to the specified bullet points in the application instructions section."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
-  "total_critical": 1,
+  "total_defects": 1,
+  "total_critical": 0,
   "total_major": 0,
   "total_minor": 1,
   "exclusion_reason": null,
@@ -92,18 +81,18 @@
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.9973,
+      "raw_score": 0.9973,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
+      "fidelity_composite": 0.9973,
       "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 0.9689239332096475,
       "shingling_precision": 0.9770813844714686,
@@ -133,11 +122,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 170332,
+    "processing_ms": 128515,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }
