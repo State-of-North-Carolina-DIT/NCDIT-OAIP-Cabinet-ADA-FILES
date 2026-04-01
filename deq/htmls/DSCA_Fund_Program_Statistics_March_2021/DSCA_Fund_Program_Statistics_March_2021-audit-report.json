@@ -1,21 +1,21 @@
 {
   "document_id": "DSCA_Fund_Program_Statistics_March_2021",
-  "audited_at": "2026-04-01T06:29:52.759282Z",
+  "audited_at": "2026-04-01T15:42:14.171323Z",
   "source_files": {
     "extraction_json": "DSCA_Fund_Program_Statistics_March_2021.json",
     "source_pdf": "source.pdf",
     "rendered_html": "DSCA_Fund_Program_Statistics_March_2021.html"
   },
-  "quality_score": 50,
-  "quality_grade": "Poor",
-  "fidelity_composite": null,
-  "fidelity_content": null,
-  "fidelity_structural": null,
-  "fidelity_visual": null,
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 1.0,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "Programmatic-only: 1 major concern(s): Table header markup issues: 3 table(s) have data values in <th> cells: \"$ 47,756.04\", \"$ 12,400,720.08\", \"$ 57,272.02\"",
-  "decision_method": "programmatic_only",
+  "reasoning": "The LLM fidelity analysis indicates perfect conversion quality with a composite score of 1.0. However, the programmatic accessibility checks identified a major structural issue: data values are improperly marked up as <th> header cells instead of <td> cells across 3 tables. According to the strict count-based routing rules, any major programmatic defect requires at least HUMAN_REVIEW to fix the accessibility issues.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Table header markup issues: 3 table(s) have data values in <th> cells: \"$ 47,756.04\", \"$ 12,400,720.08\", \"$ 57,272.02\"",
@@ -43,7 +43,8 @@
     }
   ],
   "action_items": [
-    "Table header markup issues: 3 table(s) have data values in <th> cells: \"$ 47,756.04\", \"$ 12,400,720.08\", \"$ 57,272.02\""
+    "Review all tables and ensure data values are placed in <td> cells rather than <th> cells.",
+    "Verify that all data tables have appropriate and semantically correct <th> header rows for screen reader accessibility."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -54,21 +55,21 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.7,
+    "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": null,
-      "raw_score": 0.5,
-      "ceiling": 0.5,
-      "ceiling_reason": "fidelity_unavailable",
-      "available_components": 0
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
     },
     "signals": {
-      "fidelity_composite": null,
-      "fidelity_content": null,
-      "fidelity_structural": null,
-      "fidelity_visual": null,
-      "fidelity_routing": null,
-      "fidelity_available": false,
+      "fidelity_composite": 1.0,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_available": true,
       "shingling_recall": 0.8842105263157894,
       "shingling_precision": 0.8879492600422833,
       "duplication_ratio": 0.0,
@@ -101,8 +102,8 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 89,
-    "fidelity_report_path": null,
+    "processing_ms": 84206,
+    "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }
 }

@@ -1,22 +1,34 @@
 {
   "document_id": "DSCA_November_2023_Meeting_Minutes",
-  "audited_at": "2026-04-01T06:29:52.960355Z",
+  "audited_at": "2026-04-01T15:43:01.325818Z",
   "source_files": {
     "extraction_json": "DSCA_November_2023_Meeting_Minutes.json",
     "source_pdf": "source.pdf",
     "rendered_html": "DSCA_November_2023_Meeting_Minutes.html"
   },
-  "quality_score": 50,
-  "quality_grade": "Poor",
-  "fidelity_composite": null,
-  "fidelity_content": null,
-  "fidelity_structural": null,
-  "fidelity_visual": null,
+  "quality_score": 97,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9727,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 0.9091,
+  "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "Programmatic-only: 2 major concern(s): 1 bare URL(s) in text not converted to hyperlinks: https://www.deq.nc.gov/about/divisions/waste-management/superfund-section/dry-cl; Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p3:letter+roman — possible sub-point flattening",
-  "decision_method": "programmatic_only",
+  "reasoning": "The document shows excellent content preservation with a composite score of 0.9727 and near-perfect programmatic shingling metrics. However, there are two major structural defects: a continuous Roman numeral list is broken across pages, and one bare URL was not converted to a functional hyperlink. Per the count-based routing thresholds, the presence of these 2 major defects requires HUMAN_REVIEW for structural correction.",
+  "decision_method": "llm_final_decider",
   "concerns": [
+    {
+      "description": "Lists converted incorrectly",
+      "severity": "major",
+      "analysis": "The source document contains a continuous numbered list using Roman numerals (I through X) spanning all three pages. However, the output breaks this list. While items I-IV on page 1 and VII-X on page 3 are converted into list arrays, items V and VI on page 2 are converted into a heading and a standard paragraph, respectively, completely losing their list structure. This is a defect where numbered items are rendered as plain text/headings instead of list items.",
+      "source_pdf_quote": "V. Fund & Site Statistics\n...\nVI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer...",
+      "output_quote": "{\"type\": \"heading\", \"level\": 2, \"text\": \"V. Fund & Site Statistics\"}\n...\n{\"type\": \"paragraph\", \"text\": \"VI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer...\"}",
+      "location": "Page 2",
+      "source": "fidelity_llm",
+      "check_id": "S5",
+      "fidelity_dimension": "structural",
+      "corroborated": true
+    },
     {
       "description": "1 bare URL(s) in text not converted to hyperlinks: https://www.deq.nc.gov/about/divisions/waste-management/superfund-section/dry-cl",
       "severity": "major",
@@ -28,48 +40,36 @@
       "check_id": "S8",
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p3:letter+roman — possible sub-point flattening",
-      "severity": "major",
-      "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
     }
   ],
   "action_items": [
-    "1 bare URL(s) in text not converted to hyperlinks: https://www.deq.nc.gov/about/divisions/waste-management/superfund-section/dry-cl",
-    "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p3:letter+roman — possible sub-point flattening"
+    "Reformat list items V and VI to ensure they properly continue the numbered list structure.",
+    "Wrap the bare URL with the appropriate href tag to make it an accessible hyperlink."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 0,
+  "total_defects": 1,
   "total_critical": 0,
-  "total_major": 0,
+  "total_major": 1,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.7,
+    "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": null,
-      "raw_score": 0.5,
-      "ceiling": 0.5,
-      "ceiling_reason": "fidelity_unavailable",
-      "available_components": 0
+      "fidelity_composite": 0.9727,
+      "raw_score": 0.9727,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
     },
     "signals": {
-      "fidelity_composite": null,
-      "fidelity_content": null,
-      "fidelity_structural": null,
-      "fidelity_visual": null,
-      "fidelity_routing": null,
-      "fidelity_available": false,
+      "fidelity_composite": 0.9727,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 0.9091,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_available": true,
       "shingling_recall": 0.9966832504145937,
       "shingling_precision": 0.9942100909842845,
       "duplication_ratio": 0.0,
@@ -98,12 +98,12 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 0
+      "deduplicated_count": 1
     },
-    "processing_ms": 136,
-    "fidelity_report_path": null,
+    "processing_ms": 131359,
+    "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }
 }

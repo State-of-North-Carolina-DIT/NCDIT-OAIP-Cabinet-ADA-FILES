@@ -1,6 +1,6 @@
 {
   "document_id": "002_PFAS_Mass_Load_Protocol_8_31_2020",
-  "audited_at": "2026-04-01T06:38:36.017430Z",
+  "audited_at": "2026-04-01T15:45:03.875919Z",
   "source_files": {
     "extraction_json": "002_PFAS_Mass_Load_Protocol_8_31_2020.json",
     "source_pdf": "source.pdf",
@@ -9,7 +9,7 @@
   "quality_score": 30,
   "quality_grade": "Critical",
   "fidelity_composite": 0.4,
-  "fidelity_content": 1.0,
+  "fidelity_content": 0.8091603053435115,
   "fidelity_structural": 1.0,
   "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
@@ -18,12 +18,24 @@
   "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
     {
+      "description": "Fabricated contact information",
+      "severity": "critical",
+      "analysis": "On Page 15, the output contains a URL in the footer that does not match the source PDF. The source URL points to a specific SharePoint/ShareDrive path ending in an Excel file '[Tables and Figures.xlsx]Figure 1'. The output hallucinates an entirely different subdomain ('projectweb'), path ('CWContent', '112', 'DF.002'), and file type ('Tables and Figures.aprx').",
+      "source_pdf_quote": "https://projectsitesb.geosyntec.com/5/FWConsentOrder/Shared Documents/12 - Outfall 002 Reductions/2020 Misc Tasks/OF 002 Mass Loading/Tables and Figures/[Tables and Figures.xlsx]Figure 1",
+      "output_quote": "https://projectweb.geosyntec.com/CWContent/Shared Documents/112 - Outfall 002 Reductions/2020 Misc Tasks/DF.002 Mass Loading/Tables and Figures/Tables and Figures.aprx | Figure 1",
+      "location": "Page 15, first element (footer)",
+      "source": "fidelity_llm",
+      "check_id": "C2",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "Several meaningful images from the source PDF are missing or broken in the HTML output. The main aerial map/photograph on page 15 (Figure 1) is entirely missing from the HTML. On page 7, the image for Equation 1 is missing and replaced by an image of a solid white rectangle. Additionally, the flowchart on page 16 (Figure 2) failed to render as an image, resulting in a text placeholder instead of the visual diagram.",
-      "source_pdf_quote": "Figure 1 map on page 15; Equation 1 on page 7.",
-      "output_quote": "The HTML lacks the map image for Figure 1, and Equation 1 is replaced by `<img src=\"...\" alt=\"A solid white rectangle.\">`.",
-      "location": "Pages 7, 15, 16",
+      "analysis": "On page 15 of the source document, there is a large, highly meaningful aerial map illustrating the Outfall 002 Sampling Locations (Figure 1). This image is entirely missing from the HTML output; only the small scale bar is present as an image. Additionally, on page 16, the flowchart for Figure 2 is missing its image element entirely and instead displays a text placeholder `[Image: A flowchart detailing the logic...]`.",
+      "source_pdf_quote": "Large aerial map showing 'Outfall 002 Sampling Locations' (Figure 1)",
+      "output_quote": "The HTML lacks an <img> element for the map, showing only the scale bar image and text/tables for the legend.",
+      "location": "Page 15 (Figure 1) and Page 16 (Figure 2)",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
@@ -95,8 +107,8 @@
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
-  "total_critical": 1,
+  "total_defects": 2,
+  "total_critical": 2,
   "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
@@ -112,7 +124,7 @@
     },
     "signals": {
       "fidelity_composite": 0.4,
-      "fidelity_content": 1.0,
+      "fidelity_content": 0.8091603053435115,
       "fidelity_structural": 1.0,
       "fidelity_visual": 0.2857142857142857,
       "fidelity_routing": "AUTO_REJECT",
@@ -149,7 +161,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 175535,
+    "processing_ms": 253910,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

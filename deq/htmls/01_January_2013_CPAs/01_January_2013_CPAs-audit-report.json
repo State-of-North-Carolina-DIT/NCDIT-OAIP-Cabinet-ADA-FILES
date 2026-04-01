@@ -1,21 +1,21 @@
 {
   "document_id": "01_January_2013_CPAs",
-  "audited_at": "2026-04-01T05:08:20.277011Z",
+  "audited_at": "2026-04-01T15:42:46.606421Z",
   "source_files": {
     "extraction_json": "01_January_2013_CPAs.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_January_2013_CPAs.html"
   },
-  "quality_score": 50,
-  "quality_grade": "Poor",
-  "fidelity_composite": null,
-  "fidelity_content": null,
-  "fidelity_structural": null,
-  "fidelity_visual": null,
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 1.0,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "Programmatic-only: 1 major concern(s): Table split across page break(s): 1 table(s) with repeated headers across consecutive pages",
-  "decision_method": "programmatic_only",
+  "reasoning": "The document exhibits perfect LLM fidelity scores and programmatic text comparison metrics, indicating excellent text and layout preservation. However, the programmatic detectors identified one major structural issue: a table spanning across page breaks was split into multiple table elements. Per routing guidelines, this programmatic major defect mandates HUMAN_REVIEW.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Table split across page break(s): 1 table(s) with repeated headers across consecutive pages",
@@ -31,7 +31,7 @@
     }
   ],
   "action_items": [
-    "Table split across page break(s): 1 table(s) with repeated headers across consecutive pages"
+    "Review the table spanning pages 1-2 and merge the separate HTML table elements into a single continuous table to ensure proper structural accessibility."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -42,21 +42,21 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.7,
+    "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": null,
-      "raw_score": 0.5,
-      "ceiling": 0.5,
-      "ceiling_reason": "fidelity_unavailable",
-      "available_components": 0
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
     },
     "signals": {
-      "fidelity_composite": null,
-      "fidelity_content": null,
-      "fidelity_structural": null,
-      "fidelity_visual": null,
-      "fidelity_routing": null,
-      "fidelity_available": false,
+      "fidelity_composite": 1.0,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_available": true,
       "shingling_recall": 1.0,
       "shingling_precision": 1.0,
       "duplication_ratio": 0.0,
@@ -89,8 +89,8 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 79,
-    "fidelity_report_path": null,
+    "processing_ms": 116640,
+    "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }
 }

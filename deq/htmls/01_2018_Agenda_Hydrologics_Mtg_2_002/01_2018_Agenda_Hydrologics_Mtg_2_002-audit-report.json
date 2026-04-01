@@ -1,21 +1,21 @@
 {
   "document_id": "01_2018_Agenda_Hydrologics_Mtg_2_002",
-  "audited_at": "2026-04-01T06:29:52.755526Z",
+  "audited_at": "2026-04-01T15:42:14.956921Z",
   "source_files": {
     "extraction_json": "01_2018_Agenda_Hydrologics_Mtg_2_002.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_2018_Agenda_Hydrologics_Mtg_2_002.html"
   },
-  "quality_score": 50,
-  "quality_grade": "Poor",
-  "fidelity_composite": null,
-  "fidelity_content": null,
-  "fidelity_structural": null,
-  "fidelity_visual": null,
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 1.0,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "Programmatic-only: fidelity unavailable but programmatic signals excellent (shingling=0.949, word_ratio=0.960) (1 minor concern(s) noted).",
-  "decision_method": "programmatic_only",
+  "reasoning": "The document exhibits perfect LLM fidelity scores across all categories and strong programmatic text extraction metrics (shingling recall 0.949). The only observation is a single minor programmatic issue regarding table header semantics, which does not impact the overall content accuracy or warrant human review. Therefore, the document is approved.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Table header markup issues: 1 table(s) have time values in <th> cells: \"9:00 - 9:10\"",
@@ -40,21 +40,21 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.65,
+    "decider_confidence": 1.0,
     "score_breakdown": {
-      "fidelity_composite": null,
-      "raw_score": 0.5,
-      "ceiling": 0.5,
-      "ceiling_reason": "fidelity_unavailable",
-      "available_components": 0
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
     },
     "signals": {
-      "fidelity_composite": null,
-      "fidelity_content": null,
-      "fidelity_structural": null,
-      "fidelity_visual": null,
-      "fidelity_routing": null,
-      "fidelity_available": false,
+      "fidelity_composite": 1.0,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_available": true,
       "shingling_recall": 0.9489194499017681,
       "shingling_precision": 0.971830985915493,
       "duplication_ratio": 0.0,
@@ -83,12 +83,12 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge_with_minors",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 87,
-    "fidelity_report_path": null,
+    "processing_ms": 84994,
+    "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }
 }

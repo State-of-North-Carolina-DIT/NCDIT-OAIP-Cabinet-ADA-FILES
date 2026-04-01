@@ -1,26 +1,26 @@
 {
   "document_id": "Asheville_Mtg_Officer_Report_FINAL_051316",
-  "audited_at": "2026-04-01T06:29:50.303374Z",
+  "audited_at": "2026-04-01T15:42:48.759685Z",
   "source_files": {
     "extraction_json": "Asheville_Mtg_Officer_Report_FINAL_051316.json",
     "source_pdf": "source.pdf",
     "rendered_html": "Asheville_Mtg_Officer_Report_FINAL_051316.html"
   },
-  "quality_score": 50,
-  "quality_grade": "Poor",
-  "fidelity_composite": null,
-  "fidelity_content": null,
-  "fidelity_structural": null,
-  "fidelity_visual": null,
+  "quality_score": 100,
+  "quality_grade": "Good",
+  "fidelity_composite": 1.0,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "Programmatic-only: 2 major concern(s): Header/footer elements retained in output (1): State of North Carolina | Environmental Quality | Energy, Mi; Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
-  "decision_method": "programmatic_only",
+  "reasoning": "The LLM fidelity signals indicate a perfectly clean document with scores of 1.0 across the board. However, programmatic detectors identified two major structural issues: a full-page image alongside extracted text, and mixed numbering types in lists indicating possible sub-point flattening. According to the count-based routing rules, 1-5 major defects mandate a HUMAN_REVIEW.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Header/footer elements retained in output (1): State of North Carolina | Environmental Quality | Energy, Mi",
+      "description": "Full-page image alongside extracted text (1 page(s))",
       "severity": "major",
-      "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "analysis": "suspect_pages=1. A scanned/screenshot page image duplicates content already present as text elements.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -40,11 +40,24 @@
       "check_id": "S5",
       "fidelity_dimension": null,
       "corroborated": false
+    },
+    {
+      "description": "Header/footer elements retained in output (1): State of North Carolina | Environmental Quality | Energy, Mi",
+      "severity": "minor",
+      "analysis": "header_footer_count=1. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
     }
   ],
   "action_items": [
-    "Header/footer elements retained in output (1): State of North Carolina | Environmental Quality | Energy, Mi",
-    "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening"
+    "Check for redundant full-page images duplicating extracted text and remove them if necessary",
+    "Review list structures on pages 1 and 5 to ensure correct nesting of sub-points",
+    "Remove retained header/footer text"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -55,21 +68,21 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.7,
+    "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": null,
-      "raw_score": 0.5,
-      "ceiling": 0.5,
-      "ceiling_reason": "fidelity_unavailable",
-      "available_components": 0
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
+      "ceiling": null,
+      "ceiling_reason": null,
+      "available_components": 1
     },
     "signals": {
-      "fidelity_composite": null,
-      "fidelity_content": null,
-      "fidelity_structural": null,
-      "fidelity_visual": null,
-      "fidelity_routing": null,
-      "fidelity_available": false,
+      "fidelity_composite": 1.0,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_available": true,
       "shingling_recall": 0.9801657785671996,
       "shingling_precision": 0.979585798816568,
       "duplication_ratio": 0.0,
@@ -102,8 +115,8 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 154,
-    "fidelity_report_path": null,
+    "processing_ms": 118797,
+    "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }
 }
