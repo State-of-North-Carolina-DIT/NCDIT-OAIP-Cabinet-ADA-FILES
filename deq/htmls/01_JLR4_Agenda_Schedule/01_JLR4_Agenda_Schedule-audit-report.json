@@ -1,6 +1,6 @@
 {
   "document_id": "01_JLR4_Agenda_Schedule",
-  "audited_at": "2026-04-01T08:44:02.809691Z",
+  "audited_at": "2026-04-01T19:23:17.886358Z",
   "source_files": {
     "extraction_json": "01_JLR4_Agenda_Schedule.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document consists of presentation slides, indicated by the landscape orientation, background colors, and slide-style layout.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document consists of a slide presentation layout with a landscape orientation, solid blue background colors, and slide-like formatting including a cover/agenda slide and a full-page schedule table.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 23991,
+    "processing_ms": 22093,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

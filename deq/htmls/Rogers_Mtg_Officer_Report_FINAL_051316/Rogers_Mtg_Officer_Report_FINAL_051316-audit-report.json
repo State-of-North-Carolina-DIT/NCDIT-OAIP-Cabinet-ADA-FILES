@@ -1,6 +1,6 @@
 {
   "document_id": "Rogers_Mtg_Officer_Report_FINAL_051316",
-  "audited_at": "2026-04-01T08:47:11.194875Z",
+  "audited_at": "2026-04-01T19:28:41.097885Z",
   "source_files": {
     "extraction_json": "Rogers_Mtg_Officer_Report_FINAL_051316.json",
     "source_pdf": "source.pdf",
@@ -14,9 +14,21 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity metrics indicate very high content preservation (composite score 0.9973). However, the programmatic detector found a major structural issue regarding mixed numbering types at the same list level, suggesting flattened sub-points. According to the count-based routing rules, any major defect requires routing to HUMAN_REVIEW.",
+  "reasoning": "The document exhibits very high content fidelity (composite score 0.997) but contains two programmatic major defects: a full-page image alongside extracted text and mixed numbering types in lists indicating possible sub-point flattening. According to the count-based routing rules, the presence of 1-5 major defects requires a routing to HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
+    {
+      "description": "Full-page image alongside extracted text (1 page(s))",
+      "severity": "major",
+      "analysis": "suspect_pages=1. A scanned/screenshot page image duplicates content already present as text elements.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
     {
       "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
       "severity": "major",
@@ -32,10 +44,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The word 'MEMORANDUM' on page 1 is visibly underlined in the source PDF. In the output JSON, it is extracted as a heading without any underline formatting representation.",
-      "source_pdf_quote": "MEMORANDUM (underlined)",
-      "output_quote": "\"text\": \"MEMORANDUM\"",
-      "location": "Page 1, heading",
+      "analysis": "The source document uses bold formatting for the beginning words of each list item in the comment summaries (e.g., 'Environmental:', 'Property Values:', 'Health Issues:'). This bold emphasis is completely lost in the JSON output, as no markdown syntax is present.",
+      "source_pdf_quote": "Environmental: There were concerns...",
+      "output_quote": "\"text\": \"Environmental: There were concerns about quality/pollution...\"",
+      "location": "List items on pages 3, 4, and 5",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -55,8 +67,10 @@
     }
   ],
   "action_items": [
-    "Check lists on pages 1 and 5 to ensure sub-points are correctly nested rather than flattened at the same depth level.",
-    "Verify if the retained header/footer text affects readability or accessibility and needs to be removed."
+    "Check for and remove redundant full-page images if the content is already extracted as text",
+    "Review list structures on pages 1 and 5 to ensure proper nesting and sub-point hierarchy",
+    "Remove any remaining header/footer artifacts from the body text",
+    "Restore bold emphasis to the comment summaries if required"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -67,7 +81,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.9,
+    "decider_confidence": 0.95,
     "score_breakdown": {
       "fidelity_composite": 0.9973,
       "raw_score": 0.9973,
@@ -114,7 +128,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 152782,
+    "processing_ms": 188396,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

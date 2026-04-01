@@ -1,6 +1,6 @@
 {
   "document_id": "Riverbend_Meeting_Officer_Report_Final_5_13_16",
-  "audited_at": "2026-04-01T06:37:29.567403Z",
+  "audited_at": "2026-04-01T19:28:18.870681Z",
   "source_files": {
     "extraction_json": "Riverbend_Meeting_Officer_Report_Final_5_13_16.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "The LLM fidelity analysis found only one minor formatting defect and suggested AUTO_APPROVE. However, programmatic detectors identified a critical defect: headers and footers from the source PDF were retained across all 5 pages in the extraction, creating significant accessibility issues for screen readers. Additionally, a major defect regarding flattened sub-lists was detected. According to the count-based routing rules, the presence of any critical defect requires an immediate REJECT.",
+  "reasoning": "While the LLM fidelity scores are extremely high and indicate strong content preservation, programmatic detectors identified pervasive retention of header/footer elements across all 5 pages. This is classified as a CRITICAL defect because screen readers will encounter duplicate, disruptive artifacts on every page. Additionally, a major structural issue with mixed list numbering (flattening) was identified. Due to the presence of a critical defect, this document must be rejected.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -44,10 +44,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source PDF contains underlined headings for every bullet point in the 'March 1, 2016 Public Meeting and Oral Comments Summary' and 'Written Public Comment Summary' lists (e.g., 'Beneficial Reuse Areas', 'Costs', 'Dam Safety'). The extraction completely loses this underline emphasis, presenting the text plainly without any markdown formatting.",
-      "source_pdf_quote": "Beneficial Reuse Areas (Underlined and bolded)",
-      "output_quote": "Beneficial Reuse Areas",
-      "location": "Page 3 (JSON element list items)",
+      "analysis": "I checked for instances where structural emphasis, particularly underlining, was lost in the output. In the source PDF on pages 3 and 4, the introductory phrase for every bullet point in both lists (e.g., 'Beneficial Reuse Areas', 'Costs', 'Dam Safety') is heavily emphasized using an underline (and bold). The output JSON completely drops this underline/emphasis formatting, rendering them as plain text.",
+      "source_pdf_quote": "Beneficial Reuse Areas – There was a concern about contamination resulting from off-site fill areas. [Note: 'Beneficial Reuse Areas' is explicitly underlined in the source PDF]",
+      "output_quote": "\"Beneficial Reuse Areas – There was a concern about contamination resulting from off-site fill areas.\"",
+      "location": "Page 3 (JSON element index 0, list items)",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -55,9 +55,9 @@
     }
   ],
   "action_items": [
-    "Strip all duplicate header/footer artifacts from the rendered HTML",
-    "Correct list nesting levels to properly distinguish sub-points from main list items",
-    "Restore missing underline formatting for bullet point headings"
+    "Update pipeline to properly exclude header/footer artifacts from the rendered HTML",
+    "Correct the list structure to properly nest sub-points instead of flattening them into mixed numbering at the same level",
+    "Ensure underline and bold emphasis formatting is retained in the output"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -68,7 +68,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.98,
     "score_breakdown": {
       "fidelity_composite": 0.9973,
       "raw_score": 0.9973,
@@ -115,7 +115,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 109059,
+    "processing_ms": 162859,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

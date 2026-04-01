@@ -1,6 +1,6 @@
 {
   "document_id": "0_HertfordCountyCertificationDate_022411",
-  "audited_at": "2026-04-01T08:46:29.552674Z",
+  "audited_at": "2026-04-01T19:23:55.151164Z",
   "source_files": {
     "extraction_json": "0_HertfordCountyCertificationDate_022411.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "Both LLM fidelity and programmatic signals indicate a perfect conversion of a very short document (17 words). There are zero defects reported across all severity levels.",
+  "reasoning": "All signals indicate a perfect conversion. The LLM fidelity scores are all 1.0, and programmatic metrics show complete agreement with 1.0 shingling recall and precision. No defects of any severity were detected.",
   "decision_method": "llm_final_decider",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 55026,
+    "processing_ms": 101174,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

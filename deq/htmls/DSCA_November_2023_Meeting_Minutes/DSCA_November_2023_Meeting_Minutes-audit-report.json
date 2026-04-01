@@ -1,6 +1,6 @@
 {
   "document_id": "DSCA_November_2023_Meeting_Minutes",
-  "audited_at": "2026-04-01T15:43:01.325818Z",
+  "audited_at": "2026-04-01T19:27:37.398503Z",
   "source_files": {
     "extraction_json": "DSCA_November_2023_Meeting_Minutes.json",
     "source_pdf": "source.pdf",
@@ -14,15 +14,15 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document shows excellent content preservation with a composite score of 0.9727 and near-perfect programmatic shingling metrics. However, there are two major structural defects: a continuous Roman numeral list is broken across pages, and one bare URL was not converted to a functional hyperlink. Per the count-based routing thresholds, the presence of these 2 major defects requires HUMAN_REVIEW for structural correction.",
+  "reasoning": "The conversion overall is of high fidelity with a composite score of 0.9727 and programmatic text metrics near 1.0. However, there are two major defects: one LLM-identified issue regarding incorrect list semantics on page 2 (Roman numerals converted to headings/paragraphs instead of list items) and one programmatic major defect involving a bare URL that was not converted into a hyperlink. Since there are 2 major defects, the document requires human review according to the count-based routing rules.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The source document contains a continuous numbered list using Roman numerals (I through X) spanning all three pages. However, the output breaks this list. While items I-IV on page 1 and VII-X on page 3 are converted into list arrays, items V and VI on page 2 are converted into a heading and a standard paragraph, respectively, completely losing their list structure. This is a defect where numbered items are rendered as plain text/headings instead of list items.",
-      "source_pdf_quote": "V. Fund & Site Statistics\n...\nVI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer...",
-      "output_quote": "{\"type\": \"heading\", \"level\": 2, \"text\": \"V. Fund & Site Statistics\"}\n...\n{\"type\": \"paragraph\", \"text\": \"VI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer...\"}",
+      "analysis": "The source document features a primary list numbered with Roman numerals (I through X). While the output correctly identifies parts of this list on pages 1 and 3, it fails to recognize the list structure on page 2. Item V is incorrectly converted into a heading level 2, and Item VI is converted into a plain paragraph, stripping both of their list item semantics.",
+      "source_pdf_quote": "V. Fund & Site Statistics\n\nVI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer...",
+      "output_quote": "{\"type\": \"heading\", \"level\": 2, \"text\": \"V. Fund & Site Statistics\"}\n\n{\"type\": \"paragraph\", \"text\": \"VI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer...\"}",
       "location": "Page 2",
       "source": "fidelity_llm",
       "check_id": "S5",
@@ -43,8 +43,8 @@
     }
   ],
   "action_items": [
-    "Reformat list items V and VI to ensure they properly continue the numbered list structure.",
-    "Wrap the bare URL with the appropriate href tag to make it an accessible hyperlink."
+    "Correct the list semantics for Items V and VI on page 2 to match the primary Roman numeral list.",
+    "Wrap the bare DEQ URL in an appropriate href tag to create a functional hyperlink."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -102,7 +102,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 131359,
+    "processing_ms": 92579,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

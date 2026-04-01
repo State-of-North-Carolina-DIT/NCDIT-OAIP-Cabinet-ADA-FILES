@@ -1,6 +1,6 @@
 {
   "document_id": "01_NRHM_Agenda_111208",
-  "audited_at": "2026-04-01T08:45:14.154555Z",
+  "audited_at": "2026-04-01T19:26:56.632320Z",
   "source_files": {
     "extraction_json": "01_NRHM_Agenda_111208.json",
     "source_pdf": "source.pdf",
@@ -14,16 +14,16 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document contains one major LLM fidelity defect where bulleted lists within table cells have been flattened into plain text rather than using proper HTML list elements (<ul>/<li>), which breaks accessibility for screen readers. There is also a minor programmatic observation regarding table header semantics. According to the count-based routing rules, 1 major defect requires HUMAN_REVIEW.",
+  "reasoning": "The document exhibits excellent content preservation, evidenced by a 1.0 content score and high programmatic text match (shingling recall 0.962). However, a major structural defect was identified where bulleted lists inside agenda items were flattened into plain text with Unicode bullet characters instead of proper structural list elements. According to the binding routing rules, this single major defect necessitates human review for structural correction.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The source document contains several bulleted lists under the agenda topics (e.g., under 'Project Finance Update'). In the output JSON, these lists are flattened into plain text strings containing bullet characters (\\u2022) separated by newlines within the table cells, rather than being structured as proper HTML list elements (<ul>/<li>). This breaks accessibility for screen readers.",
-      "source_pdf_quote": "Project Finance Update\n• Cost share payments received.\n• Funds expended.",
-      "output_quote": "\"text\": \"Project Finance Update\\n• Cost share payments received.\\n• Funds expended.\"",
-      "location": "Table row 1, column 1 (and multiple other rows)",
+      "analysis": "The source PDF contains bulleted lists within the agenda items (e.g., under 'Project Finance Update'). In the JSON output, these lists are extracted as plain text using literal Unicode bullet characters (\\u2022) separated by newlines within the table cell text strings, rather than being converted to proper structural list elements or valid markdown list syntax (such as asterisks or hyphens at the start of the line). This flattens the list hierarchy and will cause the lists to be rendered as plai",
+      "source_pdf_quote": "• Cost share payments received.\n• Funds expended.",
+      "output_quote": "Project Finance Update\n• Cost share payments received.\n• Funds expended.",
+      "location": "Table cell at row_start: 1, column_start: 1",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -43,8 +43,8 @@
     }
   ],
   "action_items": [
-    "Convert flattened text bullet points inside table cells into properly formatted <ul>/<li> HTML list elements.",
-    "Verify and adjust table headers (<th>) to ensure they contain column descriptions rather than data like time values."
+    "Convert the plain text Unicode bullet points within agenda items into proper semantic HTML/Markdown lists.",
+    "Verify and correct table header markup where time values (e.g., '10:00-10:10') are used."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -102,7 +102,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 94916,
+    "processing_ms": 103620,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

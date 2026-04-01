@@ -1,6 +1,6 @@
 {
   "document_id": "2019-white-lake-sav-report",
-  "audited_at": "2026-04-01T08:48:01.338244Z",
+  "audited_at": "2026-04-01T19:24:22.123648Z",
   "source_files": {
     "extraction_json": "2019-white-lake-sav-report.json",
     "source_pdf": "source.pdf",
@@ -14,20 +14,20 @@
   "fidelity_visual": 0.8571428571428572,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity evaluation flagged a major defect indicating that Figures 5-9 are missing from the HTML output. Although the programmatic image_count_ratio of 1.0 contradicts this claim (suggesting potential hallucination or merged images), the presence of a major fidelity defect requires a HUMAN_REVIEW routing per the strict count-based thresholds. A reviewer must verify if the figures were correctly extracted and preserved.",
+  "reasoning": "The LLM identified a major defect regarding missing images (Figures 5 through 9), although programmatic metrics show an image count ratio of 1.0. Because count-based rules are binding for major fidelity defects, this document requires human review to verify whether the images are genuinely missing or if the count metric reflects combined or placeholder images. A minor table header markup issue was also flagged.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Images missing or broken",
       "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains 10 meaningful figures showing satellite maps with different vegetation sample points and biovolumes (Figures 1-10 on pages 3-8). While the HTML output includes Figures 1, 2, 3, 4, and 10, it completely omits Figures 5, 6, 7, 8, and 9. These are meaningful data visualizations necessary for understanding the spatial distribution of the various vegetation species across different years.",
-      "source_pdf_quote": "Pages 5, 6, and 7 contain satellite map images for Figures 5, 6, 7, 8, and 9 (e.g., 'Figure 5. Fontinalis was detected at 65 sample points in 2018.').",
-      "output_quote": "The HTML output jumps directly from Figure 4 to Figure 10, completely omitting the images and captions for Figures 5, 6, 7, 8, and 9.",
-      "location": "Pages 5-7 (Figures 5-9)",
+      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains 10 meaningful figures (maps) on pages 3 through 8. The HTML output only includes images for Figures 1, 2, 3, 4, and 10. Figures 5, 6, 7, 8, and 9 are entirely missing from the HTML output.",
+      "source_pdf_quote": "Figure 5, Figure 6, Figure 7, Figure 8, and Figure 9 (Maps showing sample points for vegetation)",
+      "output_quote": "The HTML skips directly from Figure 4 to Figure 10, omitting the intervening <img> and <figure> elements.",
+      "location": "Pages 5-7",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Table header markup issues: 2 table(s) with 3+ rows have no <th> header cells",
@@ -43,8 +43,9 @@
     }
   ],
   "action_items": [
-    "Verify if Figures 5, 6, 7, 8, and 9 are present, missing, or merged with other figures.",
-    "Add proper <th> elements to the two tables lacking header semantics."
+    "Verify if Figures 5 through 9 are present in the HTML document.",
+    "If missing, extract and insert the missing images into the correct locations.",
+    "Add appropriate <th> markup to the two tables lacking header cells."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -98,11 +99,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 0
+      "deduplicated_count": 1
     },
-    "processing_ms": 98637,
+    "processing_ms": 175533,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

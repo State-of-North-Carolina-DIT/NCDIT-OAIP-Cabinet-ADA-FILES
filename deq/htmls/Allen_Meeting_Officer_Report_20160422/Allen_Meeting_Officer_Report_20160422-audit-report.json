@@ -1,6 +1,6 @@
 {
   "document_id": "Allen_Meeting_Officer_Report_20160422",
-  "audited_at": "2026-04-01T06:37:30.798084Z",
+  "audited_at": "2026-04-01T19:24:35.674728Z",
   "source_files": {
     "extraction_json": "Allen_Meeting_Officer_Report_20160422.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 0.8571428571428572,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "The automated detectors found a critical programmatic defect where header and footer elements were pervasive across the output, causing significant duplicate artifact reading issues for screen readers. Furthermore, the LLM detected a missing signature and digital signature stamp, and there are major programmatic issues with list flattening. The presence of a critical defect mandates a REJECT routing.",
+  "reasoning": "The automated checks identified a critical defect where header and footer artifacts were retained across all 5 pages, which causes pervasive screen reader repetition. Additionally, there are major defects including a missing signature image/stamp block and flattened lists with mixed numbering types. The presence of a critical programmatic defect requires an immediate rejection.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -32,10 +32,10 @@
     {
       "description": "Images missing or broken",
       "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains an agency logo on page 1, which is successfully preserved in the HTML output. However, on page 1, next to 'From: Larry Frost', there is a handwritten signature image along with a digital signature stamp containing textual information ('Digitally signed by LYF... Date: 2016.05.12 12:11:52'). This signature image and its accompanying authorization text are completely missing from the HTML output. Because it contains readable timestamp and authorization data that is not tran",
-      "source_pdf_quote": "On page 1, a handwritten signature graphic and a digital signature stamp box containing the text 'Digitally signed by LYF... Date: 2016.05.12' are present next to the 'From' line.",
-      "output_quote": "The HTML output contains no <img> element or transcribed text representing the signature or digital signature timestamp.",
-      "location": "Page 1, 'From:' section",
+      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The first page of the source document contains a visible signature image accompanied by a digital signature stamp block next to the 'From' section. This meaningful image and the associated text are completely missing from the HTML output.",
+      "source_pdf_quote": "Page 1 contains a handwritten signature image with text reading 'Digitally signed by LYF...'",
+      "output_quote": "The HTML output contains no image element or text corresponding to the signature block between the 'From' and 'Subject' sections.",
+      "location": "Page 1",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
@@ -67,9 +67,9 @@
     }
   ],
   "action_items": [
-    "Remove retained header, footer, and page number artifacts from the HTML structure.",
-    "Ensure the handwritten and digital signature stamp images are extracted and placed with appropriate alt text.",
-    "Fix nested list structures to prevent flattening of sub-points."
+    "Remove retained header, footer, and page number artifacts",
+    "Ensure the signature image and associated digital stamp block are included",
+    "Fix list structures to prevent mixed numbering and sub-point flattening"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -80,7 +80,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 1.0,
     "score_breakdown": {
       "fidelity_composite": 0.95,
       "raw_score": 0.95,
@@ -127,7 +127,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 110316,
+    "processing_ms": 114812,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,80 +1,44 @@
 {
   "document_id": "01_2018_SAR_SouthernFlounder_2018",
-  "audited_at": "2026-04-01T06:32:24.330452Z",
+  "audited_at": "2026-04-01T19:27:22.217658Z",
   "source_files": {
     "extraction_json": "01_2018_SAR_SouthernFlounder_2018.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_2018_SAR_SouthernFlounder_2018.html"
   },
-  "quality_score": 85,
-  "quality_grade": "Good",
-  "fidelity_composite": 0.8548312213740458,
-  "fidelity_content": 0.9618320610687023,
-  "fidelity_structural": 0.7273,
-  "fidelity_visual": 0.8571428571428572,
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
+  "fidelity_content": 1.0,
+  "fidelity_structural": 0.9091,
+  "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "The document is rejected due to a high volume of severe, corroborated defects. The LLM fidelity analysis identified five major issues, including critically corrupted tables (S3, S4) that misrepresent data and missing meaningful images (V2). These findings are reinforced by programmatic detectors which independently found two additional major defects related to image duplication and displaced hyperlinks. With a total of seven major defects, the document far exceeds the rejection threshold of five, indicating systemic conversion failure that requires reprocessing, not manual review.",
-  "decision_method": "llm_final_decider",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
     {
-      "description": "Minor text differences beyond acceptable reformatting",
-      "severity": "major",
-      "analysis": "The extraction process incorrectly merged text from the bottom of page 1 with text from the top of page 2. The document identifier on page 1 and the citation instruction on page 2 are distinct elements but were combined into a single paragraph in the output. This alters the structure and creates a confusing sentence that does not exist in the source.",
-      "source_pdf_quote": "Bottom of page 1: \"NCDMF SAP-SAR-2018-01\". Top of page 2: \"This document may be cited as:\".",
-      "output_quote": "{\"type\": \"paragraph\", \"text\": \"NCDMF SAP-SAR-2018-01 This document may be cited as:\"}",
-      "location": "Page 1, element index 3",
-      "source": "fidelity_llm",
-      "check_id": "C6",
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
-    {
-      "description": "Table structure corrupted",
-      "severity": "major",
-      "analysis": "Multiple tables in the document that use `rowspan` for hierarchical row headers are extracted incorrectly. The cell with the `rowspan` is correctly identified (using the `num_rows` attribute), but the cells in the subsequent rows covered by the span are not structured to account for the span. This causes a leftward shift of all data in those rows. In the rendered output, this results in data being placed under the wrong column headers. For example, in Table 1.1 on page 85, the 'Age' data appears",
-      "source_pdf_quote": "Table 1.1 on PDF page 85. The cell 'Female' in the first column spans 10 data rows. The second data row for 'Female' (corresponding to Age 1) contains the values: 1, 5,590, 36.3, 16.0, 14.5, 58.7, which should align under the headers Age, n, Average, CV, Min, and Max respectively.",
-      "output_quote": "In the JSON for page 85, element 2 (Table 1.1), the second data row for 'Female' (row_start: 2) begins with `{\"text\": \"1\", \"column_start\": 1, ...}`. The `column_start` value should be 0 to place the data under the correct 'Age' header. Instead, it is shifted, placing the value '1' under the 'n' header, '5,590' under the 'Average' header, and so on for the rest of the row.",
-      "location": "page: 85, element_index: 2 (Table 1.1). This defect is also present in tables on pages 86, 87, 88, 125.",
-      "source": "fidelity_llm",
-      "check_id": "S3",
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
-    {
-      "description": "Lists converted incorrectly",
-      "severity": "major",
-      "analysis": "Numbered lists that appear within the body text of the source document are not converted into proper ordered list elements (`<ol>`, `<li>`). Instead, they are rendered as plain text with manual numbering (e.g., '(1)', '(2)') inside a standard paragraph element (`<p>`). This removes the list's semantic structure, which is a major accessibility failure as it prevents screen readers from identifying, navigating, and announcing the content as a list. This issue occurs in several locations.",
-      "source_pdf_quote": "PDF page 35, section 2.1.2.4: \"...delineated based on four primary factors: (1) similarity of fisheries and management, (2) extent of known protected species interactions in commercial gill net fisheries, (3) unit size, and (4) the ability of the NCDMF to monitor fishing effort.\"",
-      "output_quote": "JSON for page 35, element 8: The list is rendered as part of a single paragraph: `\"text\": \"Program 466 began sampling statewide in May 2010... Management units were delineated based on four primary factors: (1) similarity of fisheries and management, (2) extent of known protected species interactions in commercial gill net fisheries, (3) unit size, and (4) the ability of the NCDMF to monitor fishing effort. ...\"`",
-      "location": "page: 35, element_index: 8. A similar defect occurs on page 46, element 16.",
-      "source": "fidelity_llm",
-      "check_id": "S5",
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
-    {
-      "description": "Reading order significantly different",
-      "severity": "major",
-      "analysis": "Numerous tables throughout the document that use hierarchical row headers (where a cell in an early column spans multiple rows) are rendered incorrectly. In the JSON output, the rows that should be indented or nested under the spanning cell are missing an initial empty cell, causing all subsequent data cells in that row to be shifted one column to the left. This breaks the association between the row data and the correct column headers, making the tables unreadable and misrepresenting the data. ",
-      "source_pdf_quote": "Table 1.1 on page 85. The 'Sex' column has 'Female' and 'Male' cells that span multiple rows of data corresponding to different 'Age' values. For example, all rows from Age 0 to Age 9 are grouped under 'Female'.",
-      "output_quote": "In the JSON for page 85, Table 1.1, the row for Age 1 starts with a cell containing the text '1' in column 1, rather than starting with an empty cell in column 0 and placing '1' in column 1. This causes the 'n' value of '5,590' to be placed under the 'Average' header, and so on, misaligning the entire row. This issue is systemic and affects most tables with this structure, such as Table 1.2 (p. 86), Table 1.6 (p. 88), Table 2.1 (p. 93), Table 2.7 (p. 99), and many others.",
-      "location": "This issue is systemic, appearing in numerous tables starting with Table 1.1 on page 85 (element index 2).",
-      "source": "fidelity_llm",
-      "check_id": "S4",
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
-    {
       "description": "Images missing or broken",
-      "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.09, placeholder_ratio=0.00 contradict LLM claim] The source document contains a very large number of figures, primarily charts, graphs, and maps, which are critical for understanding the stock assessment data. A significant portion of these meaningful images are either completely missing from the HTML output or are represented by tiny, effectively broken image files.\n\nFor example:\n1. Figure 1.14 on page 134, a line graph showing a maturity curve, is completely missing and replaced with placeholder text. The image manifest confirms its absence ",
-      "source_pdf_quote": "Figure 1.14 on page 134, a line graph titled 'Fit of maturity curve to southern flounder data collected in North Carolina (n = 892)'.\nFigure 2.5 on page 137, a line graph titled 'Ratio of total dead discards to landings for the North Carolina gill-net fishery by season, 2004–2015'.\nFigure 2.19 on page 148, two bar charts titled 'Annual recreational gig harvest of southern flounder...'.",
-      "output_quote": "For Figure 1.14, the HTML contains only placeholder text: `[Image: Line graph showing a maturity curve (an S-shaped trend line)...]` and no `<img>` tag.\nFor Figure 2.5, the HTML contains only placeholder text: `[Image: A line graph showing the ratio of total discards to landings...]` and no `<img>` tag.\nFor Figure 2.19, the HTML contains an `<img>` tag, but the image manifest indicates a file size of only 139 bytes, which is too small to be the correct image.",
-      "location": "Pages 134, 137, 148 in the source PDF.",
+      "severity": "critical",
+      "analysis": "Several meaningful charts and graphs from the source PDF are missing from the HTML output and have been replaced with text placeholders. For example, Figure 1.14, Figure 2.5, and Figure 2.6 are completely missing their `<img>` elements, which results in a loss of critical visual information.",
+      "source_pdf_quote": "Figure 1.14. Fit of maturity curve to southern flounder data collected in North Carolina (n = 892).",
+      "output_quote": "[Image: Line graph showing a maturity curve (an S-shaped trend line). The x-axis represents Length (cm) from 22.5 to 72.5, and the y-axis represents Proportion Mature from 0.0 to 1.0. A legend indicates open circles are 'Observed' and the solid thick line is 'Predicted'.]",
+      "location": "Figure 1.14 (page 134); Figure 2.5 (page 137); Figure 2.6 (page 138)",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
+      "corroborated": true
+    },
+    {
+      "description": "Heading hierarchy broken",
+      "severity": "major",
+      "analysis": "The heading hierarchy is broken in several places where subsections are assigned a higher heading level than their parent sections, reversing the containment relationship. For example, '2.1.1.1 Survey Design and Methods' is assigned an H4 level, but its subsections on the following page ('South Carolina', 'Georgia', and 'Florida') are extracted as H2s. Similarly, '2.1.1.4 Potential Biases & Uncertainties' is an H4, but its subsections on the next page are extracted as H3s. This creates an invali",
+      "source_pdf_quote": "2.1.1.1 Survey Design and Methods\nNorth Carolina\n[...]\nSouth Carolina",
+      "output_quote": "{\n  \"type\": \"heading\",\n  \"level\": 2,\n  \"text\": \"South Carolina\"\n}",
+      "location": "Pages 29-30, 32-33",
+      "source": "fidelity_llm",
+      "check_id": "S2",
+      "fidelity_dimension": "structural",
       "corroborated": false
     },
     {
@@ -98,6 +62,18 @@
       "location": null,
       "source": "programmatic",
       "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "1 bare URL(s) in text not converted to hyperlinks: https://github.com/cmlegault/ASAPplots",
+      "severity": "major",
+      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S8",
       "fidelity_dimension": null,
       "corroborated": false
     },
@@ -126,18 +102,6 @@
       "corroborated": false
     },
     {
-      "description": "1 bare URL(s) in text not converted to hyperlinks: https://github.com/cmlegault/ASAPplots",
-      "severity": "minor",
-      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
       "description": "Table header markup issues: 8 table(s) with 3+ rows have no <th> header cells",
       "severity": "minor",
       "analysis": "data_in_th_time=0, no_th_tables=8. Minor semantic markup issues: tables lack <th> elements or use time values as headers. These affect screen reader context but are less severe than data misrepresentation.",
@@ -150,30 +114,32 @@
       "corroborated": false
     }
   ],
-  "action_items": [],
+  "action_items": [
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+  ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 5,
-  "total_critical": 0,
-  "total_major": 5,
+  "total_defects": 2,
+  "total_critical": 1,
+  "total_major": 1,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 1.0,
+    "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.8548312213740458,
-      "raw_score": 0.8548,
-      "ceiling": null,
-      "ceiling_reason": null,
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.8548312213740458,
-      "fidelity_content": 0.9618320610687023,
-      "fidelity_structural": 0.7273,
-      "fidelity_visual": 0.8571428571428572,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_composite": 0.4,
+      "fidelity_content": 1.0,
+      "fidelity_structural": 0.9091,
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
       "shingling_recall": 0.9596281908990011,
       "shingling_precision": 0.9650101844359497,
@@ -205,9 +171,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 0
+      "deduplicated_count": 1
     },
-    "processing_ms": 983192,
+    "processing_ms": 386868,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

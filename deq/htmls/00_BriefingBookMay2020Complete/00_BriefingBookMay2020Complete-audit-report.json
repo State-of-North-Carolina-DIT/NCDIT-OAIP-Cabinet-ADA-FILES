@@ -1,22 +1,34 @@
 {
   "document_id": "00_BriefingBookMay2020Complete",
-  "audited_at": "2026-04-01T18:05:48.098164Z",
+  "audited_at": "2026-04-01T19:26:07.880437Z",
   "source_files": {
     "extraction_json": "00_BriefingBookMay2020Complete.json",
     "source_pdf": "source.pdf",
     "rendered_html": "00_BriefingBookMay2020Complete.html"
   },
-  "quality_score": 50,
-  "quality_grade": "Poor",
-  "fidelity_composite": null,
-  "fidelity_content": null,
-  "fidelity_structural": null,
-  "fidelity_visual": null,
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
+  "fidelity_content": 0.9923664122137404,
+  "fidelity_structural": 1.0,
+  "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "Programmatic-only: 1 critical concern(s): Header/footer elements retained in output (255): Marine Fisheries Commission Business Meeting Agenda; 1; 2",
-  "decision_method": "programmatic_only",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
+    {
+      "description": "Images missing or broken",
+      "severity": "critical",
+      "analysis": "A review of the HTML output against the source PDF reveals that multiple meaningful images conveying specific information are missing. First, the map for 'Figure 10' in the sea turtle report (page 143 of the PDF) is entirely absent from the HTML, with the content skipping straight from Figure 9 to Figure 11. Second, the map for 'Figure 3' in the Atlantic Sturgeon report (page 196 of the PDF) is similarly missing from the HTML sequence. Finally, the flowchart diagram illustrating the 'NORTH CAROL",
+      "source_pdf_quote": "1. Figure 10 map (page 143) showing spring 2019 gill-net trips.\n2. Figure 3 map (page 196) showing fall 2018 gill-net trips.\n3. Flowchart diagram (page 218) showing Fishery Management Plan steps.",
+      "output_quote": "The images and their associated content are completely absent from the HTML at the points where they should appear.",
+      "location": "PDF pages 143, 196, and 218",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": true
+    },
     {
       "description": "Header/footer elements retained in output (255): Marine Fisheries Commission Business Meeting Agenda; 1; 2",
       "severity": "critical",
@@ -99,7 +111,7 @@
       "source": "programmatic",
       "check_id": "S8",
       "fidelity_dimension": null,
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Table cells contain 9 unlinked URL(s)/email(s) that should be hyperlinks",
@@ -111,7 +123,7 @@
       "source": "programmatic",
       "check_id": "S7",
       "fidelity_dimension": null,
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Flattened sub-lists: 4 item(s) contain nested sub-items (a/b/c or bullets) as plain text instead of structured children",
@@ -171,6 +183,18 @@
       "source": "programmatic",
       "check_id": "S7",
       "fidelity_dimension": null,
+      "corroborated": true
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source document includes numerous legislative rule changes where new additions are indicated by underlining (e.g., 'hook and line; and' on page 211, and the added definitions starting on page 233). The extraction JSON does not retain this underline emphasis, resulting in a loss of visual emphasis.",
+      "source_pdf_quote": "15A NCAC 03M .0509 TARPON\nIt shall be unlawful to do any of the following:\n(a) It is unlawful to(1) possess, sell sell, or offer for sale tarpon.tarpon;\n(b) It is unlawful to possess more than one tarpon per person taken in any one day.\n(c) It is unlawful to(2) take tarpon by any method other than hook-and-line.hook and line; and\n(3) spear, gaff, or puncture a tarpon.",
+      "output_quote": "(a) It is unlawful to(1) possess, sell sell, or offer for sale tarpon.tarpon; ... (c) It is unlawful to(2) take tarpon by any method other than hook-and-line.hook and line; and\n(3) spear, gaff, or puncture a tarpon.",
+      "location": "Page 211 (and Page 233)",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
       "corroborated": false
     },
     {
@@ -231,36 +255,36 @@
       "source": "programmatic",
       "check_id": "S7",
       "fidelity_dimension": null,
-      "corroborated": false
+      "corroborated": true
     }
   ],
   "action_items": [
-    "Header/footer elements retained in output (255): Marine Fisheries Commission Business Meeting Agenda; 1; 2"
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 0,
-  "total_critical": 0,
+  "total_defects": 2,
+  "total_critical": 1,
   "total_major": 0,
-  "total_minor": 0,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.8,
+    "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": null,
-      "raw_score": 0.5,
-      "ceiling": 0.5,
-      "ceiling_reason": "fidelity_unavailable",
-      "available_components": 0
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
+      "available_components": 1
     },
     "signals": {
-      "fidelity_composite": null,
-      "fidelity_content": null,
-      "fidelity_structural": null,
-      "fidelity_visual": null,
-      "fidelity_routing": null,
-      "fidelity_available": false,
+      "fidelity_composite": 0.4,
+      "fidelity_content": 0.9923664122137404,
+      "fidelity_structural": 1.0,
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_available": true,
       "shingling_recall": 0.9553093724428778,
       "shingling_precision": 0.9551891245515766,
       "duplication_ratio": 0.07469230484920165,
@@ -289,12 +313,12 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 0
+      "deduplicated_count": 1
     },
-    "processing_ms": 5464,
-    "fidelity_report_path": null,
+    "processing_ms": 313888,
+    "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }
 }

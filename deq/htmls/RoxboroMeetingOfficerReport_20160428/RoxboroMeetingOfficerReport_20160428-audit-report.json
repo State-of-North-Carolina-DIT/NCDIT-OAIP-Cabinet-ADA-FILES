@@ -1,20 +1,20 @@
 {
   "document_id": "RoxboroMeetingOfficerReport_20160428",
-  "audited_at": "2026-04-01T08:52:46.964736Z",
+  "audited_at": "2026-04-01T19:29:55.934214Z",
   "source_files": {
     "extraction_json": "RoxboroMeetingOfficerReport_20160428.json",
     "source_pdf": "source.pdf",
     "rendered_html": "RoxboroMeetingOfficerReport_20160428.html"
   },
-  "quality_score": 90,
+  "quality_score": 95,
   "quality_grade": "Good",
-  "fidelity_composite": 0.8973282442748092,
+  "fidelity_composite": 0.9473282442748091,
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.7142857142857143,
+  "fidelity_visual": 0.8571428571428572,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "The document contains a critical programmatic defect due to header/footer elements being retained across 5 pages. This introduces duplicate artifacts that will significantly impact screen reader accessibility. Additionally, there are multiple major defects including a missing signature image, duplicated visual content, and mixed numbering types in lists. Because there is a critical defect, the document must be rejected.",
+  "reasoning": "The document contains a critical programmatic defect due to pervasive header and footer artifacts retained in the HTML output across all 5 pages. Additionally, there are major defects identified including a missing meaningful digital signature image and mixed numbering types in lists indicating sub-point flattening. According to the count-based severity rules, the presence of a critical defect requires automatic rejection.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -32,24 +32,12 @@
     {
       "description": "Images missing or broken",
       "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains a digital signature block on the first page next to 'Elizabeth S. Werner', which includes a cursive signature image and a digital timestamp/authentication block. This meaningful image and its associated text are completely missing from the HTML output.",
-      "source_pdf_quote": "A cursive signature image and digital signature text block ('Digitally signed by Elizabeth S Werner...') next to the 'From:' line on page 1",
-      "output_quote": "The HTML table row only contains the text 'Elizabeth S. Werner<br>Division of Waste Management<br>Raleigh Central Office' with no corresponding signature image",
-      "location": "Page 1, 'From:' section",
+      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The first page of the source PDF contains a prominent digital signature stamp and cursive signature image ('Elizabeth S Werner') next to the 'From:' line. This is a meaningful image that establishes the authenticity and authorization of the memorandum. There is no corresponding image (or transcribed text of the digital stamp) present in the HTML output.",
+      "source_pdf_quote": "Cursive signature image and digital signature stamp text ('Digitally signed by Elizabeth S Werner...')",
+      "output_quote": "The signature image and stamp are completely absent from the HTML output.",
+      "location": "Page 1, adjacent to the 'From:' field",
       "source": "fidelity_llm",
       "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": false
-    },
-    {
-      "description": "Content visually duplicated on page",
-      "severity": "major",
-      "analysis": "The HTML output contains a duplicated image artifact. The 'NC' agency logo appears once at the top left of the first page in the source PDF. In the HTML output, an image tag for the logo appears at the beginning of the document, and a second `<img>` tag for the logo is improperly inserted again at the end of the page 1 content.",
-      "source_pdf_quote": "A single 'NC Waste Management Environmental Quality' logo located at the top left of page 1",
-      "output_quote": "Two <img> tags for the logo: one at the start of the `<body>`, and a second one `<img src=\"...\" alt=\"Logo featuring large &quot;NC&quot; letters...\">` inserted right before the 'I. History/Background' heading",
-      "location": "Page 1 content / HTML Body",
-      "source": "fidelity_llm",
-      "check_id": "V3",
       "fidelity_dimension": "visual",
       "corroborated": false
     },
@@ -68,10 +56,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source PDF features bolded and underlined terms at the start of multiple list items on pages 3 and 4 (e.g., 'Excavation', 'Groundwater Assessments', 'Well Testing', 'Beneficial Reuse'). The extraction JSON completely strips both the underline formatting and the bold markdown (**) for these terms, resulting in genuine loss of visual emphasis.",
-      "source_pdf_quote": "Excavation – (Underlined and bolded in source)",
-      "output_quote": "\"text\": \"Excavation – Speakers requested...\" (Missing markdown ** and underline formatting)",
-      "location": "Pages 3 and 4 (Oral Comments Summary and Written Public Comment Summary lists)",
+      "analysis": "In the source PDF, the run-in headers for the bulleted list items on pages 3, 4, and 5 are both bolded and underlined (e.g., 'Excavation', 'Groundwater Assessments', 'Beneficial Reuse'). In the extraction JSON, these terms are presented as plain text without any markdown or HTML indicating bold or underline emphasis. This is a clear loss of structural/visual emphasis.",
+      "source_pdf_quote": "Excavation – Speakers requested that full excavation occur...",
+      "output_quote": "\"text\": \"Excavation – Speakers requested that full excavation occur as quickly as possible.\"",
+      "location": "Sections II and III (Pages 3-5 bulleted lists)",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -79,34 +67,33 @@
     }
   ],
   "action_items": [
-    "Remove recurring header/footer artifacts from the HTML.",
-    "Ensure the digital signature block is captured and described appropriately.",
-    "Remove duplicated image tags for the agency logo.",
-    "Correct list structures to properly nest sub-points.",
-    "Restore bold and underline formatting where terms are visually emphasized."
+    "Remove pervasive header and footer artifacts from the HTML extraction",
+    "Ensure digital signatures and meaningful images are retained or properly described",
+    "Fix flattened list structures to ensure proper nested numbering",
+    "Restore visual emphasis (bold/underline) on run-in headers"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 3,
+  "total_defects": 2,
   "total_critical": 0,
-  "total_major": 2,
+  "total_major": 1,
   "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.8973282442748092,
-      "raw_score": 0.8973,
+      "fidelity_composite": 0.9473282442748091,
+      "raw_score": 0.9473,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.8973282442748092,
+      "fidelity_composite": 0.9473282442748091,
       "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.7142857142857143,
+      "fidelity_visual": 0.8571428571428572,
       "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": 0.9343046357615894,
@@ -141,7 +128,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 121612,
+    "processing_ms": 94785,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

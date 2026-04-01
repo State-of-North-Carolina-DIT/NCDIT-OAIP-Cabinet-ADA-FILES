@@ -1,44 +1,56 @@
 {
   "document_id": "01_10_adilet_2020_3",
-  "audited_at": "2026-04-01T08:45:26.773462Z",
+  "audited_at": "2026-04-01T19:22:43.511999Z",
   "source_files": {
     "extraction_json": "01_10_adilet_2020_3.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_10_adilet_2020_3.html"
   },
-  "quality_score": 90,
-  "quality_grade": "Good",
-  "fidelity_composite": 0.8973282442748092,
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.7142857142857143,
-  "routing": "human_review",
-  "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity analysis and programmatic signals both identify significant issues with image handling in this scanned document. The LLM noted a missing agency logo and the erroneous inclusion of text content as an embedded image, which is corroborated by the programmatic image count ratio of 1.5. Because there are 4 major defects (2 LLM, 2 programmatic) and no critical defects, the document requires a human review to correct the image duplication and formatting loss.",
-  "decision_method": "llm_final_decider",
+  "fidelity_visual": 0.1428571428571429,
+  "routing": "reject",
+  "routing_label": "Reject",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
     {
       "description": "Images missing or broken",
-      "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.50, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains two distinct agency logos on page 1: the North Carolina State Seal at the top center, and the NC DEQ (Department of Environmental Quality) logo at the bottom left. While the HTML successfully preserves the State Seal at the top of the document, the DEQ logo is entirely missing from the output.",
-      "source_pdf_quote": "The NC DEQ logo located at the bottom left of page 1 next to the department address block.",
-      "output_quote": "The HTML lacks an <img> element representing the DEQ logo.",
-      "location": "Page 1 footer region",
+      "severity": "critical",
+      "analysis": "The source document contains a DEQ (Department of Environmental Quality) agency logo in the bottom left corner of the first page. This is a meaningful organizational logo. The HTML output does not contain any image corresponding to this logo.",
+      "source_pdf_quote": "DEQ logo in the bottom left corner of page 1.",
+      "output_quote": "Missing <img> element for the DEQ logo.",
+      "location": "Page 1 footer",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Content visually duplicated on page",
       "severity": "major",
-      "analysis": "The HTML output extracts the numbered list on page 1 correctly into an <ol> element and subsequent <p> elements. However, immediately following the 'Please be advised...' paragraph, the HTML inserts an image that captures a screenshot of this exact same text (items concerning sediment basin baffles and contacting well owners). This results in the user seeing the text content as structured HTML and then seeing it again as an embedded image.",
-      "source_pdf_quote": "The numbered list (specifically items 3 and 4) and the following paragraph on page 1.",
-      "output_quote": "The HTML contains the text in standard tags but also includes an image duplicating the content: <img src=\"...\" alt=\"A snippet of an official document containing a numbered list of requirements regarding sediment basin baffles and contacting well\">",
-      "location": "Body of HTML, immediately preceding the footer address text",
+      "analysis": "The source document has a numbered list of requirements on the first page. In the HTML output, this list is correctly extracted as structured HTML (<ol>). However, an image is also inserted immediately following the list's closing paragraph, which based on its alt text ('A snippet of an official document containing a numbered list of requirements regarding sediment basin baffles and contacting well') is a screenshot/crop of the text itself. This results in the user seeing the same text content t",
+      "source_pdf_quote": "Numbered list items 1 through 4.",
+      "output_quote": "<ol><li>Provide proof...</li>...<li>Please re-contact...</li></ol> followed by <img src=\"...\" alt=\"A snippet of an official document containing a numbered list of requirements regarding sediment basin baffles and contacting well\">",
+      "location": "Page 1",
       "source": "fidelity_llm",
       "check_id": "V3",
       "fidelity_dimension": "visual",
+      "corroborated": false
+    },
+    {
+      "description": "Full-page image alongside extracted text (2 page(s))",
+      "severity": "major",
+      "analysis": "suspect_pages=2. A scanned/screenshot page image duplicates content already present as text elements.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
       "corroborated": false
     },
     {
@@ -68,10 +80,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document contains underlined text to indicate emphasis on the mailing type ('Certified Mail' and 'Return Receipt Requested'). This underline formatting is completely lost in the output JSON.",
-      "source_pdf_quote": "Certified Mail\nReturn Receipt Requested",
-      "output_quote": "Certified Mail\nReturn Receipt Requested",
-      "location": "Page 1, elements 5",
+      "analysis": "The source document features underlines for emphasis on phrases like 'Certified Mail' and 'Return Receipt Requested' on page 1, and 'Certified Mail' on page 2. The extraction output drops this emphasis entirely, presenting them as plain text.",
+      "source_pdf_quote": "Underlined text: \"Certified Mail\" and \"Return Receipt Requested\"",
+      "output_quote": "\"Certified Mail\\nReturn Receipt Requested\"",
+      "location": "Page 1, element index 4",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -91,34 +103,31 @@
     }
   ],
   "action_items": [
-    "Remove the embedded image that duplicates the structured text content.",
-    "Restore the missing NC DEQ logo if contextually important.",
-    "Restore missing underline formatting for 'Certified Mail' and 'Return Receipt Requested'.",
-    "Remove any retained header/footer text from the main body content."
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 3,
-  "total_critical": 0,
-  "total_major": 2,
+  "total_critical": 1,
+  "total_major": 1,
   "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.8973282442748092,
-      "raw_score": 0.8973,
-      "ceiling": null,
-      "ceiling_reason": null,
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.8973282442748092,
+      "fidelity_composite": 0.4,
       "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.7142857142857143,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_visual": 0.1428571428571429,
+      "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
       "shingling_recall": null,
       "shingling_precision": null,
@@ -150,9 +159,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 0
+      "deduplicated_count": 1
     },
-    "processing_ms": 108911,
+    "processing_ms": 109537,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

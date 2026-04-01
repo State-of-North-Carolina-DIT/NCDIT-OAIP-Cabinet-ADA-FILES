@@ -1,6 +1,6 @@
 {
   "document_id": "DEQ_Risk_Calculator_User_Guide_(February_2024)",
-  "audited_at": "2026-03-31T03:44:13.648237Z",
+  "audited_at": "2026-04-01T19:30:54.344016Z",
   "source_files": {
     "extraction_json": "DEQ_Risk_Calculator_User_Guide_(February_2024).json",
     "source_pdf": "source.pdf",
@@ -9,42 +9,66 @@
   "quality_score": 30,
   "quality_grade": "Critical",
   "fidelity_composite": 0.4,
-  "fidelity_content": 0.9923664122137404,
-  "fidelity_structural": 0.9091,
-  "fidelity_visual": 0.2857142857142857,
+  "fidelity_content": 0.6106870229007634,
+  "fidelity_structural": 0.5455,
+  "fidelity_visual": 1.0,
   "routing": "reject",
   "routing_label": "Reject",
   "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
   "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
     {
-      "description": "Images missing or broken",
+      "description": "Fabricated paragraphs or sentences",
       "severity": "critical",
-      "analysis": "The image manifest indicates that almost all of the images extracted from the document have 'valid: false' due to a missing Python module ('No module named \\'PIL\\''). This includes critical images such as the agency logo on page 1, the 'Potential Exposure Pathways' flowchart on page 6, the map of North Carolina on page 28, and numerous screenshots of the Excel tool throughout the document. Because the base64 data is corrupt, these images will appear broken and fail to render in a browser.",
-      "source_pdf_quote": "Agency logo on page 1, flowchart on page 6, map on page 28, and numerous software screenshots throughout.",
-      "output_quote": "The image manifest shows 'valid': false with the error 'No module named \\'PIL\\'' for almost all images, meaning the base64 data is corrupt and the images will be broken when rendered.",
-      "location": "Multiple locations (Pages 1, 6, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30)",
+      "analysis": "The JSON output contains a massive, fabricated string of repeating zeros appended to a Table of Contents entry on page 2. While this is likely an AI extraction artifact caused by parsing leader dots in the table of contents, it is not JSON structure or prompt text (which are the only exceptions allowed). Because this long string of zeros appears nowhere in the source text, it constitutes fabricated content.",
+      "source_pdf_quote": "3.1 Project Information and Report Organization .................................................................... 6",
+      "output_quote": "\"3.1 Project Information and Report Organization .................................................................... 6000000000000000000000000000...\" (followed by hundreds of zeros)",
+      "location": "Page 2, Table of Contents list item",
       "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": true
-    },
-    {
-      "description": "Link text pulled over but not hyperlinked",
-      "severity": "major",
-      "analysis": "Across multiple pages, text that is a clickable hyperlink in the source PDF is extracted as plain text. The model has fragmented the sentences containing these links into multiple paragraphs, isolating the link text into its own paragraph but failing to wrap it in an anchor (`<a href=\"...\">`) tag.",
-      "source_pdf_quote": "\"Refer to the Risk Evaluation Resources page on the NCDEQ Risk-Based Remediation website...\" (where \"Risk Evaluation Resources\" is a clickable hyperlink)",
-      "output_quote": "The text is split into three paragraphs, with the hyperlink completely lost: {\"type\": \"paragraph\", \"text\": \"Risk Evaluation Resources\"}",
-      "location": "Page 5 (Document Page 1), Paragraphs 2-4",
-      "source": "fidelity_llm",
-      "check_id": "S8",
-      "fidelity_dimension": "structural",
+      "check_id": "C1",
+      "fidelity_dimension": "content",
       "corroborated": false
     },
     {
+      "description": "Significant text omission within a section",
+      "severity": "critical",
+      "analysis": "The Table of Contents extraction on page 2 terminates abruptly after the fabricated string of zeros. Consequently, roughly 80% of the Table of Contents section (covering sections 3.1.1 through 6.0) is entirely missing from the output JSON.",
+      "source_pdf_quote": "3.1.1 Cover Page ... [through] ... 6.0 REFERENCES",
+      "output_quote": "[Content entirely absent from the list after '3.1 Project Information and Report Organization']",
+      "location": "Page 2, Table of Contents",
+      "source": "fidelity_llm",
+      "check_id": "C5",
+      "fidelity_dimension": "content",
+      "corroborated": true
+    },
+    {
+      "description": "Link injection issues",
+      "severity": "critical",
+      "analysis": "Compared clickable hyperlinks in the source PDF against the JSON output. Several text elements that are explicitly hyperlinked with embedded URLs in the source PDF were extracted as plain text blocks, completely missing their hyperlink attributes. This includes important references in the introduction and reference columns in tables.",
+      "source_pdf_quote": "Page 5: \"Risk Evaluation Resources\", \"USEPA Regional Screening Level (RSL) Tables\", and \"Technical Guidance for Risk-Based Environmental Remediation of Sites\" are all clickable hyperlinks. Page 24: Table entries in the 'Reference' column (e.g., \"IRIS\", \"Supplemental Guidance\") are clickable links.",
+      "output_quote": "These are extracted as plain text without any hyperlink or URL data. For example: {\"type\": \"paragraph\", \"text\": \"Risk Evaluation Resources\"}",
+      "location": "Pages 5, 8, 13, 23, and 24",
+      "source": "fidelity_llm",
+      "check_id": "S7",
+      "fidelity_dimension": "structural",
+      "corroborated": true
+    },
+    {
       "description": "Header/footer elements retained in output (69): Risk Calculator User Guide; Risk Calculator User Guide; February 2024",
+      "severity": "critical",
+      "analysis": "header_footer_count=69, pages_affected=31/33. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Full-page image alongside extracted text (1 page(s))",
       "severity": "major",
-      "analysis": "header_footer_count=69. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "analysis": "suspect_pages=1. A scanned/screenshot page image duplicates content already present as text elements.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -78,28 +102,28 @@
       "corroborated": false
     },
     {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document uses underlined text for clickable hyperlinks (e.g., 'Risk Evaluation Resources' on page 5). The extraction output completely loses this underline emphasis, rendering the text as standard paragraph text without any markdown or formatting indicators for the underline/link.",
-      "source_pdf_quote": "Risk Evaluation Resources",
-      "output_quote": "\"text\": \"Risk Evaluation Resources\"",
-      "location": "Page 5",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
-    {
-      "description": "2 bare URL(s) in text not converted to hyperlinks: *janet.macdonald@deq.nc.gov; *david.lilley@deq.nc.gov",
-      "severity": "minor",
-      "analysis": "bare_url_count=2. URLs appear as plain text instead of clickable links.",
+      "description": "Incomplete image alt text: 34 image(s) with inadequate descriptions (31 truncated mid-sentence, 3 generic placeholder(s)) — e.g. p1: \"...y. The design features a blue outline map of North\"; p6: \"...nmental contaminants from initial release to human\"; p8: \"... and a black house icon on the right, separated by\"",
+      "severity": "major",
+      "analysis": "incomplete_alt_text=34 (truncated=31, placeholder=3, empty=0). Per WCAG 2.1 AA, meaningful images must have descriptive alternative text for screen-reader accessibility.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
       "check_id": null,
       "fidelity_dimension": null,
-      "corroborated": true
+      "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source PDF frequently uses underlines to denote clickable hyperlinks (e.g., 'Risk Evaluation Resources'). Because the JSON format has no markdown representation for underline and did not capture these as markdown links, the text appears as plain text, resulting in a genuine loss of visual emphasis.",
+      "source_pdf_quote": "Risk Evaluation Resources (styled with blue text and underline)",
+      "output_quote": "\"text\": \"Risk Evaluation Resources\" (styled as plain paragraph text)",
+      "location": "Page 5, first paragraph",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
     },
     {
       "description": "Table header markup issues: 1 table(s) with 3+ rows have no <th> header cells",
@@ -112,18 +136,6 @@
       "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "Source PDF contains 21 instance(s) of blue-styled text without hyperlink annotations. These appear to be intended as hyperlinks but were not annotated in the PDF (likely lost during Word-to-PDF export). This is a source document limitation, not a pipeline defect. Examples: page 5: \"Risk Evaluation Resources\"; page 5: \"USEPA Regional Screening Level\"; page 5: \"(RSL) Tables\"; page 5: \"Technical\"; page 5: \"Guidance for Risk-Based Environmental Remediation \"",
-      "severity": "informational",
-      "analysis": "orphaned_blue_text_count=21. Blue text without link annotations detected via PyMuPDF color extraction.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S7",
-      "fidelity_dimension": null,
-      "corroborated": true
     }
   ],
   "action_items": [
@@ -131,9 +143,9 @@
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 3,
-  "total_critical": 1,
-  "total_major": 1,
+  "total_defects": 4,
+  "total_critical": 3,
+  "total_major": 0,
   "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
@@ -148,9 +160,9 @@
     },
     "signals": {
       "fidelity_composite": 0.4,
-      "fidelity_content": 0.9923664122137404,
-      "fidelity_structural": 0.9091,
-      "fidelity_visual": 0.2857142857142857,
+      "fidelity_content": 0.6106870229007634,
+      "fidelity_structural": 0.5455,
+      "fidelity_visual": 1.0,
       "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
       "shingling_recall": 0.9194845117048948,
@@ -185,7 +197,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 300640,
+    "processing_ms": 346145,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

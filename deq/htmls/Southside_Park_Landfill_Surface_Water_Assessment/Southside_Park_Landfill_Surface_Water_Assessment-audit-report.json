@@ -1,6 +1,6 @@
 {
   "document_id": "Southside_Park_Landfill_Surface_Water_Assessment",
-  "audited_at": "2026-04-01T07:26:08.119951Z",
+  "audited_at": "2026-04-01T19:26:19.667655Z",
   "source_files": {
     "extraction_json": "Southside_Park_Landfill_Surface_Water_Assessment.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single-page GIS map where the primary content is a visual map showing surface water and sediment sample locations. The text content consists entirely of supplementary data tables, legends, and notes directly supporting the primary visual element.",
+  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single page dominated by a visual element (a GIS/site map) showing surface water assessment locations. Text content consists entirely of supplementary map labels, legends, notes, references, and overlaid data tables, which supports the classification of SINGLE_GRAPHIC.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 36838,
+    "processing_ms": 48638,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

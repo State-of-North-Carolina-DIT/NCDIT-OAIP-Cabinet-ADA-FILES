@@ -1,6 +1,6 @@
 {
   "document_id": "00_2019_Phase_II_MS4_Training_combined",
-  "audited_at": "2026-04-01T08:45:33.827366Z",
+  "audited_at": "2026-04-01T19:21:52.834369Z",
   "source_files": {
     "extraction_json": "00_2019_Phase_II_MS4_Training_combined.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The source document is a presentation slide deck, formatted with two landscape-oriented slides per portrait page.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a multi-page PDF where every page consists of presentation slides (printed two per page), featuring landscape slide layouts, large graphics, bulleted points, and typical presentation slide structures.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 115762,
+    "processing_ms": 58840,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,22 +1,34 @@
 {
   "document_id": "Cape_Fear_Mtg_Officer_Report_FINAL_051316",
-  "audited_at": "2026-04-01T09:01:00.625684Z",
+  "audited_at": "2026-04-01T19:25:30.356208Z",
   "source_files": {
     "extraction_json": "Cape_Fear_Mtg_Officer_Report_FINAL_051316.json",
     "source_pdf": "source.pdf",
     "rendered_html": "Cape_Fear_Mtg_Officer_Report_FINAL_051316.html"
   },
-  "quality_score": 100,
-  "quality_grade": "Good",
-  "fidelity_composite": 0.9973,
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 1.0,
-  "routing": "human_review",
-  "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity analysis indicates near-perfect content preservation and suggests AUTO_APPROVE. However, the programmatic analysis identified a MAJOR structural defect involving mixed list numbering on pages 1 and 4, which suggests that list sub-points were improperly flattened. Under the binding count-based routing rules, the presence of one major programmatic defect requires routing to HUMAN_REVIEW to check the list structure.",
-  "decision_method": "llm_final_decider",
+  "fidelity_visual": 0.2857142857142857,
+  "routing": "reject",
+  "routing_label": "Reject",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
+    {
+      "description": "Images missing or broken",
+      "severity": "critical",
+      "analysis": "Page 1 of the source PDF contains an official agency logo ('NC Energy, Mineral & Land Resources Environmental Quality') at the top left. This is a meaningful image that identifies the document's authoring organization. However, the rendered HTML output lacks an `<img>` element for this logo. Instead, it only provides a plain text placeholder inside a paragraph tag (`<p>[Image: ...]</p>`). Because there is no functional image element in the DOM, the image is visually missing from the output.",
+      "source_pdf_quote": "The visual logo for 'NC Energy, Mineral & Land Resources Environmental Quality' at the top left of the document.",
+      "output_quote": "<p>[Image: Logo for North Carolina Energy, Mineral &amp; Land Resources, Environmental Quality]</p>",
+      "location": "Page 1 / Top of document",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": false
+    },
     {
       "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p4:letter+roman — possible sub-point flattening",
       "severity": "major",
@@ -32,10 +44,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The word 'MEMORANDUM' is underlined in the source document. However, the extraction JSON does not retain this underline formatting, only extracting it as plain text within a heading.",
+      "analysis": "The word 'MEMORANDUM' serving as the primary document title on Page 1 is underlined in the source PDF. The extraction output captures it as a heading, but the underline emphasis is lost, as no markdown or alternative representation was applied for the underline.",
       "source_pdf_quote": "MEMORANDUM (underlined)",
       "output_quote": "\"text\": \"MEMORANDUM\"",
-      "location": "Page 1, element index 4",
+      "location": "Page 1, primary heading",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -55,13 +67,12 @@
     }
   ],
   "action_items": [
-    "Review lists on pages 1 and 4 to ensure sub-lists are correctly nested and not flattened into single-level lists.",
-    "Verify if any header/footer artifacts (e.g., 'State of North Carolina') were erroneously retained in the output."
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
-  "total_critical": 0,
+  "total_defects": 2,
+  "total_critical": 1,
   "total_major": 0,
   "total_minor": 1,
   "exclusion_reason": null,
@@ -69,18 +80,18 @@
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9973,
-      "raw_score": 0.9973,
-      "ceiling": null,
-      "ceiling_reason": null,
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9973,
+      "fidelity_composite": 0.4,
       "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 1.0,
-      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
       "shingling_recall": 0.9854640327991054,
       "shingling_precision": 0.9792592592592593,
@@ -110,11 +121,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 92487,
+    "processing_ms": 131778,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,6 +1,6 @@
 {
   "document_id": "01_2020MayMFC_BusinessMeetingAgenda",
-  "audited_at": "2026-04-01T08:45:29.253577Z",
+  "audited_at": "2026-04-01T19:22:37.235071Z",
   "source_files": {
     "extraction_json": "01_2020MayMFC_BusinessMeetingAgenda.json",
     "source_pdf": "source.pdf",
@@ -14,16 +14,16 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document contains three major defects that require human intervention. The LLM fidelity evaluation flagged two major issues: the omission of double asterisks that designate 'Probable Action Items', which alters the meaning of the agenda, and a flattened three-level list hierarchy. Additionally, programmatic checks found a major structural issue where a footnote was incorrectly converted into a bulleted list. With 3 major defects, the document falls under the HUMAN_REVIEW threshold.",
+  "reasoning": "Both LLM fidelity and programmatic signals identified major issues with this document's conversion. The extraction dropped double asterisks used to denote 'Probable Action Items,' nested lists were flattened, and footnotes were incorrectly converted into bulleted lists. These structural and content alterations require human review.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Minor text differences beyond acceptable reformatting",
       "severity": "major",
-      "analysis": "The source document uses a double asterisk ('**') to denote 'Probable Action Items', as defined in the document's legend. The output is missing this double asterisk marker on several agenda items, which alters the meaning by removing their 'Probable Action Item' designation. This occurs on Page 1 ('Approval of Agenda' and 'Approval of Meeting Minutes') and Page 2 (2:30 p.m. Rulemaking Update and 3:00 p.m. Rule Suspensions items).",
-      "source_pdf_quote": "Approval of Agenda **\nApproval of Meeting Minutes**",
-      "output_quote": "Approval of Agenda \nApproval of Meeting Minutes",
-      "location": "Page 1, 9:10 a.m. schedule block",
+      "analysis": "The source document uses a double asterisk (`**`) immediately following specific agenda items to designate them as 'Probable Action Items' (as defined by the legend at the bottom of the pages). The extraction silently dropped these asterisks from multiple items, notably in the agenda schedules on both page 1 and page 2, altering the informational meaning of those items.",
+      "source_pdf_quote": "Approval of Agenda **\nApproval of Meeting Minutes**\n[...]\nVote on approval of the continued suspension of NCMFC Rule 15A NCAC 03M .0511 Bluefish.**",
+      "output_quote": "Approval of Agenda \nApproval of Meeting Minutes\n[...]\n• Vote on approval of the continued suspension of NCMFC Rule 15A NCAC 03M .0511 Bluefish.",
+      "location": "Page 1 and Page 2 (various schedule items)",
       "source": "fidelity_llm",
       "check_id": "C6",
       "fidelity_dimension": "content",
@@ -32,10 +32,10 @@
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The source PDF on page 2 contains a three-level list hierarchy under 'Informational Materials continued:'. For example, 'Observer Program' and 'Incidental Take Permit Updates' are visually indented as sub-points under 'Protected Resources Update'. The extraction flattens this hierarchy, placing the sub-items as direct siblings to their parent item within the 'children' array. This flattens the list meaning and is a major defect.",
-      "source_pdf_quote": "– Protected Resources Update\n Observer Program\n Incidental Take Permit Updates",
+      "analysis": "In the source document on page 2, there is a nested list where 'Observer Program' and 'Incidental Take Permit Updates' are clearly sub-items indented under 'Protected Resources Update'. Similarly, 'Red Drum' and 'Southern Flounder' are sub-items under 'Landings Update'. In the JSON output, these nested hierarchies are flattened, and the sub-items are placed at the exact same level as their parent items within the 'children' array of 'Informational Materials continued:'.",
+      "source_pdf_quote": "Protected Resources Update\n▪ Observer Program\n▪ Incidental Take Permit Updates",
       "output_quote": "{\"text\": \"Protected Resources Update\"}, {\"text\": \"Observer Program\"}, {\"text\": \"Incidental Take Permit Updates\"}",
-      "location": "Page 2, first list under 'Informational Materials continued:'",
+      "location": "Page 2, first list element",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -79,11 +79,11 @@
     }
   ],
   "action_items": [
-    "Restore the double asterisks ('**') to the appropriate agenda items to correctly identify 'Probable Action Items'.",
-    "Correct the list hierarchy under 'Informational Materials continued:' so sub-items are properly nested.",
-    "Convert the table footnote from an unordered list item (<ul><li>) to a standard paragraph (<p>).",
-    "Remove retained header/footer text from the document.",
-    "Fix table header <th> markup to ensure semantic table structure."
+    "Restore the double asterisks ('**') to the appropriate agenda items to preserve 'Probable Action Items' context",
+    "Correct the list structure to reflect proper nesting for sub-items",
+    "Convert the footnote list items back to proper paragraph format",
+    "Remove retained header and footer elements",
+    "Fix table header semantics"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -141,7 +141,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 111269,
+    "processing_ms": 101715,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

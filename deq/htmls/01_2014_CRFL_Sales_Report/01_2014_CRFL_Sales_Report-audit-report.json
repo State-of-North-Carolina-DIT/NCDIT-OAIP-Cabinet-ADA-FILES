@@ -1,34 +1,22 @@
 {
   "document_id": "01_2014_CRFL_Sales_Report",
-  "audited_at": "2026-04-01T15:45:18.638438Z",
+  "audited_at": "2026-04-01T19:22:51.693549Z",
   "source_files": {
     "extraction_json": "01_2014_CRFL_Sales_Report.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_2014_CRFL_Sales_Report.html"
   },
-  "quality_score": 97,
+  "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9727,
+  "fidelity_composite": 1.0,
   "fidelity_content": 1.0,
-  "fidelity_structural": 0.9091,
+  "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document contains multiple major structural defects. Both LLM and programmatic signals corroborate that large tables spanning multiple pages with repeated headers were incorrectly split into separate table elements. Additionally, programmatic detectors found that footnotes were incorrectly converted to bulleted lists. Since there are 1-5 major defects, the document must be routed to HUMAN_REVIEW.",
+  "reasoning": "The LLM fidelity analysis found no issues, but the programmatic evaluation identified four major structural accessibility defects in the document's tables. These include tables split across page breaks, captions and data miscoded as header rows, and footnotes converted to unordered lists. Given the presence of 4 major programmatic defects, the document must be routed to HUMAN_REVIEW to correct the table structure and semantics.",
   "decision_method": "llm_final_decider",
   "concerns": [
-    {
-      "description": "Table structure corrupted",
-      "severity": "major",
-      "analysis": "The source document contains several large tables that span multiple pages with repeated headers (e.g., 'Number of Coastal Recreational Fishing Licenses sold by North Carolina county of sale' on pages 4-6, state of residence on pages 10-11, and country of residence on pages 12-15). According to the extraction rules, when a large table spans multiple PDF pages with repeated headers, it must be rendered as one continuous table. However, the output JSON separates these into individual table objects",
-      "source_pdf_quote": "The table 'Number of Coastal Recreational Fishing Licenses sold by North Carolina county of sale' spans across pages 4, 5, and 6 as a single continuous data set.",
-      "output_quote": "The JSON output extracts this as three completely separate table objects within the page 4, page 5, and page 6 arrays.",
-      "location": "Pages 4-6 (and similarly Pages 10-11, 12-15)",
-      "source": "fidelity_llm",
-      "check_id": "S3",
-      "fidelity_dimension": "structural",
-      "corroborated": true
-    },
     {
       "description": "Table split across page break(s): 6 table(s) with repeated headers across consecutive pages",
       "severity": "major",
@@ -38,6 +26,30 @@
       "location": null,
       "source": "programmatic",
       "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Table caption coded as header row: 1 table(s) have a single spanning first row that is likely a caption/title",
+      "severity": "major",
+      "analysis": "caption_as_header=1. Examples: p2: \"SUMMARY\". First row spans all columns — should be a <caption> element, not a header row.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S3",
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Data row marked as header: 4 table(s) have numeric/data values in the header row",
+      "severity": "major",
+      "analysis": "data_as_header=4. Examples: p5: [2010, 2011, 2012]; p6: [2010, 2011, 2012]; p9: [2010, 2011, 2012]. Header rows should contain column labels, not data values.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S3",
       "fidelity_dimension": null,
       "corroborated": false
     },
@@ -67,33 +79,34 @@
     }
   ],
   "action_items": [
-    "Merge split tables across consecutive pages into single continuous table objects.",
-    "Convert list items acting as footnotes back to proper paragraph elements.",
-    "Verify and add missing <th> semantic tags to table headers."
+    "Merge tables that were split across page breaks and remove duplicate header rows",
+    "Change spanning header rows acting as table titles into <caption> elements",
+    "Ensure numeric data rows are not coded as <th> elements",
+    "Convert footnotes incorrectly formatted as unordered lists into standard paragraph text"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 0,
   "total_critical": 0,
-  "total_major": 1,
+  "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9727,
-      "raw_score": 0.9727,
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9727,
+      "fidelity_composite": 1.0,
       "fidelity_content": 1.0,
-      "fidelity_structural": 0.9091,
+      "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 0.9026933101650738,
       "shingling_precision": 0.9110039456378781,
@@ -123,11 +136,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 2
+      "deduplicated_count": 0
     },
-    "processing_ms": 268674,
+    "processing_ms": 117281,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

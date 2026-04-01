@@ -1,6 +1,6 @@
 {
   "document_id": "Lee_Meeting_Officer_Final_5_13_16",
-  "audited_at": "2026-04-01T06:38:06.411290Z",
+  "audited_at": "2026-04-01T19:29:53.320669Z",
   "source_files": {
     "extraction_json": "Lee_Meeting_Officer_Final_5_13_16.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "While the LLM fidelity scores are excellent (composite 0.9973), automated programmatic detectors identified a critical pipeline failure where header and footer artifacts were retained across all 5 pages. Additionally, a major list structure defect was found indicating flattened sub-points. According to strict count-based routing thresholds, the presence of a critical defect mandates a REJECT routing.",
+  "reasoning": "While the LLM fidelity scores indicate near-perfect content preservation, programmatic detectors identified a critical pipeline failure where header/footer artifacts were retained across all 5 pages of the document. Additionally, there is a major structural defect involving flattened mixed-number lists. Per the strict count-based routing rules, the presence of a critical programmatic defect requires automatic rejection.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -44,10 +44,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "In the source PDF, the key terms at the beginning of the bulleted lists on pages 3, 4, and 5 (e.g., 'Agriculture', 'Air Quality', 'Beneficial Reuse') are heavily emphasized using bold and underlining. This emphasis is entirely missing from the output text, which contains no markdown for bold or underlining for these terms.",
-      "source_pdf_quote": "Agriculture– One citizen commented",
-      "output_quote": "Agriculture– One citizen commented",
-      "location": "Page 3, oral comments list items",
+      "analysis": "The source PDF contains numerous list items on pages 3, 4, and 5 where the introductory phrase is both bold and underlined (e.g., 'Agriculture', 'Air Quality', 'Costs'). The extraction completely loses this emphasis, providing the plain text without any markdown for bolding (** text **) or any mechanism to preserve the underline.",
+      "source_pdf_quote": "Agriculture–",
+      "output_quote": "Agriculture–",
+      "location": "Page 3, list item 1",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -55,9 +55,9 @@
     }
   ],
   "action_items": [
-    "Remove duplicated header and footer artifacts from the HTML output.",
-    "Correct list structures to ensure proper nesting of sub-points instead of flattening.",
-    "Restore bold and underline emphasis to key terms in list items."
+    "Investigate pipeline failure causing header/footer retention",
+    "Fix list flattening issue with mixed alphanumeric/roman bulleting",
+    "Restore bolding/underline markdown on list introductory phrases"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -68,7 +68,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 1.0,
     "score_breakdown": {
       "fidelity_composite": 0.9973,
       "raw_score": 0.9973,
@@ -115,7 +115,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 145922,
+    "processing_ms": 220809,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

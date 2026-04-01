@@ -1,6 +1,6 @@
 {
   "document_id": "Primary_Nursery_Areas",
-  "audited_at": "2026-03-31T03:44:58.992154Z",
+  "audited_at": "2026-04-01T19:26:48.292627Z",
   "source_files": {
     "extraction_json": "Primary_Nursery_Areas.json",
     "source_pdf": "source.pdf",
@@ -20,10 +20,10 @@
     {
       "description": "Significant text omission within a section",
       "severity": "critical",
-      "analysis": "There is a massive text omission starting on page 14. Due to an extraction artifact/hallucination failure at item (f) under 'Bogue Sound - Bogue Inlet Area', the model completely drops the remaining half of the page. This includes multiple sub-items for Bogue Sound ((i), (ii), (g), (h), (i)) and the beginning of the 'New River Area' section ((13) and paragraph (a)).",
-      "source_pdf_quote": "(i) Pettiford Creek - east of a line beginning on the north shore at a point 34° 42.8670' N ... [through] ... (13) New River Area: (a) Salliers Bay area - all waters north and northwest of the IWW beginning at a point on the shoreline 34° 37.0788' N - 77° 12.5350' W; running easterly to a point near Beacon \"58\" at a point 34° 37.9670' N - 77° 12.3060' W; running along the IWW near Cedar Point to a",
-      "output_quote": "The text abruptly stops after the leaked internal monologue for item (f) ('(f) White Oak River...') and jumps directly to the continuation of the sentence from the top of page 15 ('point 34° 33.1860' N - 77° 20.4370' W...'). All intervening text is missing.",
-      "location": "Page 14 / Bogue Sound - Bogue Inlet Area & New River Area",
+      "analysis": "A significant block of text from the middle/bottom of page 14 of the source PDF has been omitted from the output. After extracting item (12)(f) 'White Oak River', the output encounters a parsing hallucination and subsequently completely drops items (12)(f)(i), (12)(f)(ii), (12)(g), (12)(h), (12)(i), and the beginning of section (13)(a). It resumes mid-sentence from the top of page 15 ('point 34° 33.1860' N...').",
+      "source_pdf_quote": "(i) Pettiford Creek - east of a line beginning on the north shore at a point 34° 42.8670' N - 77° 05.3990' W; running southerly to the south shore to a point 34° 42.6310' N - 77° 05.3180' W; and\n(ii) Holland Mill Creek... [continuing through] ... (13) New River Area:\n(a) Salliers Bay area - all waters north and northwest of the IWW beginning at a point on the shoreline 34° 37.0788' N - 77° 12.5350' W; running easterly to a point near Beacon \"58\" at a point 34° 37.9670' N - 77° 12.3060' W; runnin",
+      "output_quote": "The output entirely skips from item (f) 'White Oak River' to the continuation of the sentence on the next page ('point 34° 33.1860' N - 77° 20.4370' W...'). The missing block corresponds to roughly half of page 14.",
+      "location": "Page 14 (Source) / Pages 13-15 (Output JSON)",
       "source": "fidelity_llm",
       "check_id": "C5",
       "fidelity_dimension": "content",
@@ -32,10 +32,10 @@
     {
       "description": "Content duplicated",
       "severity": "major",
-      "analysis": "The output contains multiple severe instances of content duplication. On page 3 of the JSON, the text block beginning with '(a) Fortescue Creek' and ending with '(viii) Runway Creek' is repeated 8 times in a row. Additionally, on page 13 of the JSON, the text for item '(f) White Oak River' is repeated multiple times alongside AI internal monologue/extraction artifacts ('Wait, extracting properly into children array as seen below...').",
-      "source_pdf_quote": "(a) Fortescue Creek: (i) Headwaters of Fortescue Creek - southeast of a line beginning on the south shore...",
-      "output_quote": "\"text\": \"(a) Fortescue Creek:- southeast of a line beginning on the south shore at a point 35° 25.5379' N - 76° 30.6923' W;...\" (This entire block appears 8 consecutive times in the children array of \"In the Pungo River Area:\")",
-      "location": "Pages 3 and 13 (JSON pages 3 and 13)",
+      "analysis": "The output contains severe duplication and AI extraction artifacts. The entire section for '(a) Fortescue Creek' and its sub-items (i through viii) from Page 4 is repeated verbatim at least 6 times in the output array for Page 3. Additionally, under item '(f) White Oak River' (from Page 14), the extraction model leaked its internal instructions/monologue (e.g., 'Wait, extracting properly into children array...') and duplicated the text block multiple times.",
+      "source_pdf_quote": "(a) Fortescue Creek:\n(i) Headwaters of Fortescue Creek... \n[appears exactly once in the source document on Page 4]",
+      "output_quote": "\"(a) Fortescue Creek:- southeast of a line beginning on the south shore...\" [This entire block is repeated 6 distinct times in the JSON 'children' array under 'In the Pungo River Area:'] AND \"Wait, extracting properly into children array as seen below -> no text string modification here to combine, just plain exact reproduction of items -> (this comment node conceptually applies, keeping pure extraction format).\"",
+      "location": "Page 3 and Page 13 JSON objects (covering content from pages 4 and 14)",
       "source": "fidelity_llm",
       "check_id": "S1",
       "fidelity_dimension": "structural",
@@ -113,7 +113,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 2
     },
-    "processing_ms": 363324,
+    "processing_ms": 141878,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

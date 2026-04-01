@@ -1,6 +1,6 @@
 {
   "document_id": "Southside_Park_Stream_Sediment_Assessment",
-  "audited_at": "2026-04-01T07:26:04.553016Z",
+  "audited_at": "2026-04-01T19:26:16.755177Z",
   "source_files": {
     "extraction_json": "Southside_Park_Stream_Sediment_Assessment.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single-page GIS map where the visual element dominates the page's purpose. The text present is supplementary, including data callout tables, a legend, scale, notes, and reference information.",
+  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single page where the primary content is a large map showing sample locations and geographical features. The text consists of supplementary data tables, a legend, and notes that support the visual map.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 33271,
+    "processing_ms": 23024,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

@@ -1,40 +1,64 @@
 {
   "document_id": "East_Carolina_Landfill_Draft_permit",
-  "audited_at": "2026-03-31T03:50:48.894962Z",
+  "audited_at": "2026-04-01T19:26:46.098181Z",
   "source_files": {
     "extraction_json": "East_Carolina_Landfill_Draft_permit.json",
     "source_pdf": "source.pdf",
     "rendered_html": "East_Carolina_Landfill_Draft_permit.html"
   },
-  "quality_score": 14,
+  "quality_score": 30,
   "quality_grade": "Critical",
-  "fidelity_composite": 0.1429,
-  "fidelity_content": null,
-  "fidelity_structural": null,
+  "fidelity_composite": 0.4,
+  "fidelity_content": 0.6106870229007634,
+  "fidelity_structural": 0.8182,
   "fidelity_visual": 0.1428571428571429,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.14).",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
   "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
     {
+      "description": "Fabricated paragraphs or sentences",
+      "severity": "critical",
+      "analysis": "The extraction output contains significant hallucinated text and leaked AI 'thought process' on Page 27, where it injects Hindi text and an internal monologue about correcting an error.",
+      "source_pdf_quote": "the k value to be used is 0.02 per year.",
+      "output_quote": "the k value to be used is 0.02 per year मजदूर . \n\n Wait, wait. \"0.02 per year.\"\n\nWait, I must check my text again. Oh, \"0.02 per year.\"\nI will re-write carefully without any extra characters from thought process.\nActually let's just supply the raw string directly.\n\nHere is the correct structure.",
+      "location": "Page 27",
+      "source": "fidelity_llm",
+      "check_id": "C1",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
+      "description": "Complete section or page missing",
+      "severity": "critical",
+      "analysis": "The extraction pipeline failed on multiple pages (Page 43 and Page 60), leaving them completely empty in the JSON output and resulting in significant content loss.",
+      "source_pdf_quote": "CFR 62.16722. \n(3) Each owner or operator subject to the provisions of this subpart who uses a boiler or process heater...",
+      "output_quote": "[]",
+      "location": "Page 43",
+      "source": "fidelity_llm",
+      "check_id": "C3",
+      "fidelity_dimension": "content",
+      "corroborated": true
+    },
+    {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The image manifest indicates that multiple meaningful images from the source PDF, including the DEQ logo on page 1 and several mathematical equations (such as Eq. 1 and Eq. 2 on page 23, Eq. 4 on page 27, and Eq. 5 on page 27), have invalid/corrupted base64 data ('valid': false). Consequently, these images will not render in the browser. Furthermore, the North Carolina state seal on page 1 is missing entirely as an image element and is instead rendered as plain text bracketed like '[Image: Seal ",
-      "source_pdf_quote": "Page 1 shows the North Carolina state seal and the DEQ logo. Page 23 shows mathematical formulas for Equation 1 and Equation 2.",
-      "output_quote": "The HTML output includes image tags for the DEQ logo and equations but with corrupted base64 data that will fail to render ('valid': false). The state seal is missing an <img> element completely and appears as '[Image: Seal of the State of North Carolina]'.",
-      "location": "Page 1, Page 23, and various pages with equations",
+      "analysis": "The source PDF contains a critical mathematical formula for calculating Carbon Monoxide emissions (A_CO) on page 50 of the PDF (Permit page 46, Section 5.d). In the HTML output, this formula is entirely missing from the text, and the corresponding image element is an unusable blank placeholder. As a result, the actual formula is completely lost and inaccessible to the user.",
+      "source_pdf_quote": "A_CO = [ 0.37 lbs CO / 1x10^6 Btu ... ] + [ 0.37 lbs CO / 1x10^6 Btu ... ]",
+      "output_quote": "<img src=\"[base64 image stripped for token budget]\" alt=\"A completely blank white image.\">",
+      "location": "Section 5.d (Page 46 of Permit)",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
       "corroborated": true
     },
     {
-      "description": "Fabricated paragraph (0 source overlap): \"Qm = 2LoR(e-kc - e-kt) (Eq. 5)\"",
+      "description": "Header/footer elements retained in output (74): North Carolina Department of Environmental Quality | Divisio; Permit No. 08849T09; Page 3",
       "severity": "critical",
-      "analysis": "shingle_overlap=7.41%, threshold=10%",
+      "analysis": "header_footer_count=74, pages_affected=53/60. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
       "source_pdf_quote": null,
-      "output_quote": "Qm = 2LoR(e-kc - e-kt) (Eq. 5)",
+      "output_quote": null,
       "location": null,
       "source": "programmatic",
       "check_id": null,
@@ -42,45 +66,33 @@
       "corroborated": false
     },
     {
-      "description": "Fidelity Content evaluation failed — dimension not assessed, requires human review",
+      "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The content fidelity call did not produce valid results.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
+      "analysis": "The conversion frequently fails to preserve the hierarchical structure of nested lists, resulting in list flattening. In multiple instances, indented sub-list items are extracted as siblings to top-level items or merged as plain text into their parent item's text. For example, on page 10, sub-items (A) and (B) under item 'ii' are extracted as sibling elements to the top-level items 'g' and 'h', losing their nested relationship. Similarly, on page 11, sub-items (A), (B), and (C) are completely fl",
+      "source_pdf_quote": "ii. Collect gas from each area, cell, or group of cells in the landfill in which the initial solid waste has been placed for a period of \n(A) 5 years or more if active; or \n(B) 2 years or more if closed or at final grade.",
+      "output_quote": "The JSON array structure places the parent and children as flat sibling objects:\n{\n  \"text\": \"ii. Collect gas from each area, cell, or group of cells in the landfill in which the initial solid waste has been placed for a period of\"\n},\n{\n  \"text\": \"(A) 5 years or more if active; or\"\n},\n{\n  \"text\": \"(B) 2 years or more if closed or at final grade.\"\n}",
+      "location": "Page 10, items under Section 2.1 A.3.g.ii",
       "source": "fidelity_llm",
-      "check_id": null,
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
-    {
-      "description": "Fidelity Structural evaluation failed — dimension not assessed, requires human review",
-      "severity": "major",
-      "analysis": "The structural fidelity call did not produce valid results.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "fidelity_llm",
-      "check_id": null,
+      "check_id": "S5",
       "fidelity_dimension": "structural",
-      "corroborated": false
+      "corroborated": true
     },
     {
-      "description": "Content visually duplicated on page",
+      "description": "Content duplicated",
       "severity": "major",
-      "analysis": "A significant section of text and list items from page 27 (PDF page 31) is duplicated excessively in the HTML output. The paragraph starting with 'Except as provided in 40 CFR 62.16724(d)(2)...' and the subsequent list items describing Equation 5, including its variable definitions, repeat at least seven times consecutively in the body content.",
-      "source_pdf_quote": "Page 31 of the PDF contains a single instance of the section starting: 'Except as provided in 40 CFR 62.16724(d)(2), the specified methods in paragraphs (a)(1) through (6) of this section...'",
-      "output_quote": "The HTML output contains 7 back-to-back repetitions of the exact same list item block starting with 'Except as provided in 40 CFR 62.16724(d)(2)...' down through the 'Qm = 2LoR(e-kc - e-kt) (Eq. 5)' formula and variable definitions.",
-      "location": "HTML body corresponding to PDF Page 31",
+      "analysis": "In the JSON output for page 31, the list item beginning with '(a) Except as provided in 40 CFR 62.16724(d)(2), the specified methods in paragraphs (a)(1) through (6)...' and its nested children (including Equation 5 and the variable definitions) is duplicated 7 times consecutively within the list. In the source PDF on page 27, this text block appears only once.",
+      "source_pdf_quote": "(a) Except as provided in 40 CFR 62.16724(d)(2), the specified methods in paragraphs (a)(1) through (6) of this section must be used to determine whether the gas collection system is in compliance with 40 CFR 62.16714(b)(2).",
+      "output_quote": "The JSON array for page 31 contains 7 identical objects starting with `\"text\": \"(a) Except as provided in 40 CFR 62.16724(d)(2)...\"` and identical children arrays.",
+      "location": "Page 31 (JSON index 30)",
       "source": "fidelity_llm",
-      "check_id": "V3",
-      "fidelity_dimension": "visual",
-      "corroborated": false
+      "check_id": "S1",
+      "fidelity_dimension": "structural",
+      "corroborated": true
     },
     {
-      "description": "Output has more images than source PDF (ratio 1.3x) — possible image duplication",
+      "description": "Full-page image alongside extracted text (1 page(s))",
       "severity": "major",
-      "analysis": "image_count_ratio=1.33. More images in output than in source indicates duplicated or fabricated image elements.",
+      "analysis": "suspect_pages=1. A scanned/screenshot page image duplicates content already present as text elements.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -102,40 +114,16 @@
       "corroborated": false
     },
     {
-      "description": "Header/footer elements retained in output (74): North Carolina Department of Environmental Quality | Divisio; Permit No. 08849T09; Page 3",
+      "description": "3 bare URL(s) in text not converted to hyperlinks: https://www.oah.nc.gov/hearings-division/filing/hearing-forms.; (https://www.epa.gov/electronic-reporting-air-emissions/compliance-and-emissions; (https://www3.epa.gov/ttn/chief/cedri/index.html).",
       "severity": "major",
-      "analysis": "header_footer_count=74. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "analysis": "bare_url_count=3. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "7 bare URL(s) in text not converted to hyperlinks: https://www.oah.nc.gov/hearings-division/filing/hearing-forms.; oah.postmaster@oah.nc.gov; (https://www.epa.gov/electronic-reporting-air-emissions/compliance-and-emissions; fedreg.legal@nara.gov; www.archives.gov/federal-register/cfr/ibr-locations.html.",
-      "severity": "major",
-      "analysis": "bare_url_count=7. URLs appear as plain text instead of clickable links.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
+      "check_id": "S8",
       "fidelity_dimension": null,
       "corroborated": true
-    },
-    {
-      "description": "List numbering restart(s): 9 ordered list(s) restart numbering at 1 instead of continuing sequence",
-      "severity": "major",
-      "analysis": "restart_count=9. Examples: p9: heading \"1. 15A NCAC 02D .0516: SULFUR DIOXIDE EM\"; p9: heading \"2. 15A NCAC 02D .0521: CONTROL OF VISIBL\"; p9: 4 single-item ordered lists (fragmented). Ordered lists that restart numbering suggest content was split across page breaks and not reassembled.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
     },
     {
       "description": "Footnote(s) converted to bulleted list: 1 unordered list(s) after table(s) appear to be footnotes",
@@ -150,9 +138,9 @@
       "corroborated": false
     },
     {
-      "description": "Table header markup issues: 4 table(s) have a data row marked as header: \"Permittee:\", \"AOS\", \"Emission Source ID No.\"",
+      "description": "Table header markup issues: 3 table(s) have a data row marked as header: \"Permittee:\", \"AOS\", \"Emission Source ID No.\"",
       "severity": "major",
-      "analysis": "data_in_th=0, datarow_as_header=4. Tables use <th> for data values (misrepresenting data as headers) or have a data row mismarked as a header row. Screen readers rely on <th> to announce column/row context.",
+      "analysis": "data_in_th=0, datarow_as_header=3. Tables use <th> for data values (misrepresenting data as headers) or have a data row mismarked as a header row. Screen readers rely on <th> to announce column/row context.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -172,6 +160,18 @@
       "check_id": "S7",
       "fidelity_dimension": null,
       "corroborated": true
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source document uses underlining for emphasis in certain specific sections. This underline emphasis is completely lost in the JSON output.",
+      "source_pdf_quote": "u. When seeking to install a collection system that does not meet the active collection system specifications...",
+      "output_quote": "u. When seeking to install a collection system that does not meet the active collection system specifications in 40 CFR 63.1962...",
+      "location": "Page 16 (PDF Page 12)",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
     },
     {
       "description": "Page number artifacts retained: Page 2, Page 3, Page 5",
@@ -196,56 +196,32 @@
       "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
-    },
-    {
-      "description": "Mixed numbering types at same list level (6 list(s)): p10:letter+roman, p12:letter+roman, p13:letter+roman — possible sub-point flattening",
-      "severity": "minor",
-      "analysis": "flat_lists=6. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Numbered items as headings: 6 heading(s) look like numbered list items",
-      "severity": "minor",
-      "analysis": "heading_list_count=6. Headings starting with '1.', '2.' etc. suggest numbered list items were misclassified as headings during extraction.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.14)."
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
-  "total_critical": 1,
-  "total_major": 1,
-  "total_minor": 0,
+  "total_defects": 6,
+  "total_critical": 3,
+  "total_major": 2,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.1429,
-      "raw_score": 0.1429,
-      "ceiling": 0.1429,
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
       "ceiling_reason": "fidelity_auto_reject",
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.1429,
-      "fidelity_content": null,
-      "fidelity_structural": null,
+      "fidelity_composite": 0.4,
+      "fidelity_content": 0.6106870229007634,
+      "fidelity_structural": 0.8182,
       "fidelity_visual": 0.1428571428571429,
       "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
@@ -278,10 +254,10 @@
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
-      "fabrication_detected_count": 1,
-      "deduplicated_count": 1
+      "fabrication_detected_count": 0,
+      "deduplicated_count": 6
     },
-    "processing_ms": 576514,
+    "processing_ms": 203712,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

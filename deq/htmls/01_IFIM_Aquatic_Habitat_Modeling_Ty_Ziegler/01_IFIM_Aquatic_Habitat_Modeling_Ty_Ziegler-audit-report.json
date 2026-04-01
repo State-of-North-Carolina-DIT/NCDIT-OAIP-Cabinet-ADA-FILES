@@ -1,6 +1,6 @@
 {
   "document_id": "01_IFIM_Aquatic_Habitat_Modeling_Ty_Ziegler",
-  "audited_at": "2026-04-01T08:44:32.691251Z",
+  "audited_at": "2026-04-01T19:23:22.627596Z",
   "source_files": {
     "extraction_json": "01_IFIM_Aquatic_Habitat_Modeling_Ty_Ziegler.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a landscape-oriented slide presentation featuring mostly images, diagrams, charts, and bulleted lists typical of a PowerPoint presentation.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a 58-page landscape-oriented presentation. The pages consist almost entirely of presentation slides containing bullet points, large images, maps, diagrams, and charts typical of a slide deck.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 54223,
+    "processing_ms": 35179,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

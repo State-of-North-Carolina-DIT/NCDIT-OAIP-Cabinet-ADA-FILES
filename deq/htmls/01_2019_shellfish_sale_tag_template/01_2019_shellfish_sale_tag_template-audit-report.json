@@ -1,6 +1,6 @@
 {
   "document_id": "01_2019_shellfish_sale_tag_template",
-  "audited_at": "2026-04-01T07:26:07.103339Z",
+  "audited_at": "2026-04-01T19:21:27.010772Z",
   "source_files": {
     "extraction_json": "01_2019_shellfish_sale_tag_template.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single page dominated by a large diagram/graphic of a shellstock tag with numerous instructional callouts. The text below the graphic is supplementary to the visual requirements.",
+  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single page where the primary content is an annotated diagram of a shellstock tag. The text at the bottom is supplementary to the visual guide.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 35822,
+    "processing_ms": 31661,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

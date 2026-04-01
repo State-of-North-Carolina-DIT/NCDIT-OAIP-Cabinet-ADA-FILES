@@ -1,34 +1,22 @@
 {
   "document_id": "01_Fact_Sheet_SKA.pdf_2",
-  "audited_at": "2026-04-01T07:44:24.075157Z",
+  "audited_at": "2026-04-01T19:22:54.375029Z",
   "source_files": {
     "extraction_json": "01_Fact_Sheet_SKA.pdf_2.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_Fact_Sheet_SKA.pdf_2.html"
   },
-  "quality_score": 97,
+  "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9727,
+  "fidelity_composite": 1.0,
   "fidelity_content": 1.0,
-  "fidelity_structural": 0.9091,
+  "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
-  "routing": "human_review",
-  "routing_label": "Human Review",
-  "reasoning": "The document has strong text preservation (shingling recall 0.987), but it contains a MAJOR structural defect where a running header interrupts a sentence spanning a page boundary. This disrupts the logical reading order and requires a human reviewer to resolve. Several minor issues related to header/footers and standalone links were also noted.",
+  "routing": "auto_approve",
+  "routing_label": "Auto-Approve",
+  "reasoning": "All signals indicate an excellent conversion. The LLM fidelity scores are perfect across the board, and programmatic metrics confirm strong text retention with 0.987 shingling recall. The only issues observed are three minor programmatic observations relating to cosmetic header/footer elements and a displaced link, which do not meet the threshold for human review.",
   "decision_method": "llm_final_decider",
   "concerns": [
-    {
-      "description": "Reading order significantly different",
-      "severity": "major",
-      "analysis": "The output contains running header text at the start of Page 2 ('FACT SHEET / DRAFT PERMIT RENEWAL...') that interrupts a sentence spanning the page boundary. Page 1 ends with 'Persons wishing to', and Page 2 continues the sentence with 'comment on the proposed permit...', but the repeated header is injected between them in the reading order as regular body headings and paragraphs, breaking the logical reading flow.",
-      "source_pdf_quote": "Page 1: \"Persons wishing to\" -> Page 2: \"comment on the proposed permit...\"",
-      "output_quote": "{\"type\": \"paragraph\", \"text\": \"The public may also submit written comments... Persons wishing to\"} followed by {\"type\": \"heading\", \"level\": 1, \"text\": \"FACT SHEET\"} ... followed by {\"type\": \"paragraph\", \"text\": \"comment on the proposed permit...\"}",
-      "location": "End of Page 1 / Start of Page 2",
-      "source": "fidelity_llm",
-      "check_id": "S4",
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
     {
       "description": "Page number artifacts retained: Page 1 of 2",
       "severity": "minor",
@@ -66,34 +54,30 @@
       "corroborated": false
     }
   ],
-  "action_items": [
-    "Remove the running header from the middle of the sentence spanning Pages 1 and 2 to restore logical reading order",
-    "Ensure hyperlinks are inline within paragraphs rather than standalone blocks",
-    "Remove any remaining page number or header/footer artifacts"
-  ],
+  "action_items": [],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 0,
   "total_critical": 0,
-  "total_major": 1,
+  "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 1.0,
+    "decider_confidence": 0.98,
     "score_breakdown": {
-      "fidelity_composite": 0.9727,
-      "raw_score": 0.9727,
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9727,
+      "fidelity_composite": 1.0,
       "fidelity_content": 1.0,
-      "fidelity_structural": 0.9091,
+      "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 0.9867924528301887,
       "shingling_precision": 0.9966650786088613,
@@ -123,11 +107,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge_with_minors",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 83232,
+    "processing_ms": 119200,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

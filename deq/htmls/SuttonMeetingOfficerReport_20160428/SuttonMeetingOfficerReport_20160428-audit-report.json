@@ -1,6 +1,6 @@
 {
   "document_id": "SuttonMeetingOfficerReport_20160428",
-  "audited_at": "2026-04-01T06:37:48.978250Z",
+  "audited_at": "2026-04-01T19:34:16.272896Z",
   "source_files": {
     "extraction_json": "SuttonMeetingOfficerReport_20160428.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "While the LLM fidelity scores are extremely high, programmatic detectors found critical and major accessibility issues. Most notably, header and footer elements were retained across all 5 pages of the document, which is a critical failure for screen reader accessibility. Additionally, there is a major issue with list flattening. Due to the presence of a critical programmatic defect, the document must be rejected.",
+  "reasoning": "The document contains a programmatic CRITICAL defect regarding header and footer elements retained across multiple pages (pages_affected=5/5), which creates pervasive accessibility issues for screen readers. It also contains a programmatic MAJOR defect for mixed numbering types indicating list flattening. Based on the count-based routing rules, any critical defect requires an automatic REJECT.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -44,10 +44,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "In the source PDF, the beginning of each list item in sections II and III (pages 3 and 4) is both bold and underlined (e.g., 'Dam Safety', 'Excavation', 'Beneficial Reuse Areas'). In the extraction JSON, this text is rendered as plain text without any markdown for bolding or any other mechanism to preserve the underline/emphasis. This constitutes a loss of visual emphasis.",
-      "source_pdf_quote": "Dam Safety – There was a concern... (bold and underlined in source)",
-      "output_quote": "\"Dam Safety – There was a concern...\"",
-      "location": "Pages 3 and 4, unordered lists",
+      "analysis": "The source document contains underlined and bolded text for the main document title and the lead-in words of the bullet points in Sections II and III. This emphasis is entirely lost in the output JSON, which contains no underline formatting or markdown bold asterisks.",
+      "source_pdf_quote": "Dam Safety – There was a concern about the history... (where \"Dam Safety\" is bolded and underlined)",
+      "output_quote": "\"Dam Safety – There was a concern about the history of structural failures in dams.\"",
+      "location": "Page 3, Section II bullet points",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -55,9 +55,9 @@
     }
   ],
   "action_items": [
-    "Configure pipeline to correctly identify and exclude header/footer elements",
-    "Fix list flattening issue to preserve correct list hierarchies",
-    "Ensure visual emphasis (bold/underline) is preserved in Markdown output"
+    "Remove retained header/footer artifacts from the rendered text",
+    "Fix list structures to prevent flattening of sub-points",
+    "Restore bold and underline emphasis for document titles and lead-in words"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -68,7 +68,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.98,
     "score_breakdown": {
       "fidelity_composite": 0.9973,
       "raw_score": 0.9973,
@@ -115,7 +115,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 128496,
+    "processing_ms": 93217,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

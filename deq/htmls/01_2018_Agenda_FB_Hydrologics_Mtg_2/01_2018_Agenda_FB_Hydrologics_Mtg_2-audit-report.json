@@ -1,6 +1,6 @@
 {
   "document_id": "01_2018_Agenda_FB_Hydrologics_Mtg_2",
-  "audited_at": "2026-04-01T08:44:58.305974Z",
+  "audited_at": "2026-04-01T19:22:28.264148Z",
   "source_files": {
     "extraction_json": "01_2018_Agenda_FB_Hydrologics_Mtg_2.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "All signals point to a very high-quality conversion. The LLM fidelity scores are perfect (1.0) and programmatic text matching metrics are strong (recall 0.977, precision 0.979). The only issue found is a minor programmatic observation about table header markup, which does not block auto-approval according to the threshold rules.",
+  "reasoning": "The document has perfect LLM fidelity scores and strong programmatic text metrics (shingling recall and precision near 0.98). No major or critical defects were identified by any system. A single minor programmatic observation regarding missing table headers does not cross the threshold for manual review.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -87,7 +87,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 80586,
+    "processing_ms": 94045,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

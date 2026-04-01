@@ -1,6 +1,6 @@
 {
   "document_id": "01_NRBM_Agenda_032509",
-  "audited_at": "2026-04-01T08:45:25.313786Z",
+  "audited_at": "2026-04-01T19:24:39.844091Z",
   "source_files": {
     "extraction_json": "01_NRBM_Agenda_032509.json",
     "source_pdf": "source.pdf",
@@ -14,16 +14,16 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document contains 1 major defect regarding missing semantic list markup inside table cells (literal bullet characters used instead of proper markdown list syntax), which breaks accessibility for screen readers. The automated signals confirm this is a clean document in terms of text preservation, but the structural markup issue requires human intervention to correct. Routing to HUMAN_REVIEW based on 1 major defect.",
+  "reasoning": "The document has high overall fidelity scores (composite 0.9727, content 1.0) and strong text preservation metrics, indicating the content is entirely present. However, there is one major structural defect: bulleted lists within table cells have been flattened into plain text with literal bullet characters instead of using proper HTML list markup. This creates an accessibility barrier and requires manual correction.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The PDF contains bulleted lists under several agenda topics. In the JSON output, these lists are represented using literal bullet characters ('•') and newlines within the table cell text. Because they are not converted using proper markdown list syntax ('*' or '-'), they will be rendered as plain text strings rather than semantic HTML lists (<ul>/<li>), which breaks accessibility for screen readers.",
-      "source_pdf_quote": "• Review inflow development.\n• Review model calibration.\n• Discuss model calibration and limitations.",
-      "output_quote": "\"Discuss Model Inflow Development and Calibration\\n• Review inflow development.\\n• Review model calibration.\\n• Discuss model calibration and limitations.\"",
-      "location": "Table cell (row 3, column 1)",
+      "analysis": "The source document contains bulleted lists under several agenda topics (e.g., 'Project Finance Update', 'Discuss Agricultural Data Development'). In the extraction output, these lists have been flattened into plain text inside the table cells, using literal bullet characters ('•') and newline characters instead of proper list structures. This breaks accessibility, as screen readers cannot interpret the plain text as a list.",
+      "source_pdf_quote": "Project Finance Update \n[bullet] Cost share payments received. \n[bullet] Funds expended.",
+      "output_quote": "Project Finance Update\n• Cost share payments received.\n• Funds expended.",
+      "location": "Table, Row 2, Column 2",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -43,8 +43,8 @@
     }
   ],
   "action_items": [
-    "Convert literal bullet characters inside table cells into proper HTML/markdown semantic lists (<ul>/<li>) to ensure accessibility.",
-    "Review table headers to ensure time values are appropriately marked up or moved to data cells if necessary."
+    "Convert plain text bullets inside table cells into proper <ul>/<li> structures",
+    "Review table headers to ensure <th> tags are used for appropriate column/row headers rather than just time values"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -102,7 +102,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 106495,
+    "processing_ms": 115657,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

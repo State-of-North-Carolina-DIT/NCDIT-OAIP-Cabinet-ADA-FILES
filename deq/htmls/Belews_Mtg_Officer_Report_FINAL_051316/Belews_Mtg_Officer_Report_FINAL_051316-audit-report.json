@@ -1,6 +1,6 @@
 {
   "document_id": "Belews_Mtg_Officer_Report_FINAL_051316",
-  "audited_at": "2026-04-01T08:45:32.996396Z",
+  "audited_at": "2026-04-01T19:28:20.300896Z",
   "source_files": {
     "extraction_json": "Belews_Mtg_Officer_Report_FINAL_051316.json",
     "source_pdf": "source.pdf",
@@ -14,9 +14,21 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document has perfect LLM fidelity scores and strong text preservation metrics (recall 0.979). However, programmatic checks identified a major structural issue with mixed numbering types at the same list level, which suggests possible sub-point flattening. According to the strict routing rules, the presence of a major programmatic defect requires human review to correct structural accessibility.",
+  "reasoning": "While the LLM fidelity signals indicate a clean document with a perfect composite score, the automated programmatic detectors identified two major structural issues: a full-page image alongside extracted text and flattened lists with mixed numbering types. Because there are 2 programmatic major defects, the count-based routing thresholds require routing to HUMAN_REVIEW to assess structural accessibility.",
   "decision_method": "llm_final_decider",
   "concerns": [
+    {
+      "description": "Full-page image alongside extracted text (1 page(s))",
+      "severity": "major",
+      "analysis": "suspect_pages=1. A scanned/screenshot page image duplicates content already present as text elements.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
     {
       "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
       "severity": "major",
@@ -43,8 +55,9 @@
     }
   ],
   "action_items": [
-    "Check lists on pages 1 and 5 to ensure sub-points are properly nested rather than flattened.",
-    "Remove any retained header or footer text from the HTML output."
+    "Check if the full-page image is redundant to extracted text and should be hidden from screen readers",
+    "Review list structures on pages 1 and 5 to ensure correct semantic nesting",
+    "Verify if the retained header/footer text affects readability or accessibility"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -102,7 +115,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 88245,
+    "processing_ms": 186777,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

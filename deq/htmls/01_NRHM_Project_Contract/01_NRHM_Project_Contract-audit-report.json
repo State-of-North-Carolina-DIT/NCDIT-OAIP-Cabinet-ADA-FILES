@@ -1,6 +1,6 @@
 {
   "document_id": "01_NRHM_Project_Contract",
-  "audited_at": "2026-04-01T08:44:37.751298Z",
+  "audited_at": "2026-04-01T19:24:08.380144Z",
   "source_files": {
     "extraction_json": "01_NRHM_Project_Contract.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: FORM. The document is a Request for Quotes (RFQ) procurement document that begins with a primary fillable form on page 1 (requiring vendor information, signature, and selections) followed by additional text, terms, and conditions.",
+  "reasoning": "Document excluded: FORM. The first page of the document is a fillable procurement form with standard vendor fields, radio buttons, and signature lines. Even though subsequent pages contain standard contract text, the document begins as a form.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 58327,
+    "processing_ms": 50769,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

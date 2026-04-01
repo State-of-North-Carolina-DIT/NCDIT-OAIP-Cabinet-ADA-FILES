@@ -1,20 +1,20 @@
 {
   "document_id": "MayoMeetingOfficerReport_20160428",
-  "audited_at": "2026-04-01T06:38:43.349708Z",
+  "audited_at": "2026-04-01T19:26:41.030655Z",
   "source_files": {
     "extraction_json": "MayoMeetingOfficerReport_20160428.json",
     "source_pdf": "source.pdf",
     "rendered_html": "MayoMeetingOfficerReport_20160428.html"
   },
-  "quality_score": 95,
+  "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9473282442748091,
+  "fidelity_composite": 0.9973,
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.8571428571428572,
+  "fidelity_visual": 1.0,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "The evaluation identified a CRITICAL programmatic defect regarding pervasive header and footer artifacts retained across all 5 pages of the rendered output. Additionally, there are MAJOR defects concerning missing digital signature images and flattened list hierarchies (mixed numbering types). Per the strict count-based routing rules, the presence of any critical defect mandates a REJECT routing.",
+  "reasoning": "The document must be rejected due to a critical programmatic defect involving retained header and footer artifacts across all 5 pages, which severely disrupts screen reader navigation. Additionally, there are major accessibility issues including truncated and placeholder image alt text, as well as flattened lists with mixed numbering types. Despite high LLM fidelity scores, these verified structural and accessibility failures trigger an automatic rejection.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -30,18 +30,6 @@
       "corroborated": false
     },
     {
-      "description": "Images missing or broken",
-      "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] On page 1 of the source PDF, there is a prominent digital signature image next to the 'From' block containing a cursive signature for Elizabeth S. Werner and a digital stamp with text ('Digitally signed by Elizabeth S Werner...', 'Date: 2016.04.28'). This is a meaningful image that authenticates the document. The HTML output completely omits this signature image and its accompanying digital stamp text.",
-      "source_pdf_quote": "Page 1 shows a digital signature image with cursive text and a digital stamp reading 'Digitally signed by Elizabeth S Werner...'",
-      "output_quote": "The HTML table row for the 'From:' field contains only the text 'Elizabeth S. Werner<br>Division of Waste Management<br>Raleigh Central Office' with no corresponding image or digital stamp.",
-      "location": "Page 1, Memo Header ('From:' section)",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": false
-    },
-    {
       "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
       "severity": "major",
       "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
@@ -54,12 +42,24 @@
       "corroborated": false
     },
     {
+      "description": "Incomplete image alt text: 2 image(s) with inadequate descriptions (1 truncated mid-sentence, 1 generic placeholder(s)) — e.g. p1: \"...ing from green to dark blue with a white pine tree\"; p1: \"Unidentified image\"",
+      "severity": "major",
+      "analysis": "incomplete_alt_text=2 (truncated=1, placeholder=1, empty=0). Per WCAG 2.1 AA, meaningful images must have descriptive alternative text for screen-reader accessibility.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document uses underline formatting for emphasis in multiple places, such as the 'MEMORANDUM' heading on page 1 and the topic headings at the start of each bullet point on pages 3 and 4 (e.g., 'Excavation', 'Groundwater Assessments', 'Beneficial Reuse'). This underline formatting is entirely lost in the output JSON, which does not utilize any markup to preserve these underlines.",
-      "source_pdf_quote": "MEMORANDUM (Page 1), Excavation (Page 3), Groundwater Assessments (Page 3)",
-      "output_quote": "\"text\": \"MEMORANDUM\"",
-      "location": "Page 1 Heading, Page 3 and 4 bulleted lists",
+      "analysis": "The source PDF uses underlining for emphasis on the lead-in terms for each bulleted item in Section II and Section III (e.g., 'Excavation', 'Groundwater Assessments', 'Well Testing'). The extraction JSON does not preserve this underline formatting.",
+      "source_pdf_quote": "Excavation – Speakers requested... \nGroundwater Assessments – The speakers... \nWell Testing - Speakers requested...",
+      "output_quote": "Excavation – Speakers requested... \nGroundwater Assessments – The speakers... \nWell Testing - Speakers requested...",
+      "location": "Sections II and III (Pages 3-5), bulleted list items",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -79,33 +79,34 @@
     }
   ],
   "action_items": [
-    "Review and adjust header/footer exclusion logic to prevent duplicate artifact rendering.",
-    "Ensure digital signatures and stamps are captured as meaningful images or text.",
-    "Fix list extraction logic to properly nest lists with mixed alphanumeric/roman numbering."
+    "Remove repeated header/footer artifacts from the HTML body",
+    "Fix truncated and placeholder alt text for images",
+    "Restore proper hierarchical structure to nested lists",
+    "Restore underline emphasis on list terms"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
+  "total_defects": 1,
   "total_critical": 0,
-  "total_major": 1,
+  "total_major": 0,
   "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9473282442748091,
-      "raw_score": 0.9473,
+      "fidelity_composite": 0.9973,
+      "raw_score": 0.9973,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9473282442748091,
+      "fidelity_composite": 0.9973,
       "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.8571428571428572,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 0.9313778256189451,
       "shingling_precision": 0.990271816881259,
@@ -135,11 +136,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "major_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 182837,
+    "processing_ms": 138204,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

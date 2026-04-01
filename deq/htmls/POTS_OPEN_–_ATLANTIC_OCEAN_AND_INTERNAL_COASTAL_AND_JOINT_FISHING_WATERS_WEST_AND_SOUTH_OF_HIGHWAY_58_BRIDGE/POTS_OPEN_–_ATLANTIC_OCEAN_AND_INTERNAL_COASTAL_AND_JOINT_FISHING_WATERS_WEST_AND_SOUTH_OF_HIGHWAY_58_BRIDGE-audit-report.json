@@ -1,6 +1,6 @@
 {
   "document_id": "POTS_OPEN_–_ATLANTIC_OCEAN_AND_INTERNAL_COASTAL_AND_JOINT_FISHING_WATERS_WEST_AND_SOUTH_OF_HIGHWAY_58_BRIDGE",
-  "audited_at": "2026-04-01T08:50:03.673327Z",
+  "audited_at": "2026-04-01T19:26:33.743172Z",
   "source_files": {
     "extraction_json": "POTS_OPEN_–_ATLANTIC_OCEAN_AND_INTERNAL_COASTAL_AND_JOINT_FISHING_WATERS_WEST_AND_SOUTH_OF_HIGHWAY_58_BRIDGE.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 0.8571428571428572,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "The document contains a critical programmatic defect due to the retention of header/footer artifacts across all pages, which will negatively impact screen reader navigation. Additionally, there are multiple major defects including displaced hyperlinks, unlinked text, and structural list conversion errors. Based on the count-based routing rules, the presence of a critical defect mandates a REJECT routing.",
+  "reasoning": "The document contains a critical programmatic defect due to header/footer elements being retained in the output across multiple pages, which creates duplicate artifacts for screen readers. Additionally, there are several major defects including displaced and non-hyperlinked URLs, broken list hierarchy, and potentially missing images. Because of the critical defect, the document must be rejected.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -32,10 +32,10 @@
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The source document contains a single overarching Roman numeral list (I through X) with sub-items (A, B, C...) under several of the numerals. On Page 1, items 'V. CARTERET COUNTY/ONSLOW COUNTY' and 'VI. ONSLOW COUNTY' are correctly extracted as list items with their sub-items properly nested as 'children'. However, on Pages 2 and 3, items 'VII. PENDER COUNTY', 'VIII. NEW HANOVER COUNTY', 'IX. BRUNSWICK COUNTY', and 'X. GENERAL INFORMATION' are incorrectly extracted as standalone headings rather ",
-      "source_pdf_quote": "VII. PENDER COUNTY\nA. That area 100 feet on either side...",
-      "output_quote": "{\n  \"type\": \"heading\",\n  \"level\": 2,\n  \"text\": \"VII. PENDER COUNTY\"\n},\n{\n  \"type\": \"list\",\n  \"list_type\": \"ordered\",\n  \"items\": [\n    {\n      \"text\": \"A. That area 100 feet on either side...\"",
-      "location": "Page 2, VII. PENDER COUNTY",
+      "analysis": "The source document contains a continuous numbered list using Roman numerals (I through X). While the output correctly identifies items I through VI as a list on Page 1, it incorrectly converts the subsequent Roman numeral list items on Pages 2 and 3 into headings. This completely breaks the list hierarchy, as items VII, VIII, IX, and X are structurally equivalent to items I through VI in the source PDF but are rendered as unassociated H2 and H3 elements in the output.",
+      "source_pdf_quote": "VII. PENDER COUNTY\nA. That area 100 feet on either side...\n\nVIII. NEW HANOVER COUNTY\nA. Mason Channel - from the IWW...",
+      "output_quote": "{\"type\": \"heading\", \"level\": 2, \"text\": \"VII. PENDER COUNTY\"}\n...\n{\"type\": \"heading\", \"level\": 3, \"text\": \"VIII. NEW HANOVER COUNTY\"}",
+      "location": "Pages 2 and 3",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -44,10 +44,10 @@
     {
       "description": "Link text pulled over but not hyperlinked",
       "severity": "major",
-      "analysis": "Multiple phrases that are hyperlinked in the main text of the source PDF have been extracted as plain text within their respective list items, lacking the necessary markdown to render them as inline clickable links in the output. Although the URLs were extracted as isolated link objects at the page boundaries, the inline context is lost.",
-      "source_pdf_quote": "Page 1: \"visit the NCDMF Interactive Map.\"\nPage 3: \"Go to the latest proclamation for areas\"\nPage 3: \"See proclamation PT-1-2024 for details\"",
-      "output_quote": "Page 1: \"visit the NCDMF Interactive Map.\"\nPage 3: \"Go to the latest proclamation for areas\"\nPage 3: \"See proclamation PT-1-2024 for details\" (None of these contain the markdown [text](url) syntax needed to create inline links)",
-      "location": "Page 1, List Item II; Page 3, List Item X.E and X.H",
+      "analysis": "Several clickable inline hyperlinks in the source document were extracted as plain flat text without markdown link syntax. As a result, the inline text is no longer hyperlinked in the main flow of the text.",
+      "source_pdf_quote": "Item II: '...visit the NCDMF Interactive Map.' | Item X.E: 'Go to the latest proclamation...' | Item X.H: 'See proclamation PT-1-2024...'",
+      "output_quote": "\"text\": \"II. Designated primary nursery areas... visit the NCDMF Interactive Map.\" | \"text\": \"E. Hatched areas on the attached maps indicate... Go to the latest proclamation for areas...\" | \"text\": \"H. See proclamation PT-1-2024 for details...\"",
+      "location": "Page 1, List item II | Page 3, List item E | Page 3, List item H",
       "source": "fidelity_llm",
       "check_id": "S8",
       "fidelity_dimension": "structural",
@@ -56,14 +56,14 @@
     {
       "description": "Images missing or broken",
       "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source PDF features a prominent agency seal (Seal of the North Carolina Marine Fisheries) on the top left of the first page. In the rendered HTML output, this meaningful image is missing and has been replaced by a text placeholder instead of a valid `<img>` element. The image manifest confirms the extraction failed (b64_len: 0) for this image.",
-      "source_pdf_quote": "The Seal of the North Carolina Marine Fisheries on the top left of page 1.",
+      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] Examined the first page of the source PDF, which contains a meaningful agency seal (North Carolina Marine Fisheries) in the top left corner. In the HTML output, this image is missing its proper `<img>` element and is instead rendered as a plain text placeholder bracketed by `<p>[Image: ...]</p>`. This fails the first-page logo requirement.",
+      "source_pdf_quote": "Top left corner of page 1 shows the circular North Carolina Marine Fisheries seal/logo.",
       "output_quote": "<p>[Image: Seal of the North Carolina Marine Fisheries featuring a fish over an outline of the state]</p>",
-      "location": "Page 1, top left",
+      "location": "Page 1 / Beginning of HTML document",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Displaced hyperlinks: 4 link(s) extracted as standalone elements instead of inline text",
@@ -78,24 +78,12 @@
       "corroborated": false
     },
     {
-      "description": "1 bare URL(s) in text not converted to hyperlinks: http://ncmarinefisheries.net.",
-      "severity": "major",
-      "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S8",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document makes heavy use of underlined text to emphasize specific location names at the start of list items (e.g., 'West Channel', 'Queens Creek', 'Banks Channel') and for entire critical paragraphs (e.g., paragraph K on page 3 is both bolded and underlined). The extraction JSON fails to capture this underlining. Additionally, the bolding on paragraph K is completely lost (no markdown asterisks are present).",
-      "source_pdf_quote": "West Channel - Island Channel",
-      "output_quote": "A. West Channel - Island Channel - from Intracoastal Waterway (IWW)...",
-      "location": "Page 1, Section VI, Item A",
+      "analysis": "The source document makes extensive use of underlined text to emphasize section titles and location names within list items (e.g., 'CARTERET COUNTY/ONSLOW COUNTY', 'West Channel - Island Channel'). This underline emphasis is completely missing from the output text.",
+      "source_pdf_quote": "V. CARTERET COUNTY/ONSLOW COUNTY (underlined)",
+      "output_quote": "\"V. CARTERET COUNTY/ONSLOW COUNTY\"",
+      "location": "Page 1, Item V",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -103,10 +91,10 @@
     }
   ],
   "action_items": [
-    "Remove header and footer artifacts from the output.",
-    "Ensure hyperlinks are properly embedded inline with the text.",
-    "Correct the list structure so Roman numeral items are consistently formatted as list items rather than standalone headings.",
-    "Restore missing visual emphasis (underlining and bolding)."
+    "Ensure header/footer regions are properly excluded from the extraction",
+    "Correct list hierarchy for Roman numerals across pages",
+    "Fix hyperlink extraction to keep links inline and properly formatted",
+    "Ensure the agency seal image is properly rendered with an <img> tag"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -162,9 +150,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 2
     },
-    "processing_ms": 147219,
+    "processing_ms": 131065,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

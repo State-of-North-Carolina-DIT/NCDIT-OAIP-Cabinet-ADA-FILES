@@ -1,6 +1,6 @@
 {
   "document_id": "01_2018_Agenda_Hydrologics_Mtg_2_002",
-  "audited_at": "2026-04-01T15:42:14.956921Z",
+  "audited_at": "2026-04-01T19:23:32.190234Z",
   "source_files": {
     "extraction_json": "01_2018_Agenda_Hydrologics_Mtg_2_002.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "The document exhibits perfect LLM fidelity scores across all categories and strong programmatic text extraction metrics (shingling recall 0.949). The only observation is a single minor programmatic issue regarding table header semantics, which does not impact the overall content accuracy or warrant human review. Therefore, the document is approved.",
+  "reasoning": "All signals indicate a clean document with perfect fidelity scores (1.0). Programmatic text comparison metrics are very strong (shingling recall 0.949, precision 0.972). The only finding is a single minor observation regarding a time value in a table header cell, which does not block approval.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -40,7 +40,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 1.0,
+    "decider_confidence": 0.98,
     "score_breakdown": {
       "fidelity_composite": 1.0,
       "raw_score": 1.0,
@@ -87,7 +87,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 84994,
+    "processing_ms": 156931,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

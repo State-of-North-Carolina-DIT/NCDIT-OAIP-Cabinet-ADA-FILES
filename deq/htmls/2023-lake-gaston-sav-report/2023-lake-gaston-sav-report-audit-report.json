@@ -1,6 +1,6 @@
 {
   "document_id": "2023-lake-gaston-sav-report",
-  "audited_at": "2026-04-01T08:47:55.101014Z",
+  "audited_at": "2026-04-01T19:24:02.808292Z",
   "source_files": {
     "extraction_json": "2023-lake-gaston-sav-report.json",
     "source_pdf": "source.pdf",
@@ -20,10 +20,10 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The HTML output is missing several meaningful images from the source PDF. Specifically, the cover page of the source PDF contains a collage of four photographs and the North Carolina State University logo, none of which are present in the HTML output. Furthermore, several charts are incorrectly cropped or missing: Figure 7 on page 15 and Figure 11 on page 19 are missing their actual charts, with the HTML instead containing cropped images of the page footers/blank space. Figures 1, 2, and 9 were ",
-      "source_pdf_quote": "Page 1 contains a collage of four photos and an NC State University logo. Page 15 contains a bar/line chart for Figure 7.",
-      "output_quote": "The HTML output completely lacks the <img> tags for the cover photos and logo. For Figure 7, the HTML contains an image with the alt text 'The image displays the footer of a document page', indicating a severe mis-crop.",
-      "location": "Page 1, Page 15 (Figure 7)",
+      "analysis": "The HTML output is missing multiple meaningful images. The first page of the source document features a prominent photo collage and the 'NC STATE UNIVERSITY' logo, which are absent in the HTML (only a generic 'empty white rectangle' image appears). Furthermore, Figures 1, 2, and 9 are missing their `<img>` tags and have been replaced entirely by text placeholders like '[Image: A bar graph...]'. Figures 7 and 11 have been improperly cropped or misidentified, capturing only page footers or blank b",
+      "source_pdf_quote": "Page 1 contains a photo collage and university logo. Page 15 contains Figure 7, a bar/line chart titled 'Lake Gaston Hydrilla'. Page 10 contains bar charts for Figures 1 and 2.",
+      "output_quote": "The first page images are missing. Figures 1, 2, and 9 are rendered as text (e.g., '[Image: A bar graph...]'). The image for Figure 7 has an alt text of 'The image displays the footer of a document page' and does not contain the chart.",
+      "location": "Page 1, Figures 1, 2, 7, 9, 11",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
@@ -56,10 +56,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document contains underlined text on Page 1 (\"Prepared By:\" and \"Submitted To:\") to indicate distinct sections/labels. In the extraction JSON, this text is only italicized and has lost the original underline emphasis.",
-      "source_pdf_quote": "Prepared By: (underlined)\nSubmitted To: (underlined)",
-      "output_quote": "\"*Prepared By:*\"\n\"*Submitted To:*\"",
-      "location": "Page 1",
+      "analysis": "The source document contains underlined text on the title page ('Prepared By:' and 'Submitted To:') to denote specific metadata sections. While the extraction preserved the italics, it completely lost the underline emphasis. Since underline has no markdown equivalent and was omitted from the JSON, this is a genuine loss of visual emphasis.",
+      "source_pdf_quote": "Prepared By:\n[...]\nSubmitted To:",
+      "output_quote": "*Prepared By:*\n[...]\n*Submitted To:*",
+      "location": "Page 1, Paragraphs 3 and 9",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -137,7 +137,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 176054,
+    "processing_ms": 108151,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

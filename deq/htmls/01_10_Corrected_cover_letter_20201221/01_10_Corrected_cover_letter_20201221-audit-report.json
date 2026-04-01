@@ -1,6 +1,6 @@
 {
   "document_id": "01_10_Corrected_cover_letter_20201221",
-  "audited_at": "2026-04-01T08:45:10.380727Z",
+  "audited_at": "2026-04-01T19:22:36.380003Z",
   "source_files": {
     "extraction_json": "01_10_Corrected_cover_letter_20201221.json",
     "source_pdf": "source.pdf",
@@ -14,9 +14,21 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity scores are excellent, indicating high-quality text extraction from a scanned document. However, programmatic signals identified two MAJOR structural issues: the source document has 0 extractable text words but output has 322 (indicating a scanned document), and the image count ratio is 3.0. This suggests the output likely contains duplicated content, with the page rendered as both an image and extracted text, which requires human intervention.",
+  "reasoning": "The document has a very high LLM fidelity composite score (0.9973) but triggered 3 major programmatic defects. These defects indicate that the document is a scanned PDF where the entire page image was included alongside the extracted OCR text, causing severe content duplication for screen readers. According to the count-based routing thresholds, the presence of 3 major defects mandates a HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
+    {
+      "description": "Full-page image alongside extracted text (1 page(s))",
+      "severity": "major",
+      "analysis": "suspect_pages=1. A scanned/screenshot page image duplicates content already present as text elements.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
     {
       "description": "Scanned document: source has 0 extractable text but output contains 322 words (OCR'd from images)",
       "severity": "major",
@@ -44,10 +56,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "In the third body paragraph of the source document, the final sentence is heavily underlined for emphasis. The extraction JSON captures this text as plain unformatted text, losing the explicit underline emphasis.",
-      "source_pdf_quote": "Please attach this letter to the cover of your existing mining permit for future reference. (underlined in source)",
+      "analysis": "The source document includes a sentence that is underlined for emphasis. In the extracted JSON, this sentence is presented as plain text without any indication of underlining, resulting in visual emphasis loss as outlined in the evaluation rules.",
+      "source_pdf_quote": "Please attach this letter to the cover of your existing mining permit for future reference.",
       "output_quote": "Please attach this letter to the cover of your existing mining permit for future reference.",
-      "location": "Third body paragraph (beginning \"This letter is an administrative correction...\")",
+      "location": "Paragraph 12 (third paragraph of letter body)",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -67,10 +79,9 @@
     }
   ],
   "action_items": [
-    "Check for duplicated content where the scanned page is presented as an image alongside the extracted text",
-    "Remove duplicate images if present",
-    "Remove retained header/footer elements",
-    "Restore underlining emphasis in the third body paragraph if necessary"
+    "Remove or mark as decorative the full-page images that duplicate the extracted text",
+    "Strip any retained headers or footers from the text flow",
+    "Apply appropriate HTML formatting (e.g., <u> or <em>) for the missing visual emphasis"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -128,7 +139,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 92389,
+    "processing_ms": 102756,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

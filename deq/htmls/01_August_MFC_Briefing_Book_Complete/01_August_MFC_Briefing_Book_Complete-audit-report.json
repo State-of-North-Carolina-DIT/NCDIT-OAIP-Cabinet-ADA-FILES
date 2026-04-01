@@ -1,22 +1,34 @@
 {
   "document_id": "01_August_MFC_Briefing_Book_Complete",
-  "audited_at": "2026-04-01T18:06:17.988621Z",
+  "audited_at": "2026-04-01T19:28:56.782523Z",
   "source_files": {
     "extraction_json": "01_August_MFC_Briefing_Book_Complete.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_August_MFC_Briefing_Book_Complete.html"
   },
-  "quality_score": 50,
-  "quality_grade": "Poor",
-  "fidelity_composite": null,
-  "fidelity_content": null,
-  "fidelity_structural": null,
-  "fidelity_visual": null,
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
+  "fidelity_content": 0.9541984732824428,
+  "fidelity_structural": 0.8182,
+  "fidelity_visual": 0.1428571428571429,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "Programmatic-only: 1 critical concern(s): Header/footer elements retained in output (433): Marine Fisheries Commission Business Meeting Agenda; 1; 2",
-  "decision_method": "programmatic_only",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
+    {
+      "description": "Images missing or broken",
+      "severity": "critical",
+      "analysis": "Several meaningful data visualizations in the 'STATE-MANAGED SPECIES – KINGFISHES' section are missing or incorrectly rendered. Specifically, the charts for Figures 6, 10, and 12 have been erroneously replaced by cropped images of the page footers (containing only the page number). Furthermore, the charts for Figures 5, 9, and 11 are missing completely from the HTML, represented only by text placeholders like '[Image: A line chart...]'. This results in a critical loss of information.",
+      "source_pdf_quote": "PDF page 173 (Document page 170) contains Figure 6, a line chart showing the annual proportion of adults.",
+      "output_quote": "The corresponding <figure> in the HTML contains an image of the page footer instead of the chart, evidenced by the alt text: 'The number 170 is in the lower center. Two dark blue buttons are on the right side...'",
+      "location": "Figure 6, Figure 10, Figure 12 (PDF pages 173, 175, 176)",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": true
+    },
     {
       "description": "Header/footer elements retained in output (433): Marine Fisheries Commission Business Meeting Agenda; 1; 2",
       "severity": "critical",
@@ -30,15 +42,51 @@
       "corroborated": false
     },
     {
-      "description": "Table caption coded as header row: 37 table(s) have a single spanning first row that is likely a caption/title",
+      "description": "Minor text differences beyond acceptable reformatting",
       "severity": "major",
-      "analysis": "caption_as_header=37. Examples: p8: \"Roll Call Vote\"; p8: \"Roll Call Vote\"; p10: \"Roll Call Vote\". First row spans all columns — should be a <caption> element, not a header row.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
+      "analysis": "The source PDF contains legislative text where deletions are indicated by strikethrough and additions are indicated by underline. The extraction pipeline failed to process the strikethrough formatting and instead extracted the deleted text as regular, active text. This alters the legal meaning of the document by presenting repealed regulations as if they were current. For example, on page 204, an entire block of text meant for a sign is struck out in the PDF, but appears as a normal paragraph in",
+      "source_pdf_quote": "ATTENTION: THESE WATERS MAY BE CONTAMINATED BY HUMAN OR ANIMAL WASTE. SWIMMING IS NOT ADVISED IN THESE WATERS BECAUSE OF THE INCREASED RISK OF ILLNESS. OFFICE OF THE STATE HEALTH DIRECTOR. [Note: This entire text block has a strikethrough line drawn through it in the PDF]",
+      "output_quote": "\"text\": \"ATTENTION: THESE WATERS MAY BE CONTAMINATED BY HUMAN OR ANIMAL WASTE. SWIMMING IS NOT ADVISED IN THESE WATERS BECAUSE OF THE INCREASED RISK OF ILLNESS. OFFICE OF THE STATE HEALTH DIRECTOR.\"",
+      "location": "Page 204",
+      "source": "fidelity_llm",
+      "check_id": "C6",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
+      "description": "Table structure corrupted",
+      "severity": "major",
+      "analysis": "An examination of the 'Eligibility Pool Board Meeting Summary' table (which spans across multiple pages) reveals a column merging error. On PDF page 182 (JSON page 185), the data rows incorrectly span the 'TOTAL REVIEWED' value across two columns, effectively swallowing the adjacent empty 'INCOMP.' column. For example, in the row for '10/4/2006', the PDF shows the value '21' under 'TOTAL REVIEWED' and a blank space under 'INCOMP.'. The JSON output merges these by giving the '21' cell a `num_colu",
+      "source_pdf_quote": "Row for '10/4/2006' with '21' in the 'TOTAL REVIEWED' column and a blank space in the 'INCOMP.' column.",
+      "output_quote": "{\"text\": \"21\", \"column_start\": 4, \"row_start\": 53, \"num_columns\": 2}",
+      "location": "Page 185, 'Eligibility Pool Board Meeting Summary' table",
+      "source": "fidelity_llm",
       "check_id": "S3",
-      "fidelity_dimension": null,
+      "fidelity_dimension": "structural",
+      "corroborated": true
+    },
+    {
+      "description": "Lists converted incorrectly",
+      "severity": "major",
+      "analysis": "A review of the list structures reveals a hierarchy flattening error in the text for rule '15A NCAC 03R .0105 SPECIAL SECONDARY NURSERY AREAS'. In the source PDF, item '(2) In the Pamlico and Pungo rivers Area:' acts as a parent to several indented sub-items (a through e, such as '(a) Pungo Creek'). In the JSON output, these sub-items are extracted as top-level siblings to item (2), rather than being nested as its children. This flattens the list hierarchy and corrupts the structural relationshi",
+      "source_pdf_quote": "(2) In the Pamlico and Pungo rivers Area: \n(a) Pungo Creek - west of a line beginning...",
+      "output_quote": "{\"text\": \"In the Pamlico and Pungo rivers Area:\"} (with no children array), followed by sibling {\"text\": \"(a) Pungo Creek - west of a line beginning...\"}",
+      "location": "Page 311, Rule 15A NCAC 03R .0105",
+      "source": "fidelity_llm",
+      "check_id": "S5",
+      "fidelity_dimension": "structural",
+      "corroborated": true
+    },
+    {
+      "description": "Content visually duplicated on page",
+      "severity": "major",
+      "analysis": "The HTML output contains a clear instance of content duplication where a full document page is embedded as an image and immediately followed by the extracted text of that exact same page. A letter from Stephen W. Murphey to Gregg Waugh is rendered first as an image tag, and then the full text of the letter ('ROY COOPER...', 'Dear Gregg...', etc.) is printed as HTML paragraphs directly beneath it. This forces the user to encounter the same content twice.",
+      "source_pdf_quote": "PDF page 24 (Document page 21) shows a formal letter dated March 1, 2019.",
+      "output_quote": "The HTML includes an image tag `<img src=\"[base64 image stripped...]\" alt=\"Letter dated March 1, 201 from the North Carolina Division of Marine Fisheries to\">` immediately followed by the extracted text: `<p>ROY COOPER<br>Governor<br><br>MICHAEL S. REGAN<br>Secretary...`",
+      "location": "PDF page 24 (Document page 21)",
+      "source": "fidelity_llm",
+      "check_id": "V3",
+      "fidelity_dimension": "visual",
       "corroborated": false
     },
     {
@@ -75,7 +123,7 @@
       "source": "programmatic",
       "check_id": "S8",
       "fidelity_dimension": null,
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Table cells contain 27 unlinked URL(s)/email(s) that should be hyperlinks",
@@ -87,72 +135,12 @@
       "source": "programmatic",
       "check_id": "S7",
       "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Mixed numbering types at same list level (2 list(s)): p197:letter+roman, p269:letter+roman — possible sub-point flattening",
-      "severity": "major",
-      "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "List numbering restart(s): 1 ordered list(s) restart numbering at 1 instead of continuing sequence",
-      "severity": "major",
-      "analysis": "restart_count=1. Examples: p222: 2 single-item ordered lists (fragmented); p280: heading \"1. 2016 - Shellfish Aquaculture Plan Rep\"; p281: heading \"2. 2018 - N.C. Strategic Plan for Shellf\". Ordered lists that restart numbering suggest content was split across page breaks and not reassembled.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Numbered items as headings: 7 heading(s) look like numbered list items",
-      "severity": "major",
-      "analysis": "heading_list_count=7. Headings starting with '1.', '2.' etc. suggest numbered list items were misclassified as headings during extraction.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Flattened sub-lists: 3 item(s) contain nested sub-items (a/b/c or bullets) as plain text instead of structured children",
-      "severity": "major",
-      "analysis": "flattened_sublists=3. Examples: p6 table: • 2020-2021 Annual Rulemaking Cycle Upda, • “Package A” - Coastal Recreational Wat, • “Package B”- Periodic Review and Expir; p69 table: • Landed at least 500,000 pounds in one , • Purchased and installed a refrigerated; p170 table: • improvement and continuation of urban , • more stringent sediment controls on co, • implementation of additional buffers a. Sub-items embedded as newline-delimited text lose semantic nesting in HTML — screen readers can't navigate the hierarchy.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Footnote(s) converted to bulleted list: 2 unordered list(s) after table(s) appear to be footnotes",
       "severity": "major",
       "analysis": "footnote_as_list_count=2. Examples: 6 item(s): \"† The schedule assumes no rulemaking is required t\"; 1 item(s): \"*Fisheries Director no longer has authority to ope\". Table footnotes (often marked with *, †, ‡) were converted to <ul><li> elements instead of paragraphs. This changes the semantic meaning — screen readers announce them as list items rather than explanatory notes.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Table header markup issues: 10 table(s) have a data row marked as header: \"Artificial Reef Site Name\", \"Original FMP Adoption:\", \"Progressive triggers and targe\"",
-      "severity": "major",
-      "analysis": "data_in_th=0, datarow_as_header=10. Tables use <th> for data values (misrepresenting data as headers) or have a data row mismarked as a header row. Screen readers rely on <th> to announce column/row context.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -171,6 +159,18 @@
       "source": "programmatic",
       "check_id": "S7",
       "fidelity_dimension": null,
+      "corroborated": true
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source PDF uses underline formatting extensively to denote new additions to regulatory text. The extraction JSON does not capture or represent this underline formatting, resulting in a loss of visual emphasis that is critical for understanding legislative changes.",
+      "source_pdf_quote": "WARNING! SEWAGE TREATMENT EFFLUENT DISCHARGE SITE. SWIMMING IS NOT ADVISED IN THESE WATERS BECAUSE OF THE INCREASED RISK OF ILLNESS. OFFICE OF THE STATE HEALTH DIRECTOR. [Note: This text is underlined in the PDF]",
+      "output_quote": "\"text\": \"WARNING! SEWAGE TREATMENT EFFLUENT DISCHARGE SITE. SWIMMING IS NOT ADVISED IN THESE WATERS BECAUSE OF THE INCREASED RISK OF ILLNESS. OFFICE OF THE STATE HEALTH DIRECTOR.\"",
+      "location": "Page 204",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
       "corroborated": false
     },
     {
@@ -291,36 +291,36 @@
       "source": "programmatic",
       "check_id": "S7",
       "fidelity_dimension": null,
-      "corroborated": false
+      "corroborated": true
     }
   ],
   "action_items": [
-    "Header/footer elements retained in output (433): Marine Fisheries Commission Business Meeting Agenda; 1; 2"
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 0,
-  "total_critical": 0,
-  "total_major": 0,
-  "total_minor": 0,
+  "total_defects": 6,
+  "total_critical": 1,
+  "total_major": 4,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.8,
+    "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": null,
-      "raw_score": 0.5,
-      "ceiling": 0.5,
-      "ceiling_reason": "fidelity_unavailable",
-      "available_components": 0
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
+      "available_components": 1
     },
     "signals": {
-      "fidelity_composite": null,
-      "fidelity_content": null,
-      "fidelity_structural": null,
-      "fidelity_visual": null,
-      "fidelity_routing": null,
-      "fidelity_available": false,
+      "fidelity_composite": 0.4,
+      "fidelity_content": 0.9541984732824428,
+      "fidelity_structural": 0.8182,
+      "fidelity_visual": 0.1428571428571429,
+      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_available": true,
       "shingling_recall": 0.919537454389354,
       "shingling_precision": 0.9372402100196894,
       "duplication_ratio": 0.05962009569044524,
@@ -349,12 +349,12 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 0
+      "deduplicated_count": 7
     },
-    "processing_ms": 3929,
-    "fidelity_report_path": null,
+    "processing_ms": 481584,
+    "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }
 }

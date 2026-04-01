@@ -1,6 +1,6 @@
 {
   "document_id": "01_CFNM_April_2011_Version_Contract_A",
-  "audited_at": "2026-04-01T07:26:15.675755Z",
+  "audited_at": "2026-04-01T19:21:36.168618Z",
   "source_files": {
     "extraction_json": "01_CFNM_April_2011_Version_Contract_A.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: FORM. The document contains a Request for Quotes (RFQ) and several other procurement-related pages that feature multiple fillable form fields, signature lines, checkboxes, and blank lines intended for handwritten or typed input by a bidder (e.g., pages 6, 10, 11, and 22).",
+  "reasoning": "Document excluded: FORM. The document is a Request for Quotes (RFQ) that includes procurement bid forms with fillable fields, signature lines, and checkboxes (e.g., Pages 6, 10, 11, and 22), fitting the definition of a form-based procurement document.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 44394,
+    "processing_ms": 41039,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

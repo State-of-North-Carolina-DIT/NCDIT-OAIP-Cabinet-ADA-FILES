@@ -1,6 +1,6 @@
 {
   "document_id": "01_NCDAQ_Final_RH_SIP_Transmittal_Letter_040422.pdf",
-  "audited_at": "2026-04-01T08:45:20.368168Z",
+  "audited_at": "2026-04-01T19:24:11.587825Z",
   "source_files": {
     "extraction_json": "01_NCDAQ_Final_RH_SIP_Transmittal_Letter_040422.pdf.json",
     "source_pdf": "source.pdf",
@@ -20,10 +20,10 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The source document contains two significant logos on page 1 (the Great Seal of the State of North Carolina and the DEQ logo). In the image manifest, both of these images have a base64 length of 0, indicating they are corrupted or missing. In the rendered HTML, they are represented as plain text placeholders instead of actual <img> elements.",
-      "source_pdf_quote": "Great Seal of the State of North Carolina at the top of page 1 and DEQ logo at the bottom left of page 1.",
+      "analysis": "The source PDF contains meaningful images that are missing from the HTML output. Specifically, the Great Seal of the State of North Carolina and the DEQ logo on page 1 are not rendered as `<img>` elements; instead, they appear as plain text paragraph placeholders (e.g., `<p>[Image: Great Seal of the State of North Carolina]</p>`). Additionally, the handwritten signature on page 3 is entirely absent, replaced by an image described in the alt text as 'a completely white, blank image.'",
+      "source_pdf_quote": "Great Seal of the State of North Carolina and DEQ logos on page 1, and the handwritten signature on page 3.",
       "output_quote": "<p>[Image: Great Seal of the State of North Carolina]</p> and <p>[Image: DEQ North Carolina Department of Environmental Quality logo]</p>",
-      "location": "Page 1",
+      "location": "Page 1 and Page 3",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
@@ -125,7 +125,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 101084,
+    "processing_ms": 94428,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

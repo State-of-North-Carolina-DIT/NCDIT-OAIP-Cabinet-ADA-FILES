@@ -1,6 +1,6 @@
 {
   "document_id": "Web_Meeting_Etiquette_PDF",
-  "audited_at": "2026-04-01T06:37:57.114556Z",
+  "audited_at": "2026-04-01T19:29:14.321868Z",
   "source_files": {
     "extraction_json": "Web_Meeting_Etiquette_PDF.json",
     "source_pdf": "source.pdf",
@@ -14,24 +14,24 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity evaluation identified one major structural defect regarding the reading order of icons in the document (the microphone and chat bubble icons are swapped). According to the count-based routing rules, 1-5 major defects requires a routing to HUMAN_REVIEW. The programmatic text metrics are acceptable, but the structural misordering of meaningful images needs human correction.",
+  "reasoning": "The document contains 1 major LLM fidelity defect related to list conversion, where non-list text (an asterisk paragraph) was converted into an unordered list, and a continuation paragraph was incorrectly nested. According to the count-based routing thresholds, 1-5 major defects requires HUMAN_REVIEW. The programmatic text metrics indicate some discrepancy in word counts, potentially related to this formatting change, although the overall content seems well preserved.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Reading order significantly different",
+      "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "On page 1, the logical reading order and visual flow of the source document pairs the 'microphone muted' text with the microphone icon, and the 'introduce themselves... using the chat box' text with the chat bubble icon. The output JSON reverses the reading order of these two images, placing the speech bubble icon immediately after the microphone bullet point, and the microphone icon after the chat box bullet point. This materially disrupts the contextual flow of the instructions.",
-      "source_pdf_quote": "Visual flow: 1. 'Keep your microphone muted.' 2. [Microphone Icon] 3. 'Guests will be asked to introduce themselves... using the chat box.' 4. [Speech Bubble Icon]",
-      "output_quote": "1. 'Keep your microphone muted.' 2. {\"type\": \"image\", \"description\": \"A white outlined speech bubble icon...\"} 3. 'Guests will be asked to introduce themselves...' 4. {\"type\": \"image\", \"description\": \"A white outline of a microphone...\"}",
-      "location": "Page 1, element indices 2 through 5",
+      "analysis": "The output contains incorrect list conversion for non-list elements. A paragraph on page 2 functioning as a note, which begins and ends with an asterisk ('* Commission Members...'), was incorrectly converted into an unordered list item. Furthermore, a continuation paragraph ('Alternatively:...') under a bullet point was incorrectly structured as a nested child list item rather than a paragraph block within the parent list item.",
+      "source_pdf_quote": "* Commission Members, if you use the chat function on WebEx: Since there should be no group discussion...",
+      "output_quote": "{\"type\": \"list\", \"list_type\": \"unordered\", \"items\": [{\"text\": \"Commission Members, if you use the chat function on WebEx: Since there should be no group discussion...\"}]}",
+      "location": "Page 2",
       "source": "fidelity_llm",
-      "check_id": "S4",
+      "check_id": "S5",
       "fidelity_dimension": "structural",
       "corroborated": false
     }
   ],
   "action_items": [
-    "Review the placement and reading order of the microphone and chat bubble icons on page 1 and correct them to match the contextual flow of the text instructions."
+    "Review the list formatting on page 2, specifically the paragraph starting with an asterisk and the continuation paragraph under a bullet point, and correct the structure to match the source document."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -89,7 +89,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 136629,
+    "processing_ms": 234676,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

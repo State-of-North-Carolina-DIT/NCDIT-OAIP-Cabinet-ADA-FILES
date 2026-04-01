@@ -1,34 +1,22 @@
 {
   "document_id": "01_January_2012_CPAs",
-  "audited_at": "2026-04-01T08:45:44.865368Z",
+  "audited_at": "2026-04-01T19:23:28.219787Z",
   "source_files": {
     "extraction_json": "01_January_2012_CPAs.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_January_2012_CPAs.html"
   },
-  "quality_score": 97,
+  "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9727,
+  "fidelity_composite": 1.0,
   "fidelity_content": 1.0,
-  "fidelity_structural": 0.9091,
+  "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The extraction achieved excellent text fidelity (shingling recall 1.0) but failed to merge a table spanning across two pages. Both the LLM fidelity evaluation and the programmatic structural detectors identified this as a major structural defect. Per the count-based routing thresholds, the presence of a major defect requires HUMAN_REVIEW.",
+  "reasoning": "The LLM fidelity signals indicate a perfectly clean extraction with excellent content and structural preservation. However, the programmatic signals detected a major structural issue: a table spanning across pages was extracted as separate tables with duplicated headers. According to the strict count-based routing rules, the presence of one major programmatic defect mandates human review.",
   "decision_method": "llm_final_decider",
   "concerns": [
-    {
-      "description": "Table structure corrupted",
-      "severity": "major",
-      "analysis": "The source document contains a single large table that spans across two pages, with the header row repeated on the second page. According to the structural requirements, this should be rendered as one continuous table. However, the output JSON incorrectly extracts this as two separate table objects, one on page 1 and another on page 2.",
-      "source_pdf_quote": "Large data table spanning pages 1 and 2, with columns \"Case Number\" to \"Total Cases in Previous 12 Months\".",
-      "output_quote": "Two separate table objects (one in page 1 content, another in page 2 content) rather than a single continuous table.",
-      "location": "Pages 1 and 2",
-      "source": "fidelity_llm",
-      "check_id": "S3",
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
     {
       "description": "Table split across page break(s): 1 table(s) with repeated headers across consecutive pages",
       "severity": "major",
@@ -43,31 +31,32 @@
     }
   ],
   "action_items": [
-    "Merge the split tables on pages 1 and 2 into a single continuous HTML table and handle the repeated header row appropriately."
+    "Review the tables spanning pages 1-2.",
+    "Merge the separate table elements into a single, continuous HTML table, removing the duplicated header row on the second page."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 0,
   "total_critical": 0,
-  "total_major": 1,
+  "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 1.0,
+    "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9727,
-      "raw_score": 0.9727,
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9727,
+      "fidelity_composite": 1.0,
       "fidelity_content": 1.0,
-      "fidelity_structural": 0.9091,
+      "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 1.0,
       "shingling_precision": 0.9989395546129375,
@@ -97,11 +86,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 126037,
+    "processing_ms": 94483,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

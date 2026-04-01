@@ -1,6 +1,6 @@
 {
   "document_id": "0_JLA4_Email_Announcement_20160316",
-  "audited_at": "2026-04-01T08:47:02.734606Z",
+  "audited_at": "2026-04-01T19:22:48.832189Z",
   "source_files": {
     "extraction_json": "0_JLA4_Email_Announcement_20160316.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity analysis found no issues and assigned a perfect composite score. However, the programmatic analysis identified a major defect regarding 4 displaced hyperlinks that were extracted as standalone elements instead of being inline text. Per the count-based routing rules, 1 major defect requires human review to ensure accessibility standards are met.",
+  "reasoning": "The LLM fidelity signals gave perfect scores indicating excellent text and structural preservation. However, programmatic detectors identified a MAJOR defect regarding displaced hyperlinks, where 4 links were extracted as standalone elements rather than inline text. According to the binding routing rules, 1-5 major defects require routing to HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -31,7 +31,7 @@
     }
   ],
   "action_items": [
-    "Review the 4 standalone links and ensure they are placed inline with the appropriate paragraph text."
+    "Review the 4 standalone hyperlinks to ensure they are properly formatted within the context of the paragraphs and do not disrupt screen reader flow."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -89,7 +89,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 94267,
+    "processing_ms": 81164,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

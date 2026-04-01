@@ -1,6 +1,6 @@
 {
   "document_id": "2020-white-lake-sav-report",
-  "audited_at": "2026-04-01T08:48:13.059327Z",
+  "audited_at": "2026-04-01T19:23:39.254475Z",
   "source_files": {
     "extraction_json": "2020-white-lake-sav-report.json",
     "source_pdf": "source.pdf",
@@ -20,14 +20,14 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The source PDF contains a meaningful bathymetry map image on the final page (page 22) labeled 'Figure 16'. The rendered HTML output ends completely after 'Figure 15' and entirely omits the Figure 16 image and its corresponding caption.",
-      "source_pdf_quote": "Figure 16: Bathymetry data collected during the August survey. Data was collected and processed using BioSonics epuipment and software. Average depth 7.67ft.",
-      "output_quote": "[Absent from HTML output]",
+      "analysis": "The source PDF contains 'Figure 16: Bathymetry data collected during the August survey...' on page 22, which includes a meaningful map visualization. However, the rendered HTML completely omits this figure; the HTML document ends after Figure 15, meaning the image and its associated caption for Figure 16 are entirely missing.",
+      "source_pdf_quote": "Figure 16 image and caption: 'Figure 16: Bathymetry data collected during the August survey. Data was collected and processed using BioSonics epuipment and software. Average depth 7.67ft.'",
+      "output_quote": "The HTML document ends after Figure 15. There is no element for Figure 16.",
       "location": "Page 22 / End of document",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "1 bare URL(s) in text not converted to hyperlinks: https://auth1.dpr.ncparks.gov/flora/species_account.php?id=4050.",
@@ -111,9 +111,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 0
+      "deduplicated_count": 1
     },
-    "processing_ms": 130800,
+    "processing_ms": 122338,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

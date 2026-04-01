@@ -1,6 +1,6 @@
 {
   "document_id": "Lake-Tillery-Aquatic-Plant-Reporting",
-  "audited_at": "2026-04-01T08:45:27.714398Z",
+  "audited_at": "2026-04-01T19:24:27.197717Z",
   "source_files": {
     "extraction_json": "Lake-Tillery-Aquatic-Plant-Reporting.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a landscape-oriented presentation slide deck with heavily visual, image-based layouts characteristic of a PowerPoint presentation.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is an image-based slide presentation. It features a landscape orientation with multiple slides containing large graphics, logos, screenshots, and presentation-style text layouts.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 21515,
+    "processing_ms": 31346,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

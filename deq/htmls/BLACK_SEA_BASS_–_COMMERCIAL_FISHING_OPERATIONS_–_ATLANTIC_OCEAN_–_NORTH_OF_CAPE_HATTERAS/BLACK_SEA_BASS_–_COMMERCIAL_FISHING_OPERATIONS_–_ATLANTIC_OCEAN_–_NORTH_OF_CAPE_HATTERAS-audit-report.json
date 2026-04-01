@@ -1,6 +1,6 @@
 {
   "document_id": "BLACK_SEA_BASS_–_COMMERCIAL_FISHING_OPERATIONS_–_ATLANTIC_OCEAN_–_NORTH_OF_CAPE_HATTERAS",
-  "audited_at": "2026-04-01T08:47:08.013826Z",
+  "audited_at": "2026-04-01T19:25:32.021313Z",
   "source_files": {
     "extraction_json": "BLACK_SEA_BASS_–_COMMERCIAL_FISHING_OPERATIONS_–_ATLANTIC_OCEAN_–_NORTH_OF_CAPE_HATTERAS.json",
     "source_pdf": "source.pdf",
@@ -20,10 +20,10 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The source PDF contains a meaningful agency logo (Seal of the North Carolina Marine Fisheries) on the top left of the first page. According to the image manifest, the extracted image data for this logo has a `b64_len` of 0, meaning it is corrupt/invalid. In the HTML output, it appears merely as a text placeholder `[Image: Seal of the North Carolina Marine Fisheries celebrating 200 years of management and conservation (1822-2022)]` rather than a valid `<img>` element. The primary agency seal on t",
-      "source_pdf_quote": "Top left of page 1 shows the circular seal of the North Carolina Marine Fisheries celebrating 200 years.",
+      "analysis": "The source document contains the 'North Carolina Marine Fisheries' seal/logo on the top left of the first page. In the rendered HTML output, this image is missing entirely as an <img> element, and instead appears as a text placeholder within a paragraph tag. Per the instructions, a missing agency logo on the first page of a government document constitutes a critical failure.",
+      "source_pdf_quote": "Seal of the North Carolina Marine Fisheries on page 1",
       "output_quote": "<p>[Image: Seal of the North Carolina Marine Fisheries celebrating 200 years of management and conservation (1822-2022)]</p>",
-      "location": "Page 1 / top of the document",
+      "location": "Page 1 / Document Start",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
@@ -32,14 +32,26 @@
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The main structured list in the document uses Roman numerals (I. SIZE LIMIT, II. HARVEST PERIOD AND LIMITS, III. GEAR RESTRICTIONS, IV. GENERAL INFORMATION). In the output for page 1, items I, II, and III are correctly extracted as items within a single ordered list. However, on page 2, 'IV. GENERAL INFORMATION' is extracted as a level 2 heading (`h2`), and its sub-items (A-J) are extracted as a completely new top-level ordered list instead of being nested children. This incorrectly splits the c",
-      "source_pdf_quote": "IV. GENERAL INFORMATION\nA. This proclamation is issued...",
-      "output_quote": "{\n  \"type\": \"heading\",\n  \"level\": 2,\n  \"text\": \"IV. GENERAL INFORMATION\"\n},\n{\n  \"type\": \"list\",\n  \"list_type\": \"ordered\",\n  \"items\": [\n    {\n      \"text\": \"A. This proclamation is issued...\"",
-      "location": "Page 2, first heading and list",
+      "analysis": "The source document contains lists that use Roman numerals (I, II, III) and uppercase letters (A, B, C). However, the output JSON converts these as generic 'ordered' lists without specifying the list type (e.g., type='a' or type='I'), and instead bakes the markers ('A.', 'B.', 'I.') directly into the list item text strings. This causes a numbering type mismatch where the default numbers (1, 2, 3) will render alongside the hardcoded text letters, violating the instruction that ordered lists with ",
+      "source_pdf_quote": "A. This proclamation is issued under the authority of...",
+      "output_quote": "\"type\": \"list\", \"list_type\": \"ordered\", \"items\": [ { \"text\": \"A. This proclamation is issued under the authority of...\"",
+      "location": "Page 2, section IV. GENERAL INFORMATION",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
       "corroborated": true
+    },
+    {
+      "description": "Full-page image alongside extracted text (1 page(s))",
+      "severity": "major",
+      "analysis": "suspect_pages=1. A scanned/screenshot page image duplicates content already present as text elements.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
     },
     {
       "description": "Displaced hyperlinks: 3 link(s) extracted as standalone elements instead of inline text",
@@ -54,24 +66,12 @@
       "corroborated": false
     },
     {
-      "description": "2 bare URL(s) in text not converted to hyperlinks: https://www.ecfr.gov/current/title-50/part-; www.ncmarinefisheries.net.",
-      "severity": "major",
-      "analysis": "bare_url_count=2. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S8",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document relies heavily on underlining to indicate visual emphasis (e.g., all section headings like 'I. SIZE LIMIT', 'II. HARVEST PERIOD AND LIMITS', and entire list items such as II. A-E and III. M). The extraction output completely loses this underline emphasis, returning plain text.",
-      "source_pdf_quote": "II. HARVEST PERIOD AND LIMITS\nA. It is unlawful for persons participating in a commercial fishing operation employing fish pots, traps, and/or hook and line gear, regardless of the number of people involved, to possess or land more than 2,000 pounds of black sea bass per trip. (entire text is underlined)",
-      "output_quote": "II. HARVEST PERIOD AND LIMITS... A. It is unlawful for persons participating in a commercial fishing operation employing fish pots, traps, and/or hook and line gear, regardless of the number of people involved, to possess or land more than 2,000 pounds of black sea bass per trip. (no underline emphasis)",
-      "location": "Page 1, Section II",
+      "analysis": "The source PDF heavily uses bolding and underlining for emphasis (e.g., the entirety of the list items under Section II, and the inline bold labels for Section III list items). The output completely loses this visual emphasis, stripping both the bold markdown and any indication of the underline structure.",
+      "source_pdf_quote": "It is unlawful for persons participating in a commercial fishing operation employing fish pots, traps, and/or hook and line gear, regardless of the number of people involved, to possess or land more than 2,000 pounds of black sea bass per trip. (Fully bolded and underlined in the PDF)",
+      "output_quote": "A. It is unlawful for persons participating in a commercial fishing operation employing fish pots, traps, and/or hook and line gear, regardless of the number of people involved, to possess or land more than 2,000 pounds of black sea bass per trip.",
+      "location": "Page 1, Section II.A",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -149,7 +149,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 98083,
+    "processing_ms": 156864,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

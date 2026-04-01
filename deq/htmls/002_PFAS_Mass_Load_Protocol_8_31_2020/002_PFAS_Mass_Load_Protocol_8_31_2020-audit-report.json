@@ -1,6 +1,6 @@
 {
   "document_id": "002_PFAS_Mass_Load_Protocol_8_31_2020",
-  "audited_at": "2026-04-01T15:45:03.875919Z",
+  "audited_at": "2026-04-01T19:22:46.735953Z",
   "source_files": {
     "extraction_json": "002_PFAS_Mass_Load_Protocol_8_31_2020.json",
     "source_pdf": "source.pdf",
@@ -9,7 +9,7 @@
   "quality_score": 30,
   "quality_grade": "Critical",
   "fidelity_composite": 0.4,
-  "fidelity_content": 0.8091603053435115,
+  "fidelity_content": 0.8015267175572519,
   "fidelity_structural": 1.0,
   "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
@@ -20,10 +20,10 @@
     {
       "description": "Fabricated contact information",
       "severity": "critical",
-      "analysis": "On Page 15, the output contains a URL in the footer that does not match the source PDF. The source URL points to a specific SharePoint/ShareDrive path ending in an Excel file '[Tables and Figures.xlsx]Figure 1'. The output hallucinates an entirely different subdomain ('projectweb'), path ('CWContent', '112', 'DF.002'), and file type ('Tables and Figures.aprx').",
+      "analysis": "On page 15, there is a document file path/URL running vertically along the left edge. The output contains a highly hallucinated version of this URL, altering multiple directories, file names, and extensions.",
       "source_pdf_quote": "https://projectsitesb.geosyntec.com/5/FWConsentOrder/Shared Documents/12 - Outfall 002 Reductions/2020 Misc Tasks/OF 002 Mass Loading/Tables and Figures/[Tables and Figures.xlsx]Figure 1",
       "output_quote": "https://projectweb.geosyntec.com/CWContent/Shared Documents/112 - Outfall 002 Reductions/2020 Misc Tasks/DF.002 Mass Loading/Tables and Figures/Tables and Figures.aprx | Figure 1",
-      "location": "Page 15, first element (footer)",
+      "location": "Page 15, footer text",
       "source": "fidelity_llm",
       "check_id": "C2",
       "fidelity_dimension": "content",
@@ -32,14 +32,14 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "On page 15 of the source document, there is a large, highly meaningful aerial map illustrating the Outfall 002 Sampling Locations (Figure 1). This image is entirely missing from the HTML output; only the small scale bar is present as an image. Additionally, on page 16, the flowchart for Figure 2 is missing its image element entirely and instead displays a text placeholder `[Image: A flowchart detailing the logic...]`.",
-      "source_pdf_quote": "Large aerial map showing 'Outfall 002 Sampling Locations' (Figure 1)",
-      "output_quote": "The HTML lacks an <img> element for the map, showing only the scale bar image and text/tables for the legend.",
-      "location": "Page 15 (Figure 1) and Page 16 (Figure 2)",
+      "analysis": "The source PDF contains several meaningful figures that are missing from the HTML output. On page 15, there is a large aerial map (Figure 1: Outfall 002 Sampling Locations) that is entirely missing from the HTML; only its text legend and a small scale bar were extracted. On page 16, a flowchart (Figure 2) is missing and has been replaced by a text placeholder instead of the actual image.",
+      "source_pdf_quote": "Page 15 contains a large aerial map showing Outfall 002 Sampling Locations (Figure 1). Page 16 contains a flowchart diagram (Figure 2).",
+      "output_quote": "The HTML lacks the map image on page 15 and replaces the flowchart on page 16 with a text placeholder: '[Image: A flowchart detailing the logic...]'.",
+      "location": "Pages 15 and 16",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Header/footer elements retained in output (43): DocuSign Envelope ID: 1B477D8C-F5AD-4BCC-B766-EF28605DC046; Geosyntec Consultants of NC, P.C.\nNC License No.: C-3500 and; Outfall 002 Mass Load",
@@ -78,6 +78,18 @@
       "corroborated": false
     },
     {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source document uses underline formatting for numerous headings (e.g., sections 2.1, 2.2, 2.3, 2.4, 3.1, 3.2, 3.3). This underline emphasis is lost entirely in the output JSON.",
+      "source_pdf_quote": "2.1 Outfall 002 Sample Types (underlined)",
+      "output_quote": "\"text\": \"2.1 Outfall 002 Sample Types\" (no underline)",
+      "location": "Page 5, heading 2.1",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
       "description": "Repeated footer/header text (2x): \"geosyntec consultants of nc, p.c.\nnc license no.: c-3500 and\"",
       "severity": "minor",
       "analysis": "Short text with footer-like pattern appears on 2 pages",
@@ -107,10 +119,10 @@
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
+  "total_defects": 3,
   "total_critical": 2,
   "total_major": 0,
-  "total_minor": 0,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
@@ -124,7 +136,7 @@
     },
     "signals": {
       "fidelity_composite": 0.4,
-      "fidelity_content": 0.8091603053435115,
+      "fidelity_content": 0.8015267175572519,
       "fidelity_structural": 1.0,
       "fidelity_visual": 0.2857142857142857,
       "fidelity_routing": "AUTO_REJECT",
@@ -159,9 +171,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 0
+      "deduplicated_count": 1
     },
-    "processing_ms": 253910,
+    "processing_ms": 112389,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

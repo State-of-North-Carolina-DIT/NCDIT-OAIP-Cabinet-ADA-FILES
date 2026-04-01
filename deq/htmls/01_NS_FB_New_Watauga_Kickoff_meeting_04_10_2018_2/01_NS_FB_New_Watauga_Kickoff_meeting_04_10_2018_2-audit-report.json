@@ -1,6 +1,6 @@
 {
   "document_id": "01_NS_FB_New_Watauga_Kickoff_meeting_04_10_2018_2",
-  "audited_at": "2026-04-01T08:45:44.907393Z",
+  "audited_at": "2026-04-01T19:22:58.694434Z",
   "source_files": {
     "extraction_json": "01_NS_FB_New_Watauga_Kickoff_meeting_04_10_2018_2.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is an image-based slide presentation with a landscape orientation, slide titles, background images, and multiple images per page.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is an image-based slide presentation with a landscape orientation, title slide, slide-like layouts, graphical backgrounds, and 76 images across 23 pages.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 125277,
+    "processing_ms": 29730,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

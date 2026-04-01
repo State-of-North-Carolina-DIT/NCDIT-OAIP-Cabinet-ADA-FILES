@@ -1,6 +1,6 @@
 {
   "document_id": "(UPDATED)_25095_Colwick_Rd_SNI_20250925.pdf",
-  "audited_at": "2026-04-01T08:04:33.286085Z",
+  "audited_at": "2026-04-01T19:23:30.935351Z",
   "source_files": {
     "extraction_json": "(UPDATED)_25095_Colwick_Rd_SNI_20250925.pdf.json",
     "source_pdf": "source.pdf",
@@ -14,16 +14,16 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "The LLM fidelity evaluation indicates exceptional overall quality with a composite score of 0.9973. There is only one minor LLM defect (loss of underline formatting). The programmatic checks confirm excellent structural and text preservation, with two minor programmatic observations regarding displaced links and a retained header/footer. Because there are zero major or critical defects and the minor issues fall well below the threshold of 5, the document qualifies for automatic approval.",
+  "reasoning": "The document exhibits exceptional fidelity with a composite score of 0.9973 and strong programmatic text metrics (0.985 shingling recall). Only one minor LLM fidelity defect was found (loss of underline emphasis on an already bolded date), along with two minor programmatic observations regarding displaced links and a retained header/footer. With no major or critical defects and the minor count well below the threshold of 5, the document qualifies for automatic approval.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document includes an underlined (and bolded) date for emphasis ('October 1, 2025'). In the output JSON, the text retains markdown for bold (**), but the underline formatting is lost entirely.",
-      "source_pdf_quote": "start no sooner than October 1, 2025, and will end no sooner",
-      "output_quote": "These periods will start no sooner than **October 1, 2025**, and will end no sooner",
-      "location": "Paragraph 4 (The Act requires a public comment period...)",
+      "analysis": "In the third paragraph, the date \"October 1, 2025\" is both bolded and underlined in the source PDF. While the extraction preserved the bold emphasis using markdown (**October 1, 2025**), the underline emphasis was lost entirely.",
+      "source_pdf_quote": "These periods will start no sooner than October 1, 2025, and will end no sooner than the later of",
+      "output_quote": "These periods will start no sooner than **October 1, 2025**, and will end no sooner than the later of",
+      "location": "Paragraph starting with \"The Act requires a public comment period\"",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -111,7 +111,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 75915,
+    "processing_ms": 157194,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

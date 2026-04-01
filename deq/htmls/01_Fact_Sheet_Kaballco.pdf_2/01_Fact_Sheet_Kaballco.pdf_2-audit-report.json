@@ -1,22 +1,34 @@
 {
   "document_id": "01_Fact_Sheet_Kaballco.pdf_2",
-  "audited_at": "2026-04-01T08:44:47.271383Z",
+  "audited_at": "2026-04-01T19:22:40.047043Z",
   "source_files": {
     "extraction_json": "01_Fact_Sheet_Kaballco.pdf_2.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_Fact_Sheet_Kaballco.pdf_2.html"
   },
-  "quality_score": 100,
+  "quality_score": 97,
   "quality_grade": "Good",
-  "fidelity_composite": 1.0,
+  "fidelity_composite": 0.9727,
   "fidelity_content": 1.0,
-  "fidelity_structural": 1.0,
+  "fidelity_structural": 0.9091,
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity signals indicate a clean document with excellent text retention and structural fidelity (composite score 1.0). However, the programmatic signals detected a major accessibility defect: a bare URL that was not converted into a proper hyperlink. Under the count-based routing rules, a single major defect requires a human review to address the accessibility issue.",
+  "reasoning": "The document exhibits two major defects: a header injected mid-sentence, interrupting the reading order, and one bare URL not properly converted into a hyperlink. Since there are exactly 2 major defects (between 1 and 5) and no critical defects, count-based routing mandates HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
+    {
+      "description": "Reading order significantly different",
+      "severity": "major",
+      "analysis": "There is a header leakage issue that interrupts the reading flow mid-sentence. At the bottom of page 1, a sentence begins ('All comments received... considered in'). In the output, the running header 'FACT SHEET' from the top of page 2 is injected immediately after this, before the sentence concludes ('the final permit decision.'). This breaks a continuous sentence.",
+      "source_pdf_quote": "...will be considered in [page break] the final permit decision.",
+      "output_quote": "All comments received during the public comment period or at the public hearings will be considered in [...] { \"type\": \"heading\", \"level\": 1, \"text\": \"FACT SHEET\" } [...] the final permit decision.",
+      "location": "End of Page 1 / Start of Page 2",
+      "source": "fidelity_llm",
+      "check_id": "S4",
+      "fidelity_dimension": "structural",
+      "corroborated": false
+    },
     {
       "description": "1 bare URL(s) in text not converted to hyperlinks: https://deq.nc.gov/about/divisions/waste-management/laserfiche.",
       "severity": "major",
@@ -55,32 +67,32 @@
     }
   ],
   "action_items": [
-    "Convert the bare URL into a proper accessible hyperlink",
-    "Review and potentially remove extraneous page numbers and header/footer elements"
+    "Fix the reading order issue where the header interrupts the sentence bridging pages 1 and 2.",
+    "Convert the bare URL into a proper hyperlink."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 0,
+  "total_defects": 1,
   "total_critical": 0,
-  "total_major": 0,
+  "total_major": 1,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 1.0,
-      "raw_score": 1.0,
+      "fidelity_composite": 0.9727,
+      "raw_score": 0.9727,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 1.0,
+      "fidelity_composite": 0.9727,
       "fidelity_content": 1.0,
-      "fidelity_structural": 1.0,
+      "fidelity_structural": 0.9091,
       "fidelity_visual": 1.0,
-      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": 0.9789823008849557,
       "shingling_precision": 0.9943820224719101,
@@ -110,11 +122,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 69339,
+    "processing_ms": 104525,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

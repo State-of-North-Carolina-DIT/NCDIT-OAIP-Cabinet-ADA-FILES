@@ -1,6 +1,6 @@
 {
   "document_id": "(Buffer_Only)_RunningDog_100210_MY1_2023",
-  "audited_at": "2026-04-01T08:24:42.072951Z",
+  "audited_at": "2026-04-01T19:24:47.189547Z",
   "source_files": {
     "extraction_json": "(Buffer_Only)_RunningDog_100210_MY1_2023.json",
     "source_pdf": "source.pdf",
@@ -9,9 +9,9 @@
   "quality_score": 30,
   "quality_grade": "Critical",
   "fidelity_composite": 0.4,
-  "fidelity_content": 0.9923664122137404,
-  "fidelity_structural": 0.1818,
-  "fidelity_visual": 0.0,
+  "fidelity_content": 0.9618320610687023,
+  "fidelity_structural": 0.5455,
+  "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
   "routing_label": "Reject",
   "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
@@ -20,10 +20,10 @@
     {
       "description": "Link injection issues",
       "severity": "critical",
-      "analysis": "I have found an instance of a missing hyperlink. On page 6 of the source PDF, a long sentence starting with 'support the Carolina heelsplitter...' is fully hyperlinked with a 'mailto:' address. In the output JSON, this sentence appears as plain text within its paragraph, and the hyperlink is missing from the correct location. An unrelated, malformed link object with garbled text was created at the end of the page content, but the original, correct link is gone. This constitutes a critical defect",
-      "source_pdf_quote": "On page 6, the sentence 'one of only three watersheds in North Carolina to still support the Carolina heelsplitter (Lasmigona decorata), a federally and state endangered freshwater mussel.' is a clickable hyperlink to 'mailto:aeckardt@wildlandseng.com'.",
-      "output_quote": "The sentence is present as plain, un-hyperlinked text in the paragraph. A malformed link object `{ \"type\": \"link\", \"text\": \"support the Carolina heelsplit mussel ” According to the rep\", \"url\": \"mailto:aeckardt@wildlandseng.com\" }` appears at the end of the page's content array.",
-      "location": "Page 6, in the paragraph starting 'The project is located within the Yadkin River Hydrologic Unit Code...'",
+      "analysis": "On page 6, the output contains a fabricated link object pointing to a 'mailto:' address that was scraped from page 4. This email address URL is wrapped around random body text that was not a clickable hyperlink in the source PDF.",
+      "source_pdf_quote": "support the Carolina heelsplitter (Lasmigona decorata), a federally and state endangered freshwater mussel.” According to the report (Plain text with no hyperlink)",
+      "output_quote": "{\"type\": \"link\", \"text\": \"support the Carolina heelsplit mussel ” According to the rep\", \"url\": \"mailto:aeckardt@wildlandseng.com\"}",
+      "location": "Page 6",
       "source": "fidelity_llm",
       "check_id": "S7",
       "fidelity_dimension": "structural",
@@ -32,14 +32,14 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The HTML output is missing four critical, meaningful maps that are present in the source PDF. These are Figure 1 (Project Vicinity Map), Figure 2 (Project Service Area Map), Figure 3 (Project Component/Asset Map), and Figure 4 (Current Condition Plan View Map). The image manifest confirms that the image data for these was not extracted (b64_len: 0). These maps contain essential spatial information that is not replicated in the text, and their absence constitutes a critical loss of information fo",
-      "source_pdf_quote": "The source PDF contains four maps: \"Figure 1. Project Vicinity Map\" (p. 13), \"Figure 2. Project Service Area Map\" (p. 14), \"Figure 3. Project Component/Asset Map\" (p. 15), and \"Figure 4. Current Condition Plan View Map\" (p. 20).",
-      "output_quote": "The HTML output does not contain the image data for these four maps. Instead, it shows text placeholders like `[Image: A project vicinity map for the Running Dog Mitigation Site...]`. The image manifest confirms this with `\"b64_len\": 0` for each of these images.",
-      "location": "Pages 13, 14, 15, and 20.",
+      "analysis": "Several critical and meaningful maps from the source PDF are completely missing from the HTML output and have been replaced by text placeholders. For example, the Project Vicinity Map, Project Service Area Map, and Current Condition Plan View Map are absent as `<img>` elements.",
+      "source_pdf_quote": "Page 13 contains a large map titled \"Figure 1. Project Vicinity Map\".",
+      "output_quote": "The HTML output lacks an `<img>` element for this map, instead displaying a text placeholder: `[Image: A project vicinity map for the Running Dog Mitigation Site...]`",
+      "location": "Page 13 (Appendix 1)",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Header/footer elements retained in output (26): Wildlands Engineering, Inc. • phone 704-332-7754 • fax 704-3; Wildlands Engineering, Inc. • phone 704-332-7754 • fax 704-3; Running Dog Mitigation Site\nMonitoring Year 1 Annual Report ",
@@ -54,51 +54,27 @@
       "corroborated": false
     },
     {
-      "description": "Table structure corrupted",
+      "description": "Minor text differences beyond acceptable reformatting",
       "severity": "major",
-      "analysis": "On page 5, the Table of Contents for the Appendices section is converted into a 2-column table. The source document clearly shows a hierarchical structure where items like 'Figure 1' and 'Table 1' belong under 'Appendix 1', and items like 'Site Overview Photographs' belong under 'Appendix 2'. The output table flattens this hierarchy. For sub-items like 'Site Overview Photographs', it creates a table row with an empty cell in the first column and the text in the second. This structurally fails to",
-      "source_pdf_quote": "The Table of Contents on page 'i' (PDF page 5), under the 'APPENDICES' heading, shows several items listed and indented under 'Appendix 2', including 'Site Overview Photographs' and 'Vegetation Plot Photographs'.",
-      "output_quote": "The JSON for the table on page 5 contains rows like: `{\"text\": \"\", \"column_start\": 0, \"row_start\": 12, ...}, {\"text\": \"Site Overview Photographs\", \"column_start\": 1, \"row_start\": 12, ...}`. The empty cell in the first column indicates a structural misinterpretation of the nested source content.",
-      "location": "Page 5, in the `table` element that represents the Appendices section of the Table of Contents.",
+      "analysis": "There are two notable text alterations. First, on Page 6, the output includes an errant hyperlink at the end of the page containing a duplicated fragment of text and a 'mailto' URL that does not exist in that location in the source. Second, on Page 39 in Table 10, the Height and Vigor data for a Quercus rubra plant in Plot 12 is incorrectly extracted as 'fee' and '4' instead of 'Dead' and '0'.",
+      "source_pdf_quote": "1) No link or text at the bottom of Page 6. 2) '12 Quercus rubra 1 Northern red oak 8.0 4.0 Dead 0'",
+      "output_quote": "1) {\"type\": \"link\", \"text\": \"support the Carolina heelsplit mussel \\u201d According to the rep\", \"url\": \"mailto:aeckardt@wildlandseng.com\"} 2) 'fee' and '4' in the corresponding table cells.",
+      "location": "Page 6 (end of content array) and Page 39 (Table 10, Plot 12)",
       "source": "fidelity_llm",
+      "check_id": "C6",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
+      "description": "Table caption coded as header row: 3 table(s) have a single spanning first row that is likely a caption/title",
+      "severity": "major",
+      "analysis": "caption_as_header=3. Examples: p16: \"TOTAL AREA OF BUFFER MITIGATION (TABM)\"; p18: \"Project Information\"; p33: \"Vegetation Performance Standards Summary Table\". First row spans all columns — should be a <caption> element, not a header row.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
       "check_id": "S3",
-      "fidelity_dimension": "structural",
-      "corroborated": true
-    },
-    {
-      "description": "Lists converted incorrectly",
-      "severity": "major",
-      "analysis": "The Table of Contents on page 5 of the source document contains a clear, multi-level numbered list (e.g., '1.1', '1.2', '4.1', '4.2', '4.3', etc.). The conversion pipeline failed to identify this as a list and instead rendered each list item as a separate paragraph element. For instance, '1.1 Project Description...' is output as a `<p>` tag containing the text '1.1 ...' rather than a `<li>` element within a semantic list structure. This is a failure of pattern (4) of the S5 check, as numbered it",
-      "source_pdf_quote": "The Table of Contents on page 'i' (PDF page 5), showing numbered and indented items such as '1.1 Project Description', '1.2 Project Goals and Objectives', and '4.1 Vegetation Success Criteria and Monitoring Protocol'.",
-      "output_quote": "The JSON output for page 5 contains elements like: `{\"type\": \"paragraph\", \"text\": \"1.1 Project Description.......................................................................................................... 1\"}`.",
-      "location": "Page 5, affecting the series of paragraph elements from 'Section 1' through 'Section 6'.",
-      "source": "fidelity_llm",
-      "check_id": "S5",
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
-    {
-      "description": "Heading hierarchy broken",
-      "severity": "major",
-      "analysis": "The heading hierarchy is generally well-preserved. However, on page 41, the text 'Stephanie Erickson', which is part of an email header, has been incorrectly classified as a level 1 heading (H1). This text is not a structural heading for the document or a section. Misclassifying it as an H1 disrupts the semantic structure and would be confusing for a screen reader user.",
-      "source_pdf_quote": "Text 'Stephanie Erickson' at the top of the email on page 41.",
-      "output_quote": "{ \"type\": \"heading\", \"level\": 1, \"text\": \"Stephanie Erickson\" }",
-      "location": "Page 41, first content element.",
-      "source": "fidelity_llm",
-      "check_id": "S2",
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
-    {
-      "description": "Content visually duplicated on page",
-      "severity": "major",
-      "analysis": "The document contains several pages of photographs (pp. 23, 24, 25, 27, 28). In the source PDF, each page displays 4 or 6 unique photos. The HTML output incorrectly extracts composite images (e.g., an entire column of photos) and then duplicates these composite images for each individual photo's caption. The image manifest confirms this, showing only two unique image sizes being repeated for all photos on a given page. This results in the same group of photos being displayed multiple times on th",
-      "source_pdf_quote": "Page 23 of the PDF contains 6 unique photographs, individually captioned: PP1 Upstream, PP1 Downstream, PP2 Upstream, PP2 Downstream, PP3 Upstream, and PP3 Downstream.",
-      "output_quote": "The HTML contains 6 `<figure>` elements, but the `<img>` elements within them are duplicated. The image manifest for page 23 shows that only two unique images were extracted (based on `b64_len` values 4895680 and 4912232), and these two images are used three times each. This causes the user to see the same columns of photos repeated with different captions.",
-      "location": "Image galleries starting on page 23, \"SITE OVERVIEW PHOTOGRAPHS\". This pattern of duplication repeats on pages 24, 25, 27, and 28.",
-      "source": "fidelity_llm",
-      "check_id": "V3",
-      "fidelity_dimension": "visual",
+      "fidelity_dimension": null,
       "corroborated": false
     },
     {
@@ -114,15 +90,15 @@
       "corroborated": true
     },
     {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source PDF uses underlining for emphasis in several places, which is not consistently preserved in the output. For instance, the name in the signature block on page 4 is underlined in the source but is rendered as plain text in the output. Similarly, URLs in the reference section on page 11 are underlined in the source but appear as non-underlined text in the output. This constitutes a loss of visual emphasis.",
-      "source_pdf_quote": "On page 4, the name \"Andrea S. Eckardt\" is underlined. On page 11, the URL \"http://cvs.bio.unc.edu/protocol/cvs-eep-protocol-v4.2-lev1-2.pdf\" is underlined.",
-      "output_quote": "On page 4, the JSON output is `{\"type\": \"paragraph\", \"text\": \"Andrea S. Eckardt\\nEcological Assessment Team Leader\"}` with no indication of an underline. On page 11, the URL is part of a paragraph with no underline: `\"text\": \"Lee, Michael T., ... Retrieved from: http://cvs.bio.unc.edu/protocol/cvs-eep-protocol-v4.2-lev1-2.pdf\"}`.",
-      "location": "Page 4, signature block and Page 11, Section 6: REFERENCES.",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
+      "description": "Table header markup issues: 5 table(s) have a data row marked as header: \"Appendix 1\", \"Yadkin - Goose Creek\", \"Activity or Report\"",
+      "severity": "major",
+      "analysis": "data_in_th=0, datarow_as_header=5. Tables use <th> for data values (misrepresenting data as headers) or have a data row mismarked as a header row. Screen readers rely on <th> to announce column/row context.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
       "corroborated": false
     },
     {
@@ -167,10 +143,10 @@
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 7,
+  "total_defects": 3,
   "total_critical": 2,
-  "total_major": 4,
-  "total_minor": 1,
+  "total_major": 1,
+  "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
@@ -184,9 +160,9 @@
     },
     "signals": {
       "fidelity_composite": 0.4,
-      "fidelity_content": 0.9923664122137404,
-      "fidelity_structural": 0.1818,
-      "fidelity_visual": 0.0,
+      "fidelity_content": 0.9618320610687023,
+      "fidelity_structural": 0.5455,
+      "fidelity_visual": 0.2857142857142857,
       "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
       "shingling_recall": 0.8480988411071736,
@@ -219,9 +195,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 4
+      "deduplicated_count": 1
     },
-    "processing_ms": 447059,
+    "processing_ms": 232399,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

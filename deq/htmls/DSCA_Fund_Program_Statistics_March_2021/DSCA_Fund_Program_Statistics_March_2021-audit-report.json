@@ -1,6 +1,6 @@
 {
   "document_id": "DSCA_Fund_Program_Statistics_March_2021",
-  "audited_at": "2026-04-01T15:42:14.171323Z",
+  "audited_at": "2026-04-01T19:29:17.482694Z",
   "source_files": {
     "extraction_json": "DSCA_Fund_Program_Statistics_March_2021.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity analysis indicates perfect conversion quality with a composite score of 1.0. However, the programmatic accessibility checks identified a major structural issue: data values are improperly marked up as <th> header cells instead of <td> cells across 3 tables. According to the strict count-based routing rules, any major programmatic defect requires at least HUMAN_REVIEW to fix the accessibility issues.",
+  "reasoning": "The document has perfect LLM fidelity scores, indicating excellent content and visual preservation. However, automated accessibility checks found 1 major programmatic defect: multiple tables use <th> tags for data values, which misrepresents data to screen readers. Based on the count-based routing rules, 1 major programmatic defect requires HUMAN_REVIEW to fix the table structure.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -43,8 +43,7 @@
     }
   ],
   "action_items": [
-    "Review all tables and ensure data values are placed in <td> cells rather than <th> cells.",
-    "Verify that all data tables have appropriate and semantically correct <th> header rows for screen reader accessibility."
+    "Review all tables in the document and correct the semantic markup so that only actual header cells use <th> and data cells use <td>."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -102,7 +101,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 84206,
+    "processing_ms": 77890,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

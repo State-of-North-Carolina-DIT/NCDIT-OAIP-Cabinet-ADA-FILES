@@ -1,6 +1,6 @@
 {
   "document_id": "01_Fact_Sheet_SKA.pdf",
-  "audited_at": "2026-04-01T07:44:13.623243Z",
+  "audited_at": "2026-04-01T19:22:37.513925Z",
   "source_files": {
     "extraction_json": "01_Fact_Sheet_SKA.pdf.json",
     "source_pdf": "source.pdf",
@@ -8,15 +8,27 @@
   },
   "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 1.0,
-  "fidelity_content": 1.0,
+  "fidelity_composite": 0.9973,
+  "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "All signals indicate an exceptionally clean conversion. The LLM fidelity scores are perfect across the board (composite 1.0), and programmatic text comparison metrics confirm strong content preservation (shingling recall 0.989). There are zero major or critical defects, and the three minor programmatic observations do not exceed the threshold for human review.",
+  "reasoning": "The document exhibits exceptionally high fidelity scores (composite 0.997) and strong programmatic text metrics (shingling recall 0.989). The only LLM fidelity defect is a single MINOR issue regarding lost underline formatting for headings. Along with minor programmatic observations related to pagination and standalone links, the total defect count is well below the threshold for human review, making this a clear candidate for auto-approval.",
   "decision_method": "llm_final_decider",
   "concerns": [
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The headings 'Background' and 'Public Comment & Public Hearing' are underlined in the source PDF to indicate visual emphasis. However, this underline formatting is lost in the extracted JSON, which contains no <u> tags or other underline representation.",
+      "source_pdf_quote": "Background\n\nPublic Comment & Public Hearing (underlined in source)",
+      "output_quote": "{\"type\": \"heading\", \"level\": 2, \"text\": \"Background\"}\n{\"type\": \"heading\", \"level\": 2, \"text\": \"Public Comment & Public Hearing\"}",
+      "location": "Page 1",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
     {
       "description": "Page number artifacts retained: Page 1 of 2",
       "severity": "minor",
@@ -57,24 +69,24 @@
   "action_items": [],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 0,
+  "total_defects": 1,
   "total_critical": 0,
   "total_major": 0,
-  "total_minor": 0,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 1.0,
+    "decider_confidence": 0.98,
     "score_breakdown": {
-      "fidelity_composite": 1.0,
-      "raw_score": 1.0,
+      "fidelity_composite": 0.9973,
+      "raw_score": 0.9973,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 1.0,
-      "fidelity_content": 1.0,
+      "fidelity_composite": 0.9973,
+      "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
       "fidelity_routing": "AUTO_APPROVE",
@@ -111,7 +123,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 73950,
+    "processing_ms": 102462,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

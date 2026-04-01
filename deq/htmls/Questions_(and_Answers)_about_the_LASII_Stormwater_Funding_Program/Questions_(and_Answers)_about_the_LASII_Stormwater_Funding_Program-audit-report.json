@@ -1,29 +1,41 @@
 {
   "document_id": "Questions_(and_Answers)_about_the_LASII_Stormwater_Funding_Program",
-  "audited_at": "2026-04-01T08:47:31.655568Z",
+  "audited_at": "2026-04-01T19:27:11.906631Z",
   "source_files": {
     "extraction_json": "Questions_(and_Answers)_about_the_LASII_Stormwater_Funding_Program.json",
     "source_pdf": "source.pdf",
     "rendered_html": "Questions_(and_Answers)_about_the_LASII_Stormwater_Funding_Program.html"
   },
-  "quality_score": 97,
+  "quality_score": 94,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9701,
+  "fidelity_composite": 0.9428,
   "fidelity_content": 0.9923664122137404,
-  "fidelity_structural": 0.9091,
+  "fidelity_structural": 0.8182,
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document contains strong textual fidelity but multiple structural issues with hyperlinks. Specifically, there are displaced hyperlinks extracted as standalone elements rather than inline text, and missing hyperlink annotations (though some of the latter appears to be a source document limitation). With three major structural/hyperlink defects and a few minor formatting artifacts, the document falls squarely into the HUMAN_REVIEW category.",
+  "reasoning": "Both LLM fidelity and programmatic signals converge on several structural and accessibility defects. There are four major defects identified, including an improper reading order where a footnote is injected mid-sentence across a page boundary, displaced standalone hyperlinks, and unlinked text ('Division's website.' and 'army.mil') caused by missing source annotations. With 4 major defects, count-based rules dictate HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
+      "description": "Reading order significantly different",
+      "severity": "major",
+      "analysis": "At the boundary between Page 4 and Page 5, the answer to Question 16 is split across pages. The source reads '...planning study, then' at the bottom of Page 4, and continues with 'only one application needs to be submitted...' at the top of Page 5. A footnote ('1 Levee Terms & Definitions (army.mil)') located at the bottom of Page 4 was improperly injected directly into the middle of this continuing sentence in the output.",
+      "source_pdf_quote": "\"...accomplish the goals of the planning study, then\" (page 4) followed by \"only one application needs to be submitted by the COG.\" (page 5).",
+      "output_quote": "\"1 Levee Terms & Definitions (army.mil) only one application needs to be submitted by the COG.\"",
+      "location": "Page 4/5 boundary (Question 16 answer)",
+      "source": "fidelity_llm",
+      "check_id": "S4",
+      "fidelity_dimension": "structural",
+      "corroborated": false
+    },
+    {
       "description": "Link text pulled over but not hyperlinked",
       "severity": "major",
-      "analysis": "The source PDF contains clickable hyperlinks on page 4 and page 5 that were pulled into the output as plain text without corresponding link objects or markup. On page 4, the footnote link 'Levee Terms & Definitions (army.mil)' is flattened. On page 5, the link 'Division's website.' under Question 19 is isolated as a plain text paragraph with no href or link object associated with it.",
-      "source_pdf_quote": "Page 4 footnote: 'Levee Terms & Definitions (army.mil)' (hyperlink) and Page 5 under Question 19: 'Division's website.' (hyperlink).",
-      "output_quote": "Page 4 JSON has '1 Levee Terms & Definitions (army.mil) only one application needs to be submitted...' as a plain text paragraph. Page 5 JSON has a plain text paragraph 'Division's website.' Both lack link objects or anchor markup.",
-      "location": "Page 4 and Page 5 content arrays",
+      "analysis": "On Page 5, in the answer to Question 19, the text 'Division's website.' is styled as a hyperlink in the source document. In the extraction output, this text is isolated into its own paragraph block, but there is no corresponding link object provided for that page. Consequently, the text will render as flat text rather than a functional link.",
+      "source_pdf_quote": "Yes. Resolution templates are available on the Division's website.",
+      "output_quote": "{\"type\": \"paragraph\", \"text\": \"Division's website.\"}",
+      "location": "Page 5, Question 19 answer",
       "source": "fidelity_llm",
       "check_id": "S8",
       "fidelity_dimension": "structural",
@@ -56,10 +68,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source PDF frequently uses underlining for emphasis in several answers, which is completely lost in the output text. As stated in the prompt, underline has no markdown equivalent, but its complete absence denotes a genuine loss of visual emphasis.",
-      "source_pdf_quote": "constructing or repairing dams or other structures designed to retain waters within a stream channel is not eligible for funding.",
-      "output_quote": "constructing or repairing dams or other structures designed to retain waters within a stream channel is not eligible for funding.",
-      "location": "Page 2, Question 8 Answer",
+      "analysis": "The source document uses underlining for specific emphasis in several paragraphs (e.g., 'designed to retain waters within a stream channel' in Q8, and 'why the Applicant considers it qualified as critical infrastructure' in Q9). This underline emphasis is completely lost in the output, which provides plain text without any HTML structural representation or markdown equivalent for the underline.",
+      "source_pdf_quote": "Description of the infrastructure and why the Applicant considers it qualified as critical infrastructure.",
+      "output_quote": "Description of the infrastructure and why the Applicant considers it qualified as critical infrastructure. It is the responsibility...",
+      "location": "Page 2, Question 9 Answer",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -103,32 +115,33 @@
     }
   ],
   "action_items": [
-    "Fix displaced hyperlinks so they are inline within their respective paragraphs",
-    "Add href attributes to bare URLs and intended link text",
-    "Remove retained header/footer text and page numbers",
-    "Restore necessary visual emphasis where appropriate"
+    "Relocate the footnote text that interrupted the continuous sentence between pages 4 and 5.",
+    "Embed the 3 standalone URLs inline within their proper paragraphs.",
+    "Add functional hrefs to the unlinked text 'Division's website.' and the '(army.mil)' reference.",
+    "Restore lost underline emphasis if semantically important.",
+    "Remove remaining header, footer, and page number artifacts."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
+  "total_defects": 3,
   "total_critical": 0,
-  "total_major": 1,
+  "total_major": 2,
   "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9701,
-      "raw_score": 0.9701,
+      "fidelity_composite": 0.9428,
+      "raw_score": 0.9428,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9701,
+      "fidelity_composite": 0.9428,
       "fidelity_content": 0.9923664122137404,
-      "fidelity_structural": 0.9091,
+      "fidelity_structural": 0.8182,
       "fidelity_visual": 1.0,
       "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
@@ -164,7 +177,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 135680,
+    "processing_ms": 155528,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

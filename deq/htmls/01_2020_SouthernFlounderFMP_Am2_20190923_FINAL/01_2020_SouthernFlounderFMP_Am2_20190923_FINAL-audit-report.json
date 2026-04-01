@@ -1,6 +1,6 @@
 {
   "document_id": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL",
-  "audited_at": "2026-04-01T17:31:15.499749Z",
+  "audited_at": "2026-04-01T19:23:41.972126Z",
   "source_files": {
     "extraction_json": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL.json",
     "source_pdf": "source.pdf",
@@ -9,7 +9,7 @@
   "quality_score": 30,
   "quality_grade": "Critical",
   "fidelity_composite": 0.4,
-  "fidelity_content": 0.9923664122137404,
+  "fidelity_content": 1.0,
   "fidelity_structural": 0.9091,
   "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
@@ -20,22 +20,22 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "Several meaningful charts from the source PDF (Figures 14, 15, 16, 17, 18, 21, 22, and 23) are missing their image data in the rendered HTML. Instead of valid <img> elements, the output contains literal text placeholders (e.g., '[Image: Line chart showing projections...]') indicating that the image extraction failed (manifest confirms b64_len: 0 for these). Since these are critical data visualizations, their absence constitutes a severe loss of meaningful information.",
-      "source_pdf_quote": "The source PDF contains meaningful data line charts for Figures 14, 15, 16, 17, 18, 21, 22, and 23.",
-      "output_quote": "The HTML contains literal text placeholders instead of actual image elements, such as: \"[Image: Line chart showing projections of Spawning Stock Biomass (SSB) from 2018 to 2050 under different fishing scenarios...]\"",
-      "location": "Figures 14, 15, 16, 17, 18, 21, 22, 23 (Pages 56-62)",
+      "analysis": "Multiple meaningful charts are completely missing from the HTML output and have been replaced by bracketed text placeholders. For example, the line charts for Figures 14-18 and 21-23 in the source PDF contain critical data visualizations (such as projected spawning stock biomass). In the HTML, these images are absent and instead represented as text paragraphs containing the alt text (e.g., `<p>[Image: Line chart showing projections of Spawning Stock Biomass...]</p>`).",
+      "source_pdf_quote": "Figure 14: Projections of SSB related to fishing at a level to end overfishing... line chart showing data from 2018 to 2050.",
+      "output_quote": "<p>[Image: Line chart showing projections of Spawning Stock Biomass (SSB) from 2018 to 2050 under different fishing scenarios...]</p>",
+      "location": "Figure 14 (and Figures 15-18, 21-23)",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": false
+      "corroborated": true
     },
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "I examined the list structures throughout the document. Most lists, including complex nested ones (e.g., Page 25 and Page 27), were extracted properly with appropriate child items. However, on Page 14, there is a nested list under the heading 'Amendment 1 Management Carried Forward in Amendment 2'. The second main bullet point ('From Supplement A to the Southern Flounder FMP Amendment 1...') contains three sub-bullets ('A commercial minimum...', 'A minimum mesh...', 'A minimum mesh...'). In the ",
-      "source_pdf_quote": "• From Supplement A to the Southern Flounder FMP Amendment 1, as modified by the Aug. \n17, 2017 settlement agreement:\n− A commercial minimum size limit of 15 inches TL;\n− A minimum mesh size of 6.0-ISM to harvest southern flounder from a gill net; and\n− A minimum mesh size of 5.75-ISM stretched mesh for pound net escape panels.",
-      "output_quote": "{\n  \"text\": \"From Supplement A to the Southern Flounder FMP Amendment 1, as modified by the Aug. 17, 2017 settlement agreement:\"\n},\n{\n  \"text\": \"A commercial minimum size limit of 15 inches TL;\"\n},\n{\n  \"text\": \"A minimum mesh size of 6.0-ISM to harvest southern flounder from a gill net; and\"\n}",
-      "location": "Page 14",
+      "analysis": "The document contains multiple nested lists. While most nested lists (like the identical text on page 24) were extracted correctly, the list on page 14 suffers from hierarchy flattening. The sub-items under the bullet 'From Supplement A to the Southern Flounder FMP Amendment 1...' are visually indented in the source PDF to indicate they are sub-bullets. However, in the JSON output, they are rendered as top-level sibling items in the 'items' array rather than being properly nested inside a 'child",
+      "source_pdf_quote": "• From Supplement A to the Southern Flounder FMP Amendment 1, as modified by the Aug. 17, 2017 settlement agreement:\n− A commercial minimum size limit of 15 inches TL;\n− A minimum mesh size of 6.0-ISM...",
+      "output_quote": "{\"text\": \"From Supplement A to the Southern Flounder FMP Amendment 1, as modified by the Aug. 17, 2017 settlement agreement:\"},\n{\"text\": \"A commercial minimum size limit of 15 inches TL;\"},\n{\"text\": \"A minimum mesh size of 6.0-ISM to harvest southern flounder from a gill net; and\"}",
+      "location": "Page 14, list under 'Amendment 1 Management Carried Forward in Amendment 2'",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -90,18 +90,6 @@
       "corroborated": false
     },
     {
-      "description": "Visual emphasis loss",
-      "severity": "minor",
-      "analysis": "The source document uses underlining for emphasis on certain paragraph text (e.g., 'Advisory Committee Recommendations' and 'Southern Flounder FMP Advisory Committee' on page 27). The extraction JSON converts these to markdown italics but drops the actual underline styling. Since markdown does not support underline natively and the pipeline did not preserve it, this represents a loss of visual emphasis.",
-      "source_pdf_quote": "Advisory Committee Recommendations (Refer to Table 13 for a comparison of recommendations)\n\nSouthern Flounder FMP Advisory Committee (Both phrases are underlined in the source PDF)",
-      "output_quote": "*Advisory Committee Recommendations* (Refer to Table 13 for a comparison of recommendations)\n\n*Southern Flounder FMP Advisory Committee*",
-      "location": "Page 27",
-      "source": "fidelity_llm",
-      "check_id": "C7",
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
-    {
       "description": "Header/footer elements retained in output (61): 2; 3; 4",
       "severity": "minor",
       "analysis": "header_footer_count=61. Header/footer elements are present in extraction data. This is common in multi-page government PDFs and is typically cosmetic — the renderer strips them from HTML output.",
@@ -119,10 +107,10 @@
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 3,
+  "total_defects": 2,
   "total_critical": 1,
   "total_major": 1,
-  "total_minor": 1,
+  "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
@@ -136,7 +124,7 @@
     },
     "signals": {
       "fidelity_composite": 0.4,
-      "fidelity_content": 0.9923664122137404,
+      "fidelity_content": 1.0,
       "fidelity_structural": 0.9091,
       "fidelity_visual": 0.2857142857142857,
       "fidelity_routing": "AUTO_REJECT",
@@ -171,9 +159,9 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 0
+      "deduplicated_count": 1
     },
-    "processing_ms": 168611,
+    "processing_ms": 166850,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

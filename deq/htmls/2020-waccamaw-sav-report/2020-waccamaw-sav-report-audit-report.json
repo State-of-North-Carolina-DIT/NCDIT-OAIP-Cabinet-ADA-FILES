@@ -1,58 +1,83 @@
 {
   "document_id": "2020-waccamaw-sav-report",
-  "audited_at": "2026-04-01T08:49:40.045300Z",
+  "audited_at": "2026-04-01T19:30:37.417808Z",
   "source_files": {
     "extraction_json": "2020-waccamaw-sav-report.json",
     "source_pdf": "source.pdf",
     "rendered_html": "2020-waccamaw-sav-report.html"
   },
-  "quality_score": 95,
+  "quality_score": 93,
   "quality_grade": "Good",
-  "fidelity_composite": 0.95,
-  "fidelity_content": 1.0,
+  "fidelity_composite": 0.9339694656488549,
+  "fidelity_content": 0.9541984732824428,
   "fidelity_structural": 1.0,
   "fidelity_visual": 0.8571428571428572,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity analysis flagged one major defect regarding a missing image (Map 3), though programmatic signals suggest the image count matches the source. Because the defect was classified as MAJOR by the fidelity calls, strict count-based routing rules dictate a minimum routing of HUMAN_REVIEW to verify the presence of this specific map.",
+  "reasoning": "The document shows strong overall programmatic and fidelity scores (composite 0.93), but the LLM identified two major defects. Specifically, there is a potentially significant text error ('net' vs 'nest') and a reported missing map (Map 3), although programmatic image counts contradict the missing image claim. Given the presence of 2 major defects, human review is required to verify these specific issues per the count-based routing rules.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
+      "description": "Minor text differences beyond acceptable reformatting",
+      "severity": "major",
+      "analysis": "The output contains a minor text error where the word 'net' was changed to 'nest'. This alters the meaning slightly as it refers to a different object.",
+      "source_pdf_quote": "Also observed were softball-sized masses/tangles of Eleocharis which were associated with fish nests and some of these tangles formed a ring just inside the edge of the fish net.",
+      "output_quote": "Also observed were softball-sized masses/tangles of *Eleocharis* which were associated with fish nests and some of these tangles formed a ring just inside the edge of the fish nest.",
+      "location": "Page 2, 4th paragraph",
+      "source": "fidelity_llm",
+      "check_id": "C6",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
       "description": "Images missing or broken",
       "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains a map on page 6 titled 'Map 3. Area where Hydrilla monitoring was conducted (red polygons).' This map is a meaningful image that conveys the visual boundaries of the monitoring area. However, the HTML output completely omits this image, transitioning directly from Table 1 to Map 4.",
-      "source_pdf_quote": "Map 3 on page 6 of the PDF, titled 'Map 3. Area where Hydrilla monitoring was conducted (red polygons).'",
-      "output_quote": "The HTML skips from the end of Table 1 directly to '<figure><img src=\"[base64 image stripped for token budget]\" alt=\"Aerial map...\"<figcaption>Map 4...'",
-      "location": "Page 6 / Between Table 1 and Map 4 in HTML",
+      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source document contains 'Map 3. Area where Hydrilla monitoring was conducted (red polygons).' on page 6, which includes a large map image. In the HTML output, this entire map and its caption are completely absent. The content jumps directly from Table 1 to Map 4.",
+      "source_pdf_quote": "Map 3. Area where Hydrilla monitoring was conducted (red polygons).",
+      "output_quote": "Missing completely from HTML output",
+      "location": "Page 6",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
+      "corroborated": true
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The headings 'Introduction', 'Background', 'Results', and 'Summary' are underlined in the source PDF. This structural emphasis (underline) was lost in the output, although they were correctly captured as headings.",
+      "source_pdf_quote": "Underlined headings: 'Introduction', 'Background', 'Results', 'Summary'",
+      "output_quote": "{\"type\": \"heading\", \"level\": 2, \"text\": \"Introduction\"} (and others similarly missing underline markdown or tagging)",
+      "location": "Pages 1, 2, and 3",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
       "corroborated": false
     }
   ],
   "action_items": [
-    "Verify if Map 3 on page 6 was properly included in the HTML output, as programmatic image counts contradict the LLM's missing image claim."
+    "Verify if the word 'net' was incorrectly changed to 'nest' and correct if necessary.",
+    "Check if Map 3 and its caption are present in the HTML output."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 3,
   "total_critical": 0,
-  "total_major": 1,
-  "total_minor": 0,
+  "total_major": 2,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.85,
     "score_breakdown": {
-      "fidelity_composite": 0.95,
-      "raw_score": 0.95,
+      "fidelity_composite": 0.9339694656488549,
+      "raw_score": 0.934,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.95,
-      "fidelity_content": 1.0,
+      "fidelity_composite": 0.9339694656488549,
+      "fidelity_content": 0.9541984732824428,
       "fidelity_structural": 1.0,
       "fidelity_visual": 0.8571428571428572,
       "fidelity_routing": "FLAG_FOR_REVIEW",
@@ -85,11 +110,11 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "partial_disagree",
+      "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 0
+      "deduplicated_count": 1
     },
-    "processing_ms": 126660,
+    "processing_ms": 99907,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }

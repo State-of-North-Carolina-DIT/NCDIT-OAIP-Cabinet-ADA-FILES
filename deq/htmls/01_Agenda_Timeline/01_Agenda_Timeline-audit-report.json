@@ -1,6 +1,6 @@
 {
   "document_id": "01_Agenda_Timeline",
-  "audited_at": "2026-04-01T08:44:04.034952Z",
+  "audited_at": "2026-04-01T19:21:25.791552Z",
   "source_files": {
     "extraction_json": "01_Agenda_Timeline.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document consists of landscape-oriented presentation slides featuring large titles, decorative backgrounds, slide-like layouts, and visual components typical of a slide deck.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a landscape-oriented presentation consisting of 3 pages with slide-like layouts, background graphics (corkboard on page 1), and multiple images per page.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -74,7 +74,7 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 26302,
+    "processing_ms": 30052,
     "fidelity_report_path": "fidelity-report.json",
     "routing_escalated_from": null
   }
