@@ -11,3 +11,5 @@ audit-batch-results-baseline.json
 *-human-vs-auditor*.csv
 AUDIT-ANALYSIS.md
 deq/htmls/Auditor Review (DEQ Set).xlsx
+AUDITOR-REPORT-pre-phase7-run.md
+audit-batch-results-pre-phase7-run.json
