@@ -1,3 +1,1010 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e8a930226a8cfaa1b8db2542ea536dc3b61e8afe7d089c96a7db515d087f7cf
-size 27037
+{
+  "timestamp": "2026-03-26T21:02:59",
+  "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdcr/htmls",
+  "total_docs": 100,
+  "ok": 100,
+  "failed": 0,
+  "elapsed_seconds": 613.2,
+  "results": [
+    {
+      "slug": "07_NCAC_02I_0202",
+      "project": "ada-compliance-engine-19",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 118.3,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13H_0404_Notice_of_Text_Form_0300",
+      "project": "ada-compliance-engine-19",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 70.7,
+      "status": "ok"
+    },
+    {
+      "slug": "08Hv",
+      "project": "ada-compliance-engine-19",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 121.3,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0101_v_NOT",
+      "project": "ada-compliance-engine-22",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 91.9,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_14",
+      "project": "ada-compliance-engine-22",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 149.3,
+      "status": "ok"
+    },
+    {
+      "slug": "0P8e",
+      "project": "ada-compliance-engine-22",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 90.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0302_v_NOT",
+      "project": "ada-compliance-engine-28",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 77.9,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_14B_.0606",
+      "project": "ada-compliance-engine-28",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 170.1,
+      "status": "ok"
+    },
+    {
+      "slug": "15A_NCAC_12H_0307",
+      "project": "ada-compliance-engine-28",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 113.1,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0302",
+      "project": "ada-compliance-engine-13",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 117.8,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13C",
+      "project": "ada-compliance-engine-13",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 117.8,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_1102_Commercial_Photography_Final_NOT_Version_2021\u2026",
+      "project": "ada-compliance-engine-13",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 129.3,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0305_v_NOT",
+      "project": "ada-compliance-engine-30",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 93.0,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_14B_.0706",
+      "project": "ada-compliance-engine-30",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 157.2,
+      "status": "ok"
+    },
+    {
+      "slug": "15A_NCAC_12H_0401",
+      "project": "ada-compliance-engine-30",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 117.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0107_0109_Form_0300_Notice_of_Text",
+      "project": "ada-compliance-engine-10",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 38.3,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13A",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 102.2,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_0905_Smoking_Final_NOT_Version_2021_09_27",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 106.0,
+      "status": "ok"
+    },
+    {
+      "slug": "ID_07_NCAC_10",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 131.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_Section_.0300_Rules_-_NOTICE_OF_TEXT",
+      "project": "ada-compliance-engine-17",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 50.8,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13H_0404",
+      "project": "ada-compliance-engine-17",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 147.1,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_1205_Reservation_Periods_Final_NOT_Version_2021_09\u2026",
+      "project": "ada-compliance-engine-17",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 184.4,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0109",
+      "project": "ada-compliance-engine-12",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 131.2,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13B_0802_v_NOT",
+      "project": "ada-compliance-engine-12",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 147.9,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_1101_Commercial_Enterprises_Final_NOT_Version_2021\u2026",
+      "project": "ada-compliance-engine-12",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 105.8,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0203_v_NOT",
+      "project": "ada-compliance-engine-25",
+      "score": 96,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 160.1,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_14B_.0504",
+      "project": "ada-compliance-engine-25",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 156.1,
+      "status": "ok"
+    },
+    {
+      "slug": "10.13.23_Certification_Commission_Agenda.pdf",
+      "project": "ada-compliance-engine-25",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 69.2,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_.0303_Application",
+      "project": "ada-compliance-engine-2",
+      "score": 96,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 118.2,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0702_v_NOT",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 97.8,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_0101_Definitions_of_Terms_Final_NOT_Version_2021\u2026",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 71.5,
+      "status": "ok"
+    },
+    {
+      "slug": "15A_NCAC_12H_0403",
+      "project": "ada-compliance-engine-2",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 101.2,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02I_0101",
+      "project": "ada-compliance-engine-18",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 145.5,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13H_0404_Fiscal_Note",
+      "project": "ada-compliance-engine-18",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 171.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_14b_0602_Photographs_Final_NOT_version_2021_04_20",
+      "project": "ada-compliance-engine-18",
+      "score": 99,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 83.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02_File_Stamped_NOT",
+      "project": "ada-compliance-engine-21",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 74.4,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13K",
+      "project": "ada-compliance-engine-21",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 104.0,
+      "status": "ok"
+    },
+    {
+      "slug": "0FYY",
+      "project": "ada-compliance-engine-21",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 229.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0108",
+      "project": "ada-compliance-engine-11",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 115.7,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13B",
+      "project": "ada-compliance-engine-11",
+      "score": 99,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 86.1,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_1004_Animals_at_Large_Final_NOT_Version_2021_09_20",
+      "project": "ada-compliance-engine-11",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 214.4,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0305",
+      "project": "ada-compliance-engine-16",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 138.5,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13G",
+      "project": "ada-compliance-engine-16",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 135.5,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_1204_Aviation_Final_NOT_Version_2021_09_27",
+      "project": "ada-compliance-engine-16",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 159.1,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0301_v_NOT",
+      "project": "ada-compliance-engine-27",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 120.5,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_14B_.0605",
+      "project": "ada-compliance-engine-27",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 171.4,
+      "status": "ok"
+    },
+    {
+      "slug": "121-12_-_Swann_School_Materials",
+      "project": "ada-compliance-engine-27",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 11,
+      "elapsed": 148.0,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0104_0105",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 78.1,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0711_v_NOT",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 94.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_0701_Sports_and_Games_When_Permitted_Final_NOT\u2026",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 204.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1_NCHC_Meeting_Agenda_2026-01-20.pdf",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 69.9,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_.0307_Volunteers",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 97.4,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0709_v_NOT",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 93.0,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_0507_Bicycles_Final_NOT_Version_2021_09_27",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 123.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1_NCHC_2021_03_25_Agenda_FINAL",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 141.8,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02I_0302",
+      "project": "ada-compliance-engine-20",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 118.7,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13I",
+      "project": "ada-compliance-engine-20",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 41.6,
+      "status": "ok"
+    },
+    {
+      "slug": "0Al4",
+      "project": "ada-compliance-engine-20",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 296.4,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0303",
+      "project": "ada-compliance-engine-14",
+      "score": 94,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 177.7,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13D",
+      "project": "ada-compliance-engine-14",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 225.9,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_1105_Public_Assemblies_Final_NOT_Version_2021_09_27",
+      "project": "ada-compliance-engine-14",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 65.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0304_v_NOT",
+      "project": "ada-compliance-engine-29",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 193.9,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_14B_.0607",
+      "project": "ada-compliance-engine-29",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 85.2,
+      "status": "ok"
+    },
+    {
+      "slug": "15A_NCAC_12H_0308",
+      "project": "ada-compliance-engine-29",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 194.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02G_0101_0102",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 113.5,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0501_v_NOT",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 139.0,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_15",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 92.5,
+      "status": "ok"
+    },
+    {
+      "slug": "15A_NCAC_12H_0402",
+      "project": "ada-compliance-engine-1",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 130.5,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0204_0205_v_NOT",
+      "project": "ada-compliance-engine-26",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 78.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_14B_.0602",
+      "project": "ada-compliance-engine-26",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 102.0,
+      "status": "ok"
+    },
+    {
+      "slug": "10_21_2020_Denial_of_Request_for_Declaratory_Ruling",
+      "project": "ada-compliance-engine-26",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 299.0,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_.0306_Reproduction_Services",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 96.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0704_0708_v_NOT",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 87.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_0204_Rock_Climbing_Final_NOT_Version_2021_09_27",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 218.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1_NCHC_2020_09_03_Agenda",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 82.3,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0107",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 138.2,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0718_v_NOT",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 81.1,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_0901_Firearms_Weapons_Explosives_Final_NOT_Version\u2026",
+      "project": "ada-compliance-engine-9",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 105.1,
+      "status": "ok"
+    },
+    {
+      "slug": "ID_07_NCAC_09",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 187.2,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0304",
+      "project": "ada-compliance-engine-15",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 95.4,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_13F",
+      "project": "ada-compliance-engine-15",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 196.8,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_1201_Closing_and_Opening_Hours_Restricted_Areas\u2026",
+      "project": "ada-compliance-engine-15",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 220.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0103",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 127.4,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0710_v_NOT",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 88.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_0602_Camping_Final_NOT_Version_2021_09_27",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 112.7,
+      "status": "ok"
+    },
+    {
+      "slug": "1_NCHC_2021_06_23_Agenda_FINAL",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 194.4,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0202_v_NOT",
+      "project": "ada-compliance-engine-24",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 165.5,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_14B_.0401",
+      "project": "ada-compliance-engine-24",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 147.9,
+      "status": "ok"
+    },
+    {
+      "slug": "0dyI",
+      "project": "ada-compliance-engine-24",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 217.7,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_.0305_Circulation",
+      "project": "ada-compliance-engine-3",
+      "score": 96,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 197.4,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0703_v_NOT",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 170.3,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_0104_Permits_Final_NOT_Version_2021_09_27",
+      "project": "ada-compliance-engine-3",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 138.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1_DNCR_MC_Workshop_Presentation_2017_Cary_post",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 26.2,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_02H_0106",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 145.6,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0712_0717_v_NOT",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 96.2,
+      "status": "ok"
+    },
+    {
+      "slug": "07_ncac_13b_0702_Horses_Final_NOT_Version_2021_09_27",
+      "project": "ada-compliance-engine-8",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 176.9,
+      "status": "ok"
+    },
+    {
+      "slug": "ID_07_NCAC_07",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 149.9,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_04R_0201_v_NOT",
+      "project": "ada-compliance-engine-23",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 194.1,
+      "status": "ok"
+    },
+    {
+      "slug": "07_NCAC_14A_.0101",
+      "project": "ada-compliance-engine-23",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 217.9,
+      "status": "ok"
+    },
+    {
+      "slug": "0P8e_2",
+      "project": "ada-compliance-engine-23",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 200.6,
+      "status": "ok"
+    }
+  ]
+}

@@ -1,3 +1,1010 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:189877a5fa192dc123e42f58da3d5d811d18279d21f365dd5e330440b01264c7
-size 28381
+{
+  "timestamp": "2026-03-26T21:26:03",
+  "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdoi/htmls",
+  "total_docs": 100,
+  "ok": 100,
+  "failed": 0,
+  "elapsed_seconds": 743.8,
+  "results": [
+    {
+      "slug": "11_NCAC_6A.0906",
+      "project": "ada-compliance-engine-25",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 125.1,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-05_-_Procedure_for_Catastrophic_Adjusters",
+      "project": "ada-compliance-engine-25",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 113.5,
+      "status": "ok"
+    },
+    {
+      "slug": "20-B-06_-_COVID-19_Pandemic",
+      "project": "ada-compliance-engine-25",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 122.9,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_04",
+      "project": "ada-compliance-engine-16",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 127.6,
+      "status": "ok"
+    },
+    {
+      "slug": "17-B-01_-_NCIUA_Member_Company_HO_Report",
+      "project": "ada-compliance-engine-16",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 167.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1_05_18_homeowner_rate_territories_media",
+      "project": "ada-compliance-engine-16",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 91.3,
+      "status": "ok"
+    },
+    {
+      "slug": "12_21_18_homeowners_ratesterritories_map",
+      "project": "ada-compliance-engine-29",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 27.4,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-09_-_Extra_RX_During_State_of_Emergency",
+      "project": "ada-compliance-engine-29",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 256.5,
+      "status": "ok"
+    },
+    {
+      "slug": "20-B-12_-_Extra_Prescriptions_During_a_State_of_Emergency_or_Disaster",
+      "project": "ada-compliance-engine-29",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 101.9,
+      "status": "ok"
+    },
+    {
+      "slug": "05-life-accident-fraternal.pdf",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 34.3,
+      "status": "ok"
+    },
+    {
+      "slug": "15-B-06_-_Extra_Rx_During_State_of_Emergency",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 119.4,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-15_-_CTR_Data_Call_b2",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 164.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2013_P3S21.1_Private_Passenger_Auto_Physical_Damage",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 74.4,
+      "status": "ok"
+    },
+    {
+      "slug": "083122-flyer.pdf_3",
+      "project": "ada-compliance-engine-12",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 103.4,
+      "status": "ok"
+    },
+    {
+      "slug": "16-B-07_-_Hurricane_Matthew_-_Disaster_Bulletin_(Counties_Amended_10-19-16)",
+      "project": "ada-compliance-engine-12",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 188.5,
+      "status": "ok"
+    },
+    {
+      "slug": "19-B-03_-_State_of_Emergency",
+      "project": "ada-compliance-engine-12",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 105.5,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_17_2",
+      "project": "ada-compliance-engine-24",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 125.1,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-04_-_NCIUA_Member_Co",
+      "project": "ada-compliance-engine-24",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 181.6,
+      "status": "ok"
+    },
+    {
+      "slug": "20-B-05_-_Guidance_for_Insurers_Regarding_Coverage_and_Cost_Sharing_Requirements_Related_to_COVID-19_Public_Health_Emergency",
+      "project": "ada-compliance-engine-24",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 90.6,
+      "status": "ok"
+    },
+    {
+      "slug": "09county-farm-mutual.pdf",
+      "project": "ada-compliance-engine-13",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 37.3,
+      "status": "ok"
+    },
+    {
+      "slug": "16-B-07_-_Hurricane_Matthew_-_Disaster_Bulletin_(Counties_Amended_11-03-16)",
+      "project": "ada-compliance-engine-13",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 204.4,
+      "status": "ok"
+    },
+    {
+      "slug": "19-B-04_-_Individual_Assistance_Hurricane_Dorian",
+      "project": "ada-compliance-engine-13",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 168.7,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_01_2",
+      "project": "ada-compliance-engine-15",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 178.3,
+      "status": "ok"
+    },
+    {
+      "slug": "16-B-09_-_Procedure_for_Catastrophic_Motor_Vehicle_Damage_Appraisers",
+      "project": "ada-compliance-engine-15",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 131.2,
+      "status": "ok"
+    },
+    {
+      "slug": "19-B-06_-_Activation_of_NCDOI_Disaster_Mediation_Program",
+      "project": "ada-compliance-engine-15",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 102.5,
+      "status": "ok"
+    },
+    {
+      "slug": "083122-flyer.pdf",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 98.9,
+      "status": "ok"
+    },
+    {
+      "slug": "16-B-05_-_Extra_Prescriptions_due_to_Declaration_of_Disaster_or_Emergency_in_North_Carolina",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 131.8,
+      "status": "ok"
+    },
+    {
+      "slug": "19-B-01_-_2019-2020_Procedures_for_Catastrophic_Adjusters_Bulletin",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 148.7,
+      "status": "ok"
+    },
+    {
+      "slug": "Questionnaire_Form",
+      "project": "ada-compliance-engine-10",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 33.7,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_12",
+      "project": "ada-compliance-engine-21",
+      "score": 95,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 127.3,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-01_-_Weather_Projections_-_Approaching_Winter_Storm",
+      "project": "ada-compliance-engine-21",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 195.8,
+      "status": "ok"
+    },
+    {
+      "slug": "20-B-02_-_CTR_Data_Call_(b2)",
+      "project": "ada-compliance-engine-21",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 105.7,
+      "status": "ok"
+    },
+    {
+      "slug": "11_ncac_05a_.0910_-_OAH_1.25.23",
+      "project": "ada-compliance-engine-27",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 140.1,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-07_-_Extra_Rx_During_State_of_Emergency",
+      "project": "ada-compliance-engine-27",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 170.1,
+      "status": "ok"
+    },
+    {
+      "slug": "20-B-08_-_Bulletin_TRIA_Reauthorization_Act_of_2019",
+      "project": "ada-compliance-engine-27",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 132.1,
+      "status": "ok"
+    },
+    {
+      "slug": "11_ncac_05a_.0911_-_OAH_1.24.23",
+      "project": "ada-compliance-engine-28",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 106.1,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-08_-_Consent_to_Rate",
+      "project": "ada-compliance-engine-28",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 245.2,
+      "status": "ok"
+    },
+    {
+      "slug": "20-B-11_-_CTR_Data_Call_G.S._58-36-30(e)",
+      "project": "ada-compliance-engine-28",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 100.6,
+      "status": "ok"
+    },
+    {
+      "slug": "06-hmo-php.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 34.4,
+      "status": "ok"
+    },
+    {
+      "slug": "16-B-01_-_Extra_Rx_During_State_of_Emergency",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 170.6,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-16_-_Consent_to_Rate_Data_Collection",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 139.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2013_P3Scfm_County_Farm_Mutual",
+      "project": "ada-compliance-engine-6",
+      "score": 100,
+      "routing": "human_review",
+      "method": "fallback",
+      "concerns": 5,
+      "elapsed": 150.5,
+      "status": "ok"
+    },
+    {
+      "slug": "08-factory-mutual.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 162.7,
+      "status": "ok"
+    },
+    {
+      "slug": "16-B-03_-_Procedures_for_Catastrophic_Adjusters",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 143.7,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-18_-_Snow_Extra_RX_Bulletin",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 141.7,
+      "status": "ok"
+    },
+    {
+      "slug": "Filing_Checklist_-_Factory_Mutual",
+      "project": "ada-compliance-engine-8",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 49.3,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_08_.0900_and_.1400",
+      "project": "ada-compliance-engine-19",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 131.1,
+      "status": "ok"
+    },
+    {
+      "slug": "17-B-04_-_Extra_Rx_During_State_of_Emergency",
+      "project": "ada-compliance-engine-19",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 258.6,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_Atlantic_Surety_Co_2022_ROE",
+      "project": "ada-compliance-engine-19",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 113.8,
+      "status": "ok"
+    },
+    {
+      "slug": "03-reciprocal.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 237.1,
+      "status": "ok"
+    },
+    {
+      "slug": "15-B-04_-_Procedure_for_Catastrophic_Adjusters",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 95.4,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-13_-_Hurricane_Florence_Data_Call",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 113.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2013_P3S04_Homeowners_Multiple_Peril",
+      "project": "ada-compliance-engine-3",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 96.7,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_17",
+      "project": "ada-compliance-engine-23",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 134.2,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-03_-_Dwelling_Fire_Data_Call",
+      "project": "ada-compliance-engine-23",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 163.5,
+      "status": "ok"
+    },
+    {
+      "slug": "20-B-04_-_Protective_Actions_to_Prevent_COVID-19_NC_Operations_-_Expired",
+      "project": "ada-compliance-engine-23",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 246.4,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_01",
+      "project": "ada-compliance-engine-14",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 294.8,
+      "status": "ok"
+    },
+    {
+      "slug": "16-B-08_-_Activation_of_NCDOI_Disaster_Mediation_Program",
+      "project": "ada-compliance-engine-14",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 125.9,
+      "status": "ok"
+    },
+    {
+      "slug": "19-B-05_-_Small_Business_Health_Care_Act",
+      "project": "ada-compliance-engine-14",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 142.9,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_06A.0418",
+      "project": "ada-compliance-engine-17",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 123.4,
+      "status": "ok"
+    },
+    {
+      "slug": "17-B-02_-_Procedure_for_Catastrophic_Adjusters",
+      "project": "ada-compliance-engine-17",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 268.8,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_Atlantic_Surety_Co_2013_ROE",
+      "project": "ada-compliance-engine-17",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 181.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01-title.pdf",
+      "project": "ada-compliance-engine-1",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 44.8,
+      "status": "ok"
+    },
+    {
+      "slug": "15-B-02_-_NCIUA_Member_Company_HO_Report",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 147.0,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-11_-_Activation_of_NCDOI_Disaster_Mediation_Program",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 135.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2013_P2_Property_and_Casualty_Business_By_NC_Insurer_Type",
+      "project": "ada-compliance-engine-1",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 7,
+      "elapsed": 255.3,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_08_.0735_Temporary_Certificate",
+      "project": "ada-compliance-engine-18",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 269.6,
+      "status": "ok"
+    },
+    {
+      "slug": "17-B-03_-_Procedure_for_Catastrophic_Motor_Vehicle_Damage_Appraisers",
+      "project": "ada-compliance-engine-18",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 165.0,
+      "status": "ok"
+    },
+    {
+      "slug": "1st_Atlantic_Surety_Co_2017_ROE",
+      "project": "ada-compliance-engine-18",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 163.0,
+      "status": "ok"
+    },
+    {
+      "slug": "08-factory-mutual.pdf_2",
+      "project": "ada-compliance-engine-9",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 8,
+      "elapsed": 163.7,
+      "status": "ok"
+    },
+    {
+      "slug": "16-B-04_-_Extra_Prescriptions_due_to_Declaration_of_Disaster_or_Emergency_in_North_Carolina",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 118.3,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-19_-_NCIUA_Member_Company_Homeowners_Report",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 119.5,
+      "status": "ok"
+    },
+    {
+      "slug": "Pierre,_Abdi_Jean_19895309",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 202.3,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_13.0308_Annual_Statement",
+      "project": "ada-compliance-engine-22",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 210.4,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-02_-_Weather_Projections_-_Approaching_Winter_Storm",
+      "project": "ada-compliance-engine-22",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 201.5,
+      "status": "ok"
+    },
+    {
+      "slug": "20-B-03_-_CTR_Data_Call_(e)",
+      "project": "ada-compliance-engine-22",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 194.9,
+      "status": "ok"
+    },
+    {
+      "slug": "02-self-insured-workers-compensation-group-fund.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 301.9,
+      "status": "ok"
+    },
+    {
+      "slug": "15-B-03_-_Extra_Rx_During_State_of_Emergency",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 90.8,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-12_-_Hurricane_Florence_Disaster_Bulletin",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 124.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2013_P3S02.2_Multiple_Peril_Crop",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 92.3,
+      "status": "ok"
+    },
+    {
+      "slug": "083122-flyer.pdf_2",
+      "project": "ada-compliance-engine-11",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 375.6,
+      "status": "ok"
+    },
+    {
+      "slug": "16-B-06_-_Extra_Prescriptions_due_to_Declaration_of_Disaster_or_Emergency_in_North_Carolina_(EXPANDED_AREA)",
+      "project": "ada-compliance-engine-11",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 88.6,
+      "status": "ok"
+    },
+    {
+      "slug": "19-B-02_-_2019-2020_Procedures_for_Catastrophic_Motor_Vehicle_Damage_Appraisers_Bulletin",
+      "project": "ada-compliance-engine-11",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 164.9,
+      "status": "ok"
+    },
+    {
+      "slug": "15-B-01_-_TRIA_Reauthorization_Act_of_2015",
+      "project": "ada-compliance-engine-30",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 200.7,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-10_-_Annual_Financial_Reporting_Law_Bulletin",
+      "project": "ada-compliance-engine-30",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 273.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2013_P2_Accident_and_Health_By_NC_Insurer_Type",
+      "project": "ada-compliance-engine-30",
+      "score": 95,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 7,
+      "elapsed": 162.1,
+      "status": "ok"
+    },
+    {
+      "slug": "07-hmdi.pdf",
+      "project": "ada-compliance-engine-7",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 178.8,
+      "status": "ok"
+    },
+    {
+      "slug": "16-B-02_-_NCIUA_Member_Company_HO_Report",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 114.5,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-17_-_CTR_Rule_Changes",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 160.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2013_P3Stitle_Title",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 197.3,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_10_.0602_-_Readoption",
+      "project": "ada-compliance-engine-20",
+      "score": 96,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 298.4,
+      "status": "ok"
+    },
+    {
+      "slug": "17-B-05_-_Annual_Financial_Reporting_Law_Bulletin",
+      "project": "ada-compliance-engine-20",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 268.4,
+      "status": "ok"
+    },
+    {
+      "slug": "20-B-01_-_NCIUA_Member_Company_Homeowners_Report",
+      "project": "ada-compliance-engine-20",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 112.7,
+      "status": "ok"
+    },
+    {
+      "slug": "11_NCAC_6A_-_Readoptions",
+      "project": "ada-compliance-engine-26",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 430.6,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-06_-_Procedure_for_Catastrophic_Motor_Vehicle_Damage_Appraisers",
+      "project": "ada-compliance-engine-26",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 186.5,
+      "status": "ok"
+    },
+    {
+      "slug": "20-B-07_-_COVID-19_Extended_Deferral_Period",
+      "project": "ada-compliance-engine-26",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 97.8,
+      "status": "ok"
+    },
+    {
+      "slug": "04-property-and-casualty.pdf",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 166.8,
+      "status": "ok"
+    },
+    {
+      "slug": "15-B-05_-_Annual_Financial_Reporting_Law",
+      "project": "ada-compliance-engine-4",
+      "score": 94,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 6,
+      "elapsed": 370.5,
+      "status": "ok"
+    },
+    {
+      "slug": "18-B-14_-_Extra_RX_During_State_of_Emergency",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 111.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2013_P3S19.2_Other_Private_Passenger_Auto_Liability",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 95.1,
+      "status": "ok"
+    }
+  ]
+}

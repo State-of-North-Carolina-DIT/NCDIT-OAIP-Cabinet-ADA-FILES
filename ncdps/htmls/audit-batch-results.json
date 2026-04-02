@@ -1,3 +1,970 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:39959ef2d5039deee3c1358080eed20a8df9d1ec63f658585d47af288877d3bf
-size 26553
+{
+  "timestamp": "2026-03-26T21:53:46",
+  "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncdps/htmls",
+  "total_docs": 96,
+  "ok": 96,
+  "failed": 0,
+  "elapsed_seconds": 770.2,
+  "results": [
+    {
+      "slug": "2000_Annual_Report_-_NCDJJDP",
+      "project": "ada-compliance-engine-24",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 142.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2013-14_Allocation.pdf",
+      "project": "ada-compliance-engine-24",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 75.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2019_NCEM_YearReview_web",
+      "project": "ada-compliance-engine-24",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 41.4,
+      "status": "ok"
+    },
+    {
+      "slug": "14B-17_ASLB_Emergency_Rule_Change_Public_Notice",
+      "project": "ada-compliance-engine-7",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 125.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2005_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 115.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2016_North_Carolina_Emergency_Management_Year_in_Review",
+      "project": "ada-compliance-engine-7",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 31.6,
+      "status": "ok"
+    },
+    {
+      "slug": "164th_Basic_Patrol_School.pdf",
+      "project": "ada-compliance-engine-21",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 88.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2011-12Allocation.pdf",
+      "project": "ada-compliance-engine-21",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 71.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2019_2020_ASR_Final",
+      "project": "ada-compliance-engine-21",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 130.1,
+      "status": "ok"
+    },
+    {
+      "slug": "157th_Basic_School_Graduates.pdf",
+      "project": "ada-compliance-engine-17",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 93.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2009_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-17",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 164.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2018_NCEM_YearReview_web",
+      "project": "ada-compliance-engine-17",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 39.7,
+      "status": "ok"
+    },
+    {
+      "slug": "111_Staffing_Allocations_Rev_08_31_20",
+      "project": "ada-compliance-engine-4",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 33.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2003_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 94.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2016-17Allocation.pdf",
+      "project": "ada-compliance-engine-4",
+      "score": 95,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 111.2,
+      "status": "ok"
+    },
+    {
+      "slug": "HurricaneGuide_2019_FINALsinglePages",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 111.2,
+      "status": "ok"
+    },
+    {
+      "slug": "1_-_4.14.25_-_Advisory_Council_Agenda.pdf",
+      "project": "ada-compliance-engine-23",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 122.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2011_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-23",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 106.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2019_NCEM_NCORR_Annual_Report",
+      "project": "ada-compliance-engine-23",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 120.9,
+      "status": "ok"
+    },
+    {
+      "slug": "14B_NCAC_17_0202_with_Intro_08_07_20",
+      "project": "ada-compliance-engine-12",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 104.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2007_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-12",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 153.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2017_NC_Emergency_Management_Annual_Report",
+      "project": "ada-compliance-engine-12",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 100.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2000_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-25",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 127.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2013_Diversion_Report_-_NCDJJDP",
+      "project": "ada-compliance-engine-25",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 101.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2019_NCSHP_Awards_Recipients",
+      "project": "ada-compliance-engine-25",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 137.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2002_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-30",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 143.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2015_Annual_Report_-_DJJDP",
+      "project": "ada-compliance-engine-30",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 107.7,
+      "status": "ok"
+    },
+    {
+      "slug": "ASLB_January_2025_Board_Meeting_Minutes_and_Reports",
+      "project": "ada-compliance-engine-30",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 134.6,
+      "status": "ok"
+    },
+    {
+      "slug": "16_Video_Lists",
+      "project": "ada-compliance-engine-22",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 114.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2011_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-22",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 112.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2019_FAST_Training_Dates",
+      "project": "ada-compliance-engine-22",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 160.9,
+      "status": "ok"
+    },
+    {
+      "slug": "158th_Basic_School_Duty_Station_List",
+      "project": "ada-compliance-engine-18",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 132.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2010-11Allocation.pdf",
+      "project": "ada-compliance-engine-18",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 110.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2018_NC_Disaster_Recovery_Framework",
+      "project": "ada-compliance-engine-18",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 155.6,
+      "status": "ok"
+    },
+    {
+      "slug": "155th_Basic_Patrol_School.pdf",
+      "project": "ada-compliance-engine-15",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 87.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2008_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-15",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 170.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2018_NCEM_Annual_Report",
+      "project": "ada-compliance-engine-15",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 142.1,
+      "status": "ok"
+    },
+    {
+      "slug": "12_FAST_Resource_request_form_ICS_213",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 38.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2004_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 109.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2016_Annual_Report_-_DJJDP",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 115.1,
+      "status": "ok"
+    },
+    {
+      "slug": "January_2026_Board_Meeting_Hot_Sheet",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 143.0,
+      "status": "ok"
+    },
+    {
+      "slug": "109_Advance_Determinination_of_Suitability_Rev_1_14_21",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 134.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2003_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 113.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2015_Sex_Abuse_Annual_Report",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 140.8,
+      "status": "ok"
+    },
+    {
+      "slug": "Craven_web",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 20.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2002_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-29",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 106.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2015-2016_Sexual_Abuse_Annual_Report",
+      "project": "ada-compliance-engine-29",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 137.7,
+      "status": "ok"
+    },
+    {
+      "slug": "2_-_EO13-EstablishingAdvisoryCouncilforStudentSafetyandWell-Being.pdf",
+      "project": "ada-compliance-engine-29",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 1,
+      "elapsed": 170.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2002-03Allocation.pdf",
+      "project": "ada-compliance-engine-28",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 153.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2015-16Allocation.pdf",
+      "project": "ada-compliance-engine-28",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 117.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2019_Sexual_Abuse_Annual_Report",
+      "project": "ada-compliance-engine-28",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 151.6,
+      "status": "ok"
+    },
+    {
+      "slug": "14B-17_ASLB_Emergency_Rule_Change_Public_Notice_3",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 135.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2006_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 138.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2017_Annual_Report_-_DJJDP",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 151.8,
+      "status": "ok"
+    },
+    {
+      "slug": "160th_and_161st_Basic_Patrol_School_Graduates.pdf",
+      "project": "ada-compliance-engine-20",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 107.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2010_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-20",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 148.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2018_NC_Disaster_Recovery_Framework_Final_2",
+      "project": "ada-compliance-engine-20",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 169.5,
+      "status": "ok"
+    },
+    {
+      "slug": "14B_NCAC_03_.0401-.0410_Search_and_Rescue_Program",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 127.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2006_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 125.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2017_Juvenile_Justice_Reinvestment_Act_final_summarySOG",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 174.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2001_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-27",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 211.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2014_NCCMP_ANNUAL_RPT",
+      "project": "ada-compliance-engine-27",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 145.7,
+      "status": "ok"
+    },
+    {
+      "slug": "2019_SHP_Promotions_List",
+      "project": "ada-compliance-engine-27",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 74.9,
+      "status": "ok"
+    },
+    {
+      "slug": "155th_and_156th_Basic_Patrol_School_Flyer",
+      "project": "ada-compliance-engine-16",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 123.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2009_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-16",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 162.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2018_NCEM_Annual_Report_2",
+      "project": "ada-compliance-engine-16",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 153.5,
+      "status": "ok"
+    },
+    {
+      "slug": "152nd_Basic_School_Assignments_Alpha",
+      "project": "ada-compliance-engine-14",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 148.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2008_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-14",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 136.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2018_Annual_Report_-_DJJDP",
+      "project": "ada-compliance-engine-14",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 162.2,
+      "status": "ok"
+    },
+    {
+      "slug": "14_B_NCAC_03_.0501_-_Emergency_Management_-_Hazardous_Material_Regional_Response_Program",
+      "project": "ada-compliance-engine-13",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 194.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2008-09Allocation.pdf",
+      "project": "ada-compliance-engine-13",
+      "score": 95,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 114.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2018_AnnualReport_CenterMissingPersons",
+      "project": "ada-compliance-engine-13",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 146.0,
+      "status": "ok"
+    },
+    {
+      "slug": "13_Activity_Log_ICS_214",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 25.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2004_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 157.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2016_NCCMP_ANNUAL_RPT",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 147.7,
+      "status": "ok"
+    },
+    {
+      "slug": "May_2025_Board_Meeting_Hot_Sheet",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 126.1,
+      "status": "ok"
+    },
+    {
+      "slug": "159th_Basic_School_Graduates.pdf",
+      "project": "ada-compliance-engine-19",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 128.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2010_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-19",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 170.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2018_NC_Disaster_Recovery_Framework_Final",
+      "project": "ada-compliance-engine-19",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 160.9,
+      "status": "ok"
+    },
+    {
+      "slug": "14B-17_ASLB_Emergency_Rule_Change_Public_Notice_2",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 165.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2005_DJJDP_Annual_Report",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 179.7,
+      "status": "ok"
+    },
+    {
+      "slug": "2017-18Allocation.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 132.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2001_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-26",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 184.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2014_JJ_Facilities_Strategic_Plan",
+      "project": "ada-compliance-engine-26",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 137.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2019_NC_Disaster_Recovery_Framework_FINAL",
+      "project": "ada-compliance-engine-26",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 205.0,
+      "status": "ok"
+    },
+    {
+      "slug": "102B_Consent_Form_to_Accompany_Discrimination_Complaint_Form",
+      "project": "ada-compliance-engine-2",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 63.7,
+      "status": "ok"
+    },
+    {
+      "slug": "200327_FAQ_SAH_Order_FINAL",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 108.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2015_DPS_JCPC_Special_Provisions_Report",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 11,
+      "elapsed": 292.8,
+      "status": "ok"
+    },
+    {
+      "slug": "ASLB_November_2024_Board_Meeting_Minutes_and_Reports",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 16,
+      "elapsed": 120.2,
+      "status": "ok"
+    },
+    {
+      "slug": "14B_NCAC_05B_Section_0401",
+      "project": "ada-compliance-engine-11",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 239.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2007_Annual_Report-_NCDJJDP",
+      "project": "ada-compliance-engine-11",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 199.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2017_NCCMP_ANNUAL_RPT_1",
+      "project": "ada-compliance-engine-11",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 177.2,
+      "status": "ok"
+    },
+    {
+      "slug": "00_CRES2011_final",
+      "project": "ada-compliance-engine-1",
+      "score": 0,
+      "routing": "human_review",
+      "method": "hard_veto:V8",
+      "concerns": 18,
+      "elapsed": 418.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2003-04Allocation.pdf",
+      "project": "ada-compliance-engine-1",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 118.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2015_DPS_Annual_Evaluation_of_Community_Programs_Report",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 108.0,
+      "status": "ok"
+    },
+    {
+      "slug": "ASLB_March_2025_Board_Meeting_Minutes_and_Reports",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 125.4,
+      "status": "ok"
+    }
+  ]
+}

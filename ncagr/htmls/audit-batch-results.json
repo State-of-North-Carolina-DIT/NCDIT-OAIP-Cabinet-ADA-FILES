@@ -1,3 +1,962 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aefdf095ee5087a7d1c1aea3b3e6e6b4f1f2db4a921939b981c48f6bfad0f1e2
-size 26117
+{
+  "timestamp": "2026-03-26T20:33:03",
+  "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/ncagr/htmls",
+  "total_docs": 100,
+  "ok": 88,
+  "failed": 12,
+  "elapsed_seconds": 5429.7,
+  "results": [
+    {
+      "slug": "1-20_Diamond_Skin_Disease.pdf",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 80.1,
+      "status": "ok"
+    },
+    {
+      "slug": "14A_Rowan_Supervisor_Contract",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 24.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2-24_State_Recall_Procedures.pdf",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 185.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2009_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 97.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2016-2017_School_Assessment",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 37.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2018_Water_Use_Survey_Questionnaire",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 20.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2022-2023-FTSBid-4-24-2023-5-22-2023",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 41.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2023-2024-FTSBid-11-6-2023-1-22-2024",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 120.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2024_1st-2nd_Quarter_Reimbursements_Detailed_PDF",
+      "project": "ada-compliance-engine-5",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 163.7,
+      "status": "ok"
+    },
+    {
+      "slug": "tN.C._Forest_Service_-_2018-2020_NC_Forestry_BMP_Implementation_Survey_Procedure",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 135.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1-11SlaughterPlantRemovalNotice.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 93.4,
+      "status": "ok"
+    },
+    {
+      "slug": "13-08_Offal_and_Specimen_Permit_Updated.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 116.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2-16EthicalResponsibilities.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 194.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2008_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-3",
+      "status": "timeout",
+      "elapsed": 2584.0
+    },
+    {
+      "slug": "2014_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 123.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2018-2019_School_TEFAP_Assessment",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 27.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2022-2023-FTSBid-11-7-2022-1-23-2022",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 36.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2022_Water_Use_Survey_Questionnaire",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 23.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2023_Shelter_Report_PDF_(as_of_9.24.24)",
+      "project": "ada-compliance-engine-3",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 145.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Suggested_Steps_for_Agricultural_Pond_Evaluation_&_Approval_to_Build_(PDF)",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 63.8,
+      "status": "ok"
+    },
+    {
+      "slug": "000IMregschart100815.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 94.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1217_Committee_Membership",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 91.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2-10_Branding_Equip_and_Security.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 104.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2008_Water_Use_Survey_Questionnaire",
+      "project": "ada-compliance-engine-2",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 87.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2014_Water_Use_Survey_Questionnaire",
+      "project": "ada-compliance-engine-2",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 27.7,
+      "status": "ok"
+    },
+    {
+      "slug": "2018-2019_School_Assessment",
+      "project": "ada-compliance-engine-2",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 26.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2021_Annual_Report",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 161.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2022_Public_Animal_Shelter_Report_(PDF)_-_Revised",
+      "project": "ada-compliance-engine-2",
+      "score": 95,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 132.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2023_NC_State_Fair_Fairgoer_Insights_Report",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 157.2,
+      "status": "ok"
+    },
+    {
+      "slug": "SPC&PD_-_Sniper_SLN_Label",
+      "project": "ada-compliance-engine-2",
+      "status": "timeout",
+      "elapsed": 2583.9
+    },
+    {
+      "slug": "1-21_SOP_for_Completing_Compliance_Referral_Form.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 187.1,
+      "status": "ok"
+    },
+    {
+      "slug": "15-23_Courtesy_Reviews.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 128.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2002_Central_Coastal_Plain_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 164.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2010_Water_Use_Survey_Questionnaire",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 28.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2016-2017_School_Assessment_2",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 38.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2018_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 148.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2022-2023-FTSBid-8-22-2022-10-24-2022",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 108.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2023-2024-FTSBid-2-5-2024-3-18-2024",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 35.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2024_1st-3rd_Quarter_Reimbursements_Detailed_PDF",
+      "project": "ada-compliance-engine-6",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 101.5,
+      "status": "ok"
+    },
+    {
+      "slug": "tN.C._Forest_Service_-_Assessment_of_Forestry_BMP_in_North_Carolina_2018_-_2020",
+      "project": "ada-compliance-engine-6",
+      "status": "timeout",
+      "elapsed": 2583.9
+    },
+    {
+      "slug": "11-25_Labeling_and_Point_of_Purchase_Claims.pdf",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 166.0,
+      "status": "ok"
+    },
+    {
+      "slug": "16_Steps_to_Conservation_Easement_Acquisition",
+      "project": "ada-compliance-engine-9",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 31.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2004_Southern_Coastal_Plain_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 138.7,
+      "status": "ok"
+    },
+    {
+      "slug": "2011_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 173.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2016_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 129.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2020_Annual_Report_2",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 133.7,
+      "status": "ok"
+    },
+    {
+      "slug": "2022_Annual_Report",
+      "project": "ada-compliance-engine-9",
+      "status": "timeout",
+      "elapsed": 2584.0
+    },
+    {
+      "slug": "2023-2024-FTSBid-8-21-2023-10-23-2023",
+      "project": "ada-compliance-engine-9",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 39.1,
+      "status": "ok"
+    },
+    {
+      "slug": "Nondiscrimination_Statement_Spanish",
+      "project": "ada-compliance-engine-9",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 34.8,
+      "status": "ok"
+    },
+    {
+      "slug": "tNC_Forest_Service_-_NC_Fire_Weather_Tech_Note_01",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 104.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1-24_Documents_Required_to_be_Posted.pdf",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 135.3,
+      "status": "ok"
+    },
+    {
+      "slug": "15-24_Retail_Ground_Beef_Sampling.pdf",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 201.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2003_Central_Coastal_Plain_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 107.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2010_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 116.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2016-2017_TEFAP_Assessment",
+      "project": "ada-compliance-engine-7",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 114.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2019_Annual_Report",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 170.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2022-FTSBid-4-22-2022-5-20-2022",
+      "project": "ada-compliance-engine-7",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 61.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2023-2024-FTSBid-4-8-2024-6-3-2024",
+      "project": "ada-compliance-engine-7",
+      "status": "timeout",
+      "elapsed": 2584.0
+    },
+    {
+      "slug": "2024_1st-3rd_Quarter_Reimbursements_Detailed_PDF_2",
+      "project": "ada-compliance-engine-7",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 126.8,
+      "status": "ok"
+    },
+    {
+      "slug": "tNC_Forest_Service_-_Forest_Health_Handbook_(Diseases)",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 137.3,
+      "status": "ok"
+    },
+    {
+      "slug": "$_Note_Secondary_Nutrients_and_Micronutrients",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 106.8,
+      "status": "ok"
+    },
+    {
+      "slug": "12-25_Microbiological_Laboratory_Notifications_and_Results_for_MPID_Samples",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 335.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1_IM_PHIS_QR_Guide.pdf",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 175.1,
+      "status": "ok"
+    },
+    {
+      "slug": "2007_Central_Coastal_Plain_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 96.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2012_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 93.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2018-2019_SKP_Assessment",
+      "project": "ada-compliance-engine-1",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 27.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2020_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-1",
+      "status": "timeout",
+      "elapsed": 2584.0
+    },
+    {
+      "slug": "2022_NCDA&CS_QAR_Report",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 161.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2023HolidaySchedule.pdf",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 85.8,
+      "status": "ok"
+    },
+    {
+      "slug": "SPC&PD_-_Reviton_SLN_Label",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 194.1,
+      "status": "ok"
+    },
+    {
+      "slug": "1-17_NewEmployeeTrainingAssignmentMPIDNotice.pdf",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 151.6,
+      "status": "ok"
+    },
+    {
+      "slug": "14-24_Filing_System_for_TA_and_State_Inspected_Establishments",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 130.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2-17NonAmenableNonExoticInspectionPolicy.pdf",
+      "project": "ada-compliance-engine-4",
+      "status": "timeout",
+      "elapsed": 600.1
+    },
+    {
+      "slug": "2009_Water_Use_Survey_Questionnaire",
+      "project": "ada-compliance-engine-4",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 55.7,
+      "status": "ok"
+    },
+    {
+      "slug": "2016-2017_SKP_Assessment",
+      "project": "ada-compliance-engine-4",
+      "status": "timeout",
+      "elapsed": 2584.0
+    },
+    {
+      "slug": "2018_Annual_Report",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 165.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2022-2023-FTSBid-2-6-2023-3-20-2023",
+      "project": "ada-compliance-engine-4",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 46.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2022_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 158.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2024_-_2025_Request_for_Proposals",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 110.4,
+      "status": "ok"
+    },
+    {
+      "slug": "ncsf-hcc-winners_open",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 98.1,
+      "status": "ok"
+    },
+    {
+      "slug": "11-24_Micro_Sample_Frame_Update.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 150.7,
+      "status": "ok"
+    },
+    {
+      "slug": "16-23_Custom_Exempt_Record_Requirements.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 141.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2004_Central_Coastal_Plain_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 515.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2011_Water_Use_Survey_Questionnaire",
+      "project": "ada-compliance-engine-8",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 78.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2016_Water_Use_Survey_Questionnaire",
+      "project": "ada-compliance-engine-8",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 28.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2020_Annual_Report",
+      "project": "ada-compliance-engine-8",
+      "status": "timeout",
+      "elapsed": 2583.9
+    },
+    {
+      "slug": "2022-McCain_Trail_Equestrian_Program-User_Guidelines.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 142.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2023-2024-FTSBid-8-19-2024_\u2013_10-21-2024",
+      "project": "ada-compliance-engine-8",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 58.4,
+      "status": "ok"
+    },
+    {
+      "slug": "MPID_1-26_Reimbursement_of_Travel",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 294.9,
+      "status": "ok"
+    },
+    {
+      "slug": "tNC_Forest_Service_-_Forest_Health_Handbook_(Table_of_Contents)",
+      "project": "ada-compliance-engine-8",
+      "status": "timeout",
+      "elapsed": 1340.8
+    },
+    {
+      "slug": "12-24_Instructions_for_Use_of_Sample_Seals.pdf",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 270.7,
+      "status": "ok"
+    },
+    {
+      "slug": "18-25_Change_of_Address_and_Name_Instructions",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 134.2,
+      "status": "ok"
+    },
+    {
+      "slug": "2006_Central_Coastal_Plain_Water_Use_Survey_Report",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 537.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2012_Water_Use_Survey_Questionnaire",
+      "project": "ada-compliance-engine-10",
+      "status": "timeout",
+      "elapsed": 2584.0
+    },
+    {
+      "slug": "2017_NCDA&CS_QAR_Report",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 160.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2020_Water_Use_Survey_Questionnaire",
+      "project": "ada-compliance-engine-10",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 22.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2022_Cotton_Acreage_by_County",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 166.6,
+      "status": "ok"
+    },
+    {
+      "slug": "2023Annual_Report",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 125.2,
+      "status": "ok"
+    },
+    {
+      "slug": "SPC&PD_-_Command_3ME_SLN_Label",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 88.0,
+      "status": "ok"
+    },
+    {
+      "slug": "tNC_Forest_Service_-_NC_Smoke_Management_Plan_Tech_Note_02",
+      "project": "ada-compliance-engine-10",
+      "status": "timeout",
+      "elapsed": 1340.8
+    }
+  ]
+}

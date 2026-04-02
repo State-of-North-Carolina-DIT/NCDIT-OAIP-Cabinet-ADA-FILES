@@ -1,3 +1,952 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bbbe32e274a18a53596e6b53446fb8a682cfca00384cee91012f16fee2512e90
-size 25665
+{
+  "timestamp": "2026-03-26T17:42:10",
+  "input_dir": "/Users/hermine/Documents/Projects/GitHub/NCDIT-Cabinet-ADA-FILES/dpi/htmls",
+  "total_docs": 95,
+  "ok": 93,
+  "failed": 2,
+  "elapsed_seconds": 2048.7,
+  "results": [
+    {
+      "slug": "01_Alpha_SOE_FULL_APP_PUBLIC.pdf",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 18,
+      "elapsed": 298.6,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Movement_School_Northeast_Charlotte_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-7",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 123.1,
+      "status": "ok"
+    },
+    {
+      "slug": "071_Survey.pdf",
+      "project": "ada-compliance-engine-7",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 23.2,
+      "status": "ok"
+    },
+    {
+      "slug": "1.0_Percent_Transcript",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 138.8,
+      "status": "ok"
+    },
+    {
+      "slug": "112-COVID19NationwideWaiver_Parents_PickUp_Meals.pdf",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 115.5,
+      "status": "ok"
+    },
+    {
+      "slug": "115c375",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 77.8,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06D_0508-_for_publication",
+      "project": "ada-compliance-engine-7",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 158.7,
+      "status": "ok"
+    },
+    {
+      "slug": "19_EDC_06873_Charlotte",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 100.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2006_07_21stcclc",
+      "project": "ada-compliance-engine-7",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 129.0,
+      "status": "ok"
+    },
+    {
+      "slug": "0-COVID19_KKFA_Nationwide_Waiver_Cover_Letter.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 94.7,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Johnston_Prep_FULL_APP_PUBLIC.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 128.0,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Unity_Global_Academy_PUBLIC_full_app.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 223.1,
+      "status": "ok"
+    },
+    {
+      "slug": "09conference",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 30.1,
+      "status": "ok"
+    },
+    {
+      "slug": "10conference",
+      "project": "ada-compliance-engine-3",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 29.0,
+      "status": "ok"
+    },
+    {
+      "slug": "113countbylea_4",
+      "project": "ada-compliance-engine-3",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 149.0,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06C_.0110_(Qualifications_of_School_Nurses)_-_ADOPT_2025_v.1",
+      "project": "ada-compliance-engine-3",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 124.9,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06_Decennial_Review",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 125.7,
+      "status": "ok"
+    },
+    {
+      "slug": "2003-2019_Discrete_Math_Crosswalk",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 218.4,
+      "status": "ok"
+    },
+    {
+      "slug": "2_-_NC_First_Week_Waiver_Approval.pdf",
+      "project": "ada-compliance-engine-3",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 94.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Agape_Achievement_FULL_APP_PUBLIC.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 49.6,
+      "status": "ok"
+    },
+    {
+      "slug": "01_MINA_PUBLIC_full_app.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 14,
+      "elapsed": 175.3,
+      "status": "ok"
+    },
+    {
+      "slug": "06E_.0100_(Attendance)_Combined.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 231.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1.0_Percent_PowerPoint",
+      "project": "ada-compliance-engine-6",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 19.4,
+      "status": "ok"
+    },
+    {
+      "slug": "111-COVID19NationwideWaiver_Non-Congregate_Feeding.pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 83.5,
+      "status": "ok"
+    },
+    {
+      "slug": "113countbylea_7",
+      "project": "ada-compliance-engine-6",
+      "score": 94,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 155.0,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06D_.0106_(Limited_English_Proficiency_Programs).pdf",
+      "project": "ada-compliance-engine-6",
+      "score": 94,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 153.8,
+      "status": "ok"
+    },
+    {
+      "slug": "19_EDC_06677_Charlotte_Appeal",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 114.8,
+      "status": "ok"
+    },
+    {
+      "slug": "2006",
+      "project": "ada-compliance-engine-6",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 8,
+      "elapsed": 249.6,
+      "status": "ok"
+    },
+    {
+      "slug": "01_ALA_Monroe_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-5",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 143.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Liberty_Charter_Academy_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 18,
+      "elapsed": 419.6,
+      "status": "ok"
+    },
+    {
+      "slug": "05.26.22_Special_CSAB_Minutes_APPROVED.pdf",
+      "project": "ada-compliance-engine-5",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 112.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1.0_Percent_Participation_Waiver_Request_2020\u201321",
+      "project": "ada-compliance-engine-5",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 124.3,
+      "status": "ok"
+    },
+    {
+      "slug": "110-COVID19_Admin_Review.Fiscal_Action_Supply_Chain_Waiver.pdf",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 86.0,
+      "status": "ok"
+    },
+    {
+      "slug": "113countbylea_6",
+      "project": "ada-compliance-engine-5",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 110.3,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06C_.0400_(Salary_and_Benefits)",
+      "project": "ada-compliance-engine-5",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 183.3,
+      "status": "ok"
+    },
+    {
+      "slug": "19_EDC_06677_Charlotte",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 108.5,
+      "status": "ok"
+    },
+    {
+      "slug": "2004_05_21stcclc",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 120.0,
+      "status": "ok"
+    },
+    {
+      "slug": "Quick_Guide_to_Special_Education_Dispute_Resolution_Processes_for_Parents_Guardians",
+      "project": "ada-compliance-engine-5",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 105.1,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Flat_Rock_Classical_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 30,
+      "elapsed": 328.9,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Movement_School_West_Charlotte_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-9",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 139.2,
+      "status": "ok"
+    },
+    {
+      "slug": "076",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 112.1,
+      "status": "ok"
+    },
+    {
+      "slug": "107-COVID19NationwideWaiverAreaEligibility_ExtendAreaElig.pdf",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 143.0,
+      "status": "ok"
+    },
+    {
+      "slug": "113-COVID19NationwideWaiver_Meal_Serv_Time_Restrictions.pdf",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 108.9,
+      "status": "ok"
+    },
+    {
+      "slug": "12282022_EPP_Initial_Authorization_Process_Guide_FINAL.pdf",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 214.4,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06E_.0300_(Driver_Education).pdf",
+      "project": "ada-compliance-engine-9",
+      "score": 96,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 260.5,
+      "status": "ok"
+    },
+    {
+      "slug": "1_13_By_School_Race_Gender",
+      "project": "ada-compliance-engine-9",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 114.7,
+      "status": "ok"
+    },
+    {
+      "slug": "20_Day_Rule_Memo",
+      "project": "ada-compliance-engine-9",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 118.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Centerpoint_Classical_Application_FULL_APP_PUBLIC.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 16,
+      "elapsed": 294.4,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Movement_School_Raleigh_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-8",
+      "status": "timeout",
+      "elapsed": 600.0
+    },
+    {
+      "slug": "07222025_SBO_StrategicPlanning_Update_v1.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 20.5,
+      "status": "ok"
+    },
+    {
+      "slug": "10022020",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 102.8,
+      "status": "ok"
+    },
+    {
+      "slug": "112countbylea",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 140.6,
+      "status": "ok"
+    },
+    {
+      "slug": "12.13.2023_Letter_Waiver_Request_CEP_Mid-Year_Adoption",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 9,
+      "elapsed": 137.6,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06E_.0200_(Interscholastic_Athletics).pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 97.4,
+      "status": "ok"
+    },
+    {
+      "slug": "1_-_NC_2022_OVS.pdf",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 172.0,
+      "status": "ok"
+    },
+    {
+      "slug": "2007",
+      "project": "ada-compliance-engine-8",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 102.8,
+      "status": "ok"
+    },
+    {
+      "slug": "(CACFP)_At-Risk_After_School_Meal_Programs_Meal_Pattern_Choices",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 183.3,
+      "status": "ok"
+    },
+    {
+      "slug": "01_HCLA_FULL_APP_PUBLIC.pdf",
+      "project": "ada-compliance-engine-1",
+      "score": 0,
+      "routing": "human_review",
+      "method": "hard_veto:V8",
+      "concerns": 23,
+      "elapsed": 423.2,
+      "status": "ok"
+    },
+    {
+      "slug": "01_SABER_STEM_Charlotte_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-1",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 146.2,
+      "status": "ok"
+    },
+    {
+      "slug": "09182020",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 163.2,
+      "status": "ok"
+    },
+    {
+      "slug": "109-COVID19NationwideWaiver_Reimbursement_Rates_SSO.pdf",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 105.1,
+      "status": "ok"
+    },
+    {
+      "slug": "113countbylea_2",
+      "project": "ada-compliance-engine-1",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 165.9,
+      "status": "ok"
+    },
+    {
+      "slug": "15_16_Applicants_Press",
+      "project": "ada-compliance-engine-1",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 94.5,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06G_.0602_(Technology_Cost_Considerations).pdf",
+      "project": "ada-compliance-engine-1",
+      "score": 98,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 145.3,
+      "status": "ok"
+    },
+    {
+      "slug": "1_13_By_School_Race_Gender_3",
+      "project": "ada-compliance-engine-1",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 134.7,
+      "status": "ok"
+    },
+    {
+      "slug": "20_EDC_03332_Franklin",
+      "project": "ada-compliance-engine-1",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 182.7,
+      "status": "ok"
+    },
+    {
+      "slug": "(USDA)_A_Guide_to_Smart_Snacks_in_School_for_School_Year_2018-2019",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 7,
+      "elapsed": 206.5,
+      "status": "ok"
+    },
+    {
+      "slug": "01_High_Point_Preparatory_FULL_APP_PUBLIC.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 158.5,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Two_Rivers_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 20,
+      "elapsed": 402.4,
+      "status": "ok"
+    },
+    {
+      "slug": "09252020",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 91.5,
+      "status": "ok"
+    },
+    {
+      "slug": "10_20_Day_Withdrawal_Request_Memo",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 138.4,
+      "status": "ok"
+    },
+    {
+      "slug": "113countbylea_3",
+      "project": "ada-compliance-engine-2",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 135.3,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06B_.0100_(Compiled)",
+      "project": "ada-compliance-engine-2",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 272.8,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06H_0100-_for_publication",
+      "project": "ada-compliance-engine-2",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 4,
+      "elapsed": 111.2,
+      "status": "ok"
+    },
+    {
+      "slug": "1_13_by_school_race_gender_4",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 2,
+      "elapsed": 201.5,
+      "status": "ok"
+    },
+    {
+      "slug": "20_EDC_03534_Union_County",
+      "project": "ada-compliance-engine-2",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 4,
+      "elapsed": 152.6,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Granite_State_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-10",
+      "status": "timeout",
+      "elapsed": 600.1
+    },
+    {
+      "slug": "01_Riverside_Leadership_Academy_PUBLIC_full_app.pdf",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 19,
+      "elapsed": 300.6,
+      "status": "ok"
+    },
+    {
+      "slug": "08_2025-26_instrctns_compltng_ffvp_online_app.pdf",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 86.8,
+      "status": "ok"
+    },
+    {
+      "slug": "108-COVID19NationwideWaiverAreaEligibilityCE_Area_Elig_ClsdEnrlld.pdf",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 97.3,
+      "status": "ok"
+    },
+    {
+      "slug": "113countbylea",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 3,
+      "elapsed": 163.2,
+      "status": "ok"
+    },
+    {
+      "slug": "150_Most_Frequently_Used_Words.pdf",
+      "project": "ada-compliance-engine-10",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 0,
+      "elapsed": 113.2,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06G_.0300_(School_Based_Management_&_Accountability)",
+      "project": "ada-compliance-engine-10",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 3,
+      "elapsed": 168.9,
+      "status": "ok"
+    },
+    {
+      "slug": "1_13_By_School_Race_Gender_2",
+      "project": "ada-compliance-engine-10",
+      "score": 97,
+      "routing": "human_review",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 197.6,
+      "status": "ok"
+    },
+    {
+      "slug": "20_EDC_00832_Wake",
+      "project": "ada-compliance-engine-10",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 12,
+      "elapsed": 204.4,
+      "status": "ok"
+    },
+    {
+      "slug": "01_ALA_Garner_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 20,
+      "elapsed": 555.7,
+      "status": "ok"
+    },
+    {
+      "slug": "01_Legacy_Classical_Full_App_PUBLIC.pdf",
+      "project": "ada-compliance-engine-4",
+      "score": 0,
+      "routing": "excluded",
+      "method": "document_classification",
+      "concerns": 0,
+      "elapsed": 69.7,
+      "status": "ok"
+    },
+    {
+      "slug": "04.25.2024_-_Supply_Chain_Allotment_Q&A",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 5,
+      "elapsed": 115.2,
+      "status": "ok"
+    },
+    {
+      "slug": "1.0_Percent_Alternate_Assessment_Participation_Extension_Waiver_Request",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 10,
+      "elapsed": 170.1,
+      "status": "ok"
+    },
+    {
+      "slug": "11.04.2025_SN_Service_Area_Map",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 145.5,
+      "status": "ok"
+    },
+    {
+      "slug": "113countbylea_5",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 2,
+      "elapsed": 118.3,
+      "status": "ok"
+    },
+    {
+      "slug": "16_NCAC_06C_.0110_(Qualifications_of_School_Nurses)_-_For_Publication_in_Register.pdf",
+      "project": "ada-compliance-engine-4",
+      "score": 100,
+      "routing": "auto_approve",
+      "method": "llm_final_decider",
+      "concerns": 1,
+      "elapsed": 102.7,
+      "status": "ok"
+    },
+    {
+      "slug": "19_EDC_02111_Wake",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 5,
+      "elapsed": 213.9,
+      "status": "ok"
+    },
+    {
+      "slug": "2003-2019_Precalculus_Crosswalk",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 6,
+      "elapsed": 181.3,
+      "status": "ok"
+    },
+    {
+      "slug": "2_Hr_Learning_Online_-_PUBLIC_APPLICATION",
+      "project": "ada-compliance-engine-4",
+      "score": 30,
+      "routing": "reject",
+      "method": "hard_veto:fidelity_reject",
+      "concerns": 14,
+      "elapsed": 376.0,
+      "status": "ok"
+    }
+  ]
+}

@@ -1,1 +1,13 @@
 .DS_Store
+*-audit-report-v*.json
+audit-batch-results-v*.json
+AUDITOR-REPORT-v*.md
+AUDITOR-REPORT.md
+AUDITOR-REPORT-baseline.md
+audit-batch-results-baseline.json
+*-audit-report-baseline.json
+*-audit-report-*baseline*.json
+*-audit-report-pre-*.json
+*-human-vs-auditor*.csv
+AUDIT-ANALYSIS.md
+deq/htmls/Auditor Review (DEQ Set).xlsx
