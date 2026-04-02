@@ -1,33 +1,33 @@
 {
   "document_id": "01_10_2nd_pub_not_20201215",
-  "audited_at": "2026-04-01T19:23:47.159149Z",
+  "audited_at": "2026-04-02T00:14:29.333627Z",
   "source_files": {
     "extraction_json": "01_10_2nd_pub_not_20201215.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_10_2nd_pub_not_20201215.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
+  "quality_score": 95,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9473,
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "fidelity_visual": 0.8571428571428572,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "Both the LLM fidelity evaluation and programmatic detectors independently flagged redundant full-page images that duplicate the extracted text. Additionally, automated structural analysis identified 5 instances of incomplete, truncated alt text on images. With 3 confirmed major defects, the document requires human review to remove the redundant images and correct the alt-text accessibility issues.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "The source document contains an agency logo for DEQ (Department of Environmental Quality) at the bottom left of the first page, as well as the signature of David Miller in the sign-off block. Neither of these meaningful images has a corresponding <img> tag in the HTML output. While an image corresponding to the State Seal at the top of page 1 is present, the distinct DEQ logo and the signature are completely omitted.",
-      "source_pdf_quote": "DEQ logo at the bottom left of page 1, and David Miller's signature above his printed name.",
-      "output_quote": "The HTML contains text for the footer ('North Carolina Department of Environmental Quality...') and the sign-off ('Sincerely, David Miller, PE...') but no <img> elements are present for the logo or signature.",
-      "location": "Page 1 footer and signature block",
+      "description": "Content visually duplicated on page",
+      "severity": "major",
+      "analysis": "The HTML output contains both the extracted text of the document and large image elements that appear to be screenshots of the full pages or significant text blocks. The alt text of the first image explicitly describes 'A formal business letter regarding a revised Notice of Issuance of Mining Permit for Alamance', which matches the extracted text. The alt text of the second image describes 'A formal legal notice from the North Carolina Department of Environmental Quality outlining the process an",
+      "source_pdf_quote": "Page 1 contains the text 'Enclosed is a revised Notice of Issuance...'. Page 2 contains the text '...within sixty (60) days...'.",
+      "output_quote": "The HTML contains the extracted text for these sections, but also embeds large images with alt text indicating they contain the same text (e.g., <img src=\"...\" alt=\"A formal legal notice from the North Carolina Department of Environmental Quality outlining the process and 60-\">).",
+      "location": "Body of HTML (Page 1 and Page 2 image elements)",
       "source": "fidelity_llm",
-      "check_id": "V2",
+      "check_id": "V3",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Full-page image alongside extracted text (2 page(s))",
@@ -42,21 +42,9 @@
       "corroborated": false
     },
     {
-      "description": "Scanned document: source has 0 extractable text but output contains 377 words (OCR'd from images)",
+      "description": "Incomplete image alt text: 5 image(s) with inadequate descriptions (5 truncated mid-sentence) — e.g. p1: \"...d Notice of Issuance of Mining Permit for Alamance\"; p1: \"... State Mining Engineer, regarding a revised Notice\"; p1: \"... a revised Notice of Issuance of Mining Permit for\"",
       "severity": "major",
-      "analysis": "baseline_words=0, gemini_words=377. Entire document is image-based; output likely duplicates content as both page image and extracted text.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Output has more images than source PDF (ratio 2.5x) — possible image duplication",
-      "severity": "major",
-      "analysis": "image_count_ratio=2.50. More images in output than in source indicates duplicated or fabricated image elements.",
+      "analysis": "incomplete_alt_text=5 (truncated=5, placeholder=0, empty=0). Per WCAG 2.1 AA, meaningful images must have descriptive alternative text for screen-reader accessibility.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -68,10 +56,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document uses an underline to emphasize the phrase 'within sixty (60) days' on the second page. This underline is lost in the extracted output.",
+      "analysis": "The source document underlines the phrase 'within sixty (60) days' on the second page for emphasis. The output JSON fails to preserve this underline, resulting in a loss of visual emphasis.",
       "source_pdf_quote": "within sixty (60) days",
       "output_quote": "within sixty (60) days",
-      "location": "Page 2, Paragraph 4",
+      "location": "Page 2, 4th paragraph",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -91,31 +79,34 @@
     }
   ],
   "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
+    "Remove redundant screenshot images that duplicate the extracted text.",
+    "Fix or remove the 5 instances of truncated alt text.",
+    "Restore the underline on the phrase 'within sixty (60) days'.",
+    "Remove incorrectly retained header/footer elements."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 2,
-  "total_critical": 1,
-  "total_major": 0,
+  "total_critical": 0,
+  "total_major": 1,
   "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.9473,
+      "raw_score": 0.9473,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
+      "fidelity_composite": 0.9473,
       "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_visual": 0.8571428571428572,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": null,
       "shingling_precision": null,
@@ -125,6 +116,10 @@
       "gemini_words": 377,
       "table_count_ratio": null,
       "image_count_ratio": 2.5,
+      "image_count_source": 2,
+      "image_count_output": 5,
+      "images_without_data": 0,
+      "html_img_count": 3,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -147,10 +142,15 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 172196,
+    "processing_ms": 115288,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

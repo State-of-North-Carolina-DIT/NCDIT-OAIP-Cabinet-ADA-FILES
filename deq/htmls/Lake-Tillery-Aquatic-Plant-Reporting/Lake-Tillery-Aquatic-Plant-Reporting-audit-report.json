@@ -1,6 +1,6 @@
 {
   "document_id": "Lake-Tillery-Aquatic-Plant-Reporting",
-  "audited_at": "2026-04-01T19:24:27.197717Z",
+  "audited_at": "2026-04-01T22:41:33.681495Z",
   "source_files": {
     "extraction_json": "Lake-Tillery-Aquatic-Plant-Reporting.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is an image-based slide presentation. It features a landscape orientation with multiple slides containing large graphics, logos, screenshots, and presentation-style text layouts.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a landscape-oriented, 6-page visual presentation. It features slide layouts, minimal text composed primarily of bullet points and titles, and pages dominated by large images, collages, and full-page screenshots.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 31346,
+    "processing_ms": 55540,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

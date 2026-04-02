@@ -1,6 +1,6 @@
 {
   "document_id": "01_January_2012_CPAs",
-  "audited_at": "2026-04-01T19:23:28.219787Z",
+  "audited_at": "2026-04-01T22:43:24.080673Z",
   "source_files": {
     "extraction_json": "01_January_2012_CPAs.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity signals indicate a perfectly clean extraction with excellent content and structural preservation. However, the programmatic signals detected a major structural issue: a table spanning across pages was extracted as separate tables with duplicated headers. According to the strict count-based routing rules, the presence of one major programmatic defect mandates human review.",
+  "reasoning": "The LLM fidelity analysis gave the document perfect scores across the board, finding no issues. However, the programmatic analysis identified one major defect: a table was split across pages 1 and 2, resulting in separate table elements with duplicated headers instead of a single continuous table. Because this structural accessibility issue is classified as a major defect, the document must be routed to HUMAN_REVIEW for structural verification.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -31,8 +31,7 @@
     }
   ],
   "action_items": [
-    "Review the tables spanning pages 1-2.",
-    "Merge the separate table elements into a single, continuous HTML table, removing the duplicated header row on the second page."
+    "Review the table spanning pages 1-2 to ensure it is properly merged or structured for accessibility."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -66,6 +65,10 @@
       "gemini_words": 722,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -90,8 +93,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 94483,
+    "processing_ms": 161096,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

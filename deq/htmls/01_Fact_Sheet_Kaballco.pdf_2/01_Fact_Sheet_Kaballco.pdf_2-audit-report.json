@@ -1,6 +1,6 @@
 {
   "document_id": "01_Fact_Sheet_Kaballco.pdf_2",
-  "audited_at": "2026-04-01T19:22:40.047043Z",
+  "audited_at": "2026-04-01T22:39:47.167588Z",
   "source_files": {
     "extraction_json": "01_Fact_Sheet_Kaballco.pdf_2.json",
     "source_pdf": "source.pdf",
@@ -14,16 +14,16 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document exhibits two major defects: a header injected mid-sentence, interrupting the reading order, and one bare URL not properly converted into a hyperlink. Since there are exactly 2 major defects (between 1 and 5) and no critical defects, count-based routing mandates HUMAN_REVIEW.",
+  "reasoning": "The evaluation identified two major defects: one from the LLM fidelity check (header text leaking into the middle of a continuous sentence, breaking reading order) and one programmatic defect (a bare URL not converted to a clickable hyperlink). Under the count-based routing rules, 1-5 major defects mandate a HUMAN_REVIEW outcome to correct the reading flow and ensure accessibility compliance for the link.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Reading order significantly different",
       "severity": "major",
-      "analysis": "There is a header leakage issue that interrupts the reading flow mid-sentence. At the bottom of page 1, a sentence begins ('All comments received... considered in'). In the output, the running header 'FACT SHEET' from the top of page 2 is injected immediately after this, before the sentence concludes ('the final permit decision.'). This breaks a continuous sentence.",
-      "source_pdf_quote": "...will be considered in [page break] the final permit decision.",
-      "output_quote": "All comments received during the public comment period or at the public hearings will be considered in [...] { \"type\": \"heading\", \"level\": 1, \"text\": \"FACT SHEET\" } [...] the final permit decision.",
-      "location": "End of Page 1 / Start of Page 2",
+      "analysis": "The running header 'FACT SHEET' from the top of page 2 is extracted as body content (a level 1 heading) and injected directly into the middle of a continuous sentence that spans across the page break. This breaks the reading flow between the words '...will be considered in' and 'the final permit decision.', constituting header leakage into the main body text.",
+      "source_pdf_quote": "Page 1 ends with: 'All comments received during the public comment period or at the public hearings will be considered in'. Page 2 begins with the running header 'FACT SHEET', followed by the sentence continuation 'the final permit decision.'",
+      "output_quote": "The JSON extracts the header: {\"type\": \"heading\", \"level\": 1, \"text\": \"FACT SHEET\"} and places it right before {\"type\": \"paragraph\", \"text\": \"the final permit decision...\"}, interrupting the sentence started on page 1.",
+      "location": "Page 2, Elements 0 and 1",
       "source": "fidelity_llm",
       "check_id": "S4",
       "fidelity_dimension": "structural",
@@ -67,8 +67,9 @@
     }
   ],
   "action_items": [
-    "Fix the reading order issue where the header interrupts the sentence bridging pages 1 and 2.",
-    "Convert the bare URL into a proper hyperlink."
+    "Remove the leaked 'FACT SHEET' heading from the middle of the sentence bridging pages 1 and 2.",
+    "Convert the bare URL 'https://deq.nc.gov/about/divisions/waste-management/laserfiche' into a proper clickable hyperlink.",
+    "Clean up any remaining header/footer artifacts like 'Page 1 of 2'."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -79,7 +80,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 1.0,
     "score_breakdown": {
       "fidelity_composite": 0.9727,
       "raw_score": 0.9727,
@@ -102,6 +103,10 @@
       "gemini_words": 488,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -126,8 +131,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 104525,
+    "processing_ms": 93097,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

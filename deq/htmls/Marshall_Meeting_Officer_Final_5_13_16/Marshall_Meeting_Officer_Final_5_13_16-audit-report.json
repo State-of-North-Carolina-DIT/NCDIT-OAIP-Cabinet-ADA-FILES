@@ -1,6 +1,6 @@
 {
   "document_id": "Marshall_Meeting_Officer_Final_5_13_16",
-  "audited_at": "2026-04-01T19:26:45.150803Z",
+  "audited_at": "2026-04-01T22:45:49.957537Z",
   "source_files": {
     "extraction_json": "Marshall_Meeting_Officer_Final_5_13_16.json",
     "source_pdf": "source.pdf",
@@ -12,15 +12,15 @@
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "The document contains a critical programmatic defect regarding pervasive header and footer artifacts across all 6 pages of the output. According to the count-based routing thresholds, any critical defect automatically requires a REJECT decision. Additionally, there is a major issue with mixed numbering types in lists indicating flattened sub-points, and a minor loss of visual emphasis.",
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The document contains two major programmatic defects: header/footer elements incorrectly retained in the output, and lists broken by page breaks. These are verifiable structural accessibility issues that require human intervention. Additionally, there is one minor fidelity defect involving the loss of bold and underlined emphasis in list items. Given the 2 major defects, the count-based rules dictate routing to HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Header/footer elements retained in output (6): State of North Carolina | Environmental Quality | Water Reso; Page 2 of 6; Page 3 of 6",
-      "severity": "critical",
-      "analysis": "header_footer_count=6, pages_affected=6/6. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "severity": "major",
+      "analysis": "header_footer_count=6, pages_affected=6/6. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -30,9 +30,9 @@
       "corroborated": false
     },
     {
-      "description": "Mixed numbering types at same list level (1 list(s)): p1:letter+roman — possible sub-point flattening",
+      "description": "List broken by page break (2 instance(s)): p3→p4: list item ends “…s within a 29-mile span of the river and”, continues as paragraph; p4→p5: list item ends “…s take appropriate action to require the”, continues as paragraph",
       "severity": "major",
-      "analysis": "flat_lists=1. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
+      "analysis": "split_list_count=2. Lists that span page breaks should be extracted as a single continuous structure. Split lists affect reading order and navigability for assistive technology.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -44,10 +44,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document relies heavily on bold and underlined text to demarcate inline topics within its unordered lists (e.g., 'Air Quality', 'Beneficial Reuse', 'Dam Safety'). The extraction JSON failed to preserve this emphasis, providing plain text strings without the expected markdown syntax (such as **Air Quality**) or underline preservation.",
-      "source_pdf_quote": "Air Quality – Citizens expressed concerns...",
-      "output_quote": "\"Air Quality \\u2013 Citizens expressed concerns...\"",
-      "location": "Page 3 and Page 4, unordered list items",
+      "analysis": "The source document contains bolded and underlined terms at the start of multiple list items on pages 3, 4, and 5 (e.g., 'Air Quality', 'Beneficial Reuse', 'Costs', etc.). In the extracted output, both the bolding and the underline emphasis are completely lost; the text appears as plain text without any markdown asterisks or formatting indicators.",
+      "source_pdf_quote": "Air Quality (Bold and underlined)",
+      "output_quote": "Air Quality – Citizens expressed concerns...",
+      "location": "Pages 3, 4, and 5 bulleted lists",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -55,9 +55,9 @@
     }
   ],
   "action_items": [
-    "Remove duplicate header and footer artifacts from all pages",
-    "Fix list structures to ensure sub-points are properly nested rather than flattened",
-    "Restore bold and underline visual emphasis for inline topics within unordered lists"
+    "Identify and strip the residual header/footer text from the HTML content.",
+    "Merge the split list items across page breaks 3->4 and 4->5 to ensure proper list structure.",
+    "Restore the missing bold and underline formatting to the list item headers on pages 3, 4, and 5."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -68,7 +68,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 1.0,
+    "decider_confidence": 0.95,
     "score_breakdown": {
       "fidelity_composite": 0.9973,
       "raw_score": 0.9973,
@@ -91,6 +91,10 @@
       "gemini_words": 2242,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 2,
+      "image_count_output": 2,
+      "images_without_data": 0,
+      "html_img_count": 2,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -111,12 +115,17 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "major_disagree",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 109755,
+    "processing_ms": 186096,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

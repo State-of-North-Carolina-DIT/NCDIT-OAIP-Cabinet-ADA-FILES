@@ -1,6 +1,6 @@
 {
   "document_id": "DSCA_November_2023_Case_Studies",
-  "audited_at": "2026-04-01T19:27:23.629751Z",
+  "audited_at": "2026-04-01T22:47:43.530191Z",
   "source_files": {
     "extraction_json": "DSCA_November_2023_Case_Studies.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a landscape-oriented presentation consisting of multiple slides. It features slide-like layouts with large background images, charts, maps, and bulleted lists typical of a PowerPoint presentation, which does not have a clean 1:1 mapping to standard HTML document structure.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a slide presentation, characterized by landscape orientation, large presentation graphics, and slide-like layout with background colors and bulleted lists typical of presentation software.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 26139,
+    "processing_ms": 82327,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

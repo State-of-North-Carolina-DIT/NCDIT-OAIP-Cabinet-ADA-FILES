@@ -1,6 +1,6 @@
 {
   "document_id": "2020-white-lake-sav-report",
-  "audited_at": "2026-04-01T19:23:39.254475Z",
+  "audited_at": "2026-04-01T22:45:05.019749Z",
   "source_files": {
     "extraction_json": "2020-white-lake-sav-report.json",
     "source_pdf": "source.pdf",
@@ -20,10 +20,10 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The source PDF contains 'Figure 16: Bathymetry data collected during the August survey...' on page 22, which includes a meaningful map visualization. However, the rendered HTML completely omits this figure; the HTML document ends after Figure 15, meaning the image and its associated caption for Figure 16 are entirely missing.",
-      "source_pdf_quote": "Figure 16 image and caption: 'Figure 16: Bathymetry data collected during the August survey. Data was collected and processed using BioSonics epuipment and software. Average depth 7.67ft.'",
-      "output_quote": "The HTML document ends after Figure 15. There is no element for Figure 16.",
-      "location": "Page 22 / End of document",
+      "analysis": "The HTML output is missing multiple meaningful images and their accompanying captions from the latter part of the document. Specifically, the six maps constituting Figure 14 on page 20, and the bathymetry map for Figure 16 on page 22 are completely absent from the HTML output.",
+      "source_pdf_quote": "Page 22 shows a bathymetry map with the caption 'Figure 16: Bathymetry data collected during the August survey...' Page 20 shows six maps with the caption 'Figure 14. Results of August 2020 SAV survey at White Lake'.",
+      "output_quote": "The HTML output ends abruptly after Figure 15. There are no images or text corresponding to Figure 14 or Figure 16.",
+      "location": "Missing content from Pages 20 and 22",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
@@ -89,6 +89,10 @@
       "gemini_words": 1338,
       "table_count_ratio": null,
       "image_count_ratio": 0.8235294117647058,
+      "image_count_source": 34,
+      "image_count_output": 28,
+      "images_without_data": 0,
+      "html_img_count": 23,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -113,8 +117,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 122338,
+    "processing_ms": 164498,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

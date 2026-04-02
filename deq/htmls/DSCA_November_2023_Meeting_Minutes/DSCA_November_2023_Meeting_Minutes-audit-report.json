@@ -1,6 +1,6 @@
 {
   "document_id": "DSCA_November_2023_Meeting_Minutes",
-  "audited_at": "2026-04-01T19:27:37.398503Z",
+  "audited_at": "2026-04-01T22:47:07.020267Z",
   "source_files": {
     "extraction_json": "DSCA_November_2023_Meeting_Minutes.json",
     "source_pdf": "source.pdf",
@@ -14,20 +14,20 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The conversion overall is of high fidelity with a composite score of 0.9727 and programmatic text metrics near 1.0. However, there are two major defects: one LLM-identified issue regarding incorrect list semantics on page 2 (Roman numerals converted to headings/paragraphs instead of list items) and one programmatic major defect involving a bare URL that was not converted into a hyperlink. Since there are 2 major defects, the document requires human review according to the count-based routing rules.",
+  "reasoning": "The document has high overall content preservation as indicated by strong shingling metrics and a high LLM composite score. However, there are 3 major defects identified across both LLM and programmatic signals: a bare URL not converted to a hyperlink, and list structure errors including a list broken by a page break and list items incorrectly formatted as headings and plain text. With 1-5 major defects, the document must be routed to HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The source document features a primary list numbered with Roman numerals (I through X). While the output correctly identifies parts of this list on pages 1 and 3, it fails to recognize the list structure on page 2. Item V is incorrectly converted into a heading level 2, and Item VI is converted into a plain paragraph, stripping both of their list item semantics.",
-      "source_pdf_quote": "V. Fund & Site Statistics\n\nVI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer...",
-      "output_quote": "{\"type\": \"heading\", \"level\": 2, \"text\": \"V. Fund & Site Statistics\"}\n\n{\"type\": \"paragraph\", \"text\": \"VI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer...\"}",
+      "analysis": "The source document contains a single continuous ordered list using Roman numerals (I through X). In the output JSON, this list is broken. On page 2, list item 'V' is incorrectly converted into a heading 2, and list item 'VI' is incorrectly converted into a standard paragraph instead of being maintained as list items. This violates the rule against numbered items appearing as plain text/paragraphs.",
+      "source_pdf_quote": "V. Fund & Site Statistics\n[...]\nVI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer...",
+      "output_quote": "{\n  \"type\": \"heading\",\n  \"level\": 2,\n  \"text\": \"V. Fund & Site Statistics\"\n}\n[...]\n{\n  \"type\": \"paragraph\",\n  \"text\": \"VI. Remediation Unit Updates/Issues – Turned discussion over to Billy Meyer...\"\n}",
       "location": "Page 2",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "1 bare URL(s) in text not converted to hyperlinks: https://www.deq.nc.gov/about/divisions/waste-management/superfund-section/dry-cl",
@@ -40,11 +40,23 @@
       "check_id": "S8",
       "fidelity_dimension": null,
       "corroborated": false
+    },
+    {
+      "description": "List broken by page break (1 instance(s)): p1→p2: list item ends “…ve owners manual; (b)(2) regarding waste”, continues as paragraph",
+      "severity": "major",
+      "analysis": "split_list_count=1. Lists that span page breaks should be extracted as a single continuous structure. Split lists affect reading order and navigability for assistive technology.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S5",
+      "fidelity_dimension": null,
+      "corroborated": false
     }
   ],
   "action_items": [
-    "Correct the list semantics for Items V and VI on page 2 to match the primary Roman numeral list.",
-    "Wrap the bare DEQ URL in an appropriate href tag to create a functional hyperlink."
+    "Reconstruct the continuous ordered list (Roman numerals) across the page break, fixing items V and VI",
+    "Convert the bare URL (https://www.deq.nc.gov/about/divisions/waste-management/superfund-section/dry-cl) to a proper hyperlink"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -78,6 +90,10 @@
       "gemini_words": 1465,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -100,10 +116,15 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 92579,
+    "processing_ms": 78337,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

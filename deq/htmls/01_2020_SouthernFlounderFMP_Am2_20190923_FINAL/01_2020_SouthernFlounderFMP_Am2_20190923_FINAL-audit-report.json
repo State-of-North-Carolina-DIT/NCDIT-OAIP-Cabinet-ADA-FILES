@@ -1,6 +1,6 @@
 {
   "document_id": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL",
-  "audited_at": "2026-04-01T19:23:41.972126Z",
+  "audited_at": "2026-04-02T01:43:21.441723Z",
   "source_files": {
     "extraction_json": "01_2020_SouthernFlounderFMP_Am2_20190923_FINAL.json",
     "source_pdf": "source.pdf",
@@ -9,7 +9,7 @@
   "quality_score": 30,
   "quality_grade": "Critical",
   "fidelity_composite": 0.4,
-  "fidelity_content": 1.0,
+  "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 0.9091,
   "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
@@ -20,21 +20,21 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "Multiple meaningful charts are completely missing from the HTML output and have been replaced by bracketed text placeholders. For example, the line charts for Figures 14-18 and 21-23 in the source PDF contain critical data visualizations (such as projected spawning stock biomass). In the HTML, these images are absent and instead represented as text paragraphs containing the alt text (e.g., `<p>[Image: Line chart showing projections of Spawning Stock Biomass...]</p>`).",
-      "source_pdf_quote": "Figure 14: Projections of SSB related to fishing at a level to end overfishing... line chart showing data from 2018 to 2050.",
-      "output_quote": "<p>[Image: Line chart showing projections of Spawning Stock Biomass (SSB) from 2018 to 2050 under different fishing scenarios...]</p>",
-      "location": "Figure 14 (and Figures 15-18, 21-23)",
+      "analysis": "The source PDF contains numerous meaningful charts in the figures section. While Figures 1 through 13 and 19-20 were successfully extracted as <img> elements, several subsequent charts (Figures 14-18 and 21-23) failed to extract as valid images. In the HTML output, these charts are entirely missing and have been replaced with text-based placeholders (e.g., '[Image: Line chart...]'). Because these are meaningful data visualizations necessary for understanding the document's projections, their omi",
+      "source_pdf_quote": "Charts for Figures 14, 15, 16, 17, 18, 21, 22, and 23 in the source document.",
+      "output_quote": "<p>[Image: Line chart showing projections of Spawning Stock Biomass (SSB) from 2018 to 2050...]</p> (and similar text placeholders for the other missing figures)",
+      "location": "Figures 14-18 and 21-23 (Pages 56-58, 61-62)",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
+      "corroborated": false
     },
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The document contains multiple nested lists. While most nested lists (like the identical text on page 24) were extracted correctly, the list on page 14 suffers from hierarchy flattening. The sub-items under the bullet 'From Supplement A to the Southern Flounder FMP Amendment 1...' are visually indented in the source PDF to indicate they are sub-bullets. However, in the JSON output, they are rendered as top-level sibling items in the 'items' array rather than being properly nested inside a 'child",
-      "source_pdf_quote": "• From Supplement A to the Southern Flounder FMP Amendment 1, as modified by the Aug. 17, 2017 settlement agreement:\n− A commercial minimum size limit of 15 inches TL;\n− A minimum mesh size of 6.0-ISM...",
-      "output_quote": "{\"text\": \"From Supplement A to the Southern Flounder FMP Amendment 1, as modified by the Aug. 17, 2017 settlement agreement:\"},\n{\"text\": \"A commercial minimum size limit of 15 inches TL;\"},\n{\"text\": \"A minimum mesh size of 6.0-ISM to harvest southern flounder from a gill net; and\"}",
+      "analysis": "The list starting on page 14 under 'Amendment 1 Management Carried Forward in Amendment 2' contains sub-items that span across to page 15. In the source PDF, the parent bullet 'From Supplement A...' has three indented dash sub-bullets on page 15 ('A commercial minimum size limit...', 'A minimum mesh size...', 'A minimum mesh size...'). The extraction combined the pages but failed to recognize the nested relationship. In the JSON output, these three sub-bullets are rendered as top-level sibling i",
+      "source_pdf_quote": "Page 14 parent bullet 'From Supplement A to the Southern Flounder FMP Amendment 1...' followed on Page 15 by indented sub-bullet '– A commercial minimum size limit of 15 inches TL;'",
+      "output_quote": "The JSON array places 'From Supplement A...' and 'A commercial minimum size limit...' as sibling objects within the same `items` array, rather than placing the sub-items inside a `children` array under the parent.",
       "location": "Page 14, list under 'Amendment 1 Management Carried Forward in Amendment 2'",
       "source": "fidelity_llm",
       "check_id": "S5",
@@ -45,18 +45,6 @@
       "description": "Table split across page break(s): 2 table(s) with repeated headers across consecutive pages",
       "severity": "major",
       "analysis": "split_table_count=2. Examples: pages 47-48: 5 cols (issue, ncdmf, southern flounder advisory committee...); pages 48-49: 5 cols (issue, ncdmf, southern flounder advisory committee...). Tables spanning multiple pages were extracted as separate table elements with duplicated header rows. The HTML output will show multiple tables instead of one continuous table — a structural accessibility issue.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Output has more images than source PDF (ratio 1.8x) — possible image duplication",
-      "severity": "major",
-      "analysis": "image_count_ratio=1.77. More images in output than in source indicates duplicated or fabricated image elements.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -78,6 +66,18 @@
       "corroborated": false
     },
     {
+      "description": "List broken by page break (2 instance(s)): p21→p22: ordered list D→E continues; p22→p23: ordered list D→E continues",
+      "severity": "major",
+      "analysis": "split_list_count=2. Lists that span page breaks should be extracted as a single continuous structure. Split lists affect reading order and navigability for assistive technology.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S5",
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "Table header markup issues: 1 table(s) have a data row marked as header: \"Year\"",
       "severity": "major",
       "analysis": "data_in_th=0, datarow_as_header=1. Tables use <th> for data values (misrepresenting data as headers) or have a data row mismarked as a header row. Screen readers rely on <th> to announce column/row context.",
@@ -87,6 +87,30 @@
       "source": "programmatic",
       "check_id": null,
       "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Incomplete image alt text: 15 image(s) with inadequate descriptions (15 truncated mid-sentence) — e.g. p50: \"...s, overwhelmingly dominated by North Carolina at 9\"; p50: \"...s, overwhelmingly dominated by North Carolina at 9\"; p51: \"...tegories labeled with state abbreviations and \"com\"",
+      "severity": "major",
+      "analysis": "incomplete_alt_text=15 (truncated=15, placeholder=0, empty=0). Per WCAG 2.1 AA, meaningful images must have descriptive alternative text for screen-reader accessibility.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "I checked for the preservation of visual emphasis, specifically underlines, which do not have a native markdown representation. Several instances of underlined text in the PDF (such as on page 27) were converted to italics (using markdown asterisks) rather than maintaining the underline formatting, which constitutes a loss of the original specific visual emphasis type.",
+      "source_pdf_quote": "Advisory Committee Recommendations",
+      "output_quote": "*Advisory Committee Recommendations*",
+      "location": "Page 27",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
       "corroborated": false
     },
     {
@@ -107,10 +131,10 @@
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
+  "total_defects": 3,
   "total_critical": 1,
   "total_major": 1,
-  "total_minor": 0,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
@@ -124,7 +148,7 @@
     },
     "signals": {
       "fidelity_composite": 0.4,
-      "fidelity_content": 1.0,
+      "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 0.9091,
       "fidelity_visual": 0.2857142857142857,
       "fidelity_routing": "AUTO_REJECT",
@@ -137,6 +161,10 @@
       "gemini_words": 17943,
       "table_count_ratio": null,
       "image_count_ratio": 1.7692307692307692,
+      "image_count_source": 13,
+      "image_count_output": 23,
+      "images_without_data": 8,
+      "html_img_count": 15,
       "source_link_count": 5,
       "output_link_count": 6,
       "link_count_ratio": 1.2,
@@ -159,10 +187,15 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 166850,
+    "processing_ms": 192164,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

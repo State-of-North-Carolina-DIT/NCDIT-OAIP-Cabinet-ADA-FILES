@@ -1,6 +1,6 @@
 {
   "document_id": "01_2012_CRFL_Data_Delivery_Specifications",
-  "audited_at": "2026-04-01T19:23:16.848090Z",
+  "audited_at": "2026-04-01T22:40:31.825808Z",
   "source_files": {
     "extraction_json": "01_2012_CRFL_Data_Delivery_Specifications.json",
     "source_pdf": "source.pdf",
@@ -10,7 +10,7 @@
   "quality_grade": "Critical",
   "fidelity_composite": 0.4,
   "fidelity_content": 0.8091603053435115,
-  "fidelity_structural": 0.9091,
+  "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
   "routing": "reject",
   "routing_label": "Reject",
@@ -20,26 +20,26 @@
     {
       "description": "Significant text omission within a section",
       "severity": "critical",
-      "analysis": "Appendix A provides a sample delimited data file with approximately 39 lines of data. The extraction pipeline erroneously aggressively deduplicated these lines (indicated by 'duplicates_removed: 41' in the page 3 metadata) and only extracted 6 of the 39 data rows, resulting in a severe truncation of the sample dataset.",
-      "source_pdf_quote": "0111328, 140, 1, 6, 12, 0004300700, 25.4, . , 15, 430, 8835020301, 0, 21, 1, 266,\n[... followed by ~38 more rows of data ...]",
-      "output_quote": "Contains only 6 rows of data (e.g., the last one extracted is '0111329, 140, 1, 8, 8, 0004300700, 28.5, . , 17, 430, 8835020301, 0, 11, 1, 223,'). Most of the section is missing.",
-      "location": "Page 3, Appendix A Example .txt delimited data file",
+      "analysis": "On Page 3, Appendix A contains an example `.txt` delimited data file consisting of approximately 44 lines of raw data. The pipeline appears to have aggressively deduplicated this content (noted by 'duplicates_removed: 41' in the validation block), resulting in only 6 lines of data remaining in the JSON output. This constitutes a substantial loss of the substantive example block (well over 25% of the section).",
+      "source_pdf_quote": "0111328, 140, 1, 6, 12, 0004300700, 25.4, . , 15, 430, 8835020301, 0, 21, 1, 225, [and roughly 37 subsequent lines of sample data]",
+      "output_quote": "The JSON skips directly from the first line of data to line 180, only preserving 6 data rows total and omitting the rest.",
+      "location": "Page 3, Appendix A",
       "source": "fidelity_llm",
       "check_id": "C5",
       "fidelity_dimension": "content",
       "corroborated": false
     },
     {
-      "description": "Table structure corrupted",
+      "description": "Table header markup issues: 1 table(s) have a data row marked as header: \"Record Type 1\"",
       "severity": "major",
-      "analysis": "The source PDF contains a large data dictionary table spanning pages 7, 8, and 9 (Appendix C). The table headers ('Rec. Type', 'Column #', 'Field Name', etc.) appear on page 7 and are repeated at the top of page 9. The extraction pipeline failed to merge the entire structure into a single continuous table. While it successfully merged page 8's data into the table object on page 7, it created a completely separate table object on page 9 for the remaining rows. This violates the rule that multi-pa",
-      "source_pdf_quote": "A single continuous data dictionary table spanning pages 7, 8, and 9, with headers ('Rec. Type', 'Column #', 'Field Name', etc.) repeating at the top of page 9.",
-      "output_quote": "The JSON contains a table object on page 7 (incorporating page 8 data) and a separate second table object on page 9 starting with the repeated header row.",
-      "location": "Pages 7-9 (Appendix C)",
-      "source": "fidelity_llm",
-      "check_id": "S3",
-      "fidelity_dimension": "structural",
-      "corroborated": true
+      "analysis": "data_in_th=0, datarow_as_header=1. Tables use <th> for data values (misrepresenting data as headers) or have a data row mismarked as a header row. Screen readers rely on <th> to announce column/row context.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
     }
   ],
   "action_items": [
@@ -47,9 +47,9 @@
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
+  "total_defects": 1,
   "total_critical": 1,
-  "total_major": 1,
+  "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
@@ -65,7 +65,7 @@
     "signals": {
       "fidelity_composite": 0.4,
       "fidelity_content": 0.8091603053435115,
-      "fidelity_structural": 0.9091,
+      "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
       "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
@@ -77,6 +77,10 @@
       "gemini_words": 1768,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": 0,
+      "image_count_output": 1,
+      "images_without_data": 0,
+      "html_img_count": 1,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -99,10 +103,15 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 1
+      "deduplicated_count": 0
     },
-    "processing_ms": 142797,
+    "processing_ms": 137952,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

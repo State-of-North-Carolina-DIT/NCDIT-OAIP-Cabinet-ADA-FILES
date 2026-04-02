@@ -1,6 +1,6 @@
 {
   "document_id": "01_NRHM_Agenda_111208",
-  "audited_at": "2026-04-01T19:26:56.632320Z",
+  "audited_at": "2026-04-01T22:46:20.374507Z",
   "source_files": {
     "extraction_json": "01_NRHM_Agenda_111208.json",
     "source_pdf": "source.pdf",
@@ -14,16 +14,16 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document exhibits excellent content preservation, evidenced by a 1.0 content score and high programmatic text match (shingling recall 0.962). However, a major structural defect was identified where bulleted lists inside agenda items were flattened into plain text with Unicode bullet characters instead of proper structural list elements. According to the binding routing rules, this single major defect necessitates human review for structural correction.",
+  "reasoning": "The document exhibits high textual fidelity with a composite score of 0.9727 and excellent shingling metrics. However, the LLM fidelity check identified 1 major structural defect: the use of literal bullet characters instead of semantic list formatting within table cells. Additionally, a minor programmatic issue was found regarding time values in table headers. Per the count-based routing thresholds, the presence of 1 major defect mandates a route to HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The source PDF contains bulleted lists within the agenda items (e.g., under 'Project Finance Update'). In the JSON output, these lists are extracted as plain text using literal Unicode bullet characters (\\u2022) separated by newlines within the table cell text strings, rather than being converted to proper structural list elements or valid markdown list syntax (such as asterisks or hyphens at the start of the line). This flattens the list hierarchy and will cause the lists to be rendered as plai",
+      "analysis": "The source document contains bulleted lists under the agenda topics (e.g., under 'Project Finance Update'). In the output JSON, these bulleted items are extracted as plain text within the table cells, using the literal bullet character '•' instead of proper markdown list formatting (such as '- ' or '* ') or list elements. This will result in the bullets rendering as plain text paragraphs with symbol characters rather than semantically structured HTML lists.",
       "source_pdf_quote": "• Cost share payments received.\n• Funds expended.",
       "output_quote": "Project Finance Update\n• Cost share payments received.\n• Funds expended.",
-      "location": "Table cell at row_start: 1, column_start: 1",
+      "location": "Table, row 1, column 1 (and subsequent rows)",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -43,8 +43,8 @@
     }
   ],
   "action_items": [
-    "Convert the plain text Unicode bullet points within agenda items into proper semantic HTML/Markdown lists.",
-    "Verify and correct table header markup where time values (e.g., '10:00-10:10') are used."
+    "Convert literal bullet characters inside table cells into proper semantic HTML lists",
+    "Review table header structure to ensure time ranges are not incorrectly tagged as <th> elements"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -78,6 +78,10 @@
       "gemini_words": 187,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -102,8 +106,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 103620,
+    "processing_ms": 83183,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

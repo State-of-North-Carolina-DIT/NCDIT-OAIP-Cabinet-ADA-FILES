@@ -1,6 +1,6 @@
 {
   "document_id": "0_HertfordCountyCertificationDate_022411",
-  "audited_at": "2026-04-01T19:23:55.151164Z",
+  "audited_at": "2026-04-01T22:40:37.489395Z",
   "source_files": {
     "extraction_json": "0_HertfordCountyCertificationDate_022411.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "All signals indicate a perfect conversion. The LLM fidelity scores are all 1.0, and programmatic metrics show complete agreement with 1.0 shingling recall and precision. No defects of any severity were detected.",
+  "reasoning": "All signals indicate a perfectly clean conversion. LLM fidelity scores are perfect at 1.0 across the board, programmatic text comparison metrics match perfectly, and no defects were found by any system. This document easily qualifies for automatic approval.",
   "decision_method": "llm_final_decider",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": 17,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 101174,
+    "processing_ms": 57875,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

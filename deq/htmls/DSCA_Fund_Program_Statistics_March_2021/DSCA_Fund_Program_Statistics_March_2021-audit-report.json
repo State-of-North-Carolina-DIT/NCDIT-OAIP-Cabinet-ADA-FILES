@@ -1,6 +1,6 @@
 {
   "document_id": "DSCA_Fund_Program_Statistics_March_2021",
-  "audited_at": "2026-04-01T19:29:17.482694Z",
+  "audited_at": "2026-04-01T22:46:09.010028Z",
   "source_files": {
     "extraction_json": "DSCA_Fund_Program_Statistics_March_2021.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document has perfect LLM fidelity scores, indicating excellent content and visual preservation. However, automated accessibility checks found 1 major programmatic defect: multiple tables use <th> tags for data values, which misrepresents data to screen readers. Based on the count-based routing rules, 1 major programmatic defect requires HUMAN_REVIEW to fix the table structure.",
+  "reasoning": "While the LLM fidelity scores are perfect, the programmatic detector identified a major structural accessibility issue regarding table header markup, specifically data values incorrectly placed in <th> cells. According to the binding count-based routing thresholds, the presence of one major programmatic defect mandates routing to HUMAN_REVIEW to correct the semantic markup for screen readers.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -43,7 +43,8 @@
     }
   ],
   "action_items": [
-    "Review all tables in the document and correct the semantic markup so that only actual header cells use <th> and data cells use <td>."
+    "Review all tables and fix semantic markup by changing data incorrectly tagged as <th> to <td>",
+    "Ensure tables with 3 or more rows have appropriate <th> header rows defined"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -77,6 +78,10 @@
       "gemini_words": 233,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -101,8 +106,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 77890,
+    "processing_ms": 165066,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

@@ -1,6 +1,6 @@
 {
   "document_id": "01_NS_FB_New_Watauga_Kickoff_meeting_04_10_2018",
-  "audited_at": "2026-04-01T19:23:21.685685Z",
+  "audited_at": "2026-04-01T22:43:07.731946Z",
   "source_files": {
     "extraction_json": "01_NS_FB_New_Watauga_Kickoff_meeting_04_10_2018.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a 23-page slide presentation, evident from its landscape orientation, slide layout structure, and visual/diagram-heavy content.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a presentation slide deck, characterized by its landscape orientation, title slide, bulleted content, and visual design elements such as continuous headers/footers and background images on every page.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 29251,
+    "processing_ms": 47214,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

@@ -1,6 +1,6 @@
 {
   "document_id": "2023-roanoke-rapids-sav-report",
-  "audited_at": "2026-04-01T19:24:25.709677Z",
+  "audited_at": "2026-04-02T01:42:49.601927Z",
   "source_files": {
     "extraction_json": "2023-roanoke-rapids-sav-report.json",
     "source_pdf": "source.pdf",
@@ -12,28 +12,16 @@
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 0.9091,
   "fidelity_visual": 1.0,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "The extraction contains a critical programmatic defect where header and footer artifacts were retained across almost every page of the document (35 instances over 18 pages), which will cause severe repetition for screen readers. Additionally, there are multiple major defects including a broken heading hierarchy, incomplete alternative text for 10 images, and a table caption improperly coded as a header row. Per the count-based routing rules, any critical defect mandates a REJECT.",
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The document contains 4 major defects: one from LLM fidelity regarding broken heading hierarchy, and three from programmatic evaluation including retained header/footer elements, truncated alt text on 16 images, and a table caption coded as a header row. Since the total number of major defects is exactly 4, this falls within the threshold for HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Header/footer elements retained in output (35): 2023 Roanoke Rapids Vegetation Survey Report; 1; 2023 Roanoke Rapids Vegetation Survey Report",
-      "severity": "critical",
-      "analysis": "header_footer_count=35, pages_affected=18/19. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
       "description": "Heading hierarchy broken",
       "severity": "major",
-      "analysis": "The output fails to maintain the correct structural containment relationship for major sections. In the source document, 'Conclusions and Management Implications' and 'References' are formatted with bold and underlined text, identical to top-level sections like 'Methods' and 'Results and Discussion'. However, in the JSON output, these sections are assigned as level 4 headings (H4). Because they immediately follow 'Coontail' (which was assigned H3), this incorrect level assignment structurally ne",
-      "source_pdf_quote": "Top-level section heading styled identically to previous top-level headings: 'Conclusions and Management Implications'",
+      "analysis": "The heading hierarchy is incorrectly assigned, causing major sections to be nested inside subsections. 'Coontail' is assigned as an H3 (correctly, as a species under 'Results and Discussion'). However, the major subsequent sections 'Conclusions and Management Implications' and 'References' are assigned as H4, incorrectly nesting them as subsections of 'Coontail'. This reverses the logical containment relationship of the document.",
+      "source_pdf_quote": "Conclusions and Management Implications (top-level section heading)",
       "output_quote": "{\"type\": \"heading\", \"level\": 4, \"text\": \"Conclusions and Management Implications\"}",
       "location": "Page 5",
       "source": "fidelity_llm",
@@ -54,9 +42,21 @@
       "corroborated": false
     },
     {
-      "description": "Incomplete image alt text: 10 image(s) with inadequate descriptions (10 truncated mid-sentence) — e.g. p1: \"...y with wispy clouds. A rocky, muddy shoreline with\"; p1: \"...in white uppercase letters. The words NC STATE are\"; p7: \"...nd brownish aquatic plants growing thickly beneath\"",
+      "description": "Header/footer elements retained in output (35): 2023 Roanoke Rapids Vegetation Survey Report; 1; 2023 Roanoke Rapids Vegetation Survey Report",
       "severity": "major",
-      "analysis": "incomplete_alt_text=10 (truncated=10, placeholder=0, empty=0). Per WCAG 2.1 AA, meaningful images must have descriptive alternative text for screen-reader accessibility.",
+      "analysis": "header_footer_count=35, pages_affected=18/19. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Incomplete image alt text: 16 image(s) with inadequate descriptions (16 truncated mid-sentence) — e.g. p1: \"...y with wispy clouds. A rocky, muddy shoreline with\"; p1: \"...in white uppercase letters. The words NC STATE are\"; p7: \"...nd brownish aquatic plants growing thickly beneath\"",
+      "severity": "major",
+      "analysis": "incomplete_alt_text=16 (truncated=16, placeholder=0, empty=0). Per WCAG 2.1 AA, meaningful images must have descriptive alternative text for screen-reader accessibility.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -68,10 +68,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The text 'Prepared By:' and 'Submitted To:' on the first page of the source document are underlined (and italicized). In the extraction output, these phrases are marked with italics but the underline emphasis has been entirely lost.",
-      "source_pdf_quote": "Prepared By: [underlined]\nSubmitted To: [underlined]",
-      "output_quote": "*Prepared By:*\n*Submitted To:*",
-      "location": "Page 1, Title page text blocks",
+      "analysis": "Checked for lost structural emphasis, specifically missing underlines, list markers, or demoted headings. On page 1, the text 'Prepared By:' and 'Submitted To:' are explicitly underlined in the source PDF. The JSON extracts these as italicized markdown (*Prepared By:*) but drops the underline emphasis. As stated in the guidelines, underline has no markdown equivalent, and dropping it constitutes a loss of emphasis.",
+      "source_pdf_quote": "Prepared By: (Underlined)",
+      "output_quote": "*Prepared By:*",
+      "location": "Page 1, paragraphs 3 and 4",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -103,10 +103,10 @@
     }
   ],
   "action_items": [
-    "Configure extraction to properly filter out repeating headers and footers.",
-    "Ensure complete and descriptive alternative text is generated for all images.",
-    "Fix heading hierarchy to reflect major sections accurately (e.g., 'Conclusions' and 'References' should be H1 or H2, not H4).",
-    "Ensure table captions are coded using the <caption> tag rather than spanning header rows."
+    "Correct heading levels for 'Conclusions and Management Implications' and 'References' to ensure proper document structure.",
+    "Remove retained header and footer text from the HTML output.",
+    "Rewrite the 16 truncated image alt texts to ensure full, meaningful descriptions.",
+    "Convert the spanning first row of the 'Roanoke Rapids' table into a proper <caption> element."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -117,7 +117,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 1.0,
+    "decider_confidence": 0.95,
     "score_breakdown": {
       "fidelity_composite": 0.9701,
       "raw_score": 0.9701,
@@ -140,6 +140,10 @@
       "gemini_words": 1709,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 17,
+      "image_count_output": 17,
+      "images_without_data": 0,
+      "html_img_count": 17,
       "source_link_count": 2,
       "output_link_count": 1,
       "link_count_ratio": 0.5,
@@ -164,8 +168,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 117902,
+    "processing_ms": 160324,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

@@ -1,44 +1,56 @@
 {
   "document_id": "00_BriefingBookMay2020Complete",
-  "audited_at": "2026-04-01T19:26:07.880437Z",
+  "audited_at": "2026-04-01T23:42:52.325894Z",
   "source_files": {
     "extraction_json": "00_BriefingBookMay2020Complete.json",
     "source_pdf": "source.pdf",
     "rendered_html": "00_BriefingBookMay2020Complete.html"
   },
-  "quality_score": 30,
-  "quality_grade": "Critical",
-  "fidelity_composite": 0.4,
-  "fidelity_content": 0.9923664122137404,
-  "fidelity_structural": 1.0,
-  "fidelity_visual": 0.2857142857142857,
+  "quality_score": 91,
+  "quality_grade": "Good",
+  "fidelity_composite": 0.9067,
+  "fidelity_content": 0.9541984732824428,
+  "fidelity_structural": 0.9091,
+  "fidelity_visual": 0.8571428571428572,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
-  "decision_method": "hard_veto:fidelity_reject",
+  "reasoning": "The document exhibits numerous major defects across both LLM fidelity and programmatic evaluations. Key issues include garbled text due to merged strikethrough/added text in rule amendments, flattened nested lists, duplicated content via full-page images alongside extracted text, significant retention of headers/footers (255 instances), structural table issues, displaced hyperlinks, and incomplete alt text on 59 images. With well over 5 major defects, the count-based routing rules dictate a REJECT.",
+  "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Images missing or broken",
-      "severity": "critical",
-      "analysis": "A review of the HTML output against the source PDF reveals that multiple meaningful images conveying specific information are missing. First, the map for 'Figure 10' in the sea turtle report (page 143 of the PDF) is entirely absent from the HTML, with the content skipping straight from Figure 9 to Figure 11. Second, the map for 'Figure 3' in the Atlantic Sturgeon report (page 196 of the PDF) is similarly missing from the HTML sequence. Finally, the flowchart diagram illustrating the 'NORTH CAROL",
-      "source_pdf_quote": "1. Figure 10 map (page 143) showing spring 2019 gill-net trips.\n2. Figure 3 map (page 196) showing fall 2018 gill-net trips.\n3. Flowchart diagram (page 218) showing Fishery Management Plan steps.",
-      "output_quote": "The images and their associated content are completely absent from the HTML at the points where they should appear.",
-      "location": "PDF pages 143, 196, and 218",
+      "description": "Minor text differences beyond acceptable reformatting",
+      "severity": "major",
+      "analysis": "In the sections detailing rule amendments (e.g., Tarpon rules), the source uses strikethrough text for deletions and underlined text for additions. The extraction pipeline read both the deleted and added text sequentially without any formatting or indication of the deletion, resulting in confusing, garbled text that alters the literal reading of the document.",
+      "source_pdf_quote": "(a) [strikethrough: It is unlawful to](1) sell or offer for sale [strikethrough: tarpon.]tarpon;",
+      "output_quote": "(a) It is unlawful to(1) sell or offer for sale tarpon.tarpon;",
+      "location": "Page 211",
       "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
+      "check_id": "C6",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
+      "description": "Lists converted incorrectly",
+      "severity": "major",
+      "analysis": "There are instances where nested lists are flattened and numbering is lost. On page 211, under 'Option 2' and 'Option 3', the source PDF contains sub-points numbered '(3)' and '(4)' ('(3) spear, gaff, or puncture a tarpon.' and '(4) spear, gaff, or puncture a tarpon.') that are rendered at the same hierarchical level as the parent items, and the numbers '(3)' and '(4)' are completely stripped from the text. Additionally, on page 239, sub-items '(A)' and '(B)' under item '(a)(2)' are incorrectly ",
+      "source_pdf_quote": "(c) It is unlawful to(2) take tarpon by any method other than hook and line.hook and line; and\n(3) spear, gaff, or puncture a tarpon.",
+      "output_quote": "{\"text\": \"(c) It is unlawful to(2) take tarpon by any method other than hook and line.hook and line; and\"}, {\"text\": \"spear, gaff, or puncture a tarpon.\"}",
+      "location": "Page 211 (JSON page 211) and Page 239 (JSON page 239)",
+      "source": "fidelity_llm",
+      "check_id": "S5",
+      "fidelity_dimension": "structural",
       "corroborated": true
     },
     {
-      "description": "Header/footer elements retained in output (255): Marine Fisheries Commission Business Meeting Agenda; 1; 2",
-      "severity": "critical",
-      "analysis": "header_footer_count=255, pages_affected=245/248. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
+      "description": "Content visually duplicated on page",
+      "severity": "major",
+      "analysis": "The HTML output contains instances of full-page images or cropped page sections embedded alongside the extracted text of those same pages. This is most prominent in Appendix A (a scanned letter from the Department of Commerce), where the text of the letter is fully transcribed in HTML, but multiple images of the scanned letter itself are also inserted into the document flow. This forces the user to see the same content twice: once as an image and once as text.",
+      "source_pdf_quote": "Page 203 shows a scanned letter from the United States Department of Commerce dated JUL 19 2017.",
+      "output_quote": "<img src=\"[base64 image stripped for token budget]\" alt=\"Official letter dated July 19, 2017, from the United States\">\n<p>UNITED STATES DEPARTMENT OF COMMERCE National Oceanic and Atmospheric Administration NATIONAL MARINE FISHERIES SERVICE Silver Spring, MD 20910</p>\n<p>JUL 19 2017</p>...<img src=\"[base64 image stripped for token budget]\" alt=\"A partially cropped document titled &quot;APPENDIX A&quot; features the letterhead of the &quot;UNITED STATES DEPARTMENT OF COMMERCE,&quot;...",
+      "location": "Appendix A (Page 203)",
+      "source": "fidelity_llm",
+      "check_id": "V3",
+      "fidelity_dimension": "visual",
       "corroborated": false
     },
     {
@@ -102,6 +114,18 @@
       "corroborated": false
     },
     {
+      "description": "Header/footer elements retained in output (255): Marine Fisheries Commission Business Meeting Agenda; 1; 2",
+      "severity": "major",
+      "analysis": "header_footer_count=255, pages_affected=245/248. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "19 bare URL(s) in text not converted to hyperlinks: [youtube.com; [portal.ncdenr.org; https://www.ncsbe.gov/Ethics/Education; https://EFILE.ncsbe.gov/; (http://portal.ncdenr.org/web/mf/proclamation-m-19-2017).",
       "severity": "major",
       "analysis": "bare_url_count=19. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
@@ -126,18 +150,6 @@
       "corroborated": true
     },
     {
-      "description": "Flattened sub-lists: 4 item(s) contain nested sub-items (a/b/c or bullets) as plain text instead of structured children",
-      "severity": "major",
-      "analysis": "flattened_sublists=4. Examples: p4 table: • Division of Marine Fisheries Quarterly, • Recreational Hook and Line Modificatio, • Informational Materials:; p5 table: • Status of Ongoing Plans – Catherine Bl, • Blue Crab Fishery Management Plan Amen, – Presentation on proposed Diamondback T; p5 table: • 2019/2020 rulemaking cycle, • 2020/2021 rulemaking cycle, • Vote on Notice of Text for readoption . Sub-items embedded as newline-delimited text lose semantic nesting in HTML — screen readers can't navigate the hierarchy.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
       "description": "Footnote(s) converted to bulleted list: 1 unordered list(s) after table(s) appear to be footnotes",
       "severity": "major",
       "analysis": "footnote_as_list_count=1. Examples: 1 item(s): \"***Times indicated are merely for guidance. The co\". Table footnotes (often marked with *, †, ‡) were converted to <ul><li> elements instead of paragraphs. This changes the semantic meaning — screen readers announce them as list items rather than explanatory notes.",
@@ -146,6 +158,18 @@
       "location": null,
       "source": "programmatic",
       "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "List broken by page break (1 instance(s)): p62→p63: list item ends “…eading of nesting habitat) of this long-”, continues as paragraph",
+      "severity": "major",
+      "analysis": "split_list_count=1. Lists that span page breaks should be extracted as a single continuous structure. Split lists affect reading order and navigability for assistive technology.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S5",
       "fidelity_dimension": null,
       "corroborated": false
     },
@@ -174,6 +198,18 @@
       "corroborated": false
     },
     {
+      "description": "Incomplete image alt text: 59 image(s) with inadequate descriptions (57 truncated mid-sentence, 2 generic placeholder(s)) — e.g. p1: \"...r sunset, featuring calm water, marsh grass, and a\"; p17: \"...nd and a white header displaying the word \"LETTERS\"; p29: \"...lock of black redaction covering text in the upper\"",
+      "severity": "major",
+      "analysis": "incomplete_alt_text=59 (truncated=57, placeholder=2, empty=0). Per WCAG 2.1 AA, meaningful images must have descriptive alternative text for screen-reader accessibility.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "Links displaced to end of page: 38 link(s) clustered at bottom of 14 page(s) instead of inline in text",
       "severity": "major",
       "analysis": "displaced_link_pages=14, total_displaced=38. Links appear as standalone elements at the end of pages rather than being inline in the paragraph text.",
@@ -188,10 +224,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document includes numerous legislative rule changes where new additions are indicated by underlining (e.g., 'hook and line; and' on page 211, and the added definitions starting on page 233). The extraction JSON does not retain this underline emphasis, resulting in a loss of visual emphasis.",
-      "source_pdf_quote": "15A NCAC 03M .0509 TARPON\nIt shall be unlawful to do any of the following:\n(a) It is unlawful to(1) possess, sell sell, or offer for sale tarpon.tarpon;\n(b) It is unlawful to possess more than one tarpon per person taken in any one day.\n(c) It is unlawful to(2) take tarpon by any method other than hook-and-line.hook and line; and\n(3) spear, gaff, or puncture a tarpon.",
-      "output_quote": "(a) It is unlawful to(1) possess, sell sell, or offer for sale tarpon.tarpon; ... (c) It is unlawful to(2) take tarpon by any method other than hook-and-line.hook and line; and\n(3) spear, gaff, or puncture a tarpon.",
-      "location": "Page 211 (and Page 233)",
+      "analysis": "The source document heavily uses underline formatting to denote new additions to legal rules (e.g., in the recreational water quality rule amendments). Because the extraction format does not support markdown for underlines, this emphasis is completely lost in the output.",
+      "source_pdf_quote": "The sign for waters impacted by a wastewater spill shall state the following: [Underlined text follows]",
+      "output_quote": "The sign for waters impacted by a wastewater spill shall state the following:",
+      "location": "Page 241",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -258,32 +294,30 @@
       "corroborated": true
     }
   ],
-  "action_items": [
-    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
-  ],
+  "action_items": [],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
-  "total_critical": 1,
-  "total_major": 0,
+  "total_defects": 4,
+  "total_critical": 0,
+  "total_major": 3,
   "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.98,
     "score_breakdown": {
-      "fidelity_composite": 0.4,
-      "raw_score": 0.4,
-      "ceiling": 0.3,
-      "ceiling_reason": "fidelity_auto_reject",
+      "fidelity_composite": 0.9067,
+      "raw_score": 0.9067,
+      "ceiling": null,
+      "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.4,
-      "fidelity_content": 0.9923664122137404,
-      "fidelity_structural": 1.0,
-      "fidelity_visual": 0.2857142857142857,
-      "fidelity_routing": "AUTO_REJECT",
+      "fidelity_composite": 0.9067,
+      "fidelity_content": 0.9541984732824428,
+      "fidelity_structural": 0.9091,
+      "fidelity_visual": 0.8571428571428572,
+      "fidelity_routing": "FLAG_FOR_REVIEW",
       "fidelity_available": true,
       "shingling_recall": 0.9553093724428778,
       "shingling_precision": 0.9551891245515766,
@@ -293,6 +327,10 @@
       "gemini_words": 68485,
       "table_count_ratio": null,
       "image_count_ratio": 0.6326530612244898,
+      "image_count_source": 147,
+      "image_count_output": 93,
+      "images_without_data": 14,
+      "html_img_count": 64,
       "source_link_count": 138,
       "output_link_count": 145,
       "link_count_ratio": 1.0507246376811594,
@@ -317,8 +355,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 313888,
+    "processing_ms": 342846,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

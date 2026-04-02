@@ -1,46 +1,22 @@
 {
   "document_id": "009_outfall_COALASHSUMMARY4March_2014",
-  "audited_at": "2026-04-01T19:22:55.081076Z",
+  "audited_at": "2026-04-02T00:14:54.358699Z",
   "source_files": {
     "extraction_json": "009_outfall_COALASHSUMMARY4March_2014.json",
     "source_pdf": "source.pdf",
     "rendered_html": "009_outfall_COALASHSUMMARY4March_2014.html"
   },
-  "quality_score": 97,
+  "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9727,
+  "fidelity_composite": 1.0,
   "fidelity_content": 1.0,
-  "fidelity_structural": 0.9091,
+  "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document contains strong content preservation scores (shingling recall 0.977, content score 1.0) but has structural issues requiring human attention. Both the LLM and programmatic signals detected that footnotes were incorrectly converted into a bulleted list, which strips the asterisk necessary for linking table data to explanatory text. Additionally, a programmatic detector found numeric/date data values marked within the table header row. These major structural defects fall into the 1-5 count range, necessitating HUMAN_REVIEW.",
+  "reasoning": "The LLM fidelity analysis gave the document a perfect score, but programmatic checks identified a major structural issue. Specifically, a table footnote was converted into an unordered list, which alters the semantic meaning for screen reader users. Per the routing instructions, any programmatic major defect requires at least human review.",
   "decision_method": "llm_final_decider",
   "concerns": [
-    {
-      "description": "Lists converted incorrectly",
-      "severity": "major",
-      "analysis": "The source document contains a series of footnote paragraphs at the bottom of the page. The third footnote begins with an asterisk (*). The conversion pipeline incorrectly interpreted this text character as a bullet point, rendering the footnote as an unordered list and stripping the asterisk. This is a structural defect because it is not actually a list, and stripping the asterisk destroys the linkage between the table data (e.g., '87*') and its explanatory footnote. This is also inconsistent w",
-      "source_pdf_quote": "* Aluminum is pH and hardness dependent and is based on National Reccomended Water Quality Criteria.",
-      "output_quote": "{\"type\": \"list\", \"list_type\": \"unordered\", \"items\": [{\"text\": \"Aluminum is pH and hardness dependent and is based on National Reccomended Water Quality Criteria.\"}]}",
-      "location": "Bottom of page 1 (footnotes section)",
-      "source": "fidelity_llm",
-      "check_id": "S5",
-      "fidelity_dimension": "structural",
-      "corroborated": false
-    },
-    {
-      "description": "Data row marked as header: 1 table(s) have numeric/data values in the header row",
-      "severity": "major",
-      "analysis": "data_as_header=1. Examples: p1: [2/14/2014, 2/17/2014, 2/26/2014]. Header rows should contain column labels, not data values.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S3",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
     {
       "description": "Footnote(s) converted to bulleted list: 1 unordered list(s) after table(s) appear to be footnotes",
       "severity": "major",
@@ -55,32 +31,31 @@
     }
   ],
   "action_items": [
-    "Reformat the unordered list containing the footnote text into standard paragraph elements and restore the asterisk.",
-    "Adjust table row markup to ensure data values (e.g., dates) are in data cells (<td>) rather than header cells (<th>)."
+    "Verify the unordered list following the table and convert it to appropriate paragraph text for semantic accuracy as a footnote."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 1,
+  "total_defects": 0,
   "total_critical": 0,
-  "total_major": 1,
+  "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9727,
-      "raw_score": 0.9727,
+      "fidelity_composite": 1.0,
+      "raw_score": 1.0,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9727,
+      "fidelity_composite": 1.0,
       "fidelity_content": 1.0,
-      "fidelity_structural": 0.9091,
+      "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 0.97719651240778,
       "shingling_precision": 0.9785090664875755,
@@ -90,6 +65,10 @@
       "gemini_words": 536,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -110,12 +89,17 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 120952,
+    "processing_ms": 137130,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

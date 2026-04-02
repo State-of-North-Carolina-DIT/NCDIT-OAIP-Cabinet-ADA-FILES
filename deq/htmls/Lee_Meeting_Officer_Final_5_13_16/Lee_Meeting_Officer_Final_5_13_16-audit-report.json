@@ -1,6 +1,6 @@
 {
   "document_id": "Lee_Meeting_Officer_Final_5_13_16",
-  "audited_at": "2026-04-01T19:29:53.320669Z",
+  "audited_at": "2026-04-01T22:46:27.479589Z",
   "source_files": {
     "extraction_json": "Lee_Meeting_Officer_Final_5_13_16.json",
     "source_pdf": "source.pdf",
@@ -12,15 +12,15 @@
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "While the LLM fidelity scores indicate near-perfect content preservation, programmatic detectors identified a critical pipeline failure where header/footer artifacts were retained across all 5 pages of the document. Additionally, there is a major structural defect involving flattened mixed-number lists. Per the strict count-based routing rules, the presence of a critical programmatic defect requires automatic rejection.",
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The LLM fidelity evaluation identified only a minor formatting issue with visual emphasis loss. However, programmatic detectors identified two major structural issues: header/footer elements incorrectly retained in the rendered HTML, and a list broken across a page boundary. Because there are 2 major programmatic defects, the count-based routing rules require HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Header/footer elements retained in output (5): State of North Carolina | Environmental Quality | Water Reso; Page 2 of 5; Page 3 of 5",
-      "severity": "critical",
-      "analysis": "header_footer_count=5, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "severity": "major",
+      "analysis": "header_footer_count=5, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -30,9 +30,9 @@
       "corroborated": false
     },
     {
-      "description": "Mixed numbering types at same list level (1 list(s)): p1:letter+roman — possible sub-point flattening",
+      "description": "List broken by page break (1 instance(s)): p4→p5: list item ends “…ds in wells around the Lee facility. One”, continues as paragraph",
       "severity": "major",
-      "analysis": "flat_lists=1. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
+      "analysis": "split_list_count=1. Lists that span page breaks should be extracted as a single continuous structure. Split lists affect reading order and navigability for assistive technology.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -44,10 +44,10 @@
     {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source PDF contains numerous list items on pages 3, 4, and 5 where the introductory phrase is both bold and underlined (e.g., 'Agriculture', 'Air Quality', 'Costs'). The extraction completely loses this emphasis, providing the plain text without any markdown for bolding (** text **) or any mechanism to preserve the underline.",
-      "source_pdf_quote": "Agriculture–",
-      "output_quote": "Agriculture–",
-      "location": "Page 3, list item 1",
+      "analysis": "The source document uses underline formatting heavily for emphasis, particularly on the word 'MEMORANDUM' on page 1 and the topic labels at the beginning of list items on pages 3, 4, and 5 (e.g., 'Agriculture', 'Air Quality', 'Beneficial Reuse'). This underline emphasis is completely lost in the output JSON.",
+      "source_pdf_quote": "Agriculture– One citizen commented... (with 'Agriculture' underlined)",
+      "output_quote": "\"text\": \"Agriculture– One citizen commented about how poultry...\"",
+      "location": "Page 3, first list item",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -55,9 +55,9 @@
     }
   ],
   "action_items": [
-    "Investigate pipeline failure causing header/footer retention",
-    "Fix list flattening issue with mixed alphanumeric/roman bulleting",
-    "Restore bolding/underline markdown on list introductory phrases"
+    "Remove retained header/footer text ('State of North Carolina | Environmental Quality...', 'Page X of 5') from the HTML output.",
+    "Repair the broken list item spanning pages 4 and 5 to ensure continuous semantic structure.",
+    "Restore missing underline formatting if necessary for context."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -68,7 +68,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 1.0,
+    "decider_confidence": 0.95,
     "score_breakdown": {
       "fidelity_composite": 0.9973,
       "raw_score": 0.9973,
@@ -91,6 +91,10 @@
       "gemini_words": 1944,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 2,
+      "image_count_output": 2,
+      "images_without_data": 0,
+      "html_img_count": 2,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -111,12 +115,17 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "major_disagree",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 220809,
+    "processing_ms": 175582,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

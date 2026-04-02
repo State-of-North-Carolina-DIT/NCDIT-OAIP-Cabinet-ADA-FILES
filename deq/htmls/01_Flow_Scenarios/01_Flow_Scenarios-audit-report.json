@@ -1,6 +1,6 @@
 {
   "document_id": "01_Flow_Scenarios",
-  "audited_at": "2026-04-01T19:25:12.837249Z",
+  "audited_at": "2026-04-01T22:48:51.229613Z",
   "source_files": {
     "extraction_json": "01_Flow_Scenarios.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The source document is an image-based slide presentation. It features a landscape orientation, persistent background graphics and styling on every page, and is composed of distinct slides primarily containing high-level bullet points, charts, and diagrams characteristic of a presentation deck.",
+  "reasoning": "Document excluded: SLIDE_DECK. The source document is a landscape-oriented presentation slide deck, characterized by a consistent graphical background, slide titles, bulleted lists, and multiple charts/diagrams per page.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 24952,
+    "processing_ms": 39830,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

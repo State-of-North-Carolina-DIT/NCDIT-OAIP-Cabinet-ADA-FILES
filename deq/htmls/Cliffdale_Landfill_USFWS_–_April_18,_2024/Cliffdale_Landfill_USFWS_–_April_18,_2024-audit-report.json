@@ -1,6 +1,6 @@
 {
   "document_id": "Cliffdale_Landfill_USFWS_–_April_18,_2024",
-  "audited_at": "2026-04-01T19:25:52.995402Z",
+  "audited_at": "2026-04-01T22:48:58.792717Z",
   "source_files": {
     "extraction_json": "Cliffdale_Landfill_USFWS_–_April_18,_2024.json",
     "source_pdf": "source.pdf",
@@ -9,8 +9,8 @@
   "quality_score": 30,
   "quality_grade": "Critical",
   "fidelity_composite": 0.4,
-  "fidelity_content": 1.0,
-  "fidelity_structural": 0.4545,
+  "fidelity_content": 0.9923664122137404,
+  "fidelity_structural": 1.0,
   "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
   "routing_label": "Reject",
@@ -18,40 +18,16 @@
   "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
     {
-      "description": "Link injection issues",
-      "severity": "critical",
-      "analysis": "Multiple hyperlinks located within table cells on pages 23 and 24 are missing their anchor elements. While the text of the URLs was extracted into the cells, the clickable hyperlink structure was not preserved in the HTML table as required.",
-      "source_pdf_quote": "Table cells on pages 23 and 24 contain active hyperlinks (e.g., \"Species profile: https://ecos.fws.gov/ecp/species/10515\")",
-      "output_quote": "The URLs appear strictly as plain text within the table cells without <a> elements.",
-      "location": "Pages 23 and 24, tables listing species profiles",
-      "source": "fidelity_llm",
-      "check_id": "S7",
-      "fidelity_dimension": "structural",
-      "corroborated": true
-    },
-    {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The source PDF contains several meaningful maps (Attachment I – Additional Figures) on pages 12, 13, and 14, such as the 'VICINITY EXHIBIT', 'USGS TOPOGRAPHIC EXHIBIT', and 'SITE EXHIBIT'. These maps are critical visual information for the report. In the rendered HTML output, these images are missing and have been replaced with text-only placeholders (e.g., '<p>[Image: A vicinity map...]</p>'). There are no corresponding <img> tags to render the visual maps.",
-      "source_pdf_quote": "The 'VICINITY EXHIBIT' map on page 12 of the source PDF showing the project area boundaries.",
-      "output_quote": "The HTML replaces the map with a text placeholder: '<p>[Image: A vicinity map for the Cumberland County/Cliffdale Landfill displaying the Project Area outlined in a red polygon...]</p>' and lacks an <img> element.",
-      "location": "Attachment I – Additional Figures (Pages 12, 13, and 14)",
+      "analysis": "The source document contains critical, full-page map exhibits on pages 12, 13, and 14 (Vicinity Exhibit, USGS Topographic Exhibit, and Site Exhibit). In the HTML output, these maps fail to render as images and are instead completely replaced by literal text placeholders enclosed in brackets (e.g., '[Image: A vicinity map...]'). Because these visual maps are highly meaningful to the environmental assessment and are missing their corresponding <img> elements in the output, this is a critical defec",
+      "source_pdf_quote": "Pages 12, 13, and 14 contain full-page map exhibits detailing the project vicinity, topography, and site layout.",
+      "output_quote": "<p>[Image: A vicinity map for the Cumberland County/Cliffdale Landfill displaying the Project Area... 0 to 4,000 feet.]</p> (appears without any corresponding <img> tag)",
+      "location": "Pages 12, 13, and 14",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
       "corroborated": true
-    },
-    {
-      "description": "Header/footer elements retained in output (40): Version 5/22/2023; Applicant; Page 2",
-      "severity": "critical",
-      "analysis": "header_footer_count=40, pages_affected=19/29. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
     },
     {
       "description": "Table split across page break(s): 2 table(s) with repeated headers across consecutive pages",
@@ -90,6 +66,18 @@
       "corroborated": false
     },
     {
+      "description": "Header/footer elements retained in output (40): Version 5/22/2023; Applicant; Page 2",
+      "severity": "major",
+      "analysis": "header_footer_count=40, pages_affected=19/29. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "1 bare URL(s) in text not converted to hyperlinks: (fws.gov",
       "severity": "major",
       "analysis": "bare_url_count=1. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
@@ -98,6 +86,18 @@
       "location": null,
       "source": "programmatic",
       "check_id": "S8",
+      "fidelity_dimension": null,
+      "corroborated": true
+    },
+    {
+      "description": "Table cells contain 10 unlinked URL(s)/email(s) that should be hyperlinks",
+      "severity": "major",
+      "analysis": "bare_urls_in_tables=10. Examples: p23: https://ecos.fws.gov/ecp/species/10515; p23: https://ecos.fws.gov/ecp/species/7614; p23: https://ecos.fws.gov/ecp/species/776. URLs and emails in table cells should be clickable links.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S7",
       "fidelity_dimension": null,
       "corroborated": true
     },
@@ -138,6 +138,18 @@
       "corroborated": false
     },
     {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The source PDF uses continuous underlining to emphasize the 'Status' and 'Biological Determination' lines for each species evaluated in the report (Pages 5-8). In the extraction JSON, these lines are extracted as plain text paragraphs without any underline formatting, resulting in a genuine loss of visual emphasis.",
+      "source_pdf_quote": "Status: Federally-Proposed Endangered\nBiological Determination: No consultation necessary (Both lines are underlined in the source PDF)",
+      "output_quote": "\"text\": \"Status: Federally-Proposed Endangered\\nBiological Determination: No consultation necessary\"",
+      "location": "Pages 5-8 (Species Evaluation sections)",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
+    {
       "description": "Repeated footer/header text (2x): \"ncnhde-25195\"",
       "severity": "minor",
       "analysis": "Short text with footer-like pattern appears on 2 pages",
@@ -168,9 +180,9 @@
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 2,
-  "total_critical": 2,
+  "total_critical": 1,
   "total_major": 0,
-  "total_minor": 0,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
@@ -184,8 +196,8 @@
     },
     "signals": {
       "fidelity_composite": 0.4,
-      "fidelity_content": 1.0,
-      "fidelity_structural": 0.4545,
+      "fidelity_content": 0.9923664122137404,
+      "fidelity_structural": 1.0,
       "fidelity_visual": 0.2857142857142857,
       "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
@@ -197,6 +209,10 @@
       "gemini_words": 6025,
       "table_count_ratio": null,
       "image_count_ratio": 0.38461538461538464,
+      "image_count_source": 78,
+      "image_count_output": 30,
+      "images_without_data": 4,
+      "html_img_count": 20,
       "source_link_count": 26,
       "output_link_count": 16,
       "link_count_ratio": 0.6153846153846154,
@@ -219,10 +235,15 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 3
+      "deduplicated_count": 1
     },
-    "processing_ms": 144055,
+    "processing_ms": 333984,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

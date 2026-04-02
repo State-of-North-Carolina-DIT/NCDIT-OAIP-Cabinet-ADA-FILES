@@ -1,6 +1,6 @@
 {
   "document_id": "Southside_Park_Landfill_Surface_Water_Assessment",
-  "audited_at": "2026-04-01T19:26:19.667655Z",
+  "audited_at": "2026-04-01T22:45:04.620378Z",
   "source_files": {
     "extraction_json": "Southside_Park_Landfill_Surface_Water_Assessment.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single page dominated by a visual element (a GIS/site map) showing surface water assessment locations. Text content consists entirely of supplementary map labels, legends, notes, references, and overlaid data tables, which supports the classification of SINGLE_GRAPHIC.",
+  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single-page GIS map where the primary content is visual (the map and sample locations). The text consists of supplementary legends, notes, a title block, and overlaid data tables directly related to the map features.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 48638,
+    "processing_ms": 34170,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

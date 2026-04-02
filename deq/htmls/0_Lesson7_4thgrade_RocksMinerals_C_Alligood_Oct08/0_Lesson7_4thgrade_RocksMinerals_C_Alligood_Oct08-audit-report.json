@@ -1,44 +1,44 @@
 {
   "document_id": "0_Lesson7_4thgrade_RocksMinerals_C_Alligood_Oct08",
-  "audited_at": "2026-04-01T19:26:11.810467Z",
+  "audited_at": "2026-04-01T22:43:31.246870Z",
   "source_files": {
     "extraction_json": "0_Lesson7_4thgrade_RocksMinerals_C_Alligood_Oct08.json",
     "source_pdf": "source.pdf",
     "rendered_html": "0_Lesson7_4thgrade_RocksMinerals_C_Alligood_Oct08.html"
   },
-  "quality_score": 92,
-  "quality_grade": "Good",
-  "fidelity_composite": 0.9227299999999999,
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
   "fidelity_content": 1.0,
   "fidelity_structural": 0.9091,
-  "fidelity_visual": 0.8571428571428572,
+  "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "The document contains a total of 6 major defects (2 LLM fidelity defects and 4 programmatic defects). Issues include flattened nested lists across page boundaries, missing/broken images, table captions coded as header rows, displaced hyperlinks, and mislabeled table headers. Because the total number of major defects strictly exceeds the threshold of 5, the document must be routed to REJECT.",
-  "decision_method": "llm_final_decider",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
     {
-      "description": "Lists converted incorrectly",
-      "severity": "major",
-      "analysis": "While most lists in the document are successfully captured, there is a consistent issue with nested lists spanning page boundaries. In the multiple-choice section, the sub-items (a, b, c, d) are supposed to be nested as children of the numbered question. However, when the question spans a page break, the sub-items are flattened to the same level as the parent question. For example, in Question 3 (pages 58-59), 'a. iron nail' is properly nested, but 'b', 'c', and 'd' are extracted as sibling item",
-      "source_pdf_quote": "Question 3: '3. Which of the following could be used to test the hardness of a mineral? \n a. iron nail \n [page break] \n b. penny \n c. fingernail \n d. all of the above'",
-      "output_quote": "\"items\": [ { \"text\": \"Which of the following could be used to test the hardness of a mineral?\", \"children\": [ { \"text\": \"a. iron nail\" } ] }, { \"text\": \"b. penny\" }, { \"text\": \"c. fingernail\" }, { \"text\": \"d. all of the above\" } ]",
-      "location": "Page 58 (Question 3) and Page 60 (Question 14)",
-      "source": "fidelity_llm",
-      "check_id": "S5",
-      "fidelity_dimension": "structural",
-      "corroborated": true
-    },
-    {
       "description": "Images missing or broken",
-      "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] Several meaningful images from the rock identification guide are missing or broken in the HTML. On page 54, images 5 and 6 are rendered as text placeholders (`[Image: A collection of loose...]`) rather than actual `<img>` tags. Additionally, images 9 and 10 (along with their captions 'nesoil.com' and 'www.galleries.com') are completely missing from the HTML output.",
-      "source_pdf_quote": "Page 54 shows six rock images numbered 5 through 10.",
+      "severity": "critical",
+      "analysis": "On page 54 of the source PDF, there are six meaningful photographs of rock and mineral specimens (labeled 5 through 10) used for a matching game. In the rendered HTML output, the images for specimens 5 and 6 are missing and have been replaced entirely by plain text placeholders (e.g., '<p>[Image: ...]</p>'). Because there is no <img> tag with valid source data for these items, the visual information is lost to a sighted user.",
+      "source_pdf_quote": "Page 54 contains photographs of rock specimens 5 through 10.",
       "output_quote": "<p>[Image: A collection of loose, small grey and brown rocks and gravel.]</p>\n<p>[Image: A solid white rock or mineral specimen displayed next to a dark coin for size comparison.]</p>",
-      "location": "Page 54 / Output elements near the end",
+      "location": "Page 54 (Matching Game images 5 and 6)",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
+      "corroborated": true
+    },
+    {
+      "description": "Lists converted incorrectly",
+      "severity": "major",
+      "analysis": "The extraction flattens the hierarchy of multiple-choice questions. In the source PDF, the lettered answer choices (a, b, c, d) are indented sub-items under the numbered question text. In the output, several of these are extracted as sibling items at the same level as the question, rather than as nested children. For example, on page 60 (Question 14), options a-d are extracted as independent items within the main ordered list.",
+      "source_pdf_quote": "14. Why would you not classify rocks by their size?\na. they all might be big\nb. they all might be small\nc. they can be broken into many sizes\nd. none of the above",
+      "output_quote": "{\n  \"text\": \"Why would you not classify rocks by their size?\"\n},\n{\n  \"text\": \"a. they all might be big\"\n},\n{\n  \"text\": \"b. they all might be small\"\n}",
+      "location": "Page 60, Question 14 (also Page 58-59, Question 3)",
+      "source": "fidelity_llm",
+      "check_id": "S5",
+      "fidelity_dimension": "structural",
       "corroborated": true
     },
     {
@@ -127,36 +127,31 @@
     }
   ],
   "action_items": [
-    "Ensure nested list items are properly nested inside their parent `<ol>` or `<ul>` when spanning page breaks",
-    "Restore missing images 5, 6, 9, and 10 on page 54, replacing text placeholders with `<img>` tags",
-    "Use `<caption>` elements for table titles instead of `<tr><th>` spanning all columns",
-    "Integrate displaced standalone links directly into their respective paragraphs",
-    "Fix table markup to ensure `<th>` elements are only used for header cells, not data cells",
-    "Address static form field conversion appropriately for accessibility"
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 2,
-  "total_critical": 0,
-  "total_major": 2,
+  "total_critical": 1,
+  "total_major": 1,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9227299999999999,
-      "raw_score": 0.9227,
-      "ceiling": null,
-      "ceiling_reason": null,
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9227299999999999,
+      "fidelity_composite": 0.4,
       "fidelity_content": 1.0,
       "fidelity_structural": 0.9091,
-      "fidelity_visual": 0.8571428571428572,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
       "shingling_recall": 0.9344277000358808,
       "shingling_precision": 0.9439963751699139,
@@ -166,6 +161,10 @@
       "gemini_words": 13554,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 12,
+      "image_count_output": 12,
+      "images_without_data": 2,
+      "html_img_count": 8,
       "source_link_count": 20,
       "output_link_count": 16,
       "link_count_ratio": 0.8,
@@ -190,8 +189,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 4
     },
-    "processing_ms": 213828,
+    "processing_ms": 180583,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

@@ -1,6 +1,6 @@
 {
   "document_id": "01_NRHM_Project_Contract",
-  "audited_at": "2026-04-01T19:24:08.380144Z",
+  "audited_at": "2026-04-01T22:43:23.785430Z",
   "source_files": {
     "extraction_json": "01_NRHM_Project_Contract.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: FORM. The first page of the document is a fillable procurement form with standard vendor fields, radio buttons, and signature lines. Even though subsequent pages contain standard contract text, the document begins as a form.",
+  "reasoning": "Document excluded: FORM. The first page of the document is a Request for Quotes that contains numerous fillable fields, checkboxes, and signature lines for a vendor to complete and submit. Although subsequent pages contain standard contract terms and conditions, the presence of the primary fillable execution and acceptance forms designates this as a FORM.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 50769,
+    "processing_ms": 171305,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

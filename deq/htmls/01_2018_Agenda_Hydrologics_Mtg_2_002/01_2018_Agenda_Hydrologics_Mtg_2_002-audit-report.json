@@ -1,6 +1,6 @@
 {
   "document_id": "01_2018_Agenda_Hydrologics_Mtg_2_002",
-  "audited_at": "2026-04-01T19:23:32.190234Z",
+  "audited_at": "2026-04-01T22:39:40.474287Z",
   "source_files": {
     "extraction_json": "01_2018_Agenda_Hydrologics_Mtg_2_002.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "All signals indicate a clean document with perfect fidelity scores (1.0). Programmatic text comparison metrics are very strong (shingling recall 0.949, precision 0.972). The only finding is a single minor observation regarding a time value in a table header cell, which does not block approval.",
+  "reasoning": "All signals strongly agree on the high quality of the conversion. LLM fidelity scores are perfect (1.0 across the board), and programmatic text metrics show excellent content preservation (0.949 recall, 0.972 precision). The single minor programmatic observation regarding a time value in a table header does not warrant human review.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -40,7 +40,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.98,
+    "decider_confidence": 0.99,
     "score_breakdown": {
       "fidelity_composite": 1.0,
       "raw_score": 1.0,
@@ -63,6 +63,10 @@
       "gemini_words": 95,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -87,8 +91,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 156931,
+    "processing_ms": 86316,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

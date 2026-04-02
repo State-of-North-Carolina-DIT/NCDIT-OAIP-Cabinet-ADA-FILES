@@ -1,6 +1,6 @@
 {
   "document_id": "01_2014_CRFL_Sales_Report",
-  "audited_at": "2026-04-01T19:22:51.693549Z",
+  "audited_at": "2026-04-01T22:42:19.786376Z",
   "source_files": {
     "extraction_json": "01_2014_CRFL_Sales_Report.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity analysis found no issues, but the programmatic evaluation identified four major structural accessibility defects in the document's tables. These include tables split across page breaks, captions and data miscoded as header rows, and footnotes converted to unordered lists. Given the presence of 4 major programmatic defects, the document must be routed to HUMAN_REVIEW to correct the table structure and semantics.",
+  "reasoning": "While the LLM fidelity signals indicate perfect content, structural, and visual scores, the programmatic analysis identified 4 major structural accessibility defects. These include tables split across page breaks, captions incorrectly coded as header rows, numeric data identified in header rows, and footnotes converted to unordered lists. With 4 major defects, the count-based routing rules require HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -79,10 +79,10 @@
     }
   ],
   "action_items": [
-    "Merge tables that were split across page breaks and remove duplicate header rows",
-    "Change spanning header rows acting as table titles into <caption> elements",
-    "Ensure numeric data rows are not coded as <th> elements",
-    "Convert footnotes incorrectly formatted as unordered lists into standard paragraph text"
+    "Merge the 6 tables split across consecutive pages and remove duplicate headers.",
+    "Change the table header row containing the caption 'SUMMARY' to a <caption> element.",
+    "Review table headers containing numeric data (e.g., years 2010, 2011) and ensure they are appropriately marked, or demote them to data cells if they are not headers.",
+    "Convert the unordered list item representing a table footnote into a paragraph element."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -93,7 +93,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.9,
     "score_breakdown": {
       "fidelity_composite": 1.0,
       "raw_score": 1.0,
@@ -116,6 +116,10 @@
       "gemini_words": 6096,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 1,
+      "image_count_output": 1,
+      "images_without_data": 0,
+      "html_img_count": 1,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -140,8 +144,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 117281,
+    "processing_ms": 245879,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

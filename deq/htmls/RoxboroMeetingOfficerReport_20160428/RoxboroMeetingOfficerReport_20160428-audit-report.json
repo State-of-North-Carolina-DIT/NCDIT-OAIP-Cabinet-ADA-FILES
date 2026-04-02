@@ -1,6 +1,6 @@
 {
   "document_id": "RoxboroMeetingOfficerReport_20160428",
-  "audited_at": "2026-04-01T19:29:55.934214Z",
+  "audited_at": "2026-04-01T22:53:01.676471Z",
   "source_files": {
     "extraction_json": "RoxboroMeetingOfficerReport_20160428.json",
     "source_pdf": "source.pdf",
@@ -12,15 +12,27 @@
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
   "fidelity_visual": 0.8571428571428572,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "The document contains a critical programmatic defect due to pervasive header and footer artifacts retained in the HTML output across all 5 pages. Additionally, there are major defects identified including a missing meaningful digital signature image and mixed numbering types in lists indicating sub-point flattening. According to the count-based severity rules, the presence of a critical defect requires automatic rejection.",
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The document has a programmatic major defect involving header/footer elements being incorrectly retained in the HTML output across all 5 pages. In addition, the LLM fidelity analysis identified a missing digital signature image and loss of visual emphasis (bolding/underlining). Because there is at least one major defect, count-based routing rules mandate HUMAN_REVIEW to ensure structural and visual fidelity.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
+      "description": "Images missing or broken",
+      "severity": "major",
+      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The source PDF contains a meaningful digital signature image on the first page next to the 'From' field. This image includes a cursive signature for Elizabeth S. Werner and a digital stamp containing the date and time of the signature ('Date: 2016.04.28 10:23:05 -04'00''). This image and the important verification information it conveys are completely missing from the HTML output.",
+      "source_pdf_quote": "Digital signature image containing cursive text 'Elizabeth S Werner' and stamp 'Digitally signed by Elizabeth S Werner... Date: 2016.04.28 10:23:05 -04'00''",
+      "output_quote": "The signature image and its verification information are completely absent from the HTML.",
+      "location": "Page 1, next to the 'From' section",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": false
+    },
+    {
       "description": "Header/footer elements retained in output (5): State of North Carolina | Environmental Quality | Waste Mana; Meeting Officer’s Report\nCoal Ash Impoundment Classification; Meeting Officer’s Report\nCoal Ash Impoundment Classification",
-      "severity": "critical",
-      "analysis": "header_footer_count=5, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "severity": "major",
+      "analysis": "header_footer_count=5, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -30,36 +42,12 @@
       "corroborated": false
     },
     {
-      "description": "Images missing or broken",
-      "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The first page of the source PDF contains a prominent digital signature stamp and cursive signature image ('Elizabeth S Werner') next to the 'From:' line. This is a meaningful image that establishes the authenticity and authorization of the memorandum. There is no corresponding image (or transcribed text of the digital stamp) present in the HTML output.",
-      "source_pdf_quote": "Cursive signature image and digital signature stamp text ('Digitally signed by Elizabeth S Werner...')",
-      "output_quote": "The signature image and stamp are completely absent from the HTML output.",
-      "location": "Page 1, adjacent to the 'From:' field",
-      "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": false
-    },
-    {
-      "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
-      "severity": "major",
-      "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "In the source PDF, the run-in headers for the bulleted list items on pages 3, 4, and 5 are both bolded and underlined (e.g., 'Excavation', 'Groundwater Assessments', 'Beneficial Reuse'). In the extraction JSON, these terms are presented as plain text without any markdown or HTML indicating bold or underline emphasis. This is a clear loss of structural/visual emphasis.",
-      "source_pdf_quote": "Excavation – Speakers requested that full excavation occur...",
+      "analysis": "The source document heavily uses bolding and underlining to emphasize the topics at the start of each bullet point in Sections II and III (e.g., 'Excavation', 'Groundwater Assessments', 'Well Testing'). Additionally, the word 'MEMORANDUM' on page 1 is bolded and underlined in the source. The JSON output extracts these phrases as completely plain text, failing to apply any markdown for bolding or structural representation for the underline. This constitutes a loss of visual emphasis.",
+      "source_pdf_quote": "Excavation – Speakers requested that full excavation occur as quickly as possible. (Where 'Excavation' is bold and underlined)",
       "output_quote": "\"text\": \"Excavation – Speakers requested that full excavation occur as quickly as possible.\"",
-      "location": "Sections II and III (Pages 3-5 bulleted lists)",
+      "location": "Page 3 (Section II) and Page 4 (Section III) bulleted lists",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -67,10 +55,9 @@
     }
   ],
   "action_items": [
-    "Remove pervasive header and footer artifacts from the HTML extraction",
-    "Ensure digital signatures and meaningful images are retained or properly described",
-    "Fix flattened list structures to ensure proper nested numbering",
-    "Restore visual emphasis (bold/underline) on run-in headers"
+    "Strip out the incorrectly retained header/footer text from the HTML output.",
+    "Verify the presence of the digital signature image and add it if necessary.",
+    "Restore bolding and underlining to the specified text elements."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -104,6 +91,10 @@
       "gemini_words": 1545,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 2,
+      "image_count_output": 2,
+      "images_without_data": 0,
+      "html_img_count": 2,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -128,8 +119,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 94785,
+    "processing_ms": 121815,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

@@ -1,6 +1,6 @@
 {
   "document_id": "Buck_Meeting_Officer_Report_Final_5_13_16_00000002",
-  "audited_at": "2026-04-01T19:26:04.711336Z",
+  "audited_at": "2026-04-02T01:25:10.381490Z",
   "source_files": {
     "extraction_json": "Buck_Meeting_Officer_Report_Final_5_13_16_00000002.json",
     "source_pdf": "source.pdf",
@@ -12,15 +12,15 @@
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "The document contains a critical programmatic defect regarding header and footer elements being retained across all pages in the output, which is a pervasive pipeline failure that significantly impacts accessibility. Additionally, there is a major programmatic defect indicating flattened lists due to mixed numbering types. Based on the presence of a critical defect, the document must be rejected.",
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The document shows strong overall fidelity scores, but programmatic detectors identified 3 major structural accessibility issues: retained headers/footers across 6 pages, a list split by a page break, and truncated alternative text for an image. These verified major defects trigger a mandatory routing to HUMAN_REVIEW according to the count-based routing rules.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Header/footer elements retained in output (6): State of North Carolina | Environmental Quality | Water Reso; Page 2 of 6; Page 3 of 6",
-      "severity": "critical",
-      "analysis": "header_footer_count=6, pages_affected=6/6. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "severity": "major",
+      "analysis": "header_footer_count=6, pages_affected=6/6. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -30,9 +30,9 @@
       "corroborated": false
     },
     {
-      "description": "Mixed numbering types at same list level (1 list(s)): p1:letter+roman — possible sub-point flattening",
+      "description": "List broken by page break (1 instance(s)): p4→p5: list item ends “…, permeable reactive barriers and volume”, continues as paragraph",
       "severity": "major",
-      "analysis": "flat_lists=1. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
+      "analysis": "split_list_count=1. Lists that span page breaks should be extracted as a single continuous structure. Split lists affect reading order and navigability for assistive technology.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -42,12 +42,24 @@
       "corroborated": false
     },
     {
+      "description": "Incomplete image alt text: 1 image(s) with inadequate descriptions (1 truncated mid-sentence) — e.g. p1: \"...ters \"NC\", with the 'N' in shades of green and the\"",
+      "severity": "major",
+      "analysis": "incomplete_alt_text=1 (truncated=1, placeholder=0, empty=0). Per WCAG 2.1 AA, meaningful images must have descriptive alternative text for screen-reader accessibility.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "I checked for structural emphasis loss such as missing list markers or lost underlines. Throughout pages 3, 4, and 5, the topics of the public comments (e.g., 'Beneficial Reuse', 'Dam Safety', 'Excavation') are both bolded and underlined in the source document. While the extraction correctly identified them as list items, the underline formatting was completely lost in the output text.",
-      "source_pdf_quote": "Beneficial Reuse – Comments suggested...",
-      "output_quote": "Beneficial Reuse – Comments suggested alternate uses...",
-      "location": "Page 3 (and throughout pages 4-5)",
+      "analysis": "The source document extensively uses underlining (along with bold) to highlight the topic names at the beginning of bullet points in sections II and III (e.g., 'Beneficial Reuse', 'Dam Safety', 'Excavation'). The output drops this underlined emphasis entirely for almost all of these items.",
+      "source_pdf_quote": "Beneficial Reuse (Underlined in source)",
+      "output_quote": "Beneficial Reuse – Comments suggested alternate uses",
+      "location": "Page 3 and Page 4 list items",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -55,9 +67,10 @@
     }
   ],
   "action_items": [
-    "Remove retained header and footer artifacts from the HTML output.",
-    "Fix list flattening by properly nesting sub-points with mixed numbering types.",
-    "Restore missing underline formatting to the specified list items."
+    "Remove extraneous header/footer text from the HTML",
+    "Merge the split list items across the page break",
+    "Fix the truncated alternative text for the image on page 1",
+    "Restore underlining to topic headings in sections II and III if desired"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -91,6 +104,10 @@
       "gemini_words": 2254,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 2,
+      "image_count_output": 2,
+      "images_without_data": 0,
+      "html_img_count": 2,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -111,12 +128,17 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "major_disagree",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 129725,
+    "processing_ms": 217839,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

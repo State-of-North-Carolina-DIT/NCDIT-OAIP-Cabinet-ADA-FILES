@@ -1,26 +1,26 @@
 {
   "document_id": "Allen_Meeting_Officer_Report_20160422",
-  "audited_at": "2026-04-01T19:24:35.674728Z",
+  "audited_at": "2026-04-01T22:41:55.313314Z",
   "source_files": {
     "extraction_json": "Allen_Meeting_Officer_Report_20160422.json",
     "source_pdf": "source.pdf",
     "rendered_html": "Allen_Meeting_Officer_Report_20160422.html"
   },
-  "quality_score": 95,
+  "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 0.95,
-  "fidelity_content": 1.0,
+  "fidelity_composite": 0.9973,
+  "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 0.8571428571428572,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "The automated checks identified a critical defect where header and footer artifacts were retained across all 5 pages, which causes pervasive screen reader repetition. Additionally, there are major defects including a missing signature image/stamp block and flattened lists with mixed numbering types. The presence of a critical programmatic defect requires an immediate rejection.",
+  "fidelity_visual": 1.0,
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The LLM fidelity signals are very high and recommend AUTO_APPROVE. However, the programmatic detector has identified a MAJOR defect regarding header/footer elements being retained in the output across all 5 pages. According to the strict count-based routing thresholds, the presence of a programmatic MAJOR defect mandates routing to HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Header/footer elements retained in output (5): State of North Carolina | Environmental Quality | Waste Mana; Meeting Officer’s Report Coal Ash Impoundment Classification; Meeting Officer’s Report\nCoal Ash Impoundment Classification",
-      "severity": "critical",
-      "analysis": "header_footer_count=5, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "severity": "major",
+      "analysis": "header_footer_count=5, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -30,27 +30,15 @@
       "corroborated": false
     },
     {
-      "description": "Images missing or broken",
-      "severity": "major",
-      "analysis": "[Downgraded: image_count_ratio=1.00, placeholder_ratio=0.00 contradict LLM claim] The first page of the source document contains a visible signature image accompanied by a digital signature stamp block next to the 'From' section. This meaningful image and the associated text are completely missing from the HTML output.",
-      "source_pdf_quote": "Page 1 contains a handwritten signature image with text reading 'Digitally signed by LYF...'",
-      "output_quote": "The HTML output contains no image element or text corresponding to the signature block between the 'From' and 'Subject' sections.",
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The word 'MEMORANDUM' is explicitly underlined in the source PDF to indicate structural emphasis. While the output captures it as a level-1 heading, it loses the specific underline emphasis which has no markdown representation in the JSON output format.",
+      "source_pdf_quote": "MEMORANDUM (underlined)",
+      "output_quote": "\"text\": \"MEMORANDUM\"",
       "location": "Page 1",
       "source": "fidelity_llm",
-      "check_id": "V2",
-      "fidelity_dimension": "visual",
-      "corroborated": false
-    },
-    {
-      "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
-      "severity": "major",
-      "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
+      "check_id": "C7",
+      "fidelity_dimension": "content",
       "corroborated": false
     },
     {
@@ -67,33 +55,31 @@
     }
   ],
   "action_items": [
-    "Remove retained header, footer, and page number artifacts",
-    "Ensure the signature image and associated digital stamp block are included",
-    "Fix list structures to prevent mixed numbering and sub-point flattening"
+    "Review and remove retained header, footer, and page number artifacts from the HTML output."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
   "total_defects": 1,
   "total_critical": 0,
-  "total_major": 1,
-  "total_minor": 0,
+  "total_major": 0,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 1.0,
+    "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.95,
-      "raw_score": 0.95,
+      "fidelity_composite": 0.9973,
+      "raw_score": 0.9973,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.95,
-      "fidelity_content": 1.0,
+      "fidelity_composite": 0.9973,
+      "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 0.8571428571428572,
-      "fidelity_routing": "FLAG_FOR_REVIEW",
+      "fidelity_visual": 1.0,
+      "fidelity_routing": "AUTO_APPROVE",
       "fidelity_available": true,
       "shingling_recall": 0.9171696847753186,
       "shingling_precision": 0.9895079594790159,
@@ -103,6 +89,10 @@
       "gemini_words": 1417,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 1,
+      "image_count_output": 1,
+      "images_without_data": 0,
+      "html_img_count": 1,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -123,12 +113,17 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "converge",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 114812,
+    "processing_ms": 127469,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

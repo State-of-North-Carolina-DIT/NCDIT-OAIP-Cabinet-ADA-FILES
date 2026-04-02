@@ -1,6 +1,6 @@
 {
   "document_id": "01_Fact_Sheet_SKA.pdf_2",
-  "audited_at": "2026-04-01T19:22:54.375029Z",
+  "audited_at": "2026-04-01T22:40:25.803388Z",
   "source_files": {
     "extraction_json": "01_Fact_Sheet_SKA.pdf_2.json",
     "source_pdf": "source.pdf",
@@ -8,15 +8,27 @@
   },
   "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 1.0,
-  "fidelity_content": 1.0,
+  "fidelity_composite": 0.9973,
+  "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "All signals indicate an excellent conversion. The LLM fidelity scores are perfect across the board, and programmatic metrics confirm strong text retention with 0.987 shingling recall. The only issues observed are three minor programmatic observations relating to cosmetic header/footer elements and a displaced link, which do not meet the threshold for human review.",
+  "reasoning": "The document exhibits excellent conversion quality with a composite fidelity score of 0.9973 and strong programmatic text comparison metrics (shingling recall 0.987, precision 0.997). The only identified defect is a minor loss of underline formatting on headings, which does not impact accessibility or content integrity. With fewer than 5 minor defects and no major or critical issues, this document easily qualifies for automatic approval.",
   "decision_method": "llm_final_decider",
   "concerns": [
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "In the source PDF, the headings 'Background' and 'Public Comment & Public Hearing' are underlined. While they are successfully captured as level 2 headings in the output JSON, the underline formatting itself is lost.",
+      "source_pdf_quote": "Background\nPublic Comment & Public Hearing",
+      "output_quote": "\"text\": \"Background\"\n\"text\": \"Public Comment & Public Hearing\"",
+      "location": "Page 1 headings",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
+      "corroborated": false
+    },
     {
       "description": "Page number artifacts retained: Page 1 of 2",
       "severity": "minor",
@@ -57,24 +69,24 @@
   "action_items": [],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 0,
+  "total_defects": 1,
   "total_critical": 0,
   "total_major": 0,
-  "total_minor": 0,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.98,
+    "decider_confidence": 0.99,
     "score_breakdown": {
-      "fidelity_composite": 1.0,
-      "raw_score": 1.0,
+      "fidelity_composite": 0.9973,
+      "raw_score": 0.9973,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 1.0,
-      "fidelity_content": 1.0,
+      "fidelity_composite": 0.9973,
+      "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
       "fidelity_routing": "AUTO_APPROVE",
@@ -87,6 +99,10 @@
       "gemini_words": 630,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 1,
       "output_link_count": 1,
       "link_count_ratio": 1.0,
@@ -111,8 +127,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 119200,
+    "processing_ms": 131928,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

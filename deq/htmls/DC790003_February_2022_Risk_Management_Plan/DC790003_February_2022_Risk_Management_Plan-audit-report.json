@@ -1,6 +1,6 @@
 {
   "document_id": "DC790003_February_2022_Risk_Management_Plan",
-  "audited_at": "2026-04-01T19:32:42.327005Z",
+  "audited_at": "2026-04-02T01:45:12.070043Z",
   "source_files": {
     "extraction_json": "DC790003_February_2022_Risk_Management_Plan.json",
     "source_pdf": "source.pdf",
@@ -20,10 +20,10 @@
     {
       "description": "Link injection issues",
       "severity": "critical",
-      "analysis": "The extraction model consistently stripped inline hyperlinks from body paragraphs and appended them as disconnected links at the bottom of the pages. Because the links are missing from the actual anchor text in the reading flow, they are functionally missing from their context.",
-      "source_pdf_quote": "The birds listed below are birds of particular concern either because they occur on the USFWS Birds of Conservation Concern (BCC) list or warrant special attention...",
-      "output_quote": "\"The birds listed below are birds of particular concern either because they occur on the USFWS Birds of Conservation Concern (BCC) list or warrant special attention in your project location.\"",
-      "location": "Page 44",
+      "analysis": "Checked for missing, broken, or fabricated links. There are numerous instances where text that is hyperlinked in the source PDF appears as plain text within the structural elements of the JSON (such as table cells and list items). For instance, in the '5 Species Listings' table on page 38, the link 'Implementation Progress' is clickable in the PDF, but in the JSON, it is rendered as plain text inside the table cell. The corresponding URL is merely appended as a floating link element at the very ",
+      "source_pdf_quote": "Table cells containing clickable hyperlinks, such as \"James Spinymussel\" and \"Implementation Progress\"",
+      "output_quote": "{\"text\": \"Implementation Progress\", \"column_start\": 6, \"row_start\": 4, \"num_columns\": 1, \"num_rows\": 1}",
+      "location": "Page 38 (Species Listings Table)",
       "source": "fidelity_llm",
       "check_id": "S7",
       "fidelity_dimension": "structural",
@@ -32,34 +32,22 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "Several full-page map diagrams that are critical to understanding the site conditions are completely missing from the HTML output. Specifically, the 'Soil Contaminant Concentration Map' on page 18, the 'Groundwater Contaminant Concentration Map' on page 19, and the 'Sub-Slab Gas and Indoor Air Contaminant Concentration Map' on page 20 have not been rendered as images in the output. The HTML only contains the extracted text elements (legends, notes, and title blocks) and placeholders for small ic",
-      "source_pdf_quote": "Page 18 displays a full-page diagram titled 'Soil Contaminant Concentration Map' showing property boundaries, a building footprint, and contour lines for PCE and TCE.",
-      "output_quote": "The HTML contains text extracted from the map (such as the NOTES and the TITLE block) and text placeholders like '[Image: North arrow and graphic scale bar (0 to 40 feet)]', but there is no `<img>` element corresponding to the main map graphic itself.",
-      "location": "Pages 18, 19, and 20",
+      "analysis": "Several critical and meaningful maps present in the source PDF are completely missing from the HTML output. Specifically, Figures 3, 4, 5, and 6 (Pages 18-21), which are full-page contaminant concentration and land-use control area maps, are absent. The HTML only contains the extracted text from the legends and notes, along with placeholder text like `[Image: North arrow and graphic scale bar (0 to 40 feet)]`, but no actual `<img>` element displaying the visual map data. Similarly, the survey pl",
+      "source_pdf_quote": "Page 18 contains 'Figure 3: Soil Contaminant Concentration Map', a full-page detailed map showing soil borings, building outlines, and contaminant contours.",
+      "output_quote": "The HTML output contains text extracted from the page such as 'COMPLETE CLEANERS FACILITY' and '[Image: North arrow and graphic scale bar (0 to 40 feet)]', but there is no <img> element corresponding to the map itself.",
+      "location": "Page 18 (Figure 3)",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
-      "corroborated": true
-    },
-    {
-      "description": "Header/footer elements retained in output (109): i; ii; https://harthick.sharepoint.com/sites/MasterFiles-1/Shared D",
-      "severity": "critical",
-      "analysis": "header_footer_count=109, pages_affected=51/73. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
       "corroborated": false
     },
     {
       "description": "Table structure corrupted",
       "severity": "major",
-      "analysis": "The source document contains a two-column table spanning pages 44 and 45. The header row on page 44 ('NAME' and 'BREEDING SEASON...') is extracted as a single-row table. However, the data rows corresponding to these columns on page 45 (e.g., 'Bald Eagle Haliaeetus leucocephalus' and 'Breeds Sep 1 to Jul 31') are completely stripped of their tabular structure and extracted as independent headings and paragraphs. This destroys the structural relationship between the data and the columns.",
-      "source_pdf_quote": "Two-column table spanning pages 44-45 with headers 'NAME' and 'BREEDING SEASON...' and data rows like 'Bald Eagle Haliaeetus leucocephalus' | 'Breeds Sep 1 to Jul 31'.",
-      "output_quote": "Page 44 contains a 1-row table for the headers. Page 45 extracts the tabular data as flat text: {\"type\": \"heading\", \"level\": 3, \"text\": \"Bald Eagle Haliaeetus leucocephalus\"} followed by {\"type\": \"paragraph\", \"text\": \"Breeds Sep 1 to Jul 31\"}.",
-      "location": "Pages 44-45 (Migratory birds table)",
+      "analysis": "The bird species table spanning pages 44 and 45 was not extracted as a unified table. The column headers ('NAME', 'BREEDING SEASON...') were extracted as a single-row table at the bottom of page 44, but the data rows on page 45 were completely flattened into sequential headings and paragraphs. This destroys the two-column tabular structure connecting the bird species with their corresponding breeding seasons.",
+      "source_pdf_quote": "Two-column tabular layout:\nNAME: Bald Eagle Haliaeetus leucocephalus\nBREEDING SEASON: Breeds Sep 1 to Jul 31",
+      "output_quote": "{\n  \"type\": \"heading\",\n  \"level\": 3,\n  \"text\": \"Bald Eagle Haliaeetus leucocephalus\"\n},\n{\n  \"type\": \"paragraph\",\n  \"text\": \"Breeds Sep 1 to Jul 31\"\n}",
+      "location": "Pages 44-45",
       "source": "fidelity_llm",
       "check_id": "S3",
       "fidelity_dimension": "structural",
@@ -68,10 +56,10 @@
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "On page 28, there is a continuous numbered list (1 through 4) with paragraph answers appearing below each question. The output extracts each numbered question as a separate, newly instantiated ordered list containing only one item. This causes the HTML rendering to restart the numbering at '1' for every question, rather than maintaining the continuous 1-4 sequence present in the source.",
-      "source_pdf_quote": "Continuous numbered list: '1. Are there navigable water bodies...', '2. Are there any water bodies...', '3. Are there any wetland...', '4. Are there any sensitive...'",
-      "output_quote": "Each question is extracted as an independent list block: {\"type\": \"list\", \"list_type\": \"ordered\", \"items\": [{\"text\": \"Are there navigable...\"}]} followed by a paragraph, then a new {\"type\": \"list\", \"list_type\": \"ordered\", \"items\": [{\"text\": \"Are there any water bodies...\"}]}.",
-      "location": "Page 28 (Level 1 Ecological Risk Assessment Checklist A)",
+      "analysis": "The numbered list on page 28 (questions 1 through 4) is a continuous list in the source PDF. However, the extraction pipeline split this into four separate single-item ordered lists, interspersed with paragraph elements for the answers. Because they are extracted as separate list objects, the HTML renderer will restart the numbering at '1.' for every single question instead of continuing sequentially from 1 to 4.",
+      "source_pdf_quote": "1. Are there navigable water bodies...\nYes, two unnamed tributaries...\n2. Are there any water bodies anywhere...",
+      "output_quote": "{\n  \"type\": \"list\",\n  \"list_type\": \"ordered\",\n  \"items\": [\n    {\n      \"text\": \"Are there navigable water bodies...\"\n    }\n  ]\n} ... {\n  \"type\": \"list\",\n  \"list_type\": \"ordered\",\n  \"items\": [\n    {\n      \"text\": \"Are there any water bodies anywhere...\"\n    }\n  ]\n}",
+      "location": "Page 28",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -102,6 +90,18 @@
       "corroborated": false
     },
     {
+      "description": "Header/footer elements retained in output (109): i; ii; https://harthick.sharepoint.com/sites/MasterFiles-1/Shared D",
+      "severity": "major",
+      "analysis": "header_footer_count=109, pages_affected=51/73. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "3 bare URL(s) in text not converted to hyperlinks: http://www.fws.gov/birds/management/managed-species/birds-of-conservation-concer; http://www.fws.gov/birds/management/project-assessment-tools-and-guidance/conser; http://portal.ncdenr.org/web/wm/DSCA/PublicNotices.",
       "severity": "major",
       "analysis": "bare_url_count=3. URLs appear as plain text instead of clickable links. Per NCDIT criteria, link text not wrapped in href is a major defect.",
@@ -114,9 +114,33 @@
       "corroborated": true
     },
     {
+      "description": "List broken by page break (1 instance(s)): p53→p54: list item ends “… but are not limited to: modification or”, continues as paragraph",
+      "severity": "major",
+      "analysis": "split_list_count=1. Lists that span page breaks should be extracted as a single continuous structure. Split lists affect reading order and navigability for assistive technology.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S5",
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "Form elements detected: 10 form(s) with 25 field(s) — forms lose functionality in HTML",
       "severity": "major",
       "analysis": "form_count=10, total_fields=25. PDF form fields (checkboxes, text inputs, signatures) cannot be faithfully rendered as static HTML.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Incomplete image alt text: 50 image(s) with inadequate descriptions (50 truncated mid-sentence) — e.g. p1: \"...ic of three wavy blue and green shapes between the\"; p1: \"... locations: one in Charlotte, NC at 2923 South Try\"; p2: \"...hic of three stacked, wavy black shapes separating\"",
+      "severity": "major",
+      "analysis": "incomplete_alt_text=50 (truncated=50, placeholder=0, empty=0). Per WCAG 2.1 AA, meaningful images must have descriptive alternative text for screen-reader accessibility.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -197,6 +221,10 @@
       "gemini_words": 16876,
       "table_count_ratio": null,
       "image_count_ratio": 0.8645833333333334,
+      "image_count_source": 96,
+      "image_count_output": 83,
+      "images_without_data": 12,
+      "html_img_count": 26,
       "source_link_count": 61,
       "output_link_count": 56,
       "link_count_ratio": 0.9180327868852459,
@@ -219,10 +247,15 @@
       "legacy_accuracy_score": null,
       "signal_agreement": "converge",
       "fabrication_detected_count": 0,
-      "deduplicated_count": 8
+      "deduplicated_count": 6
     },
-    "processing_ms": 208048,
+    "processing_ms": 298568,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

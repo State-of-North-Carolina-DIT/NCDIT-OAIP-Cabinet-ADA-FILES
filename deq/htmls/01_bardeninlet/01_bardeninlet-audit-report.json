@@ -1,6 +1,6 @@
 {
   "document_id": "01_bardeninlet",
-  "audited_at": "2026-04-01T19:27:38.052191Z",
+  "audited_at": "2026-04-01T22:48:42.633449Z",
   "source_files": {
     "extraction_json": "01_bardeninlet.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single-page nautical chart/map of the Cape Lookout area. Visual content entirely dominates the page, with text only serving as labels, coordinates, and depth markers on the map itself.",
+  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single-page nautical chart (map). The visual elements (depths, contours, map features) dominate the page's purpose, and there is no standard extractable body text, making it a clear SINGLE_GRAPHIC.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 15075,
+    "processing_ms": 30948,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

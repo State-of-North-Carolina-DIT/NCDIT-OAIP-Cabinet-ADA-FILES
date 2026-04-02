@@ -1,6 +1,6 @@
 {
   "document_id": "01_HB_1743_SAB_Purpose_Brief_Tom_Reeder",
-  "audited_at": "2026-04-01T19:23:54.313200Z",
+  "audited_at": "2026-04-01T22:40:14.443494Z",
   "source_files": {
     "extraction_json": "01_HB_1743_SAB_Purpose_Brief_Tom_Reeder.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The source document is a landscape-oriented presentation slide deck with typical slide layouts, bulleted points, and presentation graphics.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a presentation slide deck characterized by landscape orientation, presentation-style layouts, large bulleted lists, and conceptual diagrams.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 22656,
+    "processing_ms": 29935,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

@@ -1,6 +1,6 @@
 {
   "document_id": "Belews_Mtg_Officer_Report_FINAL_051316",
-  "audited_at": "2026-04-01T19:28:20.300896Z",
+  "audited_at": "2026-04-01T22:50:59.199982Z",
   "source_files": {
     "extraction_json": "Belews_Mtg_Officer_Report_FINAL_051316.json",
     "source_pdf": "source.pdf",
@@ -8,13 +8,13 @@
   },
   "quality_score": 100,
   "quality_grade": "Good",
-  "fidelity_composite": 1.0,
-  "fidelity_content": 1.0,
+  "fidelity_composite": 0.9973,
+  "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "While the LLM fidelity signals indicate a clean document with a perfect composite score, the automated programmatic detectors identified two major structural issues: a full-page image alongside extracted text and flattened lists with mixed numbering types. Because there are 2 programmatic major defects, the count-based routing thresholds require routing to HUMAN_REVIEW to assess structural accessibility.",
+  "reasoning": "The document exhibits exceptional text extraction quality with a near-perfect composite score of 0.9973 and strong shingling metrics. However, programmatic structural detectors identified two major defects: a full-page image duplicating extracted text and lists improperly split across page breaks. Under the count-based routing rules, the presence of these two major programmatic defects mandates a routing to HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -30,15 +30,27 @@
       "corroborated": false
     },
     {
-      "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
+      "description": "List broken by page break (2 instance(s)): p2→p3: list item ends “…arding air pollution. Comments were made”, continues as paragraph; p3→p4: list item ends “…,000 people are relying on water intakes”, continues as paragraph",
       "severity": "major",
-      "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
+      "analysis": "split_list_count=2. Lists that span page breaks should be extracted as a single continuous structure. Split lists affect reading order and navigability for assistive technology.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
       "source": "programmatic",
       "check_id": "S5",
       "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Visual emphasis loss",
+      "severity": "minor",
+      "analysis": "The title 'MEMORANDUM' is clearly underlined in the source PDF. The output captures it as a heading but fails to retain the underline styling (via HTML tags), which constitutes a loss of visual emphasis. Note: The missing bolding on the list item lead-ins (e.g., 'Environmental:', 'Property Values:') is explicitly excluded from this check per instructions, but the missing underline is a valid finding.",
+      "source_pdf_quote": "MEMORANDUM (underlined)",
+      "output_quote": "\"text\": \"MEMORANDUM\"",
+      "location": "Page 1, heading",
+      "source": "fidelity_llm",
+      "check_id": "C7",
+      "fidelity_dimension": "content",
       "corroborated": false
     },
     {
@@ -55,30 +67,30 @@
     }
   ],
   "action_items": [
-    "Check if the full-page image is redundant to extracted text and should be hidden from screen readers",
-    "Review list structures on pages 1 and 5 to ensure correct semantic nesting",
-    "Verify if the retained header/footer text affects readability or accessibility"
+    "Investigate the suspect full-page image to ensure it does not create duplicative, inaccessible content alongside the extracted text",
+    "Merge the split lists spanning pages 2→3 and pages 3→4 into continuous list structures for proper assistive technology navigation",
+    "Restore the underline styling to the 'MEMORANDUM' heading if visually necessary"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 0,
+  "total_defects": 1,
   "total_critical": 0,
   "total_major": 0,
-  "total_minor": 0,
+  "total_minor": 1,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 1.0,
-      "raw_score": 1.0,
+      "fidelity_composite": 0.9973,
+      "raw_score": 0.9973,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 1.0,
-      "fidelity_content": 1.0,
+      "fidelity_composite": 0.9973,
+      "fidelity_content": 0.9923664122137404,
       "fidelity_structural": 1.0,
       "fidelity_visual": 1.0,
       "fidelity_routing": "AUTO_APPROVE",
@@ -91,6 +103,10 @@
       "gemini_words": 1516,
       "table_count_ratio": null,
       "image_count_ratio": 0.2,
+      "image_count_source": 5,
+      "image_count_output": 1,
+      "images_without_data": 0,
+      "html_img_count": 1,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -115,8 +131,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 186777,
+    "processing_ms": 127225,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

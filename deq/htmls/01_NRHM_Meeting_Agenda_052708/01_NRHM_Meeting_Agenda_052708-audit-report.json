@@ -1,6 +1,6 @@
 {
   "document_id": "01_NRHM_Meeting_Agenda_052708",
-  "audited_at": "2026-04-01T19:26:04.108543Z",
+  "audited_at": "2026-04-01T22:45:47.780535Z",
   "source_files": {
     "extraction_json": "01_NRHM_Meeting_Agenda_052708.json",
     "source_pdf": "source.pdf",
@@ -14,16 +14,16 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The document contains excellent content preservation (content score 1.0, shingling recall 0.965) but has one major structural defect. Bulleted lists inside table cells were flattened into plain text strings with literal bullet characters instead of being properly marked up as HTML lists. Per count-based routing rules, 1 major defect requires HUMAN_REVIEW.",
+  "reasoning": "The document contains a single MAJOR fidelity defect due to bulleted lists being converted incorrectly as plain text strings within table cells, leading to a loss of list semantics. There is also a minor programmatic observation regarding table header markup. According to the count-based routing thresholds, 1 major defect requires HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "The source document contains several bulleted lists under the meeting topics (e.g., under 'Project Finance Update' and 'Project Status'). In the extraction JSON, these lists have been flattened into plain text strings with literal bullet characters ('•') separated by newlines within the table cells, rather than being parsed as proper structural list elements.",
-      "source_pdf_quote": "Bulleted list under 'Project Finance Update':\n• Cost share payments received.\n• Funds expended.",
-      "output_quote": "\"text\": \"Project Finance Update\\n• Cost share payments received.\\n• Funds expended.\"",
-      "location": "Table cell at row_start: 1, column_start: 1",
+      "analysis": "The source document contains several bulleted lists within the agenda topics (e.g., under 'Project Finance Update' and 'Project Status'). In the output JSON, these list items are extracted as plain text strings containing literal bullet characters ('•') and newline characters inside the table cells, rather than being converted into proper list structures. This causes a loss of list semantics for screen readers.",
+      "source_pdf_quote": "Project Finance Update\n• Cost share payments received.\n• Funds expended.",
+      "output_quote": "\"Project Finance Update\\n• Cost share payments received.\\n• Funds expended.\"",
+      "location": "Table cell (row_start: 1, column_start: 1)",
       "source": "fidelity_llm",
       "check_id": "S5",
       "fidelity_dimension": "structural",
@@ -43,8 +43,8 @@
     }
   ],
   "action_items": [
-    "Convert the plain text bullet points inside table cells into semantic HTML lists (<ul> and <li>).",
-    "Review table headers to ensure <th> elements are used appropriately for column/row context."
+    "Review and correct list markup within table cells to ensure proper list semantics.",
+    "Verify table headers and adjust if time values shouldn't be <th> elements."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -78,6 +78,10 @@
       "gemini_words": 121,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -102,8 +106,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 79701,
+    "processing_ms": 131306,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

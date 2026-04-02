@@ -1,6 +1,6 @@
 {
   "document_id": "IHSB_Annual_Land_Use_Restriction_Report_Form",
-  "audited_at": "2026-04-01T19:24:30.268042Z",
+  "audited_at": "2026-04-01T22:40:56.770715Z",
   "source_files": {
     "extraction_json": "IHSB_Annual_Land_Use_Restriction_Report_Form.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: FORM. The document is entirely a fillable form, containing text fields, checkboxes, a comments box, and signature lines for submitting an annual report.",
+  "reasoning": "Document excluded: FORM. The document is a single-page form consisting primarily of fillable fields (site information), checkboxes, a large comments box, and a signature block for property owner certification.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 26725,
+    "processing_ms": 30291,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

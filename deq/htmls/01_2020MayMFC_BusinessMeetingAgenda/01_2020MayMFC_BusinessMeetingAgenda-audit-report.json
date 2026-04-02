@@ -1,39 +1,27 @@
 {
   "document_id": "01_2020MayMFC_BusinessMeetingAgenda",
-  "audited_at": "2026-04-01T19:22:37.235071Z",
+  "audited_at": "2026-04-01T22:40:29.845419Z",
   "source_files": {
     "extraction_json": "01_2020MayMFC_BusinessMeetingAgenda.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_2020MayMFC_BusinessMeetingAgenda.html"
   },
-  "quality_score": 96,
+  "quality_score": 97,
   "quality_grade": "Good",
-  "fidelity_composite": 0.9594,
-  "fidelity_content": 0.9618320610687023,
+  "fidelity_composite": 0.9727,
+  "fidelity_content": 1.0,
   "fidelity_structural": 0.9091,
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "Both LLM fidelity and programmatic signals identified major issues with this document's conversion. The extraction dropped double asterisks used to denote 'Probable Action Items,' nested lists were flattened, and footnotes were incorrectly converted into bulleted lists. These structural and content alterations require human review.",
+  "reasoning": "The evaluation identified two major structural defects. The LLM fidelity signal found that nested lists were incorrectly flattened and bulleted lists within tables were rendered as plain text. The programmatic detector verified that table footnotes were semantically misrepresented as unordered lists. These structural issues require human remediation.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
-      "description": "Minor text differences beyond acceptable reformatting",
-      "severity": "major",
-      "analysis": "The source document uses a double asterisk (`**`) immediately following specific agenda items to designate them as 'Probable Action Items' (as defined by the legend at the bottom of the pages). The extraction silently dropped these asterisks from multiple items, notably in the agenda schedules on both page 1 and page 2, altering the informational meaning of those items.",
-      "source_pdf_quote": "Approval of Agenda **\nApproval of Meeting Minutes**\n[...]\nVote on approval of the continued suspension of NCMFC Rule 15A NCAC 03M .0511 Bluefish.**",
-      "output_quote": "Approval of Agenda \nApproval of Meeting Minutes\n[...]\n• Vote on approval of the continued suspension of NCMFC Rule 15A NCAC 03M .0511 Bluefish.",
-      "location": "Page 1 and Page 2 (various schedule items)",
-      "source": "fidelity_llm",
-      "check_id": "C6",
-      "fidelity_dimension": "content",
-      "corroborated": false
-    },
-    {
       "description": "Lists converted incorrectly",
       "severity": "major",
-      "analysis": "In the source document on page 2, there is a nested list where 'Observer Program' and 'Incidental Take Permit Updates' are clearly sub-items indented under 'Protected Resources Update'. Similarly, 'Red Drum' and 'Southern Flounder' are sub-items under 'Landings Update'. In the JSON output, these nested hierarchies are flattened, and the sub-items are placed at the exact same level as their parent items within the 'children' array of 'Informational Materials continued:'.",
-      "source_pdf_quote": "Protected Resources Update\n▪ Observer Program\n▪ Incidental Take Permit Updates",
+      "analysis": "The output fails to preserve the hierarchical structure of nested lists. On page 2, the 'Informational Materials continued:' section contains indented sub-items in the source PDF (e.g., 'Observer Program' is indented under 'Protected Resources Update'). However, in the converted JSON list, these sub-items are flattened and placed at the same child level as their parent items. Additionally, several bulleted lists inside the agenda tables are rendered as plain text with bullet characters (•) inste",
+      "source_pdf_quote": "Protected Resources Update\n Observer Program\n Incidental Take Permit Updates",
       "output_quote": "{\"text\": \"Protected Resources Update\"}, {\"text\": \"Observer Program\"}, {\"text\": \"Incidental Take Permit Updates\"}",
       "location": "Page 2, first list element",
       "source": "fidelity_llm",
@@ -79,32 +67,31 @@
     }
   ],
   "action_items": [
-    "Restore the double asterisks ('**') to the appropriate agenda items to preserve 'Probable Action Items' context",
-    "Correct the list structure to reflect proper nesting for sub-items",
-    "Convert the footnote list items back to proper paragraph format",
-    "Remove retained header and footer elements",
-    "Fix table header semantics"
+    "Restore hierarchical structure for nested lists.",
+    "Ensure bulleted lists within tables use proper semantic HTML list tags.",
+    "Convert list items representing footnotes into semantically correct paragraph elements.",
+    "Remove retained header and footer artifacts."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 2,
+  "total_defects": 1,
   "total_critical": 0,
-  "total_major": 2,
+  "total_major": 1,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
     "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 0.9594,
-      "raw_score": 0.9594,
+      "fidelity_composite": 0.9727,
+      "raw_score": 0.9727,
       "ceiling": null,
       "ceiling_reason": null,
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 0.9594,
-      "fidelity_content": 0.9618320610687023,
+      "fidelity_composite": 0.9727,
+      "fidelity_content": 1.0,
       "fidelity_structural": 0.9091,
       "fidelity_visual": 1.0,
       "fidelity_routing": "FLAG_FOR_REVIEW",
@@ -117,6 +104,10 @@
       "gemini_words": 661,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -141,8 +132,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 101715,
+    "processing_ms": 135440,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

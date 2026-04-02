@@ -1,6 +1,6 @@
 {
   "document_id": "DSCA_Compliance_Voluntary_Self-Inspection_Checklist_for_Petroleum_and_Alternative-solvent_Dry_Cleaners_Form",
-  "audited_at": "2026-04-01T19:25:18.951539Z",
+  "audited_at": "2026-04-01T22:44:56.566810Z",
   "source_files": {
     "extraction_json": "DSCA_Compliance_Voluntary_Self-Inspection_Checklist_for_Petroleum_and_Alternative-solvent_Dry_Cleaners_Form.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: FORM. The document is a printable checklist/form that relies heavily on manual completion. It includes a table with an 'Initials' column for checkboxes/sign-offs and a large section at the bottom specifically designed for handwritten input (signature, date, printed name, address, phone, email).",
+  "reasoning": "Document excluded: FORM. The document is a Voluntary Self-inspection Checklist that relies heavily on fillable fields (initial boxes, date, signature, facility information) for its primary function. Since HTML conversion breaks print/fill functionality, it classifies as a FORM.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 66688,
+    "processing_ms": 24552,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

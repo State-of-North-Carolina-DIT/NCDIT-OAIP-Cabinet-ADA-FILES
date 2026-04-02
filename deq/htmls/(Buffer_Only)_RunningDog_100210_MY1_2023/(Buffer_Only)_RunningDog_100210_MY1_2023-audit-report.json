@@ -1,6 +1,6 @@
 {
   "document_id": "(Buffer_Only)_RunningDog_100210_MY1_2023",
-  "audited_at": "2026-04-01T19:24:47.189547Z",
+  "audited_at": "2026-04-01T23:40:22.986357Z",
   "source_files": {
     "extraction_json": "(Buffer_Only)_RunningDog_100210_MY1_2023.json",
     "source_pdf": "source.pdf",
@@ -9,7 +9,7 @@
   "quality_score": 30,
   "quality_grade": "Critical",
   "fidelity_composite": 0.4,
-  "fidelity_content": 0.9618320610687023,
+  "fidelity_content": 1.0,
   "fidelity_structural": 0.5455,
   "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
@@ -20,8 +20,8 @@
     {
       "description": "Link injection issues",
       "severity": "critical",
-      "analysis": "On page 6, the output contains a fabricated link object pointing to a 'mailto:' address that was scraped from page 4. This email address URL is wrapped around random body text that was not a clickable hyperlink in the source PDF.",
-      "source_pdf_quote": "support the Carolina heelsplitter (Lasmigona decorata), a federally and state endangered freshwater mussel.” According to the report (Plain text with no hyperlink)",
+      "analysis": "Found a fabricated hyperlink element on page 6 of the output JSON. A snippet of regular paragraph text regarding the Carolina heelsplitter mussel was erroneously converted into a clickable hyperlink, and its destination URL was hallucinated/copied from a completely different author's email address found on page 4.",
+      "source_pdf_quote": "support the Carolina heelsplitter (Lasmigona decorata), a federally and state endangered freshwater mussel.” According to the report",
       "output_quote": "{\"type\": \"link\", \"text\": \"support the Carolina heelsplit mussel ” According to the rep\", \"url\": \"mailto:aeckardt@wildlandseng.com\"}",
       "location": "Page 6",
       "source": "fidelity_llm",
@@ -32,38 +32,14 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "Several critical and meaningful maps from the source PDF are completely missing from the HTML output and have been replaced by text placeholders. For example, the Project Vicinity Map, Project Service Area Map, and Current Condition Plan View Map are absent as `<img>` elements.",
-      "source_pdf_quote": "Page 13 contains a large map titled \"Figure 1. Project Vicinity Map\".",
-      "output_quote": "The HTML output lacks an `<img>` element for this map, instead displaying a text placeholder: `[Image: A project vicinity map for the Running Dog Mitigation Site...]`",
-      "location": "Page 13 (Appendix 1)",
+      "analysis": "Several critical and meaningful maps present in the source PDF are missing from the HTML output. Specifically, the maps on pages 13, 14, 15, and 20 (Figures 1, 2, 3, and 4) have failed extraction and appear only as text placeholders (e.g., \"[Image: A project vicinity map...]\") without an actual `<img>` tag to render the image. These maps carry essential spatial information for the document that cannot be fully conveyed through text alone.",
+      "source_pdf_quote": "Page 13 contains 'Figure 1. Project Vicinity Map', page 14 contains 'Figure 2. Project Service Area Map'.",
+      "output_quote": "The HTML contains text placeholders such as '<p>[Image: A project vicinity map for the Running Dog Mitigation Site, located east of Charlotte, North Carolina...]' instead of rendering `<img>` elements for these maps.",
+      "location": "Pages 13, 14, 15, and 20",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
       "corroborated": true
-    },
-    {
-      "description": "Header/footer elements retained in output (26): Wildlands Engineering, Inc. • phone 704-332-7754 • fax 704-3; Wildlands Engineering, Inc. • phone 704-332-7754 • fax 704-3; Running Dog Mitigation Site\nMonitoring Year 1 Annual Report ",
-      "severity": "critical",
-      "analysis": "header_footer_count=26, pages_affected=20/42. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": null,
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
-      "description": "Minor text differences beyond acceptable reformatting",
-      "severity": "major",
-      "analysis": "There are two notable text alterations. First, on Page 6, the output includes an errant hyperlink at the end of the page containing a duplicated fragment of text and a 'mailto' URL that does not exist in that location in the source. Second, on Page 39 in Table 10, the Height and Vigor data for a Quercus rubra plant in Plot 12 is incorrectly extracted as 'fee' and '4' instead of 'Dead' and '0'.",
-      "source_pdf_quote": "1) No link or text at the bottom of Page 6. 2) '12 Quercus rubra 1 Northern red oak 8.0 4.0 Dead 0'",
-      "output_quote": "1) {\"type\": \"link\", \"text\": \"support the Carolina heelsplit mussel \\u201d According to the rep\", \"url\": \"mailto:aeckardt@wildlandseng.com\"} 2) 'fee' and '4' in the corresponding table cells.",
-      "location": "Page 6 (end of content array) and Page 39 (Table 10, Plot 12)",
-      "source": "fidelity_llm",
-      "check_id": "C6",
-      "fidelity_dimension": "content",
-      "corroborated": false
     },
     {
       "description": "Table caption coded as header row: 3 table(s) have a single spanning first row that is likely a caption/title",
@@ -74,6 +50,18 @@
       "location": null,
       "source": "programmatic",
       "check_id": "S3",
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
+      "description": "Header/footer elements retained in output (26): Wildlands Engineering, Inc. • phone 704-332-7754 • fax 704-3; Wildlands Engineering, Inc. • phone 704-332-7754 • fax 704-3; Running Dog Mitigation Site\nMonitoring Year 1 Annual Report ",
+      "severity": "major",
+      "analysis": "header_footer_count=26, pages_affected=20/42. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": null,
       "fidelity_dimension": null,
       "corroborated": false
     },
@@ -143,9 +131,9 @@
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 3,
+  "total_defects": 2,
   "total_critical": 2,
-  "total_major": 1,
+  "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
@@ -160,7 +148,7 @@
     },
     "signals": {
       "fidelity_composite": 0.4,
-      "fidelity_content": 0.9618320610687023,
+      "fidelity_content": 1.0,
       "fidelity_structural": 0.5455,
       "fidelity_visual": 0.2857142857142857,
       "fidelity_routing": "AUTO_REJECT",
@@ -173,6 +161,10 @@
       "gemini_words": 8356,
       "table_count_ratio": null,
       "image_count_ratio": 0.6103896103896104,
+      "image_count_source": 77,
+      "image_count_output": 47,
+      "images_without_data": 5,
+      "html_img_count": 17,
       "source_link_count": 2,
       "output_link_count": 2,
       "link_count_ratio": 1.0,
@@ -197,8 +189,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 1
     },
-    "processing_ms": 232399,
+    "processing_ms": 194543,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

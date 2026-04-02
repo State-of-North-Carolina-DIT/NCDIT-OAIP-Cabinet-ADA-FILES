@@ -1,6 +1,6 @@
 {
   "document_id": "01_2019_shellfish_sale_tag_template",
-  "audited_at": "2026-04-01T19:21:27.010772Z",
+  "audited_at": "2026-04-01T22:38:46.002236Z",
   "source_files": {
     "extraction_json": "01_2019_shellfish_sale_tag_template.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single page where the primary content is an annotated diagram of a shellstock tag. The text at the bottom is supplementary to the visual guide.",
+  "reasoning": "Document excluded: SINGLE_GRAPHIC. The document is a single page dominated by a visual diagram of a shellstock tag with explanatory callouts. While there are substantive instructions at the bottom, the page's primary purpose is as a visual reference diagram, matching the criteria for SINGLE_GRAPHIC.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 31661,
+    "processing_ms": 32124,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

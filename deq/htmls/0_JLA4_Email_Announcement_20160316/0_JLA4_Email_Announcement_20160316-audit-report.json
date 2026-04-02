@@ -1,6 +1,6 @@
 {
   "document_id": "0_JLA4_Email_Announcement_20160316",
-  "audited_at": "2026-04-01T19:22:48.832189Z",
+  "audited_at": "2026-04-01T22:40:16.401287Z",
   "source_files": {
     "extraction_json": "0_JLA4_Email_Announcement_20160316.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "human_review",
   "routing_label": "Human Review",
-  "reasoning": "The LLM fidelity signals gave perfect scores indicating excellent text and structural preservation. However, programmatic detectors identified a MAJOR defect regarding displaced hyperlinks, where 4 links were extracted as standalone elements rather than inline text. According to the binding routing rules, 1-5 major defects require routing to HUMAN_REVIEW.",
+  "reasoning": "While LLM fidelity scores indicate a perfect conversion, programmatic detectors identified 4 displaced hyperlinks that were extracted as standalone elements instead of inline text. This constitutes a major structural defect according to the routing rules, necessitating human review despite the high fidelity scores.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -31,7 +31,7 @@
     }
   ],
   "action_items": [
-    "Review the 4 standalone hyperlinks to ensure they are properly formatted within the context of the paragraphs and do not disrupt screen reader flow."
+    "Review the 4 standalone hyperlinks and integrate them into the inline text where appropriate to ensure proper reading flow and accessibility."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -42,7 +42,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.95,
+    "decider_confidence": 0.9,
     "score_breakdown": {
       "fidelity_composite": 1.0,
       "raw_score": 1.0,
@@ -65,6 +65,10 @@
       "gemini_words": 385,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 6,
       "output_link_count": 4,
       "link_count_ratio": 0.6666666666666666,
@@ -89,8 +93,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 81164,
+    "processing_ms": 89644,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

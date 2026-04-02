@@ -1,6 +1,6 @@
 {
   "document_id": "01_NS_YPDL_Kickoff_meeting_03042020",
-  "audited_at": "2026-04-01T19:24:02.934196Z",
+  "audited_at": "2026-04-01T22:40:25.714364Z",
   "source_files": {
     "extraction_json": "01_NS_YPDL_Kickoff_meeting_03042020.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is a 24-page slide presentation characterized by a landscape orientation, slide titles, bulleted lists, background decorative images (pottery scenes), and repetitive footer logos/slide numbers typical of a PowerPoint or similar slide deck.",
+  "reasoning": "Document excluded: SLIDE_DECK. The document is a 24-page landscape-oriented presentation slide deck. It features slide layouts, repeating background graphics, large images, and bulleted text typical of a PowerPoint presentation.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 30029,
+    "processing_ms": 44456,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

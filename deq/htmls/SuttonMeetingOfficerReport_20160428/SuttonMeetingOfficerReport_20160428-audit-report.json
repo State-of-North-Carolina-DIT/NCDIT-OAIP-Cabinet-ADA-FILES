@@ -1,6 +1,6 @@
 {
   "document_id": "SuttonMeetingOfficerReport_20160428",
-  "audited_at": "2026-04-01T19:34:16.272896Z",
+  "audited_at": "2026-04-01T22:54:10.257369Z",
   "source_files": {
     "extraction_json": "SuttonMeetingOfficerReport_20160428.json",
     "source_pdf": "source.pdf",
@@ -12,15 +12,15 @@
   "fidelity_content": 0.9923664122137404,
   "fidelity_structural": 1.0,
   "fidelity_visual": 1.0,
-  "routing": "reject",
-  "routing_label": "Reject",
-  "reasoning": "The document contains a programmatic CRITICAL defect regarding header and footer elements retained across multiple pages (pages_affected=5/5), which creates pervasive accessibility issues for screen readers. It also contains a programmatic MAJOR defect for mixed numbering types indicating list flattening. Based on the count-based routing rules, any critical defect requires an automatic REJECT.",
+  "routing": "human_review",
+  "routing_label": "Human Review",
+  "reasoning": "The programmatic signal identified a major structural issue where header and footer elements were erroneously retained in the rendered HTML across all 5 pages. The LLM fidelity check also noted a minor visual emphasis loss (missing underlines). Because there is 1 major defect, the strict count-based routing thresholds require the document to be routed to HUMAN_REVIEW.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
       "description": "Header/footer elements retained in output (6): PAT MCCRORY\nGovernor\nDONALD R. VAN DER VAART\nSecretary\nMICHA; State of North Carolina | Environmental Quality | Waste Mana; Meeting Officer’s Report\nCoal Ash Impoundment Classification",
-      "severity": "critical",
-      "analysis": "header_footer_count=6, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "severity": "major",
+      "analysis": "header_footer_count=6, pages_affected=5/5. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -30,24 +30,12 @@
       "corroborated": false
     },
     {
-      "description": "Mixed numbering types at same list level (2 list(s)): p1:letter+roman, p5:letter+roman — possible sub-point flattening",
-      "severity": "major",
-      "analysis": "flat_lists=2. Lists with mixed numbering types (numeric+letter or numeric+roman) at the same depth level suggest sub-points were flattened.",
-      "source_pdf_quote": null,
-      "output_quote": null,
-      "location": null,
-      "source": "programmatic",
-      "check_id": "S5",
-      "fidelity_dimension": null,
-      "corroborated": false
-    },
-    {
       "description": "Visual emphasis loss",
       "severity": "minor",
-      "analysis": "The source document contains underlined and bolded text for the main document title and the lead-in words of the bullet points in Sections II and III. This emphasis is entirely lost in the output JSON, which contains no underline formatting or markdown bold asterisks.",
-      "source_pdf_quote": "Dam Safety – There was a concern about the history... (where \"Dam Safety\" is bolded and underlined)",
-      "output_quote": "\"Dam Safety – There was a concern about the history of structural failures in dams.\"",
-      "location": "Page 3, Section II bullet points",
+      "analysis": "The source document features underlined text at the beginning of each list item in sections II and III to provide structural emphasis. This underlining (as well as bolding) was completely lost in the JSON output.",
+      "source_pdf_quote": "Dam Safety – There was a concern...",
+      "output_quote": "Dam Safety – There was a concern about the history of structural failures in dams.",
+      "location": "Page 3, Section II list items; Page 4, Section III list items",
       "source": "fidelity_llm",
       "check_id": "C7",
       "fidelity_dimension": "content",
@@ -55,9 +43,8 @@
     }
   ],
   "action_items": [
-    "Remove retained header/footer artifacts from the rendered text",
-    "Fix list structures to prevent flattening of sub-points",
-    "Restore bold and underline emphasis for document titles and lead-in words"
+    "Locate and strip out erroneously retained header and footer text from the HTML output",
+    "Verify and restore missing visual emphasis (underlining/bolding) on list items if necessary for context"
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
@@ -68,7 +55,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.98,
+    "decider_confidence": 0.95,
     "score_breakdown": {
       "fidelity_composite": 0.9973,
       "raw_score": 0.9973,
@@ -91,6 +78,10 @@
       "gemini_words": 1342,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 3,
+      "image_count_output": 3,
+      "images_without_data": 0,
+      "html_img_count": 3,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -111,12 +102,17 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "major_disagree",
+      "signal_agreement": "partial_disagree",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 93217,
+    "processing_ms": 83182,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

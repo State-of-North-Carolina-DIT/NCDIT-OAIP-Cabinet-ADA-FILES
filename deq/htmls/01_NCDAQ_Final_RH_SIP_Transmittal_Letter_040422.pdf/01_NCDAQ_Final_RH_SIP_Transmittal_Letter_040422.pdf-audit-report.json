@@ -1,6 +1,6 @@
 {
   "document_id": "01_NCDAQ_Final_RH_SIP_Transmittal_Letter_040422.pdf",
-  "audited_at": "2026-04-01T19:24:11.587825Z",
+  "audited_at": "2026-04-01T22:44:31.265240Z",
   "source_files": {
     "extraction_json": "01_NCDAQ_Final_RH_SIP_Transmittal_Letter_040422.pdf.json",
     "source_pdf": "source.pdf",
@@ -20,10 +20,10 @@
     {
       "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "The source PDF contains meaningful images that are missing from the HTML output. Specifically, the Great Seal of the State of North Carolina and the DEQ logo on page 1 are not rendered as `<img>` elements; instead, they appear as plain text paragraph placeholders (e.g., `<p>[Image: Great Seal of the State of North Carolina]</p>`). Additionally, the handwritten signature on page 3 is entirely absent, replaced by an image described in the alt text as 'a completely white, blank image.'",
-      "source_pdf_quote": "Great Seal of the State of North Carolina and DEQ logos on page 1, and the handwritten signature on page 3.",
-      "output_quote": "<p>[Image: Great Seal of the State of North Carolina]</p> and <p>[Image: DEQ North Carolina Department of Environmental Quality logo]</p>",
-      "location": "Page 1 and Page 3",
+      "analysis": "The source document contains important organizational logos on page 1 (the Great Seal of the State of North Carolina and the DEQ logo). However, the rendered HTML does not contain actual <img> elements for these meaningful images. Instead, the HTML contains plain paragraph text placeholders (e.g., `<p>[Image: Great Seal...]</p>`). Because the actual image elements are entirely missing from the HTML for the primary document identifiers, this is a critical failure.",
+      "source_pdf_quote": "The Great Seal of the State of North Carolina and the DEQ logo appear on page 1 of the source PDF.",
+      "output_quote": "The HTML output lacks <img> tags for these logos, instead rendering plain text paragraphs: `<p>[Image: Great Seal of the State of North Carolina]</p>` and `<p>[Image: DEQ North Carolina Department of Environmental Quality logo]</p>`.",
+      "location": "Page 1",
       "source": "fidelity_llm",
       "check_id": "V2",
       "fidelity_dimension": "visual",
@@ -32,7 +32,7 @@
     {
       "description": "Header/footer elements retained in output (2): North Carolina Department of Environmental Quality | Divisio; Daniel Blackman April 4, 2022 Page 2",
       "severity": "major",
-      "analysis": "header_footer_count=2. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
+      "analysis": "header_footer_count=2, pages_affected=2/4. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -101,6 +101,10 @@
       "gemini_words": 1097,
       "table_count_ratio": null,
       "image_count_ratio": 0.75,
+      "image_count_source": 4,
+      "image_count_output": 3,
+      "images_without_data": 2,
+      "html_img_count": 1,
       "source_link_count": 0,
       "output_link_count": 1,
       "link_count_ratio": null,
@@ -125,8 +129,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 94428,
+    "processing_ms": 240596,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

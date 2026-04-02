@@ -1,6 +1,6 @@
 {
   "document_id": "01_2019_Consumer_Shellfish_Advisory_ENGLISH",
-  "audited_at": "2026-04-01T19:22:13.075652Z",
+  "audited_at": "2026-04-01T22:39:38.746202Z",
   "source_files": {
     "extraction_json": "01_2019_Consumer_Shellfish_Advisory_ENGLISH.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": 1.0,
   "routing": "auto_approve",
   "routing_label": "Auto-Approve",
-  "reasoning": "The document has perfect LLM fidelity scores across all categories, indicating an extremely clean conversion. Automated programmatic signals are also strong, with no major or critical defects detected. The only observation is a minor programmatic issue regarding retained headers/footers. According to the count-based rules (0 major/critical, 1 minor), this meets the criteria for AUTO_APPROVE.",
+  "reasoning": "LLM fidelity scores are perfect (1.0 across all categories), indicating a highly accurate structural and visual conversion. Programmatic text metrics confirm strong content preservation with high shingling recall and precision. The only noted observation is a minor retention of header/footer elements, which falls well within the threshold for automatic approval.",
   "decision_method": "llm_final_decider",
   "concerns": [
     {
@@ -40,7 +40,7 @@
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 0.98,
+    "decider_confidence": 0.95,
     "score_breakdown": {
       "fidelity_composite": 1.0,
       "raw_score": 1.0,
@@ -63,6 +63,10 @@
       "gemini_words": 105,
       "table_count_ratio": null,
       "image_count_ratio": 1.0,
+      "image_count_source": 0,
+      "image_count_output": 0,
+      "images_without_data": 0,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 0,
       "link_count_ratio": 1.0,
@@ -87,8 +91,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 77815,
+    "processing_ms": 84524,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

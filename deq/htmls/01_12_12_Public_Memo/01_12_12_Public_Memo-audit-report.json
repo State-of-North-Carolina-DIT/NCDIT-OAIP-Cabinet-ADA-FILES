@@ -1,26 +1,38 @@
 {
   "document_id": "01_12_12_Public_Memo",
-  "audited_at": "2026-04-01T19:24:43.670194Z",
+  "audited_at": "2026-04-01T22:43:35.824642Z",
   "source_files": {
     "extraction_json": "01_12_12_Public_Memo.json",
     "source_pdf": "source.pdf",
     "rendered_html": "01_12_12_Public_Memo.html"
   },
-  "quality_score": 100,
-  "quality_grade": "Good",
-  "fidelity_composite": 1.0,
+  "quality_score": 30,
+  "quality_grade": "Critical",
+  "fidelity_composite": 0.4,
   "fidelity_content": 1.0,
   "fidelity_structural": 1.0,
-  "fidelity_visual": 1.0,
+  "fidelity_visual": 0.2857142857142857,
   "routing": "reject",
   "routing_label": "Reject",
-  "reasoning": "The automated programmatic checks identified a critical pipeline failure where header/footer elements were pervasively retained across the document, which causes screen readers to encounter duplicate artifacts on every page. Additionally, there are multiple major defects including displaced hyperlinks, improper table header markup, and footnotes improperly converted to lists. Due to the presence of a critical programmatic defect, the document must be rejected.",
-  "decision_method": "llm_final_decider",
+  "reasoning": "LLM fidelity routed to AUTO_REJECT (composite=0.40).",
+  "decision_method": "hard_veto:fidelity_reject",
   "concerns": [
     {
-      "description": "Header/footer elements retained in output (8): Wetlands, Buffers, Stormwater - Compliance and Permitting Un; An Equal Opportunity \\ Affirmative Action Employer; Page 2 of 7",
+      "description": "Images missing or broken",
       "severity": "critical",
-      "analysis": "header_footer_count=8, pages_affected=7/7. Header/footer text from extraction JSON is present in the rendered HTML across most pages — pervasive pipeline failure. Screen readers will encounter duplicate artifacts on every page.",
+      "analysis": "The source PDF features a prominent, meaningful agency logo (NCDENR) at the top of the first page, as well as a 'One NorthCarolina Naturally' logo at the bottom. The HTML output fails to render these as images. Instead of using <img> tags with proper source attributes, the output merely injects literal text placeholders wrapped in paragraph tags, resulting in the visual images being entirely missing from the document structure.",
+      "source_pdf_quote": "Agency logo at the top of page 1.",
+      "output_quote": "<p>[Image: Logo of the North Carolina Department of Environment and Natural Resources (NCDENR)]</p>",
+      "location": "Page 1",
+      "source": "fidelity_llm",
+      "check_id": "V2",
+      "fidelity_dimension": "visual",
+      "corroborated": false
+    },
+    {
+      "description": "Displaced hyperlinks: 7 link(s) extracted as standalone elements instead of inline text",
+      "severity": "major",
+      "analysis": "standalone_links=7, examples=['http://portal.ncdenr.org/web/wq/swp/ws/401/publicnotices', 'http://portal.ncdenr.org/web/wq/swp/ws/401/certsandpermits/m', 'mailto:katie.merritt@ncdenr.gov']. Links should be inline within paragraphs, not separate blocks.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -30,9 +42,9 @@
       "corroborated": false
     },
     {
-      "description": "Displaced hyperlinks: 7 link(s) extracted as standalone elements instead of inline text",
+      "description": "Header/footer elements retained in output (8): Wetlands, Buffers, Stormwater - Compliance and Permitting Un; An Equal Opportunity \\ Affirmative Action Employer; Page 2 of 7",
       "severity": "major",
-      "analysis": "standalone_links=7, examples=['http://portal.ncdenr.org/web/wq/swp/ws/401/publicnotices', 'http://portal.ncdenr.org/web/wq/swp/ws/401/certsandpermits/m', 'mailto:katie.merritt@ncdenr.gov']. Links should be inline within paragraphs, not separate blocks.",
+      "analysis": "header_footer_count=8, pages_affected=7/7. Header/footer text from extraction JSON is present in the rendered HTML — the renderer failed to strip it. This is a structural accessibility issue.",
       "source_pdf_quote": null,
       "output_quote": null,
       "location": null,
@@ -54,6 +66,18 @@
       "corroborated": false
     },
     {
+      "description": "List broken by page break (1 instance(s)): p4→p5: list item ends “…talled in all streams as outlined in the”, continues as paragraph",
+      "severity": "major",
+      "analysis": "split_list_count=1. Lists that span page breaks should be extracted as a single continuous structure. Split lists affect reading order and navigability for assistive technology.",
+      "source_pdf_quote": null,
+      "output_quote": null,
+      "location": null,
+      "source": "programmatic",
+      "check_id": "S5",
+      "fidelity_dimension": null,
+      "corroborated": false
+    },
+    {
       "description": "Table header markup issues: 1 table(s) have a data row marked as header: \"Corps’ Regional General Permit\"",
       "severity": "major",
       "analysis": "data_in_th=0, datarow_as_header=1. Tables use <th> for data values (misrepresenting data as headers) or have a data row mismarked as a header row. Screen readers rely on <th> to announce column/row context.",
@@ -67,33 +91,31 @@
     }
   ],
   "action_items": [
-    "Adjust pipeline settings to exclude recurring headers and footers.",
-    "Ensure hyperlinks are rendered inline within their containing paragraphs.",
-    "Correct table header markup and preserve footnote semantics."
+    "LLM fidelity routed to AUTO_REJECT (composite=0.40)."
   ],
   "routing_changed": false,
   "pipeline_original_routing": null,
-  "total_defects": 0,
-  "total_critical": 0,
+  "total_defects": 1,
+  "total_critical": 1,
   "total_major": 0,
   "total_minor": 0,
   "exclusion_reason": null,
   "axe_compliance": null,
   "internal": {
-    "decider_confidence": 1.0,
+    "decider_confidence": 0.95,
     "score_breakdown": {
-      "fidelity_composite": 1.0,
-      "raw_score": 1.0,
-      "ceiling": null,
-      "ceiling_reason": null,
+      "fidelity_composite": 0.4,
+      "raw_score": 0.4,
+      "ceiling": 0.3,
+      "ceiling_reason": "fidelity_auto_reject",
       "available_components": 1
     },
     "signals": {
-      "fidelity_composite": 1.0,
+      "fidelity_composite": 0.4,
       "fidelity_content": 1.0,
       "fidelity_structural": 1.0,
-      "fidelity_visual": 1.0,
-      "fidelity_routing": "AUTO_APPROVE",
+      "fidelity_visual": 0.2857142857142857,
+      "fidelity_routing": "AUTO_REJECT",
       "fidelity_available": true,
       "shingling_recall": 0.7710467706013363,
       "shingling_precision": 0.9186272775517424,
@@ -103,6 +125,10 @@
       "gemini_words": 2648,
       "table_count_ratio": null,
       "image_count_ratio": 0.2857142857142857,
+      "image_count_source": 7,
+      "image_count_output": 2,
+      "images_without_data": 2,
+      "html_img_count": 0,
       "source_link_count": 0,
       "output_link_count": 7,
       "link_count_ratio": null,
@@ -123,12 +149,17 @@
       "structural_fp_list_count_pdf": null,
       "structural_fp_list_count_json": null,
       "legacy_accuracy_score": null,
-      "signal_agreement": "major_disagree",
+      "signal_agreement": "converge",
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 228622,
+    "processing_ms": 321932,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 3,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }

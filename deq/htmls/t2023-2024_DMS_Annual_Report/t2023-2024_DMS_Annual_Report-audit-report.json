@@ -1,6 +1,6 @@
 {
   "document_id": "t2023-2024_DMS_Annual_Report",
-  "audited_at": "2026-04-01T19:27:44.344695Z",
+  "audited_at": "2026-04-01T22:47:41.074418Z",
   "source_files": {
     "extraction_json": "t2023-2024_DMS_Annual_Report.json",
     "source_pdf": "source.pdf",
@@ -14,7 +14,7 @@
   "fidelity_visual": null,
   "routing": "excluded",
   "routing_label": "Excluded",
-  "reasoning": "Document excluded: SLIDE_DECK. The document is entirely composed of landscape-oriented, slide-like pages with graphic backgrounds, large titles, bulleted lists, and presentation-style layouts.",
+  "reasoning": "Document excluded: SLIDE_DECK. The source document is a presentation slide deck characterized by its landscape orientation, slide-like layout, consistent use of background images across all pages, and navigation buttons embedded in the design.",
   "decision_method": "document_classification",
   "concerns": [],
   "action_items": [],
@@ -50,6 +50,10 @@
       "gemini_words": null,
       "table_count_ratio": null,
       "image_count_ratio": null,
+      "image_count_source": null,
+      "image_count_output": null,
+      "images_without_data": 0,
+      "html_img_count": null,
       "source_link_count": null,
       "output_link_count": null,
       "link_count_ratio": null,
@@ -74,8 +78,13 @@
       "fabrication_detected_count": 0,
       "deduplicated_count": 0
     },
-    "processing_ms": 56112,
+    "processing_ms": 129848,
     "fidelity_report_path": "fidelity-report.json",
-    "routing_escalated_from": null
+    "routing_escalated_from": null,
+    "gemini_model": "gemini-3.1-pro-preview",
+    "fidelity_model": "gemini-3.1-pro-preview",
+    "fidelity_calls_ok": 0,
+    "fidelity_calls_failed": 0,
+    "fidelity_calls_total": 3
   }
 }
